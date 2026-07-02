@@ -11,6 +11,7 @@ from torch.utils.tensorboard import SummaryWriter
 from config import (ENV_CONFIG, NETWORK_CONFIG, TRAIN_CONFIG, ENVIRONMENTS, 
                    MODEL_CONFIG, TB_CONFIG)
 from environment import UAVEnvironment
+from test import resolve_metrics_output_path
 from networks import ARCAgent
 from replay_buffer import ReplayBuffer, ObservationHistory
 import time
@@ -18,7 +19,7 @@ import time
 class ARCTrainer:
     """Trainer for ARC algorithm"""
     
-    def __init__(self, env_name='env7', device=None):
+    def __init__(self, env_name='env7', device=None, collect_metrics=False, tdp_watts=None):
         """
         Initialize trainer
         
@@ -70,6 +71,15 @@ class ARCTrainer:
         self.episode_steps = []
         self.success_rate = []
         self.collision_rate = []
+        # Optional lightweight metrics collection (non-invasive)
+        try:
+            import psutil
+        except Exception:
+            psutil = None
+        self._psutil = psutil
+        self.collect_metrics = bool(collect_metrics)
+        self.tdp_watts = tdp_watts
+        self.training_metrics = []
         
         # Best model tracking
         self.best_avg_reward = -float('inf')
@@ -117,6 +127,23 @@ class ARCTrainer:
         
         # Final save
         self._save_checkpoint(num_episodes)
+        # Save collected training metrics if any were recorded
+        if self.training_metrics:
+            try:
+                out_csv = resolve_metrics_output_path(os.path.join('results', f'{self.env_name}_training_metrics.csv'))
+            except Exception:
+                out_csv = os.path.join('metrics_outputs', f'{self.env_name}_training_metrics.csv')
+            headers = ['episode','avg_reward','avg_steps','success_rate','collision_rate','sim_time_s','avg_cpu_pct','end_rss_gb','system_power_w']
+            try:
+                with open(out_csv, 'w', newline='') as f:
+                    import csv
+                    writer = csv.DictWriter(f, fieldnames=headers)
+                    writer.writeheader()
+                    for row in self.training_metrics:
+                        writer.writerow({k: row.get(k, '') for k in headers})
+                print(f"Saved training metrics CSV: {out_csv}")
+            except Exception:
+                pass
     
     def _run_episode(self, episode):
         """Run one training episode with multiple UAVs"""
@@ -128,6 +155,19 @@ class ARCTrainer:
             'losses': [],
         }
         
+        # Setup lightweight metrics collection markers
+        start_time = time.time()
+        proc = None
+        start_proc_cpu = None
+        if self.collect_metrics and self._psutil is not None:
+            try:
+                proc = self._psutil.Process(os.getpid())
+                ct = proc.cpu_times()
+                start_proc_cpu = float(ct.user + ct.system)
+            except Exception:
+                proc = None
+                start_proc_cpu = None
+
         # Run multiple UAVs in parallel (exploring starts)
         for uav_idx in range(ENV_CONFIG['num_uavs']):
             # Reset environment
@@ -200,6 +240,68 @@ class ARCTrainer:
             if 'collision' in info and info['collision']:
                 episode_stats['collisions'] += 1
         
+        # Prepare base metrics (always recorded to avoid losing training stats)
+        try:
+            base_row = {
+                'episode': episode,
+                'avg_reward': float(np.mean(episode_stats['rewards'])) if episode_stats['rewards'] else None,
+                'avg_steps': float(np.mean(episode_stats['steps'])) if episode_stats['steps'] else None,
+                'success_rate': episode_stats['successes'] / ENV_CONFIG['num_uavs'] if ENV_CONFIG['num_uavs'] else None,
+                'collision_rate': episode_stats['collisions'] / ENV_CONFIG['num_uavs'] if ENV_CONFIG['num_uavs'] else None,
+            }
+        except Exception:
+            base_row = {
+                'episode': episode,
+                'avg_reward': None,
+                'avg_steps': None,
+                'success_rate': None,
+                'collision_rate': None,
+            }
+
+        # If requested, add lightweight system metrics
+        if self.collect_metrics:
+            try:
+                end_time = time.time()
+                sim_time_s = end_time - start_time
+                end_proc_cpu = None
+                avg_cpu_pct = None
+                end_rss_gb = None
+                if proc is not None and start_proc_cpu is not None:
+                    ct2 = proc.cpu_times()
+                    end_proc_cpu = float(ct2.user + ct2.system)
+                    delta_cpu = end_proc_cpu - start_proc_cpu
+                    if sim_time_s > 0:
+                        avg_cpu_pct = (delta_cpu / sim_time_s) * 100.0
+                if proc is not None:
+                    end_rss_gb = float(proc.memory_info().rss) / (1024 ** 3)
+
+                system_power = None
+                if avg_cpu_pct is not None and self.tdp_watts is not None:
+                    try:
+                        system_power = float(avg_cpu_pct / 100.0 * float(self.tdp_watts))
+                    except Exception:
+                        system_power = None
+
+                base_row.update({
+                    'sim_time_s': round(sim_time_s, 3),
+                    'avg_cpu_pct': None if avg_cpu_pct is None else round(avg_cpu_pct, 3),
+                    'end_rss_gb': None if end_rss_gb is None else round(end_rss_gb, 4),
+                    'system_power_w': None if system_power is None else round(system_power, 3),
+                })
+            except Exception:
+                base_row.update({
+                    'sim_time_s': None,
+                    'avg_cpu_pct': None,
+                    'end_rss_gb': None,
+                    'system_power_w': None,
+                })
+
+        # Append metrics row
+        try:
+            self.training_metrics.append(base_row)
+        except Exception:
+            pass
+
         return episode_stats
     
     def _log_episode(self, episode, stats):

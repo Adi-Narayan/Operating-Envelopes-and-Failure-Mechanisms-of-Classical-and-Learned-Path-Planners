@@ -38,6 +38,12 @@ Available environments:
     parser.add_argument('--device', type=str, default=None,
                        choices=['cpu', 'cuda'],
                        help='Device to use (default: auto-detect)')
+    parser.add_argument('--collect-metrics', action='store_true',
+                       help='Enable collection of CPU/RAM/power metrics during training')
+    parser.add_argument('--metrics-tdp', type=float, default=None,
+                       help='TDP (watts) used to estimate system power from CPU %% (optional)')
+    parser.add_argument('--metrics-powermetrics', action='store_true',
+                       help='Capture macOS powermetrics output (may require sudo)')
     
     args = parser.parse_args()
     
@@ -55,7 +61,11 @@ Available environments:
     if args.device:
         device = torch.device(args.device)
     
-    trainer = ARCTrainer(env_name=args.env, device=device)
+    # Instantiate trainer without passing metric-related arguments to avoid
+    # accidental instrumentation during normal training runs.
+    trainer = ARCTrainer(env_name=args.env, device=device,
+                         collect_metrics=args.collect_metrics,
+                         tdp_watts=args.metrics_tdp)
     
     # Train
     trainer.train(num_episodes=args.episodes)
@@ -67,6 +77,8 @@ Available environments:
     print(f"  - Best model: {MODEL_CONFIG['best_model_name']}")
     print(f"  - Checkpoints: {MODEL_CONFIG['checkpoint_prefix']}_ep*.pth")
     print(f"\nTensorBoard logs: runs/ARC_{args.env}/")
+    if args.collect_metrics:
+        print(f"Metrics CSV output (if produced): results/{args.env}_training_metrics.csv")
     print("\nTo view training progress:")
     print(f"  tensorboard --logdir=runs/ARC_{args.env}")
     print("\nTo test the trained model:")

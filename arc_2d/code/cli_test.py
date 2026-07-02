@@ -52,6 +52,12 @@ Examples:
                        help='Number of evaluation runs (default: 100)')
     parser.add_argument('--apf-run1', action='store_true',
                        help='Run standalone APF Dynamic Run 1 pipeline (outputs to results/)')
+    parser.add_argument('--collect-metrics', action='store_true',
+                       help='Enable collection of CPU/RAM/power metrics during testing')
+    parser.add_argument('--metrics-tdp', type=float, default=None,
+                       help='TDP (watts) used to estimate system power from CPU %% (optional)')
+    parser.add_argument('--metrics-powermetrics', action='store_true',
+                       help='Capture macOS powermetrics output (may require sudo)')
     
     args = parser.parse_args()
 
@@ -112,7 +118,7 @@ Examples:
     print("="*70 + "\n")
     
     # Create tester
-    tester = ARCTester(args.model, args.env)
+    tester = ARCTester(args.model, args.env, tdp_watts=args.metrics_tdp, powermetrics=args.metrics_powermetrics)
     
     # Evaluation mode
     if args.evaluate:

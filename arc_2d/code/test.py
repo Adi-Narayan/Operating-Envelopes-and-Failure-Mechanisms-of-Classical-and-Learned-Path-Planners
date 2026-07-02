@@ -3,11 +3,28 @@ Testing script with visualization and animation
 """
 
 import os
+import csv
+import time
 import numpy as np
 import torch
+import subprocess
+import tempfile
+import re
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.patches import Polygon as MplPolygon, Circle as MplCircle
+
+try:
+    import psutil
+except ImportError:
+    psutil = None
+
+try:
+    import openpyxl
+    from openpyxl.styles import Font
+except Exception:
+    openpyxl = None
+    Font = None
 
 from config import (ENV_CONFIG, NETWORK_CONFIG, ENVIRONMENTS, VIS_CONFIG, MODEL_CONFIG)
 from environment import UAVEnvironment
@@ -15,10 +32,124 @@ from networks import ARCAgent
 from replay_buffer import ObservationHistory
 
 
+def _path_length(positions):
+    if len(positions) < 2:
+        return 0.0
+    return float(np.sum(np.linalg.norm(np.diff(positions, axis=0), axis=1)))
+
+
+def _mean_or_none(values):
+    if not values:
+        return None
+    return float(np.mean(values))
+
+
+def _metric_table_fieldnames():
+    return [
+        'success', 'collision', 'steps', 'sim_time_ms', 'avg_cpu_pct',
+        'peak_ram_gb', 'system_power_w', 'path_length_m', 'efficiency_pct',
+        'total_reward', 'distance_to_target', 'model_name', 'env_name'
+    ]
+
+
+def resolve_metrics_output_path(preferred_path):
+    directory = os.path.dirname(preferred_path) or '.'
+    try:
+        os.makedirs(directory, exist_ok=True)
+        test_path = os.path.join(directory, f'.__write_test_{os.getpid()}')
+        with open(test_path, 'w'):
+            pass
+        os.remove(test_path)
+        return preferred_path
+    except Exception:
+        fallback_dir = 'metrics_outputs'
+        os.makedirs(fallback_dir, exist_ok=True)
+        return os.path.join(fallback_dir, os.path.basename(preferred_path))
+
+
+def save_metrics_csv(rows, out_path):
+    out_path = resolve_metrics_output_path(out_path)
+    fieldnames = _metric_table_fieldnames()
+
+    with open(out_path, 'w', newline='') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({key: row.get(key, '') for key in fieldnames})
+
+    print(f"Saved metrics CSV: {out_path}")
+
+
+def save_metrics_excel(rows, out_path, sheet_title='Metrics Summary'):
+    if openpyxl is None:
+        raise ImportError('openpyxl is required to write Excel metrics files')
+
+    out_path = resolve_metrics_output_path(out_path)
+    workbook = openpyxl.Workbook()
+    worksheet = workbook.active
+    worksheet.title = sheet_title[:31]
+
+    headers = _metric_table_fieldnames()
+    worksheet.cell(1, 1, 'ARC Test Metrics').font = Font(bold=True, size=14)
+
+    for column_index, header in enumerate(headers, start=1):
+        cell = worksheet.cell(3, column_index, header)
+        cell.font = Font(bold=True)
+
+    for row_index, row in enumerate(rows, start=4):
+        for column_index, header in enumerate(headers, start=1):
+            worksheet.cell(row_index, column_index, row.get(header, ''))
+
+    workbook.save(out_path)
+    print(f"Saved metrics Excel: {out_path}")
+
+
+def _sanitize_filename(text):
+    safe = ''.join(ch if ch.isalnum() or ch in ('-', '_') else '_' for ch in str(text))
+    return safe.strip('_') or 'metrics'
+
+
+def save_test_summary(stats, out_dir='results', model_name=None, env_name=None, theta_deg=None):
+    """Write a one-row metric table similar to the user's summary image.
+
+    Note: `theta_deg` is accepted for compatibility but not written to outputs.
+    """
+    row = {
+        'success': stats.get('success'),
+        'collision': stats.get('collision'),
+        'steps': stats.get('steps'),
+        'sim_time_ms': round(stats.get('sim_time_ms', 0.0), 1),
+        'avg_cpu_pct': None if stats.get('avg_cpu_pct') is None else round(stats['avg_cpu_pct'], 2),
+        'peak_ram_gb': None if stats.get('peak_ram_gb') is None else round(stats['peak_ram_gb'], 3),
+        'system_power_w': stats.get('system_power_w'),
+        'path_length_m': round(stats.get('path_length_m', 0.0), 2),
+        'efficiency_pct': round(stats.get('efficiency_pct', 0.0), 2),
+        'total_reward': round(stats.get('total_reward', 0.0), 2),
+        'distance_to_target': round(stats.get('distance_to_target', 0.0), 2),
+        'model_name': model_name,
+        'env_name': env_name,
+    }
+
+    label_parts = []
+    if model_name:
+        label_parts.append(_sanitize_filename(model_name))
+    if env_name:
+        label_parts.append(_sanitize_filename(env_name))
+    # Keep theta_deg parameter for compatibility but do not include in filename
+    base_name = '_'.join(label_parts) if label_parts else 'test_metrics'
+
+    csv_path = os.path.join(out_dir, f'{base_name}.csv')
+    xlsx_path = os.path.join(out_dir, f'{base_name}.xlsx')
+    save_metrics_csv([row], csv_path)
+    if openpyxl is not None:
+        save_metrics_excel([row], xlsx_path)
+    return csv_path, xlsx_path
+
+
 class ARCTester:
     """Tester for trained ARC agent"""
     
-    def __init__(self, model_path, env_name, device=None):
+    def __init__(self, model_path, env_name, device=None, tdp_watts=None, powermetrics=False):
         """
         Initialize tester
         
@@ -33,6 +164,12 @@ class ARCTester:
         # Create environment
         self.env_def = ENVIRONMENTS[env_name]
         self.env = UAVEnvironment(self.env_def, ENV_CONFIG)
+        # Optional TDP (watts) used to estimate system power from CPU usage
+        self.tdp_watts = tdp_watts
+        # powermetrics capture (macOS). If True, will attempt to run `powermetrics`
+        self.use_powermetrics = bool(powermetrics)
+        self._pm_proc = None
+        self._pm_log = None
         
         # Find a safe collision-free fixed start position for testing
         self.test_start_pos = self._find_safe_test_position()
@@ -95,25 +232,51 @@ class ARCTester:
         """
         if max_steps is None:
             max_steps = ENV_CONFIG['max_steps']
-        
+
         # Use fixed test start position if not specified
         if start_pos is None:
             start_pos = self.test_start_pos
-        
+
+        start_pos = np.array(start_pos, dtype=np.float32)
+
+        proc = psutil.Process(os.getpid()) if psutil is not None else None
+        if proc is not None:
+            proc.cpu_percent(interval=None)
+
+        # Start powermetrics logging if requested (requires sudo/root)
+        if self.use_powermetrics:
+            try:
+                self._pm_log = tempfile.NamedTemporaryFile(prefix='powermetrics_', suffix='.log', delete=False)
+                # Leave file open by name; powermetrics will write to it
+                self._pm_log.close()
+                self._pm_proc = subprocess.Popen([
+                    'powermetrics', '--samplers', 'cpu_power', '-i', '100'
+                ], stdout=open(self._pm_log.name, 'w'), stderr=subprocess.DEVNULL)
+            except Exception as e:
+                print(f"Warning: failed to start powermetrics: {e}")
+                self._pm_proc = None
+                self._pm_log = None
+
+        episode_start = time.perf_counter()
+        cpu_samples = []
+        ram_samples = []
+
         # Reset environment with fixed start position
         obs = self.env.reset(start_pos)
-        
+        uav_start_pos = np.array(self.env.uav_pos, dtype=np.float32)
+        target_start_pos = np.array(self.env.target_pos, dtype=np.float32)
+
         # Initialize observation history
         obs_history = ObservationHistory(
             history_length=NETWORK_CONFIG['history_length'],
             obs_dim=self.obs_dim
         )
         obs_history.reset(obs)
-        
+
         # Storage for trajectory
         trajectory = {
-            'uav_positions': [self.env.uav_pos.copy()],
-            'target_positions': [self.env.target_pos.copy()],
+            'uav_positions': [np.array(self.env.uav_pos, dtype=np.float32)],
+            'target_positions': [np.array(self.env.target_pos, dtype=np.float32)],
             'actions': [],
             'rewards': [],
             'observations': [obs.copy()],
@@ -122,52 +285,142 @@ class ARCTester:
         import copy
         if hasattr(self.env, 'active_obstacle_defs'):
             trajectory['obstacles'].append(copy.deepcopy(self.env.active_obstacle_defs))
-        
+
         # Run episode
         total_reward = 0
         step = 0
         done = False
         hidden = None
-        
+        info = {'success': False, 'collision': False}
+
         while not done and step < max_steps:
             # Select action (no exploration noise)
             history_tensor = obs_history.get_tensor(self.device)
             action, hidden = self.agent.select_action(history_tensor, hidden, noise_scale=0.0)
-            
+
             # Execute action
             next_obs, reward, done, info = self.env.step(action[0])
-            
+
             # Update observation history
             obs_history.append(next_obs)
-            
+
             # Store data
-            trajectory['uav_positions'].append(self.env.uav_pos.copy())
-            trajectory['target_positions'].append(self.env.target_pos.copy())
+            trajectory['uav_positions'].append(np.array(self.env.uav_pos, dtype=np.float32))
+            trajectory['target_positions'].append(np.array(self.env.target_pos, dtype=np.float32))
             trajectory['actions'].append(action[0])
             trajectory['rewards'].append(reward)
             trajectory['observations'].append(next_obs.copy())
             if hasattr(self.env, 'active_obstacle_defs'):
                 trajectory['obstacles'].append(copy.deepcopy(self.env.active_obstacle_defs))
-            
+
             total_reward += reward
             step += 1
-        
+
+            if proc is not None:
+                cpu_samples.append(proc.cpu_percent(interval=None))
+                ram_samples.append(proc.memory_info().rss / (1024 ** 3))
+
         # Convert to numpy arrays
         trajectory['uav_positions'] = np.array(trajectory['uav_positions'])
         trajectory['target_positions'] = np.array(trajectory['target_positions'])
         trajectory['actions'] = np.array(trajectory['actions'])
         trajectory['rewards'] = np.array(trajectory['rewards'])
-        
+
+        sim_time_ms = (time.perf_counter() - episode_start) * 1000.0
+        path_length = _path_length(trajectory['uav_positions'])
+        straight_line_distance = float(np.linalg.norm(target_start_pos - start_pos))
+        efficiency = (straight_line_distance / path_length * 100.0) if path_length > 0 else 0.0
+        avg_cpu = _mean_or_none(cpu_samples)
+        peak_ram = float(np.max(ram_samples)) if ram_samples else None
+
         # Statistics
+        # If powermetrics captured data, stop it and parse measured power
+        measured_power = None
+        if self._pm_proc is not None:
+            try:
+                self._pm_proc.terminate()
+                self._pm_proc.wait(timeout=1)
+            except Exception:
+                try:
+                    self._pm_proc.kill()
+                except Exception:
+                    pass
+
+            try:
+                with open(self._pm_log.name, 'r') as f:
+                    data = f.read()
+                matches = re.findall(r'([0-9]+(?:\.[0-9]+)?)\s*W', data)
+                values = [float(m) for m in matches]
+                if values:
+                    measured_power = float(sum(values) / len(values))
+            except Exception:
+                measured_power = None
+
+        # Estimate system power from avg CPU % if TDP is provided and no measured power
+        system_power = measured_power
+        if system_power is None and avg_cpu is not None and self.tdp_watts is not None:
+            try:
+                system_power = float(avg_cpu / 100.0 * float(self.tdp_watts))
+            except Exception:
+                system_power = None
+
         stats = {
             'total_reward': total_reward,
             'steps': step,
             'success': info.get('success', False),
             'collision': info.get('collision', False),
-            'distance_to_target': np.linalg.norm(self.env.uav_pos - self.env.target_pos),
+            'distance_to_target': float(np.linalg.norm(np.array(self.env.uav_pos) - np.array(self.env.target_pos))),
+            'sim_time_ms': sim_time_ms,
+            'path_length_m': path_length,
+            'straight_line_distance_m': straight_line_distance,
+            'efficiency_pct': efficiency,
+            'avg_cpu_pct': avg_cpu,
+            'peak_ram_gb': peak_ram,
+            'system_power_w': system_power,
         }
         
         return trajectory, stats
+
+    def test_multiple_runs(self, num_runs=100, start_pos=None, max_steps=None):
+        """Run repeated evaluation episodes and aggregate the metrics."""
+        run_stats = []
+
+        for run_idx in range(num_runs):
+            _, stats = self.test_episode(start_pos=start_pos, max_steps=max_steps)
+            run_stats.append(stats)
+
+            print(
+                f"Run {run_idx + 1:>3}/{num_runs}: "
+                f"success={stats['success']} | "
+                f"steps={stats['steps']} | "
+                f"path={stats['path_length_m']:.2f} m | "
+                f"time={stats['sim_time_ms']:.1f} ms"
+            )
+
+        cpu_values = [s['avg_cpu_pct'] for s in run_stats if s['avg_cpu_pct'] is not None]
+        ram_values = [s['peak_ram_gb'] for s in run_stats if s['peak_ram_gb'] is not None]
+
+        results = {
+            'num_runs': num_runs,
+            'success_rate': float(np.mean([1.0 if s['success'] else 0.0 for s in run_stats])),
+            'collision_rate': float(np.mean([1.0 if s['collision'] else 0.0 for s in run_stats])),
+            'avg_reward': float(np.mean([s['total_reward'] for s in run_stats])),
+            'std_reward': float(np.std([s['total_reward'] for s in run_stats])),
+            'avg_steps': float(np.mean([s['steps'] for s in run_stats])),
+            'std_steps': float(np.std([s['steps'] for s in run_stats])),
+            'avg_sim_time_ms': float(np.mean([s['sim_time_ms'] for s in run_stats])),
+            'std_sim_time_ms': float(np.std([s['sim_time_ms'] for s in run_stats])),
+            'avg_path_length_m': float(np.mean([s['path_length_m'] for s in run_stats])),
+            'std_path_length_m': float(np.std([s['path_length_m'] for s in run_stats])),
+            'avg_efficiency_pct': float(np.mean([s['efficiency_pct'] for s in run_stats])),
+            'std_efficiency_pct': float(np.std([s['efficiency_pct'] for s in run_stats])),
+            'avg_cpu_pct': _mean_or_none(cpu_values),
+            'peak_ram_gb': float(np.max(ram_values)) if ram_values else None,
+            'system_power_w': None,
+            'runs': run_stats,
+        }
+
+        return results
     
     def visualize_trajectory(self, trajectory, save_path=None):
         """
