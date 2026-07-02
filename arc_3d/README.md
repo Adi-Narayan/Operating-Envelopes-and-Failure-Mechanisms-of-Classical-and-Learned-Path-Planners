@@ -8,7 +8,7 @@ The implementation includes wind models, Signed Distance Field (SDF) representat
 
 ## 📂 Project Structure
 
-*   **[`arc_3d_500_ablation (1).py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_3d/arc_3d_500_ablation%20(1).py)**: The main script containing:
+*   **[`arc_3d.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_3d/arc_3d.py)**: The main script containing:
     *   **Environment (`UAVEnvironmentPro`)**: 3D UAV target tracking environment with wind dynamics, 3D obstacles, collision margins, and Line-of-Sight (LOS) checks.
     *   **Models**: LSTM Encoder for sequence feature extraction, along with Actor and Critic network architectures.
     *   **Agent (`TD3Agent`)**: Twin Delayed Deep Deterministic Policy Gradient (TD3) reinforcement learning agent.
