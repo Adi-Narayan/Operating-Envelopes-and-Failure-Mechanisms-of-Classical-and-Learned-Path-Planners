@@ -25,7 +25,9 @@ os.makedirs("results", exist_ok=True)
 # =========================================================
 DT = 0.1
 BOUNDS = (0.0, 500.0, 0.0, 500.0)
-COLLISION_MARGIN = 6.0
+COLLISION_MARGIN = 6.0   # planner-side safety margin (escape / push-out trigger)
+COLLISION_RADIUS = 5.0   # evaluation-side collision criterion, shared with ARC (d_min_obstacle)
+GOAL_RADIUS = 10.0       # shared with ARC (d_min_target) so both planners stop at the same radius
 MAX_STEPS = 6000
 
 # =========================================================
@@ -195,7 +197,7 @@ class APFConfig:
         self.theta = np.deg2rad(25)
         self.goal_factor_pow = 2
         self.step = 1.8
-        self.goal_tol = 18.0
+        self.goal_tol = GOAL_RADIUS
         self.stuck_eps = 1e-6
         self.jitter = 0.35
 
@@ -206,9 +208,14 @@ def rotation_matrix(theta):
     c, s = np.cos(theta), np.sin(theta)
     return np.array([[c, -s], [s, c]], dtype=float)
 
+RHO_CLAMP = 0.8
+CLAMP_HITS = [0]  # counts force evaluations where the 0.8 clamp actually changed rho
+
 def F_rep_global(q, q_goal, obs, k_r, theta, goal_pow=2):
     rho, grad_rho, _ = get_distance(q, obs)
-    rho = max(rho, 0.8)
+    if rho < RHO_CLAMP:
+        CLAMP_HITS[0] += 1
+    rho = max(rho, RHO_CLAMP)
     rho_goal = np.linalg.norm(q - q_goal) + 1e-12
     mag = k_r * (10.0 / rho**2) * (rho_goal**goal_pow)
     F_base = mag * grad_rho
@@ -232,10 +239,21 @@ def path_length(path):
     if len(path) < 2: return 0.0
     return float(np.sum(np.linalg.norm(path[1:] - path[:-1], axis=1)))
 
+def clearance(q, obstacles):
+    return min(get_distance(q, obs)[0] for obs in obstacles)
+
 # =========================================================
 # STATIC SIMULATION
 # =========================================================
 def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
+    """Returns (success, path, t_sim, info).
+
+    The path ends at the first position inside the goal radius; no final
+    segment to the goal centre is appended, so L = s * steps unless an
+    escape or push-out step occurred (those are longer than s).
+    info['outcome'] is 'success', 'collision' (clearance < COLLISION_RADIUS)
+    or 'timeout'.
+    """
     if rng is None:
         rng = np.random.default_rng(42)
     q = start.copy()
@@ -243,13 +261,14 @@ def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
     t_sim = 0.0
     step_count = 0
     bias = rng.normal(0, 0.06, size=2)
+    info = {'escape_steps': 0, 'pushouts': 0, 'min_clearance': clearance(q, obstacles)}
 
     while step_count < MAX_STEPS:
         t_sim += DT
 
         if np.linalg.norm(q - goal) <= cfg.goal_tol:
-            path.append(goal.copy())
-            return True, np.array(path), t_sim
+            info['outcome'] = 'success'
+            return True, np.array(path), t_sim, info
 
         Ft, _, _ = F_total(q, goal, obstacles, cfg)
         Ft_b = Ft + bias
@@ -274,6 +293,8 @@ def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
             q_next[0] = clamp(q_next[0], *BOUNDS[:2])
             q_next[1] = clamp(q_next[1], *BOUNDS[2:])
             escape_attempts += 1
+        if escape_attempts:
+            info['escape_steps'] += 1
 
         if in_collision(q_next, obstacles, margin=COLLISION_MARGIN):
             min_rho = float('inf')
@@ -285,12 +306,20 @@ def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
                     best_grad = grad
             if min_rho < COLLISION_MARGIN:
                 q_next += (COLLISION_MARGIN - min_rho + 3.0) * best_grad
+                info['pushouts'] += 1
 
         q = q_next
         path.append(q.copy())
         step_count += 1
 
-    return False, np.array(path), t_sim
+        c = clearance(q, obstacles)
+        info['min_clearance'] = min(info['min_clearance'], c)
+        if c < COLLISION_RADIUS:
+            info['outcome'] = 'collision'
+            return False, np.array(path), t_sim, info
+
+    info['outcome'] = 'timeout'
+    return False, np.array(path), t_sim, info
 
 # =========================================================
 # GIF GENERATION
@@ -600,7 +629,7 @@ if __name__ == "__main__":
         cpu_start, ram_start, sys_start = get_resources()
         t_start = time.perf_counter()
 
-        success, path, final_t = simulate_static_apf(
+        success, path, final_t, _ = simulate_static_apf(
             START.copy(), GOAL.copy(), obstacles, cfg, rng=rng
         )
 

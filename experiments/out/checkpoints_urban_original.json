@@ -1,0 +1,227 @@
+{
+ "layout": "urban",
+ "headings_rad": [
+  0.8605556614246863,
+  -1.4464727375963786,
+  -2.8841484100105235,
+  -3.03774645687452,
+  1.9683349641197863,
+  2.5934197786078093,
+  0.6700123395200417,
+  1.441969420022903,
+  0.27410390540137985,
+  2.7336406607023154
+ ],
+ "models": {
+  "..\\arc_2d\\models_original\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 212,
+    "path_length": 636.0000207509997,
+    "efficiency": 95.61506477662721,
+    "min_clearance": 6.62680236299806
+   },
+   "random_heading_success": 10,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    93.87148986995811,
+    1.6713698946375573
+   ],
+   "random_heading_L_success": [
+    647.9999847110209,
+    11.6619323817274
+   ]
+  },
+  "..\\arc_2d\\models_original\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 209,
+    "path_length": 626.9999467931524,
+    "efficiency": 96.9875412160198,
+    "min_clearance": 6.661664786611785
+   },
+   "random_heading_success": 6,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    95.9639763313345,
+    2.288388947246791
+   ],
+   "random_heading_L_success": [
+    634.0000499398149,
+    15.722622983822633
+   ]
+  },
+  "..\\arc_2d\\models_original\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 35,
+    "path_length": 104.99999616113357,
+    "efficiency": 579.1541467175095,
+    "min_clearance": 4.802177584820729
+   },
+   "random_heading_success": 9,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "collision",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    95.36968491061391,
+    2.4041578733239777
+   ],
+   "random_heading_L_success": [
+    637.999937951669,
+    16.224989342855594
+   ]
+  },
+  "..\\arc_2d\\models_original\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 105,
+    "path_length": 315.0000285282469,
+    "efficiency": 193.05135769722634,
+    "min_clearance": 4.665146495843372
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "..\\arc_2d\\models_original\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 206,
+    "path_length": 618.0000248160868,
+    "efficiency": 98.39996883517948,
+    "min_clearance": 6.090777365735088
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "collision",
+    "success",
+    "success",
+    "success",
+    "collision",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    94.35189528116237,
+    5.506148138705207
+   ],
+   "random_heading_L_success": [
+    646.5000174898679,
+    38.88437446301642
+   ]
+  },
+  "..\\arc_2d\\models_original\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 212,
+    "path_length": 635.9999053688036,
+    "efficiency": 95.61508212297595,
+    "min_clearance": 5.745166308426077
+   },
+   "random_heading_success": 4,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "success",
+    "success",
+    "success",
+    "collision",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    94.4135204377121,
+    1.6955366723749354
+   ],
+   "random_heading_L_success": [
+    644.25006797163,
+    11.58660444804791
+   ]
+  },
+  "..\\arc_2d\\models_original\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 212,
+    "path_length": 635.9999053688036,
+    "efficiency": 95.61508212297595,
+    "min_clearance": 5.745166308426077
+   },
+   "random_heading_success": 4,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "success",
+    "success",
+    "success",
+    "collision",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    94.4135204377121,
+    1.6955366723749354
+   ],
+   "random_heading_L_success": [
+    644.25006797163,
+    11.58660444804791
+   ]
+  }
+ }
+}

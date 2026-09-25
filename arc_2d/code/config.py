@@ -264,6 +264,28 @@ ENVIRONMENTS = {
     # Start ≈ UAV spawn (scaled to 0-500, wide range away from obstacles)
     'uav_start_range': [[30, 100], [30, 100]],
 },
+'corridor_gauntlet': {
+    # Exact copy of the APF "Corridor Gauntlet" layout (static_apf.py, env 1):
+    # 2 rectangles (60x150 m), 2 squares (60x60 m), 3 triangles, 3 circles
+    # (the two r=32.5 corner circles are the stationary "outliers" of the
+    # dynamic suite). This is the shared custom environment for APF and ARC.
+    'name': 'Corridor Gauntlet (shared APF/ARC layout)',
+    'obstacles': [
+        {'type': 'polygon', 'vertices': [(150, 205), (210, 205), (210, 355), (150, 355)]},  # B1
+        {'type': 'polygon', 'vertices': [(340, 195), (400, 195), (400, 345), (340, 345)]},  # B2
+        {'type': 'polygon', 'vertices': [(200, 150), (260, 150), (260, 210), (200, 210)]},  # B3
+        {'type': 'polygon', 'vertices': [(240, 290), (300, 290), (300, 350), (240, 350)]},  # B4
+        {'type': 'polygon', 'vertices': make_triangle(185, 155, 32.5, 0.0)},               # V1
+        {'type': 'polygon', 'vertices': make_triangle(260, 240, 32.5, 0.5)},               # V2
+        {'type': 'polygon', 'vertices': make_triangle(325, 355, 32.5, 1.0)},               # V3
+        {'type': 'circle', 'center': (365, 175), 'radius': 25},                            # C1
+        {'type': 'circle', 'center': (70, 430), 'radius': 32.5},                           # C2 (outlier)
+        {'type': 'circle', 'center': (430, 70), 'radius': 32.5},                           # C3 (outlier)
+    ],
+    'target_motion': False,
+    'target_start': [465, 465],
+    'uav_start_range': [[30, 100], [30, 100]],
+},
 'env_dynamic': {
     'name': 'Urban District — Dynamic Moving Obstacles',
     'obstacles': [

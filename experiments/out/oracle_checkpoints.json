@@ -1,0 +1,13 @@
+{
+ "seed0": "out/arc_models/seed0/models/arc_checkpoint_ep150.pth",
+ "seed2": "out/arc_models/seed2/models/arc_checkpoint_ep150.pth",
+ "seed1": "out/arc_models/seed1/models/arc_checkpoint_ep300.pth",
+ "seed3": "out/arc_models/seed3/models/arc_checkpoint_ep300.pth",
+ "seed4": "out/arc_models/seed4/models/arc_checkpoint_ep200.pth",
+ "models_original": "../arc_2d/models_original/arc_checkpoint_ep50.pth",
+ "env_apf_urban_seed0": "out/arc_models/env_apf_urban_seed0/models/arc_checkpoint_ep200.pth",
+ "env_apf_urban_seed1": "out/arc_models/env_apf_urban_seed1/models/arc_checkpoint_ep150.pth",
+ "env_apf_urban_seed2": "out/arc_models/env_apf_urban_seed2/models/arc_checkpoint_ep150.pth",
+ "env_apf_urban_seed3": "out/arc_models/env_apf_urban_seed3/models/arc_checkpoint_ep150.pth",
+ "env_apf_urban_seed4": "out/arc_models/env_apf_urban_seed4/models/arc_checkpoint_ep250.pth"
+}

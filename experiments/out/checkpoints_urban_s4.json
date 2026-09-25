@@ -1,0 +1,227 @@
+{
+ "layout": "urban",
+ "headings_rad": [
+  0.8605556614246863,
+  -1.4464727375963786,
+  -2.8841484100105235,
+  -3.03774645687452,
+  1.9683349641197863,
+  2.5934197786078093,
+  0.6700123395200417,
+  1.441969420022903,
+  0.27410390540137985,
+  2.7336406607023154
+ ],
+ "models": {
+  "out\\arc_models\\env_apf_urban_seed4\\models\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 106,
+    "path_length": 318.00000945192284,
+    "efficiency": 191.23013010864986,
+    "min_clearance": 4.752881773887762
+   },
+   "random_heading_success": 2,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "collision",
+    "success",
+    "success",
+    "collision",
+    "collision"
+   ],
+   "random_heading_eff_success": [
+    94.9438434372355,
+    0.31445671079234844
+   ],
+   "random_heading_L_success": [
+    640.4998419849858,
+    2.1213537000612828
+   ]
+  },
+  "out\\arc_models\\env_apf_urban_seed4\\models\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 214,
+    "path_length": 641.9999104820403,
+    "efficiency": 94.7214823384999,
+    "min_clearance": 6.225384600529269
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    93.59997059680856,
+    1.6593546961990036
+   ],
+   "random_heading_L_success": [
+    649.874998594754,
+    11.776992397699313
+   ]
+  },
+  "out\\arc_models\\env_apf_urban_seed4\\models\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 74,
+    "path_length": 221.99993851253657,
+    "efficiency": 273.9243244367341,
+    "min_clearance": 4.401206970214844
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\env_apf_urban_seed4\\models\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 79,
+    "path_length": 237.00006770813226,
+    "efficiency": 256.58719750634253,
+    "min_clearance": 4.667449951171875
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\env_apf_urban_seed4\\models\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 206,
+    "path_length": 618.0000913377537,
+    "efficiency": 98.39995824338502,
+    "min_clearance": 5.332308539928561
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    97.02801897375971,
+    2.0892461333124777
+   ],
+   "random_heading_L_success": [
+    626.9999848584694,
+    13.887241171709837
+   ]
+  },
+  "out\\arc_models\\env_apf_urban_seed4\\models\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 50,
+    "path_length": 149.99999308728482,
+    "efficiency": 405.40790656341653,
+    "min_clearance": 4.076316576558197
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\env_apf_urban_seed4\\models\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 213,
+    "path_length": 638.9999298607099,
+    "efficiency": 95.16618130975193,
+    "min_clearance": 5.02537449772095
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision",
+    "collision"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  }
+ }
+}

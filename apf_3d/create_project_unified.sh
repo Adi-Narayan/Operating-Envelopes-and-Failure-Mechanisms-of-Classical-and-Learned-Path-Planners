@@ -59,7 +59,9 @@ import numpy as np
 DT = 0.1
 BASE_SPEED_SCALE = 1.25
 BOUNDS_3D = (0.0, 500.0, 0.0, 500.0, 0.0, 500.0)
-COLLISION_MARGIN = 6.0
+COLLISION_MARGIN = 6.0   # planner-side safety margin (escape / push-out trigger)
+COLLISION_RADIUS = 5.0   # evaluation-side collision criterion (same as 2D / ARC)
+GOAL_RADIUS = 10.0       # same goal radius as the 2D experiments
 GOAL_PROTECTION_RADIUS = 50.0
 MAX_STEPS = 6000
 
@@ -249,7 +251,7 @@ class APFConfig:
         self.theta        = np.deg2rad(25)
         self.goal_factor_pow = 2
         self.step         = 1.8
-        self.goal_tol     = 18.0
+        self.goal_tol     = GOAL_RADIUS
         self.stuck_eps    = 1e-6
         self.jitter       = 0.35
 
@@ -291,6 +293,10 @@ def path_length(path):
     return float(np.sum(np.linalg.norm(path[1:] - path[:-1], axis=1)))
 
 
+def clearance(q, obstacles):
+    return min(get_distance_3d(q, obs)[0] for obs in obstacles)
+
+
 # ── Static APF loop ───────────────────────────────────────────────────────────
 
 def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
@@ -300,11 +306,12 @@ def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
     path  = [q.copy()]
     step_count = 0
     bias  = rng.normal(0, 0.06, size=3)
+    info  = {'escape_steps': 0, 'pushouts': 0, 'min_clearance': clearance(q, obstacles)}
 
     while step_count < MAX_STEPS:
         if np.linalg.norm(q - goal) <= cfg.goal_tol:
-            path.append(goal.copy())
-            return True, np.array(path)
+            info['outcome'] = 'success'
+            return True, np.array(path), info
 
         Ft, _, _ = F_total(q, goal, obstacles, cfg)
         Ft_b = Ft + bias
@@ -328,6 +335,8 @@ def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
             q_next = q + cfg.step * 1.8 * perp + rng.normal(0, 0.15, size=3)
             q_next = clamp_vec(q_next, BOUNDS_3D)
             escape_attempts += 1
+        if escape_attempts:
+            info['escape_steps'] += 1
 
         if in_collision(q_next, obstacles, COLLISION_MARGIN):
             min_rho, best_grad = float('inf'), np.zeros(3)
@@ -337,12 +346,20 @@ def simulate_static_apf(start, goal, obstacles, cfg, rng=None):
                     min_rho, best_grad = rho, grad
             if min_rho < COLLISION_MARGIN:
                 q_next += (COLLISION_MARGIN - min_rho + 3.0) * best_grad
+                info['pushouts'] += 1
 
         q = q_next
         path.append(q.copy())
         step_count += 1
 
-    return False, np.array(path)
+        c = clearance(q, obstacles)
+        info['min_clearance'] = min(info['min_clearance'], c)
+        if c < COLLISION_RADIUS:
+            info['outcome'] = 'collision'
+            return False, np.array(path), info
+
+    info['outcome'] = 'timeout'
+    return False, np.array(path), info
 
 
 # ── Dynamic APF loop ──────────────────────────────────────────────────────────
@@ -355,6 +372,7 @@ def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None):
     obs_history = [copy.deepcopy([d.obs for d in dyn_obstacles])]
     step_count  = 0
     bias  = rng.normal(0, 0.06, size=3)
+    info  = {'escape_steps': 0, 'pushouts': 0, 'min_clearance': clearance(q, obs_history[0])}
 
     while step_count < MAX_STEPS:
         for d in dyn_obstacles:
@@ -365,10 +383,15 @@ def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None):
 
         current_obs = [d.obs for d in dyn_obstacles]
 
+        c = clearance(q, current_obs)            # obstacle moved into the agent?
+        info['min_clearance'] = min(info['min_clearance'], c)
+        if c < COLLISION_RADIUS:
+            info['outcome'] = 'collision'
+            return False, np.array(path), obs_history, info
+
         if np.linalg.norm(q - goal) <= cfg.goal_tol:
-            path.append(goal.copy())
-            obs_history.append(copy.deepcopy(current_obs))
-            return True, np.array(path), obs_history
+            info['outcome'] = 'success'
+            return True, np.array(path), obs_history, info
 
         Ft, _, _ = F_total(q, goal, current_obs, cfg)
         Ft_b = Ft + bias
@@ -392,6 +415,8 @@ def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None):
             q_next = q + cfg.step * 1.8 * perp + rng.normal(0, 0.15, size=3)
             q_next = clamp_vec(q_next, BOUNDS_3D)
             escape_attempts += 1
+        if escape_attempts:
+            info['escape_steps'] += 1
 
         if in_collision(q_next, current_obs, COLLISION_MARGIN):
             min_rho, best_grad = float('inf'), np.zeros(3)
@@ -401,13 +426,21 @@ def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None):
                     min_rho, best_grad = rho, grad
             if min_rho < COLLISION_MARGIN:
                 q_next += (COLLISION_MARGIN - min_rho + 3.0) * best_grad
+                info['pushouts'] += 1
 
         q = q_next
         path.append(q.copy())
         obs_history.append(copy.deepcopy(current_obs))
         step_count += 1
 
-    return False, np.array(path), obs_history
+        c = clearance(q, current_obs)            # agent moved into an obstacle?
+        info['min_clearance'] = min(info['min_clearance'], c)
+        if c < COLLISION_RADIUS:
+            info['outcome'] = 'collision'
+            return False, np.array(path), obs_history, info
+
+    info['outcome'] = 'timeout'
+    return False, np.array(path), obs_history, info
 EOF
 
 # ── simulation/visualization.py ───────────────────────────────────────────────
@@ -936,13 +969,13 @@ def run_single(mode, run_num, rng):
     t0 = time.perf_counter()
 
     if mode == '3d_static':
-        success, path = simulate_static_apf(
+        success, path, _ = simulate_static_apf(
             START_3D.copy(), GOAL_3D.copy(), STATIC_OBSTACLES_3D, cfg, rng=rng
         )
         obs_history = None
     else:  # 3d_dynamic
         dyn_obs = assign_velocities_3d(STATIC_OBSTACLES_3D, rng)
-        success, path, obs_history = simulate_dynamic_apf(
+        success, path, obs_history, _ = simulate_dynamic_apf(
             START_3D.copy(), GOAL_3D.copy(), dyn_obs, cfg, rng=rng
         )
 

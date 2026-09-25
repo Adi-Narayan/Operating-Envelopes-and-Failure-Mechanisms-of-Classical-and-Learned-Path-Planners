@@ -1,0 +1,1085 @@
+{
+ "original_protocol_custom_env": {
+  "steps_mean": 408.6,
+  "steps_sd": 0.5163977794943223,
+  "L_mean": 750.6005379153078,
+  "L_sd": 0.003072271398304249,
+  "eff_mean": 81.01670610556036,
+  "snap_segment_mean": 16.920537915307797,
+  "escape_steps_total": 0,
+  "pushouts_total": 0,
+  "L_over_steps": 1.8370083570608267
+ },
+ "original_protocol_5_layouts_seed0": {
+  "Corridor Gauntlet": {
+   "success": true,
+   "steps_orig": 409,
+   "L_orig": 750.6008635275914,
+   "snap": 16.20086352759132,
+   "escape_steps": 0,
+   "pushouts": 0
+  },
+  "Dense Forest": {
+   "success": true,
+   "steps_orig": 390,
+   "L_orig": 716.6999519375632,
+   "snap": 16.499951937563658,
+   "escape_steps": 0,
+   "pushouts": 0
+  },
+  "Wall Maze": {
+   "success": true,
+   "steps_orig": 384,
+   "L_orig": 705.6074084222942,
+   "snap": 16.207408422293874,
+   "escape_steps": 0,
+   "pushouts": 0
+  },
+  "Scattered Mixed": {
+   "success": true,
+   "steps_orig": 430,
+   "L_orig": 789.7075536675391,
+   "snap": 17.507553667538613,
+   "escape_steps": 0,
+   "pushouts": 0
+  },
+  "Narrow Passage": {
+   "success": false,
+   "steps_orig": 6000,
+   "L_orig": 10799.99999999996,
+   "snap": 0.0,
+   "escape_steps": 0,
+   "pushouts": 0
+  }
+ },
+ "corrected_protocol_layouts": {
+  "Corridor Gauntlet": {
+   "n_obstacles": 10,
+   "types": [
+    "rectangle",
+    "rectangle",
+    "square",
+    "square",
+    "triangle",
+    "triangle",
+    "triangle",
+    "circle",
+    "circle",
+    "circle"
+   ],
+   "success": 10,
+   "n": 10,
+   "outcomes": [
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "steps": [
+    412.0,
+    0.0
+   ],
+   "L": [
+    741.5999999999999,
+    2.5421149729252077e-13
+   ],
+   "eff": [
+    81.99997732206458,
+    2.5945352296482636e-14
+   ],
+   "escape_steps_total": 0,
+   "pushouts_total": 0,
+   "min_clearance": 24.104079226472635,
+   "L_minus_1p8_steps_max": 3.410605131648481e-13
+  },
+  "Dense Forest": {
+   "n_obstacles": 12,
+   "types": [
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle"
+   ],
+   "success": 10,
+   "n": 10,
+   "outcomes": [
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "steps": [
+    393.0,
+    0.0
+   ],
+   "L": [
+    707.4000000000001,
+    3.595093471822542e-13
+   ],
+   "eff": [
+    85.96435281600662,
+    3.906190334738976e-14
+   ],
+   "escape_steps_total": 0,
+   "pushouts_total": 0,
+   "min_clearance": 15.286376842628762,
+   "L_minus_1p8_steps_max": 5.684341886080801e-13
+  },
+  "Wall Maze": {
+   "n_obstacles": 8,
+   "types": [
+    "rectangle",
+    "rectangle",
+    "rectangle",
+    "rectangle",
+    "rectangle",
+    "square",
+    "square",
+    "triangle"
+   ],
+   "success": 10,
+   "n": 10,
+   "outcomes": [
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "steps": [
+    387.0,
+    0.0
+   ],
+   "L": [
+    696.6000000000001,
+    2.3360424480146385e-13
+   ],
+   "eff": [
+    87.29713347982067,
+    2.920053060018298e-14
+   ],
+   "escape_steps_total": 0,
+   "pushouts_total": 0,
+   "min_clearance": 20.470560050569485,
+   "L_minus_1p8_steps_max": 3.410605131648481e-13
+  },
+  "Scattered Mixed": {
+   "n_obstacles": 11,
+   "types": [
+    "circle",
+    "circle",
+    "rectangle",
+    "rectangle",
+    "rectangle",
+    "rectangle",
+    "triangle",
+    "triangle",
+    "triangle",
+    "square",
+    "square"
+   ],
+   "success": 10,
+   "n": 10,
+   "outcomes": [
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "steps": [
+    434.0,
+    0.0
+   ],
+   "L": [
+    781.2,
+    2.005247333018353e-13
+   ],
+   "eff": [
+    77.84329644398755,
+    2.2717621672127656e-14
+   ],
+   "escape_steps_total": 0,
+   "pushouts_total": 0,
+   "min_clearance": 23.95182803729004,
+   "L_minus_1p8_steps_max": 3.410605131648481e-13
+  },
+  "Narrow Passage": {
+   "n_obstacles": 11,
+   "types": [
+    "rectangle",
+    "rectangle",
+    "rectangle",
+    "rectangle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "circle",
+    "triangle",
+    "triangle"
+   ],
+   "success": 0,
+   "n": 10,
+   "outcomes": [
+    "timeout",
+    "timeout",
+    "timeout",
+    "timeout",
+    "timeout",
+    "timeout",
+    "timeout",
+    "timeout",
+    "timeout",
+    "timeout"
+   ],
+   "steps": [
+    6000.0,
+    0.0
+   ],
+   "L": [
+    10799.999999999996,
+    3.663657199169585e-11
+   ],
+   "eff": [
+    5.630665109448436,
+    1.92005467727689e-14
+   ],
+   "escape_steps_total": 0,
+   "pushouts_total": 0,
+   "min_clearance": 29.491359732538484,
+   "L_minus_1p8_steps_max": 5.275069270282984e-11
+  }
+ },
+ "clamp_hits_corrected_protocol": 0,
+ "min_raw_rho_any_distance_query_5_layouts": 15.289075164615795,
+ "gain_ratio_invariance": {
+  "ka=5.0,kr=0.85": {
+   "steps": 412,
+   "L": 741.6000000000001,
+   "end": [
+    465.56824852877577,
+    456.01707592932183
+   ]
+  },
+  "ka=2.5,kr=0.425": {
+   "steps": 412,
+   "L": 741.6000000000003,
+   "end": [
+    465.5695968663394,
+    456.0175428908571
+   ]
+  },
+  "ka=1.0,kr=0.17": {
+   "steps": 412,
+   "L": 741.6000000000003,
+   "end": [
+    465.5736419929916,
+    456.01894359313764
+   ]
+  },
+  "max_pointwise_dev_5.0/0.85_vs_2.5/0.425_m": 0.0014269082874895005
+ },
+ "theta_sweep_seed0": {
+  "Corridor Gauntlet": [
+   {
+    "theta": 0,
+    "success": true,
+    "outcome": "success",
+    "steps": 398,
+    "L": 716.4,
+    "eff": 84.9
+   },
+   {
+    "theta": 5,
+    "success": true,
+    "outcome": "success",
+    "steps": 401,
+    "L": 721.8,
+    "eff": 84.2
+   },
+   {
+    "theta": 10,
+    "success": true,
+    "outcome": "success",
+    "steps": 405,
+    "L": 729.0,
+    "eff": 83.4
+   },
+   {
+    "theta": 15,
+    "success": true,
+    "outcome": "success",
+    "steps": 419,
+    "L": 754.2,
+    "eff": 80.6
+   },
+   {
+    "theta": 20,
+    "success": true,
+    "outcome": "success",
+    "steps": 415,
+    "L": 747.0,
+    "eff": 81.4
+   },
+   {
+    "theta": 25,
+    "success": true,
+    "outcome": "success",
+    "steps": 412,
+    "L": 741.6,
+    "eff": 82.0
+   },
+   {
+    "theta": 30,
+    "success": true,
+    "outcome": "success",
+    "steps": 410,
+    "L": 738.0,
+    "eff": 82.4
+   },
+   {
+    "theta": 35,
+    "success": true,
+    "outcome": "success",
+    "steps": 408,
+    "L": 734.4,
+    "eff": 82.8
+   },
+   {
+    "theta": 40,
+    "success": true,
+    "outcome": "success",
+    "steps": 407,
+    "L": 732.6,
+    "eff": 83.0
+   },
+   {
+    "theta": 45,
+    "success": true,
+    "outcome": "success",
+    "steps": 405,
+    "L": 729.0,
+    "eff": 83.4
+   },
+   {
+    "theta": 50,
+    "success": true,
+    "outcome": "success",
+    "steps": 405,
+    "L": 729.0,
+    "eff": 83.4
+   },
+   {
+    "theta": 55,
+    "success": true,
+    "outcome": "success",
+    "steps": 404,
+    "L": 727.2,
+    "eff": 83.6
+   },
+   {
+    "theta": 60,
+    "success": true,
+    "outcome": "success",
+    "steps": 404,
+    "L": 727.2,
+    "eff": 83.6
+   },
+   {
+    "theta": 65,
+    "success": true,
+    "outcome": "success",
+    "steps": 404,
+    "L": 727.2,
+    "eff": 83.6
+   },
+   {
+    "theta": 70,
+    "success": true,
+    "outcome": "success",
+    "steps": 404,
+    "L": 727.2,
+    "eff": 83.6
+   },
+   {
+    "theta": 75,
+    "success": true,
+    "outcome": "success",
+    "steps": 406,
+    "L": 730.8,
+    "eff": 83.2
+   },
+   {
+    "theta": 80,
+    "success": true,
+    "outcome": "success",
+    "steps": 410,
+    "L": 738.0,
+    "eff": 82.4
+   },
+   {
+    "theta": 85,
+    "success": true,
+    "outcome": "success",
+    "steps": 420,
+    "L": 756.0,
+    "eff": 80.4
+   },
+   {
+    "theta": 90,
+    "success": true,
+    "outcome": "success",
+    "steps": 454,
+    "L": 819.6,
+    "eff": 74.2
+   }
+  ],
+  "Dense Forest": [
+   {
+    "theta": 0,
+    "success": true,
+    "outcome": "success",
+    "steps": 394,
+    "L": 709.2,
+    "eff": 85.7
+   },
+   {
+    "theta": 5,
+    "success": true,
+    "outcome": "success",
+    "steps": 378,
+    "L": 680.4,
+    "eff": 89.4
+   },
+   {
+    "theta": 10,
+    "success": true,
+    "outcome": "success",
+    "steps": 377,
+    "L": 678.6,
+    "eff": 89.6
+   },
+   {
+    "theta": 15,
+    "success": true,
+    "outcome": "success",
+    "steps": 377,
+    "L": 678.6,
+    "eff": 89.6
+   },
+   {
+    "theta": 20,
+    "success": true,
+    "outcome": "success",
+    "steps": 395,
+    "L": 711.0,
+    "eff": 85.5
+   },
+   {
+    "theta": 25,
+    "success": true,
+    "outcome": "success",
+    "steps": 393,
+    "L": 707.4,
+    "eff": 86.0
+   },
+   {
+    "theta": 30,
+    "success": true,
+    "outcome": "success",
+    "steps": 392,
+    "L": 705.6,
+    "eff": 86.2
+   },
+   {
+    "theta": 35,
+    "success": true,
+    "outcome": "success",
+    "steps": 430,
+    "L": 774.0,
+    "eff": 78.6
+   },
+   {
+    "theta": 40,
+    "success": true,
+    "outcome": "success",
+    "steps": 425,
+    "L": 765.0,
+    "eff": 79.5
+   },
+   {
+    "theta": 45,
+    "success": true,
+    "outcome": "success",
+    "steps": 423,
+    "L": 761.4,
+    "eff": 79.9
+   },
+   {
+    "theta": 50,
+    "success": true,
+    "outcome": "success",
+    "steps": 422,
+    "L": 759.6,
+    "eff": 80.1
+   },
+   {
+    "theta": 55,
+    "success": true,
+    "outcome": "success",
+    "steps": 421,
+    "L": 757.8,
+    "eff": 80.2
+   },
+   {
+    "theta": 60,
+    "success": true,
+    "outcome": "success",
+    "steps": 420,
+    "L": 756.0,
+    "eff": 80.4
+   },
+   {
+    "theta": 65,
+    "success": true,
+    "outcome": "success",
+    "steps": 420,
+    "L": 756.0,
+    "eff": 80.4
+   },
+   {
+    "theta": 70,
+    "success": true,
+    "outcome": "success",
+    "steps": 422,
+    "L": 759.6,
+    "eff": 80.1
+   },
+   {
+    "theta": 75,
+    "success": true,
+    "outcome": "success",
+    "steps": 370,
+    "L": 666.0,
+    "eff": 91.3
+   },
+   {
+    "theta": 80,
+    "success": true,
+    "outcome": "success",
+    "steps": 370,
+    "L": 666.0,
+    "eff": 91.3
+   },
+   {
+    "theta": 85,
+    "success": true,
+    "outcome": "success",
+    "steps": 374,
+    "L": 673.2,
+    "eff": 90.3
+   },
+   {
+    "theta": 90,
+    "success": true,
+    "outcome": "success",
+    "steps": 397,
+    "L": 714.6,
+    "eff": 85.1
+   }
+  ],
+  "Wall Maze": [
+   {
+    "theta": 0,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 5,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 10,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 15,
+    "success": true,
+    "outcome": "success",
+    "steps": 392,
+    "L": 705.6,
+    "eff": 86.2
+   },
+   {
+    "theta": 20,
+    "success": true,
+    "outcome": "success",
+    "steps": 389,
+    "L": 700.2,
+    "eff": 86.8
+   },
+   {
+    "theta": 25,
+    "success": true,
+    "outcome": "success",
+    "steps": 387,
+    "L": 696.6,
+    "eff": 87.3
+   },
+   {
+    "theta": 30,
+    "success": true,
+    "outcome": "success",
+    "steps": 385,
+    "L": 693.0,
+    "eff": 87.8
+   },
+   {
+    "theta": 35,
+    "success": true,
+    "outcome": "success",
+    "steps": 384,
+    "L": 691.2,
+    "eff": 88.0
+   },
+   {
+    "theta": 40,
+    "success": true,
+    "outcome": "success",
+    "steps": 382,
+    "L": 687.6,
+    "eff": 88.4
+   },
+   {
+    "theta": 45,
+    "success": true,
+    "outcome": "success",
+    "steps": 381,
+    "L": 685.8,
+    "eff": 88.7
+   },
+   {
+    "theta": 50,
+    "success": true,
+    "outcome": "success",
+    "steps": 380,
+    "L": 684.0,
+    "eff": 88.9
+   },
+   {
+    "theta": 55,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 60,
+    "success": true,
+    "outcome": "success",
+    "steps": 459,
+    "L": 826.2,
+    "eff": 73.6
+   },
+   {
+    "theta": 65,
+    "success": true,
+    "outcome": "success",
+    "steps": 460,
+    "L": 828.0,
+    "eff": 73.4
+   },
+   {
+    "theta": 70,
+    "success": true,
+    "outcome": "success",
+    "steps": 463,
+    "L": 833.4,
+    "eff": 73.0
+   },
+   {
+    "theta": 75,
+    "success": true,
+    "outcome": "success",
+    "steps": 470,
+    "L": 846.0,
+    "eff": 71.9
+   },
+   {
+    "theta": 80,
+    "success": true,
+    "outcome": "success",
+    "steps": 481,
+    "L": 865.8,
+    "eff": 70.2
+   },
+   {
+    "theta": 85,
+    "success": true,
+    "outcome": "success",
+    "steps": 501,
+    "L": 901.8,
+    "eff": 67.4
+   },
+   {
+    "theta": 90,
+    "success": true,
+    "outcome": "success",
+    "steps": 581,
+    "L": 1050.4,
+    "eff": 57.9
+   }
+  ],
+  "Scattered Mixed": [
+   {
+    "theta": 0,
+    "success": true,
+    "outcome": "success",
+    "steps": 406,
+    "L": 730.8,
+    "eff": 83.2
+   },
+   {
+    "theta": 5,
+    "success": true,
+    "outcome": "success",
+    "steps": 403,
+    "L": 725.4,
+    "eff": 83.8
+   },
+   {
+    "theta": 10,
+    "success": true,
+    "outcome": "success",
+    "steps": 439,
+    "L": 790.2,
+    "eff": 77.0
+   },
+   {
+    "theta": 15,
+    "success": true,
+    "outcome": "success",
+    "steps": 437,
+    "L": 786.6,
+    "eff": 77.3
+   },
+   {
+    "theta": 20,
+    "success": true,
+    "outcome": "success",
+    "steps": 435,
+    "L": 783.0,
+    "eff": 77.7
+   },
+   {
+    "theta": 25,
+    "success": true,
+    "outcome": "success",
+    "steps": 434,
+    "L": 781.2,
+    "eff": 77.8
+   },
+   {
+    "theta": 30,
+    "success": true,
+    "outcome": "success",
+    "steps": 432,
+    "L": 777.6,
+    "eff": 78.2
+   },
+   {
+    "theta": 35,
+    "success": true,
+    "outcome": "success",
+    "steps": 431,
+    "L": 775.8,
+    "eff": 78.4
+   },
+   {
+    "theta": 40,
+    "success": true,
+    "outcome": "success",
+    "steps": 429,
+    "L": 772.2,
+    "eff": 78.8
+   },
+   {
+    "theta": 45,
+    "success": true,
+    "outcome": "success",
+    "steps": 428,
+    "L": 770.4,
+    "eff": 78.9
+   },
+   {
+    "theta": 50,
+    "success": true,
+    "outcome": "success",
+    "steps": 427,
+    "L": 768.6,
+    "eff": 79.1
+   },
+   {
+    "theta": 55,
+    "success": true,
+    "outcome": "success",
+    "steps": 427,
+    "L": 768.6,
+    "eff": 79.1
+   },
+   {
+    "theta": 60,
+    "success": true,
+    "outcome": "success",
+    "steps": 386,
+    "L": 694.8,
+    "eff": 87.5
+   },
+   {
+    "theta": 65,
+    "success": true,
+    "outcome": "success",
+    "steps": 381,
+    "L": 685.8,
+    "eff": 88.7
+   },
+   {
+    "theta": 70,
+    "success": true,
+    "outcome": "success",
+    "steps": 379,
+    "L": 682.2,
+    "eff": 89.1
+   },
+   {
+    "theta": 75,
+    "success": true,
+    "outcome": "success",
+    "steps": 378,
+    "L": 680.4,
+    "eff": 89.4
+   },
+   {
+    "theta": 80,
+    "success": true,
+    "outcome": "success",
+    "steps": 378,
+    "L": 680.4,
+    "eff": 89.4
+   },
+   {
+    "theta": 85,
+    "success": true,
+    "outcome": "success",
+    "steps": 381,
+    "L": 685.8,
+    "eff": 88.7
+   },
+   {
+    "theta": 90,
+    "success": true,
+    "outcome": "success",
+    "steps": 401,
+    "L": 725.5,
+    "eff": 83.8
+   }
+  ],
+  "Narrow Passage": [
+   {
+    "theta": 0,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 5,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 10,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 15,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 20,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 25,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 30,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 35,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 40,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 45,
+    "success": false,
+    "outcome": "timeout",
+    "steps": 6000,
+    "L": 10800.0,
+    "eff": 5.6
+   },
+   {
+    "theta": 50,
+    "success": true,
+    "outcome": "success",
+    "steps": 510,
+    "L": 913.3,
+    "eff": 66.6
+   },
+   {
+    "theta": 55,
+    "success": true,
+    "outcome": "success",
+    "steps": 509,
+    "L": 913.7,
+    "eff": 66.6
+   },
+   {
+    "theta": 60,
+    "success": true,
+    "outcome": "success",
+    "steps": 507,
+    "L": 911.6,
+    "eff": 66.7
+   },
+   {
+    "theta": 65,
+    "success": true,
+    "outcome": "success",
+    "steps": 507,
+    "L": 912.5,
+    "eff": 66.6
+   },
+   {
+    "theta": 70,
+    "success": true,
+    "outcome": "success",
+    "steps": 506,
+    "L": 910.8,
+    "eff": 66.8
+   },
+   {
+    "theta": 75,
+    "success": true,
+    "outcome": "success",
+    "steps": 505,
+    "L": 909.0,
+    "eff": 66.9
+   },
+   {
+    "theta": 80,
+    "success": true,
+    "outcome": "success",
+    "steps": 506,
+    "L": 910.8,
+    "eff": 66.8
+   },
+   {
+    "theta": 85,
+    "success": true,
+    "outcome": "success",
+    "steps": 512,
+    "L": 921.6,
+    "eff": 66.0
+   },
+   {
+    "theta": 90,
+    "success": true,
+    "outcome": "success",
+    "steps": 552,
+    "L": 1000.4,
+    "eff": 60.8
+   }
+  ]
+ }
+}

@@ -7,17 +7,17 @@ This project implements the **Actor-Recurrent-Critic (ARC)** algorithm for UAV (
 ## 📂 Project Structure
 
 *   **`code/`**: Contains the complete implementation of the training, evaluation, and visualization pipelines.
-    *   [`setup.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/setup.py): Quick setup script to verify dependencies and create necessary output directories.
-    *   [`config.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/config.py): Hyperparameters and configuration settings for environments, rewards, neural networks, and training.
-    *   [`environment.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/environment.py): Implements the custom UAV Target Tracking simulation environment with dynamic targets and obstacles.
-    *   [`networks.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/networks.py): Definitions of the LSTM feature extractor, Actor network, and Critic network.
-    *   [`replay_buffer.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/replay_buffer.py): Experience replay buffer for episodic reinforcement learning.
-    *   [`train.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/train.py) / [`cli_train.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/cli_train.py): Logic and CLI utilities for training ARC agents.
-    *   [`test.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/test.py) / [`cli_test.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/cli_test.py): CLI interface to run test episodes, evaluate models, and run baselines (like APF).
-    *   [`visualize.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/visualize.py) / [`visualize_training.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/visualize_training.py) / [`cli_visualize.py`](file:///Users/jsreshta/Desktop/Research-Paper/arc_2d/code/cli_visualize.py): Visualization utilities for plotting paths and generating animations/GIFs.
+    *   [`setup.py`](code/setup.py): Quick setup script to verify dependencies and create necessary output directories.
+    *   [`config.py`](code/config.py): Hyperparameters and configuration settings for environments, rewards, neural networks, and training.
+    *   [`environment.py`](code/environment.py): Implements the custom UAV Target Tracking simulation environment with dynamic targets and obstacles.
+    *   [`networks.py`](code/networks.py): Definitions of the LSTM feature extractor, Actor network, and Critic network.
+    *   [`replay_buffer.py`](code/replay_buffer.py): Experience replay buffer for episodic reinforcement learning.
+    *   [`train.py`](code/train.py) / [`cli_train.py`](code/cli_train.py): Logic and CLI utilities for training ARC agents.
+    *   [`test.py`](code/test.py) / [`cli_test.py`](code/cli_test.py): CLI interface to run test episodes, evaluate models, and run baselines (like APF).
+    *   [`visualize.py`](code/visualize.py) / [`visualize_training.py`](code/visualize_training.py) / [`cli_visualize.py`](code/cli_visualize.py): Visualization utilities for plotting paths and generating animations/GIFs.
 *   **`results/`**: Output directory for trained model weights, evaluation metrics, CSVs, and figures.
-*   **`Tensorboard_data/`**: Directory containing logs of training progress, viewable via TensorBoard.
-*   **`2D_ARC_Methodology.docx`**: Document outlining the research methodology and theoretical foundations of the 2D ARC formulation.
+*   **`models_original/`**: The original trained 2D ARC checkpoints (300 episodes on `env_apf_urban`; `arc_best.pth` is identical to `arc_checkpoint_ep300.pth`).
+*   The methodology document now lives in `docs/legacy/` (it predates the corrections; see `experiments/FINDINGS.md`).
 
 ---
 
@@ -74,8 +74,5 @@ python code/cli_test.py --env env7 --evaluate --runs 100
 python code/cli_test.py --all
 ```
 
-### 3. Baseline Comparison (APF)
-To run the Artificial Potential Field (APF) baseline comparison script:
-```bash
-python code/cli_test.py --apf-run1
-```
+### 3. Paper experiments
+The shared APF/ARC layout of the paper is the `corridor_gauntlet` environment in `code/config.py` (an exact copy of the APF Corridor Gauntlet). Training, paired evaluation against APF, and every table in the paper are produced by the scripts in `../experiments/` (see `../experiments/README.md`).

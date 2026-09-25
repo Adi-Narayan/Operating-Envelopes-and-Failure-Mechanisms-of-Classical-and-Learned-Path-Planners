@@ -1,5 +1,5 @@
 """
-APF Dynamic Environment — 35 Truly Random Runs
+APF Dynamic Environment — 50 Seeded Runs (seed = run index - 1)
 Obstacles bounce on collision but KEEP CONSTANT SPEED
 Metrics: Steps, Time (ms), Avg CPU %, Peak RAM (GB), System Power (W)
 """
@@ -24,7 +24,9 @@ os.makedirs("results", exist_ok=True)
 DT = 0.1
 BASE_SPEED_SCALE = 1.25
 BOUNDS = (0.0, 500.0, 0.0, 500.0)
-COLLISION_MARGIN = 6.0
+COLLISION_MARGIN = 6.0   # planner-side safety margin (escape / push-out trigger)
+COLLISION_RADIUS = 5.0   # evaluation-side collision criterion, shared with ARC (d_min_obstacle)
+GOAL_RADIUS = 10.0       # shared with ARC (d_min_target)
 GOAL_PROTECTION_RADIUS = 50.0
 MAX_STEPS = 6000
 
@@ -238,10 +240,13 @@ class DynObstacle:
 # =========================================================
 # VELOCITY ASSIGNMENT
 # =========================================================
-def assign_velocities(obstacles_list, rng):
+def assign_velocities(obstacles_list, rng, verbose=True):
+    # Speeds are in m per simulated second; obstacles move vel * dt per step
+    # (dt = 0.1 s for APF), i.e. at most 0.475 m per APF step.
     dyns = []
     vel_table = []
-    print(" Initial velocities:")
+    if verbose:
+        print(" Initial velocities:")
     speed_groups = {
         'rectangle': BASE_SPEED_SCALE * 1.4,
         'square': BASE_SPEED_SCALE * 2.4,
@@ -261,7 +266,7 @@ def assign_velocities(obstacles_list, rng):
         dyns.append(DynObstacle(obs, vx, vy))
         vel_table.append((obs["label"], round(vx, 3), round(vy, 3), round(speed, 3)))
 
-    for label, vx, vy, sp in vel_table:
+    for label, vx, vy, sp in (vel_table if verbose else []):
         print(f" {label:4} | vx={vx:8.3f} vy={vy:8.3f} speed={sp:6.3f}")
     return dyns, vel_table
 
@@ -275,7 +280,7 @@ class APFConfig:
         self.theta = np.deg2rad(25)
         self.goal_factor_pow = 2
         self.step = 1.8
-        self.goal_tol = 18.0
+        self.goal_tol = GOAL_RADIUS
         self.stuck_eps = 1e-6
         self.jitter = 0.35
 
@@ -312,33 +317,60 @@ def path_length(path):
     if len(path) < 2: return 0.0
     return float(np.sum(np.linalg.norm(path[1:] - path[:-1], axis=1)))
 
+def clearance(q, obstacles):
+    return min(get_distance(q, obs)[0] for obs in obstacles)
+
 # =========================================================
 # SIMULATION
 # =========================================================
-def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None):
+def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None, timeline=None,
+                         max_steps=MAX_STEPS, record_history=True):
+    """Returns (success, path, obs_history, t_sim, info).
+
+    If `timeline` is given, obstacle states come from timeline.at(t) instead of
+    stepping `dyn_obstacles`, so that different planners can be run against the
+    identical obstacle motion sequence. The path ends at the first position
+    inside the goal radius (no final segment to the goal centre is appended).
+    A collision is recorded whenever the exact clearance from the agent to any
+    obstacle drops below COLLISION_RADIUS, whether the agent moved into the
+    obstacle or the obstacle moved into the agent.
+    """
     if rng is None:
         rng = np.random.default_rng()
     q = start.copy()
     path = [q.copy()]
-    obs_history = [copy.deepcopy([d.obs for d in dyn_obstacles])]
+    obs0 = timeline.at(0.0) if timeline is not None else [d.obs for d in dyn_obstacles]
+    obs_history = [copy.deepcopy(obs0)] if record_history else []
     t_sim = 0.0
     step_count = 0
     bias = rng.normal(0, 0.06, size=2)
+    info = {'escape_steps': 0, 'pushouts': 0, 'min_clearance': clearance(q, obs0)}
 
-    while step_count < MAX_STEPS:
-        for d in dyn_obstacles:
-            d.step(dt, goal=goal)
-        for i in range(len(dyn_obstacles)):
-            for j in range(i + 1, len(dyn_obstacles)):
-                dyn_obstacles[i].handle_obs_collision(dyn_obstacles[j])
+    def _finish(outcome, success):
+        info['outcome'] = outcome
+        return success, np.array(path), obs_history, t_sim, info
+
+    while step_count < max_steps:
+        if timeline is not None:
+            # plan on the world at t_k; the post-move check below uses t_{k+1}
+            current_obs = timeline.at(step_count * dt)
+        else:
+            for d in dyn_obstacles:
+                d.step(dt, goal=goal)
+            for i in range(len(dyn_obstacles)):
+                for j in range(i + 1, len(dyn_obstacles)):
+                    dyn_obstacles[i].handle_obs_collision(dyn_obstacles[j])
+            current_obs = [d.obs for d in dyn_obstacles]
+
+            c = clearance(q, current_obs)      # obstacle moved into the agent?
+            info['min_clearance'] = min(info['min_clearance'], c)
+            if c < COLLISION_RADIUS:
+                return _finish('collision', False)
 
         t_sim += dt
-        current_obs = [d.obs for d in dyn_obstacles]
 
         if np.linalg.norm(q - goal) <= cfg.goal_tol:
-            path.append(goal.copy())
-            obs_history.append(copy.deepcopy(current_obs))
-            return True, np.array(path), obs_history, t_sim
+            return _finish('success', True)
 
         Ft, _, _ = F_total(q, goal, current_obs, cfg)
         Ft_b = Ft + bias
@@ -363,6 +395,8 @@ def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None):
             q_next[0] = clamp(q_next[0], *BOUNDS[:2])
             q_next[1] = clamp(q_next[1], *BOUNDS[2:])
             escape_attempts += 1
+        if escape_attempts:
+            info['escape_steps'] += 1
 
         if in_collision(q_next, current_obs, margin=COLLISION_MARGIN):
             min_rho = float('inf')
@@ -374,13 +408,21 @@ def simulate_dynamic_apf(start, goal, dyn_obstacles, cfg, dt=DT, rng=None):
                     best_grad = grad
             if min_rho < COLLISION_MARGIN:
                 q_next += (COLLISION_MARGIN - min_rho + 3.0) * best_grad
+                info['pushouts'] += 1
 
         q = q_next
         path.append(q.copy())
-        obs_history.append(copy.deepcopy(current_obs))
+        if record_history:
+            obs_history.append(copy.deepcopy(current_obs))
         step_count += 1
 
-    return False, np.array(path), obs_history, t_sim
+        post_obs = timeline.at(step_count * dt) if timeline is not None else current_obs
+        c = clearance(q, post_obs)             # agent moved into an obstacle (or vice versa)?
+        info['min_clearance'] = min(info['min_clearance'], c)
+        if c < COLLISION_RADIUS:
+            return _finish('collision', False)
+
+    return _finish('timeout', False)
 
 # =========================================================
 # GIF GENERATION
@@ -498,25 +540,26 @@ if __name__ == "__main__":
     START = np.array([35.0, 35.0])
     GOAL = np.array([465.0, 465.0])
     cfg = APFConfig()
+    N_RUNS = 50
 
-    print("=== APF Dynamic Environment — 35 Truly Random Runs ===")
+    print(f"=== APF Dynamic Environment — {N_RUNS} Seeded Runs ===")
     print("Metrics: Steps | Time (ms) | Avg CPU % | Peak RAM (GB) | System Power (W)\n")
 
     wb = openpyxl.Workbook()
     ws = wb.active
-    ws.title = "Dynamic_APF_35_Runs"
+    ws.title = "Dynamic_APF_50_Runs"
 
     thin_border = Border(left=Side(style='thin'), right=Side(style='thin'),
                          top=Side(style='thin'), bottom=Side(style='thin'))
 
     row = 1
-    ws.cell(row, 1, "APF Dynamic 35 Runs").font = Font(bold=True, size=14)
+    ws.cell(row, 1, f"APF Dynamic {N_RUNS} Runs").font = Font(bold=True, size=14)
     row += 3
 
     summary_data = []
 
-    for run in range(1, 36):
-        run_seed = int(time.time() * 1000) % 1000000 + run * 100000
+    for run in range(1, N_RUNS + 1):
+        run_seed = run - 1   # fixed and reproducible; same seeds as experiments/paired_dynamic.py
         rng = np.random.default_rng(run_seed)
         random.seed(run_seed)
 
@@ -526,7 +569,7 @@ if __name__ == "__main__":
         cpu_start, ram_start, sys_start = get_resources()
         t_start = time.perf_counter()
 
-        success, path, obs_history, final_t = simulate_dynamic_apf(
+        success, path, obs_history, final_t, _ = simulate_dynamic_apf(
             START, GOAL, dyn_obstacles, cfg, dt=DT, rng=rng
         )
 
@@ -582,7 +625,7 @@ if __name__ == "__main__":
 
     # Summary Table
     row += 1
-    ws.cell(row, 1, "SUMMARY OF 35 RUNS").font = Font(bold=True, size=14)
+    ws.cell(row, 1, f"SUMMARY OF {N_RUNS} RUNS").font = Font(bold=True, size=14)
     row += 2
     headers = ["Run", "Success", "Steps", "Sim Time (ms)", "Avg CPU %", "Peak RAM (GB)",
                "System Power (W)", "Path Length", "Efficiency %", "Seed"]
@@ -601,11 +644,11 @@ if __name__ == "__main__":
             ws.cell(row, col, val).border = thin_border
         row += 1
 
-    ws.cell(row + 2, 1, f"Success Rate: {success_count}/35 ({success_count/35*100:.1f}%)").font = Font(bold=True)
+    ws.cell(row + 2, 1, f"Success Rate: {success_count}/{N_RUNS} ({success_count/N_RUNS*100:.1f}%)").font = Font(bold=True)
 
-    wb.save("results/dynamic_metrics_35_constant_speed_runs.xlsx")
+    wb.save("results/dynamic_metrics_50_seeded_runs.xlsx")
 
     print("\n" + "="*90)
-    print("ALL 35 RUNS COMPLETED SUCCESSFULLY!")
-    print("Excel saved → results/dynamic_metrics_35_constant_speed_runs.xlsx")
+    print(f"ALL {N_RUNS} RUNS COMPLETED")
+    print("Excel saved → results/dynamic_metrics_50_seeded_runs.xlsx")
     print("GIFs saved in results/ folder (successful runs)")
