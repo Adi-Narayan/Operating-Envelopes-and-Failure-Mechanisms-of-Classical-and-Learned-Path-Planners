@@ -16,7 +16,7 @@ for f in sorted(glob.glob(os.path.join(HERE, "out", "checkpoints_*.json"))):
     r = json.load(open(f))
     for k, v in r["models"].items():
         kk = k.replace("\\", "/")
-        grp = re.search(r"(env_apf_urban_seed\d+|seed\d+|models_original)", kk).group(1)
+        grp = re.search(r"((?:env_apf_urban_|td3dyn_|td3_|sacdyn_|sac_)?seed\d+|models_original)", kk).group(1)
         m = re.search(r"ep(\d+)", kk)
         ep = int(m.group(1)) if m else -1          # arc_best ranks below equal-scoring epochs
         score = (v["random_heading_success"], v["deterministic"]["outcome"] == "success", ep)

@@ -33,8 +33,10 @@ def ident(path):
     if "models_original" in p:
         train, seed = "urban", "orig"
     else:
-        m = re.search(r"(env_apf_urban_)?seed(\d+)", p)
-        train, seed = ("urban" if m.group(1) else "corridor"), m.group(2)
+        # td3_/td3dyn_/sac_ baselines get their own "train" label so they never mix with ARC seeds
+        m = re.search(r"(env_apf_urban_|td3dyn_|td3_|sacdyn_|sac_)?seed(\d+)", p)
+        pre = (m.group(1) or "").rstrip("_")
+        train, seed = {"env_apf_urban": "urban", "": "corridor"}.get(pre, pre), m.group(2)
     if p.endswith("arc_best.pth"):
         var = "best"
     elif p.endswith("ep300.pth"):
@@ -170,16 +172,115 @@ def apf_blocks(E):
             "dynamic_pushouts": sum(r.get("pushouts", 0) for r in apf_runs)}
 
 
-def speed_table():
+METHOD = {"corridor": "ARC", "urban": "ARC (second layout)", "td3": "TD3", "td3dyn": "TD3-dyn", "sacdyn": "SAC-dyn"}
+BASELINES = ("td3", "td3dyn", "sacdyn")
+
+
+def method_of(path):
+    return ident(path)[0]
+
+
+def speed_table(n_envs=50, trains=("corridor",)):
+    """Speed sweep over the files with n_envs environments; models filtered by training label."""
     rows = {}
     for f in sorted(glob.glob(os.path.join(OUT, "speed_sweep_corridor*.json"))):
         r = json.load(open(f))
+        if len(next(iter(r["speeds"].values()))["apf"]) != n_envs:
+            continue
         for v, d in r["speeds"].items():
             e = rows.setdefault(float(v), {"ratio": d["ratio"], "apf": d["apf_success"], "arc": {}})
-            assert e["apf"] == d["apf_success"]
+            assert e["apf"] == d["apf_success"], f"APF differs between speed-sweep files at {v} m/s ({f})"
             for m, k in zip(r["models"], d["arc_success"]):
-                e["arc"][m.replace("\\", "/")] = k
+                if method_of(m) in trains:
+                    e["arc"][m.replace("\\", "/")] = k
     return dict(sorted(rows.items()))
+
+
+def exact_perm_test(a, b):
+    """Two-sided exact permutation test on the difference of means (all C(n_a+n_b, n_a) splits)."""
+    from itertools import combinations
+    x = np.array(list(a) + list(b), float)
+    n, na = len(x), len(a)
+    obs = abs(np.mean(a) - np.mean(b))
+    tot, cnt = 0, 0
+    for idx in combinations(range(n), na):
+        m = np.zeros(n, bool)
+        m[list(idx)] = True
+        tot += 1
+        cnt += abs(x[m].mean() - x[~m].mean()) >= obs - 1e-12
+    return cnt / tot
+
+
+def seed_summary(xs):
+    xs = [float(v) for v in xs]
+    return {"per_seed": xs, "mean": float(np.mean(xs)), "sd": float(np.std(xs, ddof=1)) if len(xs) > 1 else 0.0,
+            "median": float(np.median(xs)), "min": min(xs), "max": max(xs),
+            "mean_ci95_bootstrap_over_seeds": bootstrap_mean_ci(xs)}
+
+
+def noise_tables():
+    """Success per model and noise level, from every out/noise_*.json (50- and 10-environment files kept apart)."""
+    out = {}
+    for f in sorted(glob.glob(os.path.join(OUT, "noise_*.json"))):
+        r = json.load(open(f))
+        for lev, R in r["results"].items():
+            n = len(next(iter(R["runs"].values())))
+            for m, runs in R["runs"].items():
+                key = m.replace("\\", "/")
+                meth = "APF " + key[4:] if key.startswith("APF ") else method_of(key)
+                d = out.setdefault(n, {}).setdefault(meth, {}).setdefault(key, {})
+                d[lev] = sum(x["outcome"] == "success" for x in runs)
+    return out
+
+
+def layout_tables():
+    """Random-layout success per model (static / dynamic), from every out/layouts_*.json except the APF factorial."""
+    out = {}
+    for f in sorted(glob.glob(os.path.join(OUT, "layouts_*.json"))):
+        if "factorial" in f:
+            continue
+        r = json.load(open(f))
+        n = len(r["results"])
+        for part in ("static", "dynamic"):
+            for m in r["results"]["0"][part]:
+                key = m.replace("\\", "/")
+                meth = "APF " + key[4:] if key.startswith("APF ") else method_of(key)
+                k = sum(r["results"][str(i)][part][m]["outcome"] == "success" for i in range(n))
+                out.setdefault(n, {}).setdefault(part, {}).setdefault(meth, {})[key] = k
+    return out
+
+
+def envelope_summary(nt, lt, sp):
+    """Per method: % success averaged over ALL its training seeds, for every noise level, both random-layout
+    parts and every speed. A seed's 50-environment (100-layout) result is used where it exists, otherwise its
+    10-environment spot check (the non-learning TD3 seeds)."""
+    def run_id(key):
+        return key.split("/")[-3] if "/" in key else key
+
+    out = {}
+    per = {}                                           # (test, method) -> {run: %}
+    for n in sorted(nt):                               # smaller n first, overwritten by larger n
+        for meth, models in nt[n].items():
+            for m, d in models.items():
+                for lev, k in d.items():
+                    per.setdefault((f"noise_{lev}", meth), {})[run_id(m)] = 100 * k / n
+    for n in sorted(lt):
+        for part in ("static", "dynamic"):
+            for meth, models in lt[n].get(part, {}).items():
+                for m, k in models.items():
+                    per.setdefault((f"layouts_{part}", meth), {})[run_id(m)] = 100 * k / n
+    for n in sorted(sp):
+        for v, e in sp[n].items():
+            if n == 50:
+                per.setdefault((f"speed_{v:g}", "APF"), {})["APF"] = 100 * e["apf"] / n
+            for m, k in e["arc"].items():
+                per.setdefault((f"speed_{v:g}", method_of(m)), {})[run_id(m)] = 100 * k / n
+    for (test, meth), runs in per.items():
+        xs = list(runs.values())
+        out.setdefault(test, {})[meth] = {"n_seeds": len(xs), "mean_pct": float(np.mean(xs)),
+                                          "sd_pct": float(np.std(xs, ddof=1)) if len(xs) > 1 else 0.0,
+                                          "min_pct": float(min(xs)), "max_pct": float(max(xs))}
+    return out
 
 
 def main():
@@ -203,6 +304,49 @@ def main():
                 arc = E["dynamic"][m]
                 rep[L]["arc"][f"original/{var}"] = {"static": E["static"][m],
                                                     "dynamic_success": sum(r["success"] for r in arc)}
+
+    # learned baselines (TD3, TD3-dyn, SAC-dyn) on the same protocol; kept under their own key
+    base = {}
+    for L, E in evals.items():
+        if E is None:
+            continue
+        for train in BASELINES:
+            if not any(method_of(m) == train for m in E["models"]):
+                continue
+            for var in ("best", "final", "oracle"):
+                base.setdefault(L, {})[f"{train}/{var}"] = {"static": static_block(E, train, var, oracles),
+                                                           "dynamic": dynamic_block(E, train, var, oracles)}
+    col = jload("collapse.json")
+    if col:
+        base["collapse"] = {}
+        for lab, pre in (("corridor", "seed"), ("td3", "td3_seed"), ("td3dyn", "td3dyn_seed"), ("sacdyn", "sacdyn_seed")):
+            runs = {k: v for k, v in col.items() if k.startswith(pre) and k[len(pre):].isdigit()}
+            base["collapse"][lab] = {"n": len(runs), "collapsed": sorted(int(k[len(pre):]) for k, v in runs.items() if v["collapsed"]),
+                                     "devices": sorted({v["device"] for v in runs.values()})}
+        c = base["collapse"]
+        if c.get("td3dyn", {}).get("n") and c.get("sacdyn", {}).get("n"):
+            from scipy.stats import fisher_exact
+            t, s = c["td3dyn"], c["sacdyn"]
+            base["collapse"]["fisher_td3dyn_vs_sacdyn_p"] = float(fisher_exact(
+                [[len(t["collapsed"]), t["n"] - len(t["collapsed"])], [len(s["collapsed"]), s["n"] - len(s["collapsed"])]])[1])
+    if "corridor" in base:
+        cmp = {}
+        for var in ("best", "final", "oracle"):
+            per = {lab: [d["success"] for _, d in sorted(blk["dynamic"]["per_seed"].items(), key=lambda x: int(x[0]))]
+                   for lab, blk in [("corridor", rep["corridor"]["arc"][f"corridor/{var}"])]
+                   + [(t, base["corridor"][f"{t}/{var}"]) for t in BASELINES if f"{t}/{var}" in base["corridor"]]}
+            cmp[var] = {lab: seed_summary(xs) for lab, xs in per.items()}
+            if "sacdyn" in per and "td3dyn" in per:
+                cmp[var]["perm_p_sacdyn_vs_td3dyn"] = exact_perm_test(per["sacdyn"], per["td3dyn"])
+            if "td3dyn" in per and "td3" in per:
+                cmp[var]["perm_p_td3dyn_vs_td3"] = exact_perm_test(per["td3dyn"], per["td3"])
+        base["corridor_seed_comparison"] = cmp
+    nt, lt = noise_tables(), layout_tables()
+    base["noise"], base["layouts"] = nt, lt
+    sp_all = {n: speed_table(n, trains=("corridor",) + BASELINES) for n in (50, 10)}
+    base["speed_sweep"] = {n: t for n, t in sp_all.items() if t}
+    base["envelope_summary"] = envelope_summary(nt, lt, base["speed_sweep"])
+    rep["baselines"] = base
 
     # ---- markdown
     if "corridor" in rep:
@@ -290,6 +434,83 @@ def main():
     if tm:
         rep["timing"] = tm
         md += ["## Timing (idle machine, AC power)", "", "```", json.dumps({k: v for k, v in tm.items() if not k.endswith("_all") and k != "arc"}, indent=1, default=float), "```", ""]
+
+    # ---- learned baselines (markdown)
+    B = rep["baselines"]
+    if B.get("collapse"):
+        md += ["## Learned baselines — training collapse (corridor-trained; policy at the ±9° action bound on ≥99% of steps)", "",
+               "| method | seeds | collapsed seeds | devices |", "|---|---|---|---|"]
+        for lab in ("corridor", "td3", "td3dyn", "sacdyn"):
+            c = B["collapse"].get(lab)
+            if c and c["n"]:
+                md.append(f"| {METHOD[lab]} | {c['n']} | {len(c['collapsed'])} {c['collapsed']} | {', '.join(c['devices'])} |")
+        if "fisher_td3dyn_vs_sacdyn_p" in B["collapse"]:
+            md.append(f"\nFisher exact, collapse TD3-dyn vs SAC-dyn: p = {B['collapse']['fisher_td3dyn_vs_sacdyn_p']:.3g}")
+        md.append("")
+    for L in ("corridor", "urban"):
+        if L not in B:
+            continue
+        md += [f"## Learned baselines — Table 3/4 protocol on the {L} layout (per seed; APF as in Table 4)", "",
+               "| method / ckpt | static success | dynamic success per seed | mean ± SD | pooled | shared pairs | η APF (shared) | η method (shared) | Wilcoxon p |",
+               "|---|---|---|---|---|---|---|---|---|"]
+        for t in BASELINES:
+            for var in ("best", "final", "oracle"):
+                blk = B[L].get(f"{t}/{var}")
+                if not blk or not blk["dynamic"]["per_seed"]:
+                    continue
+                D, S = blk["dynamic"], blk["static"]
+                ks = [d["success"] for _, d in sorted(D["per_seed"].items(), key=lambda x: int(x[0]))]
+                md.append(f"| {METHOD[t]} {var} | {S['success']}/{S['n_seeds']} | {ks} | {fmt(D['success_mean_sd'])} | {sum(ks)}/{50 * len(ks)} | "
+                          f"{D['pooled_shared_pairs']} | {fmt(D['pooled_shared_eff_apf'] or [float('nan')] * 2)} | "
+                          f"{fmt(D['pooled_shared_eff_arc'] or [float('nan')] * 2)} | {D['pooled_wilcoxon_p']:.2g} |")
+        md.append("")
+    if B.get("corridor_seed_comparison"):
+        md += ["## Per-seed dynamic success (corridor suite): method comparison over training seeds", "",
+               "| ckpt | method | n seeds | mean ± SD | median | min–max | bootstrap 95% CI of mean |", "|---|---|---|---|---|---|---|"]
+        for var, cm in B["corridor_seed_comparison"].items():
+            for lab, s in cm.items():
+                if isinstance(s, dict):
+                    md.append(f"| {var} | {METHOD[lab]} | {len(s['per_seed'])} | {s['mean']:.1f} ± {s['sd']:.1f} | {s['median']:.1f} | "
+                              f"{s['min']:.0f}–{s['max']:.0f} | {s['mean_ci95_bootstrap_over_seeds'][0]:.1f}–{s['mean_ci95_bootstrap_over_seeds'][1]:.1f} |")
+            md.append(f"| {var} | exact permutation p: SAC-dyn vs TD3-dyn = {cm.get('perm_p_sacdyn_vs_td3dyn', float('nan')):.3g}; "
+                      f"TD3-dyn vs TD3 = {cm.get('perm_p_td3dyn_vs_td3', float('nan')):.3g} | | | | | |")
+        md.append("")
+    es = B.get("envelope_summary", {})
+    if es:
+        md += ["## Envelope summary: % success, mean ± SD over ALL training seeds of each method", "",
+               "(50-env / 100-layout result per seed where available, else the 10-env spot check)", "",
+               "| test | " + " | ".join(es[next(iter(es))].keys()) + " |", "|---" * (1 + len(es[next(iter(es))])) + "|"]
+        meths = sorted({m for t in es.values() for m in t})
+        md[-2] = "| test | " + " | ".join(METHOD.get(m, m) for m in meths) + " |"
+        md[-1] = "|---" * (1 + len(meths)) + "|"
+        for test in sorted(es):
+            md.append(f"| {test} | " + " | ".join(
+                f"{es[test][m]['mean_pct']:.1f} ± {es[test][m]['sd_pct']:.1f} (n={es[test][m]['n_seeds']})" if m in es[test] else ""
+                for m in meths) + " |")
+        md.append("")
+    for n, T in sorted(B.get("noise", {}).items(), reverse=True):
+        md += [f"## Noise robustness, {n} paired dynamic environments (success per model; L0–L3 as in robustness_suite.py)", "",
+               "| method | model | L0 | L1 | L2 | L3 |", "|---|---|---|---|---|---|"]
+        for meth, models in T.items():
+            for m, d in models.items():
+                md.append(f"| {METHOD.get(meth, meth)} | {m.split('/')[-3] if '/' in m else m} | " + " | ".join(str(d.get(l, '')) for l in ("L0", "L1", "L2", "L3")) + " |")
+        md.append("")
+    for n, T in sorted(B.get("layouts", {}).items(), reverse=True):
+        md += [f"## Random layouts, {n} layouts (success per model)", "", "| method | model | static | dynamic |", "|---|---|---|---|"]
+        for meth in T.get("static", {}):
+            for m, k in T["static"][meth].items():
+                md.append(f"| {METHOD.get(meth, meth)} | {m.split('/')[-3] if '/' in m else m} | {k}/{n} | {T['dynamic'][meth].get(m, '')}/{n} |")
+        md.append("")
+    for n, sp2 in sorted(B.get("speed_sweep", {}).items(), reverse=True):
+        md += [f"## Speed sweep, {n} environments per speed (success per seed, by method)", "",
+               "| v (m/s) | r | APF | " + " | ".join(METHOD[t] for t in ("corridor",) + BASELINES) + " |", "|---" * 7 + "|"]
+        for v, e in sp2.items():
+            cells = []
+            for t in ("corridor",) + BASELINES:
+                ks = [k for m, k in sorted(e["arc"].items()) if method_of(m) == t]
+                cells.append(f"{ks}" if ks else "")
+            md.append(f"| {v:g} | {e['ratio']:.2f} | {e['apf']}/{n} | " + " | ".join(cells) + " |")
+        md.append("")
 
     with open(os.path.join(OUT, "report.json"), "w") as f:
         json.dump(rep, f, indent=1, default=float)

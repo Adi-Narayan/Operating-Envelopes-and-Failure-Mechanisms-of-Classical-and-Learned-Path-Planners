@@ -119,34 +119,130 @@ def fig6():
     fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig6_theta_sweep.png"), dpi=200); plt.close(fig)
 
 
-def fig_speed():
-    rows = {}
+TD3_C, SAC_C = "#7a3fa0", "#2a8a3e"
+METH = {"corridor": ("ARC (DDPG, static training)", ARC_C, "s"), "td3dyn": ("TD3, moving-obstacle training", TD3_C, "^"),
+        "sacdyn": ("SAC, moving-obstacle training", SAC_C, "D")}
+
+
+def run_of(path):
+    """(method label as in report.ident, seed) for a checkpoint path."""
+    import re
+    p = path.replace("\\", "/")
+    m = re.search(r"(env_apf_urban_|td3dyn_|td3_|sacdyn_|sac_)?seed(\d+)", p)
+    pre = (m.group(1) or "").rstrip("_")
+    return {"env_apf_urban": "urban", "": "corridor"}.get(pre, pre), int(m.group(2))
+
+
+def speed_rows():
+    """{speed: {'ratio', 'apf' (% of 50), (method, seed): % success}} using every speed_sweep_corridor*.json;
+    each (method, seed) keeps its largest-sample file (50 environments where available, else the 10-env check)."""
+    rows, n_of = {}, {}
     for f in sorted(glob.glob(os.path.join(OUT, "speed_sweep_corridor*.json"))):
         r = json.load(open(f))
         for v, d in r["speeds"].items():
-            e = rows.setdefault(float(v), {"ratio": d["ratio"], "apf": d["apf_success"], "arc": []})
-            e["arc"] += d["arc_success"]
+            n = len(d["apf"])
+            e = rows.setdefault(float(v), {"ratio": d["ratio"]})
+            if n == 50:
+                e["apf"] = 100 * d["apf_success"] / 50
+            for m, k in zip(r["models"], d["arc_success"]):
+                key = run_of(m)
+                if n >= n_of.get((key, v), 0):
+                    e[key] = 100 * k / n
+                    n_of[(key, v)] = n
+    return rows
+
+
+def fig_speed():
+    rows = speed_rows()
     if not rows:
         return
     v = sorted(rows)
     r = np.array([rows[x]["ratio"] for x in v])
-    apf = np.array([rows[x]["apf"] for x in v]) * 2          # % of 50
-    arc = [np.array(rows[x]["arc"]) * 2 for x in v]
-    fig, ax = plt.subplots(figsize=(6.0, 4.0))
-    ax.plot(r, apf, "o-", color=APF_C, lw=2, label="APF")
-    for i in range(len(arc[0])):
-        ax.plot(r, [a[i] for a in arc], "-", color=ARC_C, alpha=0.25, lw=1)
-    m = np.array([a.mean() for a in arc]); sd = np.array([a.std(ddof=1) for a in arc])
-    ax.plot(r, m, "s-", color=ARC_C, lw=2, label=f"ARC (mean of {len(arc[0])} seeds; thin: individual seeds)")
-    ax.fill_between(r, m - sd, m + sd, color=ARC_C, alpha=0.12)
+    fig, ax = plt.subplots(figsize=(6.4, 4.6))
+    ax.plot(r, [rows[x]["apf"] for x in v], "o-", color=APF_C, lw=2, label="APF")
+    for meth, (lab, col, mk) in METH.items():
+        seeds = sorted({k[1] for x in v for k in rows[x] if isinstance(k, tuple) and k[0] == meth})
+        if not seeds:
+            continue
+        M = np.array([[rows[x].get((meth, s), np.nan) for x in v] for s in seeds])
+        for row in M:
+            ax.plot(r, row, "-", color=col, alpha=0.22, lw=0.7)
+        m = np.nanmean(M, 0)       # no SD band: seed outcomes are bimodal (collapsed vs learned)
+        ax.plot(r, m, mk + "-", color=col, lw=2, ms=5, label=f"{lab} (mean of {len(seeds)} seed{'s' if len(seeds) != 1 else ''})")
     ax.axvline(1.0, color="0.5", ls=":", lw=1)
     ax.set_xscale("log")
     ax.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
     ax.set_xticks([0.2, 0.3, 0.5, 1.0, 1.5]); ax.set_xticklabels(["0.2", "0.3", "0.5", "1.0", "1.5"])
     ax.set_xlabel("obstacle-to-agent speed ratio  r = v_obs,max / v_agent")
     ax.set_ylabel("success over 50 paired environments (%)")
-    ax.set_ylim(-3, 103); ax.grid(alpha=0.25); ax.legend(fontsize=8, loc="center left")
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_speed_envelope.png"), dpi=200); plt.close(fig)
+    ax.set_ylim(-3, 103); ax.grid(alpha=0.25)
+    fig.legend(*ax.get_legend_handles_labels(), fontsize=7.5, loc="lower center", ncol=2, frameon=False)
+    fig.tight_layout(rect=(0, 0.11, 1, 1)); fig.savefig(os.path.join(FIG, "fig_speed_envelope.png"), dpi=200); plt.close(fig)
+
+
+def fig_baselines_seeds():
+    """Dynamic-suite success per training seed (best checkpoint) for every learned method; collapsed seeds hollow."""
+    rep = json.load(open(os.path.join(OUT, "report.json")))
+    col = json.load(open(os.path.join(OUT, "collapse.json"))) if os.path.exists(os.path.join(OUT, "collapse.json")) else {}
+    B = rep.get("baselines", {}).get("corridor", {})
+    groups = [("ARC\n(static training)", rep["corridor"]["arc"]["corridor/best"]["dynamic"]["per_seed"], "seed", ARC_C),
+              ("TD3\n(static training)", B.get("td3/best", {}).get("dynamic", {}).get("per_seed", {}), "td3_seed", "#9c6fb8"),
+              ("TD3\n(moving obstacles)", B.get("td3dyn/best", {}).get("dynamic", {}).get("per_seed", {}), "td3dyn_seed", TD3_C),
+              ("SAC\n(moving obstacles)", B.get("sacdyn/best", {}).get("dynamic", {}).get("per_seed", {}), "sacdyn_seed", SAC_C)]
+    fig, ax = plt.subplots(figsize=(6.4, 3.8))
+    ax.axhline(100, color=APF_C, lw=2, label="APF (50/50)")
+    rng = np.random.default_rng(0)
+    for i, (lab, per, pre, c) in enumerate(groups):
+        for s, d in per.items():
+            y = 2 * d["success"]
+            collapsed = col.get(f"{pre}{s}", {}).get("collapsed", False)
+            ax.scatter(i + rng.uniform(-0.18, 0.18), y, s=36, facecolor="none" if collapsed else c, edgecolor=c, lw=1.4, zorder=3)
+        if per:
+            ys = [2 * d["success"] for d in per.values()]
+            ax.plot([i - 0.3, i + 0.3], [np.mean(ys)] * 2, color="k", lw=1.5)
+    ax.scatter([], [], facecolor="0.4", edgecolor="0.4", s=36, label="training seed")
+    ax.scatter([], [], facecolor="none", edgecolor="0.4", s=36, lw=1.4, label="collapsed seed (circles at start)")
+    ax.plot([], [], color="k", lw=1.5, label="mean over seeds")
+    ax.set_xticks(range(len(groups))); ax.set_xticklabels([g[0] for g in groups], fontsize=8)
+    ax.set_ylabel("success over 50 paired\ndynamic environments (%)"); ax.set_ylim(-5, 105)
+    ax.grid(alpha=0.2, axis="y"); ax.legend(fontsize=7, loc="upper left")
+    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_baselines_seeds.png"), dpi=200); plt.close(fig)
+
+
+def fig_baselines_training():
+    """Episode reward during training for TD3 (static), TD3 (moving obstacles) and SAC (moving obstacles);
+    collapsed seeds drawn dashed."""
+    col = json.load(open(os.path.join(OUT, "collapse.json"))) if os.path.exists(os.path.join(OUT, "collapse.json")) else {}
+    panels = [("TD3, static training", "td3_seed", "#9c6fb8"), ("TD3, moving-obstacle training", "td3dyn_seed", TD3_C),
+              ("SAC, moving-obstacle training", "sacdyn_seed", SAC_C)]
+    fig, axes = plt.subplots(1, 3, figsize=(10.5, 3.2), sharey=True)
+    for ax, (title, pre, c) in zip(axes, panels):
+        n_col = 0
+        for s in range(10):
+            p = os.path.join(OUT, "arc_models", f"{pre}{s}", "train_summary.json")
+            if not os.path.exists(p):
+                continue
+            er = np.array(json.load(open(p))["episode_rewards"])
+            sm = np.convolve(er, np.ones(10) / 10, mode="valid")
+            collapsed = col.get(f"{pre}{s}", {}).get("collapsed", False)
+            n_col += collapsed
+            ax.plot(np.arange(10, 10 + len(sm)), sm, color="0.55" if collapsed else c, lw=1.0, ls="--" if collapsed else "-")
+        ax.set_title(f"{title}\n({n_col} of 10 seeds collapsed)", fontsize=9); ax.set_xlabel("episode"); ax.grid(alpha=0.2)
+    axes[0].set_ylabel("episode reward\n(10-episode moving mean)")
+    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_baselines_training.png"), dpi=200); plt.close(fig)
+
+
+def fig_dyn_examples(tag):
+    """The paper's two-panel figure: the shared-success and ARC-collision examples side by side."""
+    import matplotlib.image as mpimg
+    a = os.path.join(FIG, f"fig3_shared_success_{tag}.png"); b = os.path.join(FIG, f"fig4_arc_collision_{tag}.png")
+    if not (os.path.exists(a) and os.path.exists(b)):
+        return
+    fig, axes = plt.subplots(1, 2, figsize=(10.4, 5.2))
+    for ax, im, lab in zip(axes, (mpimg.imread(a), mpimg.imread(b)), ("(a)", "(b)")):
+        ax.imshow(im); ax.axis("off")
+        ax.text(0.01, 0.99, lab, transform=ax.transAxes, va="top", fontsize=13, fontweight="bold")
+    fig.tight_layout(pad=0.2); fig.savefig(os.path.join(FIG, "fig_dyn_examples.png"), dpi=220); plt.close(fig)
 
 
 def fig_arc3d():
@@ -234,5 +330,6 @@ if __name__ == "__main__":
         steps = sorted(arc_coll, key=lambda s: arc[s]["steps"])
         s = steps[len(steps) // 2]
         fig_pair(dp, s, f"fig4_arc_collision_{args.tag}.png", f"Environment {s}: APF reaches the goal, ARC collides", obstacles)
-    fig5(); fig6(); fig_speed(); fig_arc3d(); fig_env3d()
+    fig5(); fig6(); fig_speed(); fig_arc3d(); fig_env3d(); fig_baselines_seeds(); fig_baselines_training()
+    fig_dyn_examples(args.tag)
     print("figures ->", FIG, os.listdir(FIG))

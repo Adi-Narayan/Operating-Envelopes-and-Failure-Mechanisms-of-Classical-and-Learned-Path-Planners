@@ -1,0 +1,988 @@
+{
+ "failures": {
+  "2": {
+   "outcome": "timeout",
+   "end": [
+    235.0553677251059,
+    97.32628779600135
+   ],
+   "dist_to_goal": 433.6571140404653,
+   "distinct_last6": 2,
+   "F_att": 2168.285570202326,
+   "F_rep": 2208.679062168581,
+   "F_total": 47.396138267575274,
+   "min_clearance": 28.149662894279658,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "8": {
+   "outcome": "timeout",
+   "end": [
+    169.65372360492498,
+    252.78781767944736
+   ],
+   "dist_to_goal": 363.68039994710676,
+   "distinct_last6": 2,
+   "F_att": 1818.401999735534,
+   "F_rep": 1959.044110620774,
+   "F_total": 143.34738430692727,
+   "min_clearance": 24.225634625324005,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "15": {
+   "outcome": "timeout",
+   "end": [
+    231.56980099341473,
+    41.38776461889246
+   ],
+   "dist_to_goal": 483.670325503677,
+   "distinct_last6": 2,
+   "F_att": 2418.3516275183847,
+   "F_rep": 2529.3460390217547,
+   "F_total": 113.46715419465731,
+   "min_clearance": 30.437449188565914,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth"
+   ]
+  },
+  "16": {
+   "outcome": "timeout",
+   "end": [
+    227.54600048102841,
+    283.46296756933623
+   ],
+   "dist_to_goal": 298.8981365470311,
+   "distinct_last6": 2,
+   "F_att": 1494.4906827351551,
+   "F_rep": 1666.8275908703931,
+   "F_total": 176.924264110677,
+   "min_clearance": 20.55907184830491,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "21": {
+   "outcome": "timeout",
+   "end": [
+    276.1530257297499,
+    296.1938695560922
+   ],
+   "dist_to_goal": 253.29565603553908,
+   "distinct_last6": 2,
+   "F_att": 1266.4782801776953,
+   "F_rep": 1540.3483692418295,
+   "F_total": 288.0052762178294,
+   "min_clearance": 16.911208631492173,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "22": {
+   "outcome": "timeout",
+   "end": [
+    222.5844926398865,
+    345.5606325913394
+   ],
+   "dist_to_goal": 270.24255900143163,
+   "distinct_last6": 2,
+   "F_att": 1351.212795007158,
+   "F_rep": 1293.8441737949959,
+   "F_total": 57.375761108631096,
+   "min_clearance": 19.03359179095486,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "23": {
+   "outcome": "timeout",
+   "end": [
+    254.20350314096638,
+    65.73410902215188
+   ],
+   "dist_to_goal": 451.49575278885567,
+   "distinct_last6": 2,
+   "F_att": 2257.4787639442784,
+   "F_rep": 2180.118091137718,
+   "F_total": 78.31418785410398,
+   "min_clearance": 31.143810296298497,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "26": {
+   "outcome": "timeout",
+   "end": [
+    71.5617696136237,
+    72.94856010163969
+   ],
+   "dist_to_goal": 555.4259380474961,
+   "distinct_last6": 6,
+   "F_att": 2777.12969023748,
+   "F_rep": 2738.250690564217,
+   "F_total": 40.656716646158806,
+   "min_clearance": 37.74677289025766,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth"
+   ]
+  },
+  "34": {
+   "outcome": "timeout",
+   "end": [
+    384.8626953753562,
+    190.04546218284122
+   ],
+   "dist_to_goal": 286.3948069688945,
+   "distinct_last6": 6,
+   "F_att": 1431.9740348444725,
+   "F_rep": 1461.0203784528687,
+   "F_total": 85.90662350882006,
+   "min_clearance": 22.66016888256908,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "35": {
+   "outcome": "timeout",
+   "end": [
+    354.9544093564832,
+    223.27339408895375
+   ],
+   "dist_to_goal": 265.5970331636909,
+   "distinct_last6": 2,
+   "F_att": 1327.9851658184546,
+   "F_rep": 1336.7234530384546,
+   "F_total": 8.739717229437513,
+   "min_clearance": 19.893794739338993,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed2/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "36": {
+   "outcome": "timeout",
+   "end": [
+    372.8539051240051,
+    144.80157796556426
+   ],
+   "dist_to_goal": 333.1935357629834,
+   "distinct_last6": 6,
+   "F_att": 1665.9676788149168,
+   "F_rep": 1615.6737561054713,
+   "F_total": 81.80615561636284,
+   "min_clearance": 22.431169527617218,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "41": {
+   "outcome": "timeout",
+   "end": [
+    148.4365768541409,
+    113.81319947251158
+   ],
+   "dist_to_goal": 472.8050018121194,
+   "distinct_last6": 2,
+   "F_att": 2364.025009060597,
+   "F_rep": 2826.8502622947967,
+   "F_total": 508.2314882866752,
+   "min_clearance": 21.78689724290481,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "46": {
+   "outcome": "timeout",
+   "end": [
+    237.35162587937614,
+    102.68942576359544
+   ],
+   "dist_to_goal": 427.8933680758289,
+   "distinct_last6": 2,
+   "F_att": 2139.4668403791443,
+   "F_rep": 2250.46803891552,
+   "F_total": 112.96792781874241,
+   "min_clearance": 28.22332612411473,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "47": {
+   "outcome": "timeout",
+   "end": [
+    303.54710235263207,
+    390.10643619729586
+   ],
+   "dist_to_goal": 177.9777628182835,
+   "distinct_last6": 2,
+   "F_att": 889.8888140914177,
+   "F_rep": 725.1724944752567,
+   "F_total": 164.74504870167988,
+   "min_clearance": 15.894104790035101,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "51": {
+   "outcome": "timeout",
+   "end": [
+    88.78162177491782,
+    64.10019186721759
+   ],
+   "dist_to_goal": 549.7826154719816,
+   "distinct_last6": 2,
+   "F_att": 2748.9130773599077,
+   "F_rep": 2827.740032479164,
+   "F_total": 83.53356412504682,
+   "min_clearance": 31.912703455228435,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "52": {
+   "outcome": "timeout",
+   "end": [
+    133.49470821805835,
+    141.0603920006669
+   ],
+   "dist_to_goal": 463.5004078856802,
+   "distinct_last6": 2,
+   "F_att": 2317.5020394284006,
+   "F_rep": 2161.573772147662,
+   "F_total": 156.41565015701636,
+   "min_clearance": 29.68959644132335,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "53": {
+   "outcome": "timeout",
+   "end": [
+    190.23072937289137,
+    92.40534121848648
+   ],
+   "dist_to_goal": 462.9524077412988,
+   "distinct_last6": 2,
+   "F_att": 2314.762038706494,
+   "F_rep": 2255.31021134936,
+   "F_total": 64.85206555710836,
+   "min_clearance": 28.893795726370996,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "55": {
+   "outcome": "timeout",
+   "end": [
+    285.59121692997394,
+    179.84090119616917
+   ],
+   "dist_to_goal": 336.9023939856774,
+   "distinct_last6": 2,
+   "F_att": 1684.511969928387,
+   "F_rep": 1570.6194803236028,
+   "F_total": 125.8859807148653,
+   "min_clearance": 19.67281760686956,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth"
+   ]
+  },
+  "59": {
+   "outcome": "timeout",
+   "end": [
+    139.82680135760245,
+    165.10352577446432
+   ],
+   "dist_to_goal": 442.35224015283967,
+   "distinct_last6": 2,
+   "F_att": 2211.7612007641983,
+   "F_rep": 2244.95087044503,
+   "F_total": 34.89184832388995,
+   "min_clearance": 28.609590339880498,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "66": {
+   "outcome": "timeout",
+   "end": [
+    119.75080128890131,
+    97.52733183459006
+   ],
+   "dist_to_goal": 504.21540144987756,
+   "distinct_last6": 2,
+   "F_att": 2521.077007249388,
+   "F_rep": 2637.9225966645467,
+   "F_total": 122.14235399753274,
+   "min_clearance": 29.766905716736744,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth"
+   ]
+  },
+  "67": {
+   "outcome": "timeout",
+   "end": [
+    365.4262573261213,
+    89.82621154148617
+   ],
+   "dist_to_goal": 388.1627258977831,
+   "distinct_last6": 2,
+   "F_att": 1940.8136294889157,
+   "F_rep": 2161.3922764944155,
+   "F_total": 224.46637536205617,
+   "min_clearance": 24.09376078577375,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth"
+   ]
+  },
+  "72": {
+   "outcome": "timeout",
+   "end": [
+    159.06249596762484,
+    132.94283549125007
+   ],
+   "dist_to_goal": 451.50826888901,
+   "distinct_last6": 2,
+   "F_att": 2257.54134444505,
+   "F_rep": 2232.8229833478013,
+   "F_total": 25.853546379283245,
+   "min_clearance": 26.723914736295146,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "73": {
+   "outcome": "timeout",
+   "end": [
+    196.68875336225156,
+    218.707839528547
+   ],
+   "dist_to_goal": 364.21251129251266,
+   "distinct_last6": 2,
+   "F_att": 1821.0625564625632,
+   "F_rep": 2161.5955739172446,
+   "F_total": 363.56469384543254,
+   "min_clearance": 20.174319420547164,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "75": {
+   "outcome": "timeout",
+   "end": [
+    194.08742174081593,
+    56.62586243048147
+   ],
+   "dist_to_goal": 490.06434403523645,
+   "distinct_last6": 2,
+   "F_att": 2450.321720176182,
+   "F_rep": 2408.3541980703812,
+   "F_total": 59.30481235416401,
+   "min_clearance": 29.70185367990684,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth"
+   ]
+  },
+  "76": {
+   "outcome": "timeout",
+   "end": [
+    128.96747501810114,
+    107.94223249114049
+   ],
+   "dist_to_goal": 490.31429428900117,
+   "distinct_last6": 2,
+   "F_att": 2451.571471445006,
+   "F_rep": 2496.374427335516,
+   "F_total": 50.78832002883904,
+   "min_clearance": 27.701437614965954,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "80": {
+   "outcome": "timeout",
+   "end": [
+    101.92136051234523,
+    100.97672830404696
+   ],
+   "dist_to_goal": 514.1391259070175,
+   "distinct_last6": 2,
+   "F_att": 2570.695629535088,
+   "F_rep": 2754.2761318489434,
+   "F_total": 189.80761718745717,
+   "min_clearance": 30.076240572953267,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "85": {
+   "outcome": "timeout",
+   "end": [
+    221.5371208097016,
+    208.26205547886974
+   ],
+   "dist_to_goal": 353.81993400678374,
+   "distinct_last6": 2,
+   "F_att": 1769.0996700339185,
+   "F_rep": 1674.8885438435898,
+   "F_total": 112.35961522674701,
+   "min_clearance": 24.480838746788883,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "87": {
+   "outcome": "timeout",
+   "end": [
+    120.92719521607528,
+    96.38857825374497
+   ],
+   "dist_to_goal": 504.2424766257522,
+   "distinct_last6": 2,
+   "F_att": 2521.212383128761,
+   "F_rep": 2548.1488780990358,
+   "F_total": 31.68728387748882,
+   "min_clearance": 28.41112433589757,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth"
+   ]
+  },
+  "89": {
+   "outcome": "timeout",
+   "end": [
+    215.5987010652699,
+    165.19395956715655
+   ],
+   "dist_to_goal": 389.98034538980346,
+   "distinct_last6": 2,
+   "F_att": 1949.9017269490173,
+   "F_rep": 2615.4807147912975,
+   "F_total": 688.5183679865481,
+   "min_clearance": 17.302578389995197,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "91": {
+   "outcome": "timeout",
+   "end": [
+    91.72693505380566,
+    192.54003986621643
+   ],
+   "dist_to_goal": 462.13332588164286,
+   "distinct_last6": 2,
+   "F_att": 2310.6666294082147,
+   "F_rep": 2271.312644509175,
+   "F_total": 40.470351964348545,
+   "min_clearance": 31.47240342168429,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth"
+   ]
+  },
+  "97": {
+   "outcome": "timeout",
+   "end": [
+    151.00585159748036,
+    136.03595798586645
+   ],
+   "dist_to_goal": 454.7633078528875,
+   "distinct_last6": 6,
+   "F_att": 2273.816539264438,
+   "F_rep": 2303.850497080696,
+   "F_total": 41.982388609909286,
+   "min_clearance": 27.50760642448901,
+   "solved_by_another_planner": [
+    "APF rays|cap|arc",
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed2/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed4/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed5/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed9/models/arc_best.pth"
+   ]
+  },
+  "99": {
+   "outcome": "timeout",
+   "end": [
+    500.0,
+    250.4458882683227
+   ],
+   "dist_to_goal": 217.39012595094806,
+   "distinct_last6": 1,
+   "F_att": 1086.9506297547405,
+   "F_rep": 1214.3563787274309,
+   "F_total": 394.070952733163,
+   "min_clearance": 17.483034383690182,
+   "solved_by_another_planner": [
+    "out/arc_models/sacdyn_seed0/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed1/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed3/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed6/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth",
+    "out/arc_models/seed0/models/arc_best.pth",
+    "out/arc_models/seed3/models/arc_best.pth",
+    "out/arc_models/seed4/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed0/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed1/models/arc_best.pth",
+    "out/arc_models/td3dyn_seed6/models/arc_best.pth"
+   ]
+  }
+ },
+ "summary": {
+  "n_failures": 32,
+  "outcomes": [
+   "timeout"
+  ],
+  "dist_to_goal_min_median_max": [
+   177.9777628182835,
+   438.0046770966525,
+   555.4259380474961
+  ],
+  "two_point_oscillations": 27,
+  "solvable": 32,
+  "F_total_over_F_att_max": 0.36254724174738384
+ }
+}

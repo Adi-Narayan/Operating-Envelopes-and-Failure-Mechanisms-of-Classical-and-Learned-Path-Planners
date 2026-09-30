@@ -428,3 +428,277 @@ ARC's 3D arena (Table 7b, 2.12): 60/60 across stages 0–2, calm and wind. Idle-
 4. **New setup-cost evidence.** Training outcome depends heavily on the seed (1 of 5 never learns). Policy quality oscillates between checkpoints. The pipeline's reward-based `arc_best` choice is usually not the policy that evaluates best.
 5. **3D.** APF runs unchanged in two independent 3D worlds, including every stage of the arena the 3D ARC was built for. The 3D ARC checkpoints are not available, so no 3D head-to-head is claimed.
 6. **Future work.** Envelope-informed hybrid switching (see PAPER_EDITS §8.4).
+
+---
+
+## 4. Additional experiments for the RAS submission [FINAL; written into the paper]
+
+Scope agreed with the authors. Everything runs on the laptop; test 4 (ARC at 1000 episodes) was dropped.
+
+| Test | What it answers | Status |
+|---|---|---|
+| 1. APF with ARC's constraints, factorial over sensing {full, range-limited 50 m, ARC's 9 forward rays} × turn-rate cap {off, 54°/s = ARC's 9° per 1/6 s} × step/decision rate {1.8 m @ 10 Hz, 3.0 m @ 6 Hz} (`apf_variants.py`, `test1_matched.py`) | Does APF's robustness survive when sensing, turn rate and replanning rate are matched to ARC? | running |
+| 3a. TD3 trained **with moving obstacles** (same motion model and time scale as the evaluation suite, disjoint seeds), 10 seeds (`dyn_train_env.py`, `train_arc_seed.py --algo td3 --dynamic`) | Removes the "static-trained policy of course fails on moving obstacles" objection | training |
+| 3b. TD3 on the static layout, 10 seeds (`--algo td3`) | Is the 1-of-5 in-distribution result an artefact of the DDPG baseline? | queued |
+| 3c. SAC on the static layout, 5 seeds (optional, last in the queue) | Second modern baseline | queued |
+| 2. Sensor and actuation noise, both planners | Robustness axis of the envelope | to do |
+| 5. 100 randomly generated layouts, both planners | Replaces the single-layout limitation | to do |
+
+The all-switches-off APF variant reproduces `harness.run_apf` exactly (max path difference 0.0 m on the static layout and three dynamic seeds).
+First observation, static Corridor Gauntlet (deterministic): with only ARC's 9 forward rays, APF fails. Without the turn cap it oscillates in the gap between the central triangle and the eastern block until timeout. With the cap it detects obstacles too late to turn away at 54°/s and clips them (clearance 4.2–4.5 m). With full sensing, the cap and ARC's step rate cost less than 0.5 efficiency points (82.0% → 81.7–81.8%).
+
+**The discussion will be written only after the numbers are in.** Tests 1 and 3 may move APF below 100% on the dynamic suite, or put a dynamic-trained TD3 above it.
+
+### 4.1 Test 1 results [FINAL; in the paper as Table matched]
+`test1_matched.py` → `out/test1_matched.json`. Both planners at 18 m/s. The dynamic suite is the 50 paired Corridor Gauntlet environments of Table 4. Static layouts give one deterministic run each.
+
+**Dynamic suite, APF success out of 50** (every non-success is a collision; there were no timeouts):
+
+| sensing | turn cap | 10 Hz, 1.8 m | 6 Hz, 3.0 m | η on successes (10 Hz / 6 Hz) |
+|---|---|---|---|---|
+| full | off | 50 | 50 | 72.7 / 70.7 |
+| full | on (54°/s) | 40 | 40 | 81.6 / 81.4 |
+| 50 m range, exact geometry | off | 48 | 49 | 68.6 / 66.3 |
+| 50 m range, exact geometry | on | 32 | 32 | 82.4 / 82.2 |
+| ARC's 9 forward rays | off | 35 | 37 | 73.8 / 73.2 |
+| ARC's 9 forward rays | on | 35 | **36** (all three matched) | 80.3 / 81.5 |
+
+For reference: the corridor-trained ARC (arc_best, 5 seeds) scores 11.6 ± 13.3 / 50 on the same environments (Table 4).
+
+**Static layouts** (succ/coll/timeout, η %):
+
+| variant | Corridor | Dense Forest | Wall Maze | Scattered | Narrow Passage |
+|---|---|---|---|---|---|
+| full, no cap (both rates) | succ 82 | succ 86 | succ 87 | succ 78 | timeout |
+| full, cap (both rates) | succ 82 | succ 85 | succ 87 | succ 78 | timeout |
+| range, no cap | timeout | succ 84–87 | succ 85–86 | succ 85–86 | timeout |
+| range, cap @10 Hz / @6 Hz | coll / coll | coll / succ 89 | succ 85 | succ 85 | timeout |
+| rays, no cap | timeout | succ 69–71 | succ 71–72 | succ 71–73 | timeout |
+| rays, cap (both rates) | coll | succ 85 | succ 85 | succ 84 | coll |
+
+Measured facts only:
+- The step/decision rate changes dynamic success by ≤ 2 environments in every sensing/cap cell.
+- The turn cap alone (full sensing) removes 10 of 50 dynamic successes.
+- Restricting sensing to ARC's rays alone removes 13–15.
+- With all three asymmetries removed, APF succeeds in 36/50.
+- On the static Corridor Gauntlet, every sensing-limited variant fails, and the fully matched APF collides.
+
+### 4.2 Test 5 results: 100 random layouts (APF + the 5 corridor-trained ARC seeds) [FINAL; TD3/SAC in §4.8]
+`robustness_suite.py --test layouts` → `out/layouts_apf_arc.json`. Layouts are from `random_layouts.py` (the Corridor Gauntlet primitive mix at random positions, ≥ 25 m gaps). Static = one deterministic run per layout. Dynamic = one motion seed per layout, 18 m/s.
+
+| planner | static success /100 (coll / timeout / OOB) | η static | dynamic success /100 (coll / timeout / OOB) | η dynamic |
+|---|---|---|---|---|
+| APF, paper (full, no cap, 10 Hz) | 68 (0 / 32 / 0) | 87.9 | 98 (2 / 0 / 0) | 74.3 |
+| APF, all ARC constraints (rays, cap, 6 Hz) | 90 (4 / 6 / 0) | 87.4 | 80 (20 / 0 / 0) | 87.3 |
+| ARC seed 0 | 84 (11 / 0 / 5) | 92.5 | 58 (34 / 0 / 8) | 92.1 |
+| ARC seed 1 | 0 (0 / 100 / 0) | – | 0 (93 / 7 / 0) | – |
+| ARC seed 2 | 12 (83 / 0 / 5) | 94.9 | 6 (88 / 0 / 6) | 95.1 |
+| ARC seed 3 | 60 (39 / 0 / 1) | 94.3 | 42 (54 / 0 / 4) | 94.6 |
+| ARC seed 4 | 34 (62 / 0 / 4) | 90.7 | 21 (75 / 0 / 4) | 88.8 |
+
+**The paper's APF gets trapped on 32/100 static layouts, and all 32 are solvable** (another planner reaches the goal on each one). It stalls in open space, 180–555 m from the goal (median 438 m), oscillating between two points one step apart. At the stall point in layout 2, |F_att| = 2168, |F_rep| = 2209 and |F_total| = 47: attraction and summed repulsion nearly cancel. Restricting repulsion to obstacles within 50 m does not remove the traps (60/100 static). A 12-variant factorial on the 100 static layouts is running to isolate the factor responsible (`out/layouts_static_factorial.json`).
+
+### 4.3 Test 2 results: noise (APF + the 5 corridor-trained ARC seeds) [FINAL; TD3/SAC in §4.8]
+`robustness_suite.py --test noise` → `out/noise_apf_arc.json`. The 50 paired dynamic environments at 18 m/s; noise = (SD of perceived obstacle distance, SD of executed heading). Success out of 50:
+
+| level | APF paper | APF all-ARC-constraints | ARC s0 | s1 | s2 | s3 | s4 |
+|---|---|---|---|---|---|---|---|
+| L0 (0 m, 0°) | 50 | 36 | 26 | 0 | 1 | 26 | 5 |
+| L1 (1 m, 2°) | 48 | 32 | 27 | 0 | 1 | 22 | 7 |
+| L2 (2.5 m, 5°) | 48 | 37 | 21 | 0 | 2 | 22 | 13 |
+| L3 (5 m, 10°) | 47 | 29 | 15 | 0 | 2 | 16 | 7 |
+
+L0 reproduces Table 4 and Test 1 exactly (consistency check of the noise code path).
+
+### 4.4 Which factor removes APF's free-space traps on random layouts [FINAL]
+`out/layouts_static_factorial.json`. All 12 APF variants on the 100 random static layouts (one deterministic run each). Success / timeout / collision:
+
+| sensing | no cap, 10 Hz | no cap, 6 Hz | cap, 10 Hz | cap, 6 Hz |
+|---|---|---|---|---|
+| full | 68 / 32 / 0 | 69 / 31 / 0 | 81 / 13 / 6 | 83 / 11 / 6 |
+| 50 m range | 60 / 40 / 0 | 62 / 38 / 0 | 80 / 13 / 7 | 80 / 12 / 8 |
+| ARC's 9 rays | 68 / 30 / 2 | 68 / 29 / 3 | 89 / 3 / 8 | 90 / 6 / 4 |
+
+Measured:
+- **The turn-rate cap is the factor that removes most traps.** Timeouts fall from 29–40 to 3–13 in every sensing condition, while collisions rise from 0–3 to 4–8 (corrected: earlier text said '4–8 extra collisions'; for rays at 6 Hz the increase is 1).
+- Ray sensing alone does not change the success count (68 → 68); a 50 m range limit alone lowers it (60–62).
+- The step/decision rate changes results by ≤ 2 layouts.
+- Mechanism (from 4.2): the unconstrained planner ping-pongs between two points one step apart at a point where attraction and summed repulsion nearly cancel. A heading-rate limit makes that reversal impossible.
+
+### 4.5 TD3 checkpoint evaluation and training collapse [FINAL; all runs in out/collapse.json]
+`eval_checkpoints.py --layout corridor` → `out/checkpoints_corridor_td3dyn04.json`, `out/checkpoints_corridor_td304.json` (35 checkpoints each: ep50…ep300 + best). Static Corridor Gauntlet, fixed start; "rand" = successes over the 10 seeded random initial headings. Two of the 10 headings point out of the arena; most policies leave through the boundary on them (so 8/10 is the usual ceiling), but a policy that turns at once can recover (TD3-dyn seed6 ep200: 10/10).
+
+**Collapse diagnostic.** Best checkpoint run once on the static Corridor; fraction of steps whose heading change is exactly at the ±9° action limit, plus the mean training reward of the first/last 50 episodes.
+
+| run | device | reward first50 → last50 | best ckpt (det.) | rand (best) | steps at ±9° cap | state |
+|---|---|---|---|---|---|---|
+| ARC seed0 | cpu | 18 → 69 | collision | – | 16% | learned |
+| ARC seed1 | cpu | −19 → −15 | timeout | – | 100% (+9° every step) | **collapsed** (circles at start) |
+| ARC seed2 | cpu | 48 → 81 | collision | – | 15% | learned |
+| ARC seed3 | cpu | −22 → 86 | collision | – | 72% | learned |
+| ARC seed4 | cpu | 23 → 117 | success | – | 52% | learned |
+| TD3-dyn seed0 | cpu | 26 → 306 | collision | 5/10 | 22% | learned |
+| TD3-dyn seed1 | cpu | 53 → 295 | success | 8/10 | 18% | learned |
+| TD3-dyn seed2 | cpu | −59 → −61 | timeout | 0/10 | 100% | **collapsed** |
+| TD3-dyn seed3 | cpu | −58 → −62 | timeout | 0/10 | 100% | **collapsed** |
+| TD3-dyn seed4 | cpu | −56 → −24 | collision | 0/10 | 2.5% | partial |
+| TD3 seed0 | cpu | −10 → −9 | timeout | 0/10 | 100% | **collapsed** |
+| TD3 seed1 | cpu | −12 → −11 | timeout | 0/10 | 100% | **collapsed** |
+| TD3 seed2 (CPU retrain; replaces the CUDA run) | cpu | −9 → −12 | timeout | 0/10 | 100% (+9°) | **collapsed** |
+| TD3 seed3 | cpu | −10 → −11 | timeout | 0/10 | 100% | **collapsed** |
+| TD3 seed4 | cpu | −13 → −13 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3 seed5 | cpu | −12 → −11 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3 seed6 | cpu | −14 → −11 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3 seed7 | cpu | −13 → −8 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3 seed8 | cpu | −13 → −11 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3 seed9 | cpu | −12 → −8 | timeout | 0/10 | 100% (+9°) | **collapsed** |
+| TD3-dyn seed5 | cpu | −60 → −55 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3-dyn seed6 | cpu | 5 → 281 | collision | 0/10 (ep200: 10/10) | 12% | learned |
+| TD3-dyn seed7 | cpu | −62 → −57 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3-dyn seed8 | cpu | −58 → −58 | timeout | 0/10 | 100% (−9°) | **collapsed** |
+| TD3-dyn seed9 | cpu | 161 → 289 | collision | 0/10 (ep300: 8/10) | 7% | learned |
+
+Measured:
+- Collapse = the actor outputs the action bound at every step from the first episodes on; the agent circles at the start until the step limit (no collision, reward ≈ −10 static / ≈ −60 dynamic). All checkpoints of a collapsed run are identical in outcome.
+- Collapsed seeds: ARC 1/5; **TD3-dyn 5/10** (seeds 2, 3, 5, 7, 8; seed 4 partial; learned 0, 1, 6, 9); TD3 static **10/10** (all CPU-trained). Static seeds 5–7, 8–9 and the seed-2 CPU retrain are in `out/checkpoints_corridor_td357.json`, `out/checkpoints_corridor_td389.json`, `out/checkpoints_corridor_td3s2cpu.json`; seed 2 was removed from `out/checkpoints_corridor_td304.json`.
+- `out/checkpoints_corridor_td3dyn59.json` holds seeds 5–9.
+- In the seeds that learned, the "best" checkpoint (highest training reward) is often not the best-performing one: TD3-dyn seed6 best = 0/10 but ep200 = 10/10; seed9 best = 0/10 but ep300 = 8/10. This is the same checkpoint oscillation seen for ARC (§2.15).
+- Code check: `baselines.py` (last modified Mon 02:07) and `arc_2d/code` (Thu) predate every TD3 run; all TD3 runs used identical training code.
+- Device: static seed 2 was first trained on CUDA and learned (reward 176 → 315, best ckpt success, 8/10). To keep every reported run on one device it was retrained on the CPU with the same seed and code; the CPU run collapsed like the other nine. All reported baselines are CPU-trained. The CUDA run is archived (`out/arc_models_gpu/td3_seed2`, `out/gpu_run_td3_seed2_checkpoints.json`) and is not in any table. CUDA and CPU runs with the same seed are not numerically identical, so the CUDA success is one draw, not evidence of a device effect.
+- SAC-dyn (same hyperparameters, encoder, interface and training environment as TD3-dyn): 7/7 finished seeds learned (training reward by episode 100: 188–275), none collapsed; seeds 7–9 pending.
+- TD3 differs from ARC's DDPG in both algorithm and hyperparameters (γ 0.99 vs 0.9, Adam 3e-4 vs RMSprop, batch 64 vs 32, buffer 50k vs 4000, noise 0.1). The higher collapse rate therefore cannot yet be attributed to the algorithm alone.
+- GPU-trained checkpoints load and evaluate on the CPU (`map_location`); TD3 seed2 best reaches the goal in 232 steps.
+
+### 4.6 TD3 on the Table 3/4 protocol (Corridor Gauntlet, 18 m/s, paired 50-environment dynamic suite) [FINAL]
+`evaluate.py` → `out/final_corridor_td3dyn_a.json`, `…_td3dyn_b.json`, `…_td3_a.json`, `…_td3_b.json` (41 distinct checkpoints: best, final = ep300, oracle per seed). APF in all four files is 50/50 on the dynamic suite with outcomes identical to `final_corridor_a.json` (the ARC run), i.e. the APF baseline and the environment seeds are unchanged.
+
+**Dynamic successes out of 50 per seed**
+
+| variant | TD3 static (10 seeds) | TD3-dyn (10 seeds) | TD3-dyn pooled |
+|---|---|---|---|
+| best | 0 for every seed | 44, 42, 0, 0, 0, 0, 42, 0, 0, 29 | 157/500 |
+| final (ep300) | 0 for every seed | 45, 40, 0, 0, 0, 0, 46, 0, 0, 48 | 179/500 |
+| oracle | 0 for every seed | 45, 40, 0, 0, 0, 0, **50**, 0, 0, 48 | 183/500 |
+
+- Collapsed seeds (all TD3 static; TD3-dyn 2, 3, 5, 7, 8) fail by collision in 48–49 of 50 environments (circling at the start until a moving obstacle hits them) and time out in the rest; TD3-dyn seed 4 (partial) fails by collision 39 / out of bounds 11.
+- Static Corridor run (Table 3 protocol, fixed start, deterministic): TD3 static every checkpoint timeout; TD3-dyn final: success for seeds 0, 1, 6, 9; best: success for seed 1 only.
+
+**Paired efficiency, TD3-dyn seeds that learned (environments both planners solve)**
+
+| seed / ckpt | shared envs | APF eff. (mean ± SD) | TD3 eff. | APF L (m) | TD3 L (m) | TD3 more efficient in | envs only APF solves |
+|---|---|---|---|---|---|---|---|
+| s0 final | 45 | 71.8 ± 20.4 | 85.0 ± 7.3 | 1131 ± 1309 | 721 ± 67 | 37/45 | 5 |
+| s1 final | 40 | 72.5 ± 18.8 | 92.8 ± 7.9 | 986 ± 713 | 661 ± 63 | 38/40 | 10 |
+| s6 final | 46 | 74.7 ± 18.4 | 81.1 ± 4.1 | 1070 ± 1292 | 752 ± 38 | 36/46 | 4 |
+| s6 oracle (ep200) | 50 | 72.7 ± 19.6 | 80.3 ± 4.4 | 1093 ± 1246 | 760 ± 58 | 33/50 | 0 |
+| s9 final | 48 | 72.5 ± 20.0 | 86.5 ± 4.1 | 1106 ± 1271 | 704 ± 32 | 40/48 | 2 |
+
+- No environment is solved by TD3 but not by APF (APF solves all 50).
+- APF's path length on the shared environments is heavy-tailed (SD > mean in most rows): a few very long detours; TD3-dyn paths are tightly clustered (~660–760 m).
+- For comparison, the corridor-trained ARC seeds (static training) reach 26, 0, 1, 26, 5 / 50 on the same suite (Table 4, §3.2).
+
+### 4.7 SAC-dyn on the Table 3/4 protocol, seeds 0–6 [FINAL for 0–6; all 10 seeds in §4.8]
+`eval_checkpoints.py` → `out/checkpoints_corridor_sacdyn_a.json` (seeds 0–3), `…_sacdyn_b.json` (4–6); `evaluate.py` → `out/final_corridor_sacdyn_a.json`, `…_sacdyn_b.json`. APF outcomes identical to `final_corridor_a.json` in both files (50/50).
+
+**Oracle checkpoints (static Corridor, 10 random headings):** s0 ep300 10/10, s1 best 8/10, s2 ep150 6/10, s3 ep150 8/10, s4 ep200 8/10, s5 ep200 9/10, s6 ep250 8/10; deterministic run succeeds for every oracle.
+
+**Dynamic successes out of 50 per seed (APF: 50/50)**
+
+| variant | s0 | s1 | s2 | s3 | s4 | s5 | s6 | pooled |
+|---|---|---|---|---|---|---|---|---|
+| best | 40 | 48 | 44 | 49 | 41 | 38 | 39 | 299/350 (85%) |
+| final (ep300) | 45 | 40 | 22 | 39 | 40 | 43 | 32 | 261/350 (75%) |
+| oracle | 45 | 48 | 43 | 49 | 41 | 36 | 44 | 306/350 (87%) |
+
+- No SAC seed collapsed; the worst variant of any seed still reaches 22/50 (s2 final).
+- Failures are collisions (1–28 per model) and some out-of-bounds (0–12); no timeouts.
+- Static Corridor (deterministic, Table 3 protocol): best succeeds for s1, s3, s4, s5, s6; final for s0, s4, s6.
+
+**Paired efficiency, best checkpoint (environments both planners solve)**
+
+| seed | shared | APF eff. | SAC eff. | APF L (m) | SAC L (m) | SAC more efficient in | only APF solves |
+|---|---|---|---|---|---|---|---|
+| s0 | 40 | 72.1 ± 20.3 | 92.6 ± 7.2 | 1148 | 661 ± 60 | 37/40 | 10 |
+| s1 | 48 | 72.1 ± 19.7 | 83.4 ± 1.8 | 1110 | 730 ± 16 | 39/48 | 2 |
+| s2 | 44 | 72.7 ± 20.6 | 89.4 ± 8.3 | 1127 | 687 ± 67 | 42/44 | 6 |
+| s3 | 49 | 72.7 ± 19.8 | 86.7 ± 3.6 | 1099 | 702 ± 27 | 41/49 | 1 |
+| s4 | 41 | 73.8 ± 18.5 | 89.0 ± 9.8 | 966 | 692 ± 84 | 32/41 | 9 |
+| s5 | 38 | 75.2 ± 18.5 | 84.8 ± 6.6 | 1099 | 721 ± 53 | 35/38 | 12 |
+| s6 | 39 | 73.0 ± 21.0 | 90.1 ± 8.8 | 1147 | 682 ± 75 | 32/39 | 11 |
+
+- As for TD3-dyn: no environment is solved by SAC but not by APF; SAC is more efficient in 78–95% of the shared environments; SAC path lengths cluster at 660–730 m, APF's are heavy-tailed.
+
+### 4.8 All learned planners: final numbers (10 SAC seeds; generated by `report.py` → `out/report.md`, "Learned baselines" and "Envelope summary") [FINAL]
+**Training collapse** (`collapse_diagnostic.py` → `out/collapse.json`; collapsed = retained checkpoint at the ±9° bound on ≥ 99% of steps). Collapsed runs are at 100.0%; every other run is at ≤ 71.6% (ARC seed 3), so the threshold separates cleanly.
+
+| learner (training) | seeds | collapsed | device |
+|---|---|---|---|
+| ARC (static) | 5 | 1 (seed 1) | CPU |
+| TD3 (static) | 10 | 10 | CPU |
+| TD3 (moving obstacles) | 10 | 5 (2, 3, 5, 7, 8); seed 4 not collapsed but 0/50 | CPU |
+| SAC (moving obstacles) | 10 | 0 (fraction at bound 0.0–3.9%) | CPU |
+
+Fisher exact, collapse TD3-dyn vs SAC: p = 0.033. Wilson 95% interval of the collapse rate: TD3-dyn 24–76%, SAC 0–28%.
+
+**Table 3/4 protocol, corridor** (arc_best / oracle; dynamic successes /50, mean ± SD over seeds):
+
+| learner | static arc_best | static oracle | dynamic arc_best | dynamic oracle | pooled η shared (learner vs APF) | learner more efficient |
+|---|---|---|---|---|---|---|
+| ARC (static), 5 | 1/5 | 4/5 | 11.6 ± 13.3 (0–26) | 18.6 ± 11.0 | 93.0 vs 71.3 | 53/58 |
+| TD3 (static), 10 | 0/10 | 0/10 | 0.0 | 0.0 | – | – |
+| TD3-dyn, 10 | 1/10 | 4/10 | 15.7 ± 20.7 (0–44) | 18.3 ± 23.8 | 86.0 vs 72.6 | 135/157 |
+| SAC-dyn, 10 | 8/10 | 10/10 | 41.3 ± 6.9 (25–49) | 44.1 ± 4.0 | 88.0 vs 73.3 | 356/413 |
+
+SAC per seed (arc_best): 40, 48, 44, 49, 41, 38, 39, 47, 42, 25; oracle: 45, 48, 43, 49, 41, 36, 44, 44, 42, 49.
+- Seed-level exact permutation tests (arc_best): SAC vs TD3-dyn p = 0.0036; TD3-dyn vs TD3 static p = 0.087 (oracle: 0.0083 / 0.087).
+- Per policy vs APF: no learned policy solves any corridor environment APF fails. 7/10 SAC seeds are significantly less reliable (exact McNemar p < 0.05); s1, s3, s7 fail only 2, 1, 3 APF-solved environments (p = 0.5, 1, 0.25). Per-seed Wilcoxon on shared efficiency: p ≤ 0.0042 for every SAC seed; ≤ 1.7e-5 for every learned TD3-dyn seed.
+- Seed-mean shared path length: SAC 696 m vs APF 1061 m; TD3-dyn 715 vs 1120 m.
+- **Pooled Wilcoxon p-values (report.md) pool pairs that share APF runs; the paper reports per-policy tests instead** (for ARC: p = 2.6e-6 and 2.1e-7 for s0 and s3 with 26 pairs each; s4 p = 0.0625 with 5 pairs, the minimum attainable).
+
+**Envelope summary — % success, mean ± SD over ALL seeds of each learner** (a seed's 50-env/100-layout result where it exists, else its 10-env spot check):
+
+| test | APF | APF, ARC constraints | ARC (5) | TD3 static (10) | TD3-dyn (10) | SAC-dyn (10) |
+|---|---|---|---|---|---|---|
+| noise 0 | 100 | 72 | 23.2 ± 26.6 | 0 | 31.4 ± 41.3 | 82.6 ± 13.8 |
+| noise 1 m, 2° | 96 | 64 | 22.8 ± 24.8 | 0 | 31.0 ± 41.1 | 83.8 ± 12.5 |
+| noise 2.5 m, 5° | 96 | 74 | 23.2 ± 20.6 | 0 | 30.4 ± 41.4 | 81.6 ± 13.4 |
+| noise 5 m, 10° | 94 | 58 | 16.0 ± 14.6 | 0 | 23.2 ± 31.4 | 60.8 ± 17.6 |
+| random layouts static | 68 | 90 | 38.0 ± 34.4 | 0 | 36.0 ± 46.8 | 94.8 ± 8.3 |
+| random layouts dynamic | 98 | 80 | 25.4 ± 24.4 | 0 | 30.0 ± 39.0 | 75.6 ± 8.3 |
+| speed 3 m/s (r 1.58) | 60 | – | 6.4 | 0 | 5.2 | 11.6 |
+| speed 4.75 m/s (r 1.00) | 94 | – | 16.0 | 0 | 14.0 | 34.2 |
+| speed 9 m/s (r 0.53) | 96 | – | 22.0 | 0 | 22.4 | 48.8 |
+| speed 12 m/s (r 0.40) | 92 | – | 27.2 | 0 | 27.4 | 72.4 |
+| speed 18 m/s (r 0.26) | 100 | – | 23.2 | 0 | 31.4 | 82.6 |
+| speed 27 m/s (r 0.18) | 98 | – | 23.2 | 0 | 30.6 | 81.6 |
+
+Consistency checks passed: noise level 0 and the 18 m/s sweep reproduce the Table 4 arc_best counts of every learned model exactly; APF sweep counts identical across all sweep files; APF outcomes identical in every final_corridor_* file.
+
+**Spot checks for the 16 non-learning TD3 seeds** (10 TD3 static + TD3-dyn 2, 3, 4, 5, 7, 8; arc_best): 0 successes in `noise_collapsed10.json` (4 levels × 10 envs), `layouts_collapsed10.json` (10 static + 10 dynamic), `speed_sweep_corridor_collapsed10.json` (8 speeds × 10 envs) and `spot_urban_collapsed10.json` (6 TD3-dyn seeds, second layout, 10 envs).
+
+**Random-layout successes where APF fails were re-run and verified** (e.g. layouts 2, 8, 15 for TD3-dyn s0: end distance 8.7–9.5 m < 10 m goal radius, min clearance 8.0–13.6 m > 5 m; APF times out on each).
+
+### 4.9 Transfer of the moving-obstacle policies to the second layout [FINAL]
+`out/final_urban_learned_a.json`, `…_b.json` (best + oracle of TD3-dyn 0, 1, 6, 9 and SAC 0–9); APF 48/50 on this suite (fails 2).
+
+| learner | static (arc_best / oracle) | dynamic arc_best /50 | dynamic oracle /50 |
+|---|---|---|---|
+| ARC corridor → second (Table transfer) | 2/5 / 1/5 | 10.2 ± 10.4 | 10.8 ± 9.7 |
+| TD3-dyn, 4 learned seeds | 4/4 / 4/4 | 37.0 ± 4.3 | 40.5 ± 5.1 |
+| SAC-dyn, 10 seeds | 8/10 / 9/10 | 37.4 ± 10.2 (seed 9: 9/50) | 40.0 ± 2.5 |
+
+The 10 SAC policies solve 15 (arc_best) / 17 (oracle) of the 20 (policy, environment) pairs formed by the 2 environments APF fails. "Final" rows in report.md for the urban layout cover only seeds whose oracle is ep300 and are not used.
+
+### 4.10 Timing of the baselines [FINAL]
+`timing.py --no-3d --out timing_baselines` (idle machine after all runs): per-step cost TD3-dyn 1.27–1.35 ms, SAC 1.31–1.40 ms, ARC (seed 4, same session) 1.28 ms, APF 0.39 ms. Compute per 100 m: learned 42–47 ms vs APF 21 ms (factor ~2, as in the paper's original idle timing 50.2 vs 24.2 ms). Training wall clock per run (7–10 runs in parallel on a thermally limited CPU, all cores ~1.6 GHz): TD3 8.8–16.3 h, TD3-dyn 5.5–13.9 h, SAC 7.8–17.2 h — load-dependent, not an algorithm property.
+
+### 4.11 Corrections to earlier notes
+- "2 of the 10 random headings leave the arena for every planner, so 8/10 is the maximum" was wrong: TD3-dyn seed 6 ep200 reaches 10/10. It is the usual, not a hard, ceiling.
+- §4.4 collision wording corrected (see there).
+- The one GPU-trained TD3 run (static seed 2) is archived in `out/arc_models_gpu/` and `out/gpu_run_td3_seed2_checkpoints.json`; the reported seed 2 is a CPU retrain (collapsed).
+
+### 4.12 APF free-space traps, reproducible (`apf_traps.py` → `out/apf_traps.json`) [FINAL]
+The paper's APF fails on 32/100 random static layouts, all timeouts, all solvable (another planner reaches the goal on each). Stall points: 178–555 m from the goal (median 438 m), 16.9–39.3 m from the nearest obstacle; resultant force ≤ 36% of the attractive force at every stall point; two-point oscillation in 27 of the 32; of the other 5, four show 6 distinct positions in the last 6 steps (a longer cycle or slow drift) and one (layout 99) is stationary. Layout 2: |F_att| = 2168, |F_rep| = 2209, |F_total| = 47. (Earlier note said "180–555 m" and implied a two-point oscillation in every case; corrected here.)
+
+### 4.13 Independent audit of the paper's numbers (after the second revision round)
+An independent pass checked ~290 numeric claims in `paper.tex` against the JSON outputs. Corrected in the paper: the 36/50 matched-APF figure needs all three constraints (rays + turn cap at 10 Hz gives 35); Narrow Passage efficiency for θ ≥ 50° is 60.8–66.9% (not 66.6–66.9%); the three gain pairs agree to within 6 mm (1.4 mm holds only for the first two); SAC per-seed Wilcoxon p < 0.005 (max 0.0042); APF shared-pair path ~1070 m; "never succeeds where APF fails" scoped to the custom suite (on the second layout the learned policies solve some of APF's two failures); the 15.3 m kernel-distance claim scoped to the five static layouts; transfer wording (best ckpt worse in both transferred rows). The stall analysis was made reproducible (§4.12).

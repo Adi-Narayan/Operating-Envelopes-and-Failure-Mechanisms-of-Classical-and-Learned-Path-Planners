@@ -12,3 +12,9 @@ arc_2d/code/models/
 arc_2d/code/runs/
 arc_2d/code/visualization/
 dynamic_apf/results/
+
+# training-queue markers and the archived (unused) GPU run
+experiments/out/arc_models/**/STARTED
+experiments/out/arc_models/**/SKIPPED
+experiments/out/arc_models_gpu/
+experiments/watch_progress.cmd

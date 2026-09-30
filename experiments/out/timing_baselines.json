@@ -1,0 +1,184 @@
+{
+ "apf_static_run_ms": [
+  273.61042000120506,
+  6.81608365103619
+ ],
+ "apf_step_ms": 0.38503810680851125,
+ "apf_step_ms_all": [
+  0.38656067963264595,
+  0.37097402913857574,
+  0.4025373788148129,
+  0.38458786405243195,
+  0.37461456286639555,
+  0.37902451455999997,
+  0.3854883495645905,
+  0.38439563099177354,
+  0.3988492719092162,
+  0.3985298542617775
+ ],
+ "apf_steps_per_100m": 55.55555555555554,
+ "arc": [
+  {
+   "model": "out/arc_models/seed4/models/arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    347.3856666435798,
+    12.988329984324398
+   ],
+   "step_ms": 1.275463089948448,
+   "steps_per_100m": 33.33333431739243
+  },
+  {
+   "model": "out/arc_models/td3dyn_seed0/models/arc_checkpoint_ep300.pth",
+   "outcome": "success",
+   "run_ms": [
+    377.0952666721617,
+    27.786431026102466
+   ],
+   "step_ms": 1.2937957626645122,
+   "steps_per_100m": 33.33332283732525
+  },
+  {
+   "model": "out/arc_models/td3dyn_seed1/models/arc_checkpoint_ep300.pth",
+   "outcome": "success",
+   "run_ms": [
+    368.9286666922271,
+    21.646547566236954
+   ],
+   "step_ms": 1.2701612288503261,
+   "steps_per_100m": 33.33333161989866
+  },
+  {
+   "model": "out/arc_models/td3dyn_seed6/models/arc_checkpoint_ep300.pth",
+   "outcome": "success",
+   "run_ms": [
+    413.26613336180645,
+    41.76340916607876
+   ],
+   "step_ms": 1.3465659836494195,
+   "steps_per_100m": 33.33333662190148
+  },
+  {
+   "model": "out/arc_models/td3dyn_seed9/models/arc_checkpoint_ep300.pth",
+   "outcome": "success",
+   "run_ms": [
+    369.76003340290237,
+    31.65655083051453
+   ],
+   "step_ms": 1.3082067685010619,
+   "steps_per_100m": 33.33332994255212
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed0\\models\\arc_best.pth",
+   "outcome": "collision",
+   "run_ms": [
+    317.64963331321877,
+    52.46286982239311
+   ]
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed1\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    363.3156333429118,
+    2.4512520524916352
+   ],
+   "step_ms": 1.3076655982603502,
+   "steps_per_100m": 33.333324954666466
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed2\\models\\arc_best.pth",
+   "outcome": "collision",
+   "run_ms": [
+    267.5057667074725,
+    2.857024425055399
+   ]
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed3\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    353.8667666337763,
+    5.406915720702009
+   ],
+   "step_ms": 1.309194104638211,
+   "steps_per_100m": 33.33333002930908
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed4\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    372.100399962316,
+    13.73014171367868
+   ],
+   "step_ms": 1.3740995742796742,
+   "steps_per_100m": 33.33333002728943
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed5\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    362.74593335110694,
+    3.29202991494277
+   ],
+   "step_ms": 1.3227320081850507,
+   "steps_per_100m": 33.33332573114371
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed6\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    384.12136666011065,
+    3.8909319883497333
+   ],
+   "step_ms": 1.4023630704954884,
+   "steps_per_100m": 33.33333404412892
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed7\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    368.42820001766086,
+    6.418631604293172
+   ],
+   "step_ms": 1.3822399562236947,
+   "steps_per_100m": 33.33334336126056
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed8\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    369.26186666823924,
+    1.4445523914668543
+   ],
+   "step_ms": 1.366283122709469,
+   "steps_per_100m": 33.333339882390014
+  },
+  {
+   "model": "out/arc_models\\sacdyn_seed9\\models\\arc_best.pth",
+   "outcome": "success",
+   "run_ms": [
+    388.1207666903113,
+    8.33375640774792
+   ],
+   "step_ms": 1.3251502016153667,
+   "steps_per_100m": 33.333327398458515
+  }
+ ],
+ "arc_step_ms": [
+  1.3295323438477749,
+  0.04168028409893508
+ ],
+ "arc_run_ms_successful": [
+  372.18436154608537,
+  16.496645050018206
+ ],
+ "arc_steps_per_100m": [
+  33.33333159751666,
+  5.959809881837555e-06
+ ],
+ "compute_per_100m_ms": {
+  "apf": 21.391005933806177,
+  "arc": 44.31774248710142
+ }
+}

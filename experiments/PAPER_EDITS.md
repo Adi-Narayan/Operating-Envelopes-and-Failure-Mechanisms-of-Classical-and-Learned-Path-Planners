@@ -308,3 +308,25 @@ Keep the 3D ARC and hardware limitation paragraphs, updating "8 GB RAM, 4 GB VRA
 ## Data Availability
 
 > "The code, trained models and evaluation logs supporting this study are available at https://github.com/Adi-Narayan/Research-Paper. The experiments in Section 7 are reproduced by the scripts in the experiments/ directory."
+
+---
+
+# Second revision round (applied directly in `paper.tex`; evidence in `FINDINGS.md` §4)
+
+New material:
+- §4.4 *Additional Learned Baselines: TD3 and SAC* (new; Table `tab:baselines` hyperparameters; training distributions and seed ranges; definition of training collapse).
+- §6.4 Metrics: seed counts per learner; per-policy McNemar/Wilcoxon; seed-level exact permutation and Fisher tests (new refs `henderson2018`, `agarwal2021`).
+- §6.3 Hardware: baselines trained on CPU, ≤10 parallel runs, thermal limiting; one GPU-trained TD3 run retrained on CPU.
+- §7 *Stronger Learners and Moving-Obstacle Training* (new; Table `tab:baselines-results`, Figs. `baselines_seeds.png`, `baselines_training.png`).
+- §7 *APF Under the Learned Agent's Constraints* (new; Table `tab:matched`).
+- §7 *Sensing Noise and Unseen Layouts* (new; Table `tab:envelope`; APF free-space traps and the turn-cap factorial).
+- Speed-ratio, transfer, training-dynamics, APF-robustness and computational-cost sections extended with the baselines; Fig. `speed_envelope.png` redrawn with TD3/SAC.
+
+Rewritten: abstract, highlights (commented), keywords (+SAC), introduction (asymmetry paragraph, study description, contributions 1–4), Discussion §8.1, Limitations (training distribution, seed counts with Wilson intervals, untuned baselines, spot checks), Future work (training across speed ratios; hybrid kept as future work), Conclusion.
+
+Corrections to text that was already in the paper:
+- Table 4 efficiency test: the pooled Wilcoxon p = 2e-10 pooled pairs that share APF runs; replaced by per-policy tests (p = 2.6e-6, 2.1e-7; 0.06 at n = 5).
+- APF robustness: "four of five layouts" now qualified by the 32/100 random-layout traps.
+
+Unchanged by request: Acknowledgements.
+New references: `sac`, `sacapp`, `henderson2018`, `agarwal2021`.

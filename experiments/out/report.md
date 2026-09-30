@@ -124,3 +124,200 @@ APF: 50/50 success (95% CI 93–100%), 0 collisions, 0 timeouts; failures []; mi
  "apf3d_dynamic_ms_per_step": 0.870625994407713
 }
 ```
+
+## Learned baselines — training collapse (corridor-trained; policy at the ±9° action bound on ≥99% of steps)
+
+| method | seeds | collapsed seeds | devices |
+|---|---|---|---|
+| ARC | 5 | 1 [1] | cpu |
+| TD3 | 10 | 10 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] | cpu |
+| TD3-dyn | 10 | 5 [2, 3, 5, 7, 8] | cpu |
+| SAC-dyn | 10 | 0 [] | cpu |
+
+Fisher exact, collapse TD3-dyn vs SAC-dyn: p = 0.0325
+
+## Learned baselines — Table 3/4 protocol on the corridor layout (per seed; APF as in Table 4)
+
+| method / ckpt | static success | dynamic success per seed | mean ± SD | pooled | shared pairs | η APF (shared) | η method (shared) | Wilcoxon p |
+|---|---|---|---|---|---|---|---|---|
+| TD3 best | 0/10 | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | 0.0 ± 0.0 | 0/500 | 0 | – | – | nan |
+| TD3 final | 0/10 | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | 0.0 ± 0.0 | 0/500 | 0 | – | – | nan |
+| TD3 oracle | 0/10 | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | 0.0 ± 0.0 | 0/500 | 0 | – | – | nan |
+| TD3-dyn best | 1/10 | [44, 42, 0, 0, 0, 0, 42, 0, 0, 29] | 15.7 ± 20.7 | 157/500 | 157 | 72.6 ± 19.3 | 86.0 ± 8.3 | 2.8e-18 |
+| TD3-dyn final | 4/10 | [45, 40, 0, 0, 0, 0, 46, 0, 0, 48] | 17.9 ± 23.2 | 179/500 | 179 | 72.9 ± 19.3 | 86.1 ± 7.2 | 4.2e-19 |
+| TD3-dyn oracle | 4/10 | [45, 40, 0, 0, 0, 0, 50, 0, 0, 48] | 18.3 ± 23.8 | 183/500 | 183 | 72.4 ± 19.6 | 85.8 ± 7.4 | 1.2e-17 |
+| SAC-dyn best | 8/10 | [40, 48, 44, 49, 41, 38, 39, 47, 42, 25] | 41.3 ± 6.9 | 413/500 | 413 | 73.3 ± 19.2 | 88.0 ± 7.7 | 3.8e-49 |
+| SAC-dyn final | 4/10 | [45, 40, 22, 39, 40, 43, 32, 44, 40, 37] | 38.2 ± 6.8 | 382/500 | 382 | 72.6 ± 19.2 | 88.1 ± 7.0 | 1.6e-47 |
+| SAC-dyn oracle | 10/10 | [45, 48, 43, 49, 41, 36, 44, 44, 42, 49] | 44.1 ± 4.0 | 441/500 | 441 | 72.8 ± 19.6 | 87.9 ± 8.0 | 4.9e-49 |
+
+## Learned baselines — Table 3/4 protocol on the urban layout (per seed; APF as in Table 4)
+
+| method / ckpt | static success | dynamic success per seed | mean ± SD | pooled | shared pairs | η APF (shared) | η method (shared) | Wilcoxon p |
+|---|---|---|---|---|---|---|---|---|
+| TD3-dyn best | 4/4 | [37, 43, 35, 33] | 37.0 ± 4.3 | 148/200 | 141 | 79.6 ± 16.5 | 87.4 ± 9.1 | 1.5e-05 |
+| TD3-dyn final | 3/3 | [43, 42, 44] | 43.0 ± 1.0 | 129/150 | 124 | 78.9 ± 16.6 | 94.0 ± 5.7 | 3.1e-15 |
+| TD3-dyn oracle | 4/4 | [43, 42, 33, 44] | 40.5 ± 5.1 | 162/200 | 156 | 79.5 ± 16.4 | 92.5 ± 6.7 | 5.3e-15 |
+| SAC-dyn best | 8/10 | [43, 37, 37, 40, 44, 42, 41, 40, 41, 9] | 37.4 ± 10.2 | 374/500 | 359 | 78.7 ± 16.8 | 93.7 ± 6.2 | 8.4e-42 |
+| SAC-dyn final | 2/2 | [39, 43] | 41.0 ± 2.8 | 82/100 | 78 | 80.1 ± 15.8 | 93.8 ± 6.6 | 1e-08 |
+| SAC-dyn oracle | 9/10 | [39, 37, 39, 41, 42, 41, 35, 43, 41, 42] | 40.0 ± 2.5 | 400/500 | 383 | 78.8 ± 16.5 | 93.2 ± 7.0 | 2.9e-40 |
+
+## Per-seed dynamic success (corridor suite): method comparison over training seeds
+
+| ckpt | method | n seeds | mean ± SD | median | min–max | bootstrap 95% CI of mean |
+|---|---|---|---|---|---|---|
+| best | ARC | 5 | 11.6 ± 13.3 | 5.0 | 0–26 | 1.4–21.8 |
+| best | TD3 | 10 | 0.0 ± 0.0 | 0.0 | 0–0 | 0.0–0.0 |
+| best | TD3-dyn | 10 | 15.7 ± 20.7 | 0.0 | 0–44 | 4.2–28.5 |
+| best | SAC-dyn | 10 | 41.3 ± 6.9 | 41.5 | 25–49 | 36.8–44.9 |
+| best | exact permutation p: SAC-dyn vs TD3-dyn = 0.00359; TD3-dyn vs TD3 = 0.0867 | | | | | |
+| final | ARC | 5 | 9.4 ± 12.2 | 2.0 | 0–26 | 0.4–19.4 |
+| final | TD3 | 10 | 0.0 ± 0.0 | 0.0 | 0–0 | 0.0–0.0 |
+| final | TD3-dyn | 10 | 17.9 ± 23.2 | 0.0 | 0–48 | 4.6–31.9 |
+| final | SAC-dyn | 10 | 38.2 ± 6.8 | 40.0 | 22–45 | 33.8–41.7 |
+| final | exact permutation p: SAC-dyn vs TD3-dyn = 0.0177; TD3-dyn vs TD3 = 0.0867 | | | | | |
+| oracle | ARC | 5 | 18.6 ± 11.0 | 21.0 | 0–28 | 9.2–25.6 |
+| oracle | TD3 | 10 | 0.0 ± 0.0 | 0.0 | 0–0 | 0.0–0.0 |
+| oracle | TD3-dyn | 10 | 18.3 ± 23.8 | 0.0 | 0–50 | 4.8–32.7 |
+| oracle | SAC-dyn | 10 | 44.1 ± 4.0 | 44.0 | 36–49 | 41.6–46.4 |
+| oracle | exact permutation p: SAC-dyn vs TD3-dyn = 0.0083; TD3-dyn vs TD3 = 0.0867 | | | | | |
+
+## Envelope summary: % success, mean ± SD over ALL training seeds of each method
+
+(50-env / 100-layout result per seed where available, else the 10-env spot check)
+
+| test | APF | APF full|nocap|apf | APF rays|cap|arc | ARC | SAC-dyn | TD3 | TD3-dyn |
+|---|---|---|---|---|---|---|---|
+| layouts_dynamic |  | 98.0 ± 0.0 (n=1) | 80.0 ± 0.0 (n=1) | 25.4 ± 24.4 (n=5) | 75.6 ± 8.3 (n=10) | 0.0 ± 0.0 (n=10) | 30.0 ± 39.0 (n=10) |
+| layouts_static |  | 68.0 ± 0.0 (n=1) | 90.0 ± 0.0 (n=1) | 38.0 ± 34.4 (n=5) | 94.8 ± 8.3 (n=10) | 0.0 ± 0.0 (n=10) | 36.0 ± 46.8 (n=10) |
+| noise_L0 |  | 100.0 ± 0.0 (n=1) | 72.0 ± 0.0 (n=1) | 23.2 ± 26.6 (n=5) | 82.6 ± 13.8 (n=10) | 0.0 ± 0.0 (n=10) | 31.4 ± 41.3 (n=10) |
+| noise_L1 |  | 96.0 ± 0.0 (n=1) | 64.0 ± 0.0 (n=1) | 22.8 ± 24.8 (n=5) | 83.8 ± 12.5 (n=10) | 0.0 ± 0.0 (n=10) | 31.0 ± 41.1 (n=10) |
+| noise_L2 |  | 96.0 ± 0.0 (n=1) | 74.0 ± 0.0 (n=1) | 23.2 ± 20.6 (n=5) | 81.6 ± 13.4 (n=10) | 0.0 ± 0.0 (n=10) | 30.4 ± 41.4 (n=10) |
+| noise_L3 |  | 94.0 ± 0.0 (n=1) | 58.0 ± 0.0 (n=1) | 16.0 ± 14.6 (n=5) | 60.8 ± 17.6 (n=10) | 0.0 ± 0.0 (n=10) | 23.2 ± 31.4 (n=10) |
+| speed_12 | 92.0 ± 0.0 (n=1) |  |  | 27.2 ± 29.1 (n=5) | 72.4 ± 15.1 (n=10) | 0.0 ± 0.0 (n=10) | 27.4 ± 37.8 (n=10) |
+| speed_18 | 100.0 ± 0.0 (n=1) |  |  | 23.2 ± 26.6 (n=5) | 82.6 ± 13.8 (n=10) | 0.0 ± 0.0 (n=10) | 31.4 ± 41.3 (n=10) |
+| speed_27 | 98.0 ± 0.0 (n=1) |  |  | 23.2 ± 26.3 (n=5) | 81.6 ± 17.4 (n=10) | 0.0 ± 0.0 (n=10) | 30.6 ± 39.6 (n=10) |
+| speed_3 | 60.0 ± 0.0 (n=1) |  |  | 6.4 ± 6.2 (n=5) | 11.6 ± 4.0 (n=10) | 0.0 ± 0.0 (n=10) | 5.2 ± 7.0 (n=10) |
+| speed_4 | 74.0 ± 0.0 (n=1) |  |  | 13.6 ± 10.9 (n=5) | 26.4 ± 8.2 (n=10) | 0.0 ± 0.0 (n=10) | 9.8 ± 14.0 (n=10) |
+| speed_4.75 | 94.0 ± 0.0 (n=1) |  |  | 16.0 ± 14.6 (n=5) | 34.2 ± 14.2 (n=10) | 0.0 ± 0.0 (n=10) | 14.0 ± 18.6 (n=10) |
+| speed_6 | 92.0 ± 0.0 (n=1) |  |  | 21.2 ± 18.5 (n=5) | 50.6 ± 16.1 (n=10) | 0.0 ± 0.0 (n=10) | 20.6 ± 26.9 (n=10) |
+| speed_9 | 96.0 ± 0.0 (n=1) |  |  | 22.0 ± 21.9 (n=5) | 48.8 ± 15.6 (n=10) | 0.0 ± 0.0 (n=10) | 22.4 ± 29.6 (n=10) |
+
+## Noise robustness, 50 paired dynamic environments (success per model; L0–L3 as in robustness_suite.py)
+
+| method | model | L0 | L1 | L2 | L3 |
+|---|---|---|---|---|---|
+| APF full|nocap|apf | APF full|nocap|apf | 50 | 48 | 48 | 47 |
+| APF rays|cap|arc | APF rays|cap|arc | 36 | 32 | 37 | 29 |
+| ARC | seed0 | 26 | 27 | 21 | 15 |
+| ARC | seed1 | 0 | 0 | 0 | 0 |
+| ARC | seed2 | 1 | 1 | 2 | 2 |
+| ARC | seed3 | 26 | 22 | 22 | 16 |
+| ARC | seed4 | 5 | 7 | 13 | 7 |
+| TD3-dyn | td3dyn_seed0 | 44 | 46 | 43 | 26 |
+| TD3-dyn | td3dyn_seed1 | 42 | 41 | 46 | 37 |
+| TD3-dyn | td3dyn_seed6 | 42 | 41 | 42 | 34 |
+| TD3-dyn | td3dyn_seed9 | 29 | 27 | 21 | 19 |
+| SAC-dyn | sacdyn_seed0 | 40 | 42 | 41 | 36 |
+| SAC-dyn | sacdyn_seed1 | 48 | 47 | 45 | 33 |
+| SAC-dyn | sacdyn_seed2 | 44 | 44 | 43 | 28 |
+| SAC-dyn | sacdyn_seed3 | 49 | 50 | 49 | 31 |
+| SAC-dyn | sacdyn_seed4 | 41 | 43 | 42 | 28 |
+| SAC-dyn | sacdyn_seed5 | 38 | 36 | 36 | 22 |
+| SAC-dyn | sacdyn_seed6 | 39 | 41 | 41 | 41 |
+| SAC-dyn | sacdyn_seed7 | 47 | 49 | 49 | 45 |
+| SAC-dyn | sacdyn_seed8 | 42 | 37 | 35 | 24 |
+| SAC-dyn | sacdyn_seed9 | 25 | 30 | 27 | 16 |
+
+## Noise robustness, 10 paired dynamic environments (success per model; L0–L3 as in robustness_suite.py)
+
+| method | model | L0 | L1 | L2 | L3 |
+|---|---|---|---|---|---|
+| TD3 | td3_seed0 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed1 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed2 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed3 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed4 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed5 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed6 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed7 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed8 | 0 | 0 | 0 | 0 |
+| TD3 | td3_seed9 | 0 | 0 | 0 | 0 |
+| TD3-dyn | td3dyn_seed2 | 0 | 0 | 0 | 0 |
+| TD3-dyn | td3dyn_seed3 | 0 | 0 | 0 | 0 |
+| TD3-dyn | td3dyn_seed4 | 0 | 0 | 0 | 0 |
+| TD3-dyn | td3dyn_seed5 | 0 | 0 | 0 | 0 |
+| TD3-dyn | td3dyn_seed7 | 0 | 0 | 0 | 0 |
+| TD3-dyn | td3dyn_seed8 | 0 | 0 | 0 | 0 |
+
+## Random layouts, 100 layouts (success per model)
+
+| method | model | static | dynamic |
+|---|---|---|---|
+| APF full|nocap|apf | APF full|nocap|apf | 68/100 | 98/100 |
+| APF rays|cap|arc | APF rays|cap|arc | 90/100 | 80/100 |
+| ARC | seed0 | 84/100 | 58/100 |
+| ARC | seed1 | 0/100 | 0/100 |
+| ARC | seed2 | 12/100 | 6/100 |
+| ARC | seed3 | 60/100 | 42/100 |
+| ARC | seed4 | 34/100 | 21/100 |
+| TD3-dyn | td3dyn_seed0 | 98/100 | 79/100 |
+| TD3-dyn | td3dyn_seed1 | 99/100 | 83/100 |
+| TD3-dyn | td3dyn_seed6 | 84/100 | 75/100 |
+| TD3-dyn | td3dyn_seed9 | 79/100 | 63/100 |
+| SAC-dyn | sacdyn_seed0 | 100/100 | 86/100 |
+| SAC-dyn | sacdyn_seed1 | 93/100 | 73/100 |
+| SAC-dyn | sacdyn_seed2 | 98/100 | 82/100 |
+| SAC-dyn | sacdyn_seed3 | 98/100 | 75/100 |
+| SAC-dyn | sacdyn_seed4 | 98/100 | 77/100 |
+| SAC-dyn | sacdyn_seed5 | 97/100 | 77/100 |
+| SAC-dyn | sacdyn_seed6 | 99/100 | 81/100 |
+| SAC-dyn | sacdyn_seed7 | 99/100 | 79/100 |
+| SAC-dyn | sacdyn_seed8 | 94/100 | 70/100 |
+| SAC-dyn | sacdyn_seed9 | 72/100 | 56/100 |
+
+## Random layouts, 10 layouts (success per model)
+
+| method | model | static | dynamic |
+|---|---|---|---|
+| TD3 | td3_seed0 | 0/10 | 0/10 |
+| TD3 | td3_seed1 | 0/10 | 0/10 |
+| TD3 | td3_seed2 | 0/10 | 0/10 |
+| TD3 | td3_seed3 | 0/10 | 0/10 |
+| TD3 | td3_seed4 | 0/10 | 0/10 |
+| TD3 | td3_seed5 | 0/10 | 0/10 |
+| TD3 | td3_seed6 | 0/10 | 0/10 |
+| TD3 | td3_seed7 | 0/10 | 0/10 |
+| TD3 | td3_seed8 | 0/10 | 0/10 |
+| TD3 | td3_seed9 | 0/10 | 0/10 |
+| TD3-dyn | td3dyn_seed2 | 0/10 | 0/10 |
+| TD3-dyn | td3dyn_seed3 | 0/10 | 0/10 |
+| TD3-dyn | td3dyn_seed4 | 0/10 | 0/10 |
+| TD3-dyn | td3dyn_seed5 | 0/10 | 0/10 |
+| TD3-dyn | td3dyn_seed7 | 0/10 | 0/10 |
+| TD3-dyn | td3dyn_seed8 | 0/10 | 0/10 |
+
+## Speed sweep, 50 environments per speed (success per seed, by method)
+
+| v (m/s) | r | APF | ARC | TD3 | TD3-dyn | SAC-dyn |
+|---|---|---|---|---|---|---|
+| 3 | 1.58 | 30/50 | [3, 0, 1, 8, 4] |  | [8, 7, 7, 4] | [10, 5, 6, 5, 6, 5, 6, 7, 6, 2] |
+| 4 | 1.19 | 37/50 | [14, 0, 3, 8, 9] |  | [14, 17, 13, 5] | [17, 18, 13, 17, 12, 10, 14, 14, 13, 4] |
+| 4.75 | 1.00 | 47/50 | [19, 0, 3, 10, 8] |  | [16, 20, 21, 13] | [25, 23, 14, 19, 20, 13, 17, 22, 18, 0] |
+| 6 | 0.79 | 46/50 | [24, 0, 12, 13, 4] |  | [26, 29, 21, 27] | [31, 32, 30, 23, 25, 26, 30, 25, 27, 4] |
+| 9 | 0.53 | 48/50 | [25, 0, 7, 20, 3] |  | [32, 29, 20, 31] | [33, 19, 34, 22, 25, 30, 29, 13, 27, 12] |
+| 12 | 0.40 | 46/50 | [20, 0, 7, 36, 5] |  | [41, 45, 32, 19] | [40, 40, 37, 43, 37, 31, 45, 35, 36, 18] |
+| 18 | 0.26 | 50/50 | [26, 0, 1, 26, 5] |  | [44, 42, 42, 29] | [40, 48, 44, 49, 41, 38, 39, 47, 42, 25] |
+| 27 | 0.18 | 49/50 | [32, 0, 0, 14, 12] |  | [38, 35, 40, 40] | [37, 50, 37, 50, 45, 47, 35, 50, 30, 27] |
+
+## Speed sweep, 10 environments per speed (success per seed, by method)
+
+| v (m/s) | r | APF | ARC | TD3 | TD3-dyn | SAC-dyn |
+|---|---|---|---|---|---|---|
+| 3 | 1.58 | 8/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |
+| 4 | 1.19 | 7/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |
+| 4.75 | 1.00 | 9/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |
+| 6 | 0.79 | 9/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |
+| 9 | 0.53 | 9/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |
+| 12 | 0.40 | 9/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |
+| 18 | 0.26 | 10/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |
+| 27 | 0.18 | 10/10 |  | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | [0, 0, 0, 0, 0, 0] |  |

@@ -1,0 +1,4823 @@
+{
+ "test": "layouts",
+ "models": [
+  "out/arc_models/sacdyn_seed7/models/arc_best.pth",
+  "out/arc_models/sacdyn_seed8/models/arc_best.pth",
+  "out/arc_models/sacdyn_seed9/models/arc_best.pth"
+ ],
+ "apf_variants": [],
+ "results": {
+  "0": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 240,
+     "path_length": 720.0000265155753,
+     "efficiency": 84.45997353130319,
+     "min_clearance": 12.635029725070607
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 203,
+     "path_length": 608.9999110998865,
+     "efficiency": 99.85417415285796,
+     "min_clearance": 5.6753760496157355
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 687.0002243418128,
+     "efficiency": 88.51697718192717,
+     "min_clearance": 12.631103618819711
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 176,
+     "path_length": 528.0000584017068,
+     "efficiency": 115.17268268136712,
+     "min_clearance": 4.172809462847624
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0001262734968,
+     "efficiency": 90.09062489775535,
+     "min_clearance": 5.6753760496157355
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 241,
+     "path_length": 723.0001132460986,
+     "efficiency": 84.10950713273796,
+     "min_clearance": 9.661595870473793
+    }
+   }
+  },
+  "1": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 660.0000704107135,
+     "efficiency": 92.13814650686432,
+     "min_clearance": 15.038025582213903
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 687.0000427960667,
+     "efficiency": 88.5170005733095,
+     "min_clearance": 8.913705076255324
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 197,
+     "path_length": 591.0000989089318,
+     "efficiency": 102.89538579487376,
+     "min_clearance": 15.674786089666263
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 230,
+     "path_length": 690.0000225253444,
+     "efficiency": 88.13214666208135,
+     "min_clearance": 6.666357472838185
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9998732448266,
+     "efficiency": 90.89864679210287,
+     "min_clearance": 10.384180868727071
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 186,
+     "path_length": 557.9998829107906,
+     "efficiency": 108.98063788978463,
+     "min_clearance": 16.851061564617154
+    }
+   }
+  },
+  "2": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 237,
+     "path_length": 711.0000109644812,
+     "efficiency": 85.52908895114064,
+     "min_clearance": 14.146241480752973
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0000718162257,
+     "efficiency": 90.09063216603543,
+     "min_clearance": 10.6246411840897
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 231,
+     "path_length": 692.9999330834546,
+     "efficiency": 87.75063355557337,
+     "min_clearance": 9.53971587447244
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 669.0000259098631,
+     "efficiency": 90.89862604913623,
+     "min_clearance": 7.040814888159448
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9997549146369,
+     "efficiency": 92.98349536840492,
+     "min_clearance": 10.266336489918375
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.999941340121,
+     "efficiency": 92.1381645255404,
+     "min_clearance": 11.304968452324276
+    }
+   }
+  },
+  "3": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999734410537,
+     "efficiency": 96.98753709398704,
+     "min_clearance": 23.34981271583515
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 204,
+     "path_length": 611.9998934306191,
+     "efficiency": 99.3646957047013,
+     "min_clearance": 14.043112296293186
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 618.0000779192351,
+     "efficiency": 98.39996037992466,
+     "min_clearance": 12.282517989519885
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 169,
+     "path_length": 506.99996250086116,
+     "efficiency": 119.94317096609213,
+     "min_clearance": 2.992283341935311
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999182760203,
+     "efficiency": 97.45383196531743,
+     "min_clearance": 6.926790495758552
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9999603400959,
+     "efficiency": 97.92461685301772,
+     "min_clearance": 11.457126814899173
+    }
+   }
+  },
+  "4": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 231,
+     "path_length": 692.9999056578465,
+     "efficiency": 87.75063702832202,
+     "min_clearance": 16.104275723374997
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 614.9998642586967,
+     "efficiency": 98.87999447828034,
+     "min_clearance": 6.168565847132825
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 672.0000802043019,
+     "efficiency": 90.49282131566895,
+     "min_clearance": 15.848025776432168
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 231,
+     "path_length": 693.0001063896054,
+     "efficiency": 87.75061161080829,
+     "min_clearance": 17.61804582123734
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 29,
+     "path_length": 86.99999884536952,
+     "efficiency": 698.9791263115598,
+     "min_clearance": 3.683098592250257
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 678.0000100498569,
+     "efficiency": 89.6920092634974,
+     "min_clearance": 7.7589722667516625
+    }
+   }
+  },
+  "5": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 698.9999303531706,
+     "efficiency": 86.99740950091105,
+     "min_clearance": 16.300450261253612
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 204,
+     "path_length": 611.9999500162241,
+     "efficiency": 99.36468651742697,
+     "min_clearance": 14.759041569328922
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 671.9999098421702,
+     "efficiency": 90.49284425696658,
+     "min_clearance": 9.919473063470255
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 687.0000070380365,
+     "efficiency": 88.51700518057812,
+     "min_clearance": 16.894359005055982
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999810364282,
+     "efficiency": 96.987535919096,
+     "min_clearance": 22.940780443641138
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 227,
+     "path_length": 681.0001699171276,
+     "efficiency": 89.29686932301844,
+     "min_clearance": 19.893890595623034
+    }
+   }
+  },
+  "6": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 662.9999128842535,
+     "efficiency": 91.72125365370826,
+     "min_clearance": 8.266820486937405
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 247,
+     "path_length": 741.0000143096906,
+     "efficiency": 82.06637248002522,
+     "min_clearance": 9.035258448422134
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.9997986186274,
+     "efficiency": 92.13818444993505,
+     "min_clearance": 14.192304849910814
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9998912700522,
+     "efficiency": 97.92462774457769,
+     "min_clearance": 15.485640787598973
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 633.000127270115,
+     "efficiency": 96.0682005615042,
+     "min_clearance": 13.901654077714909
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000216717483,
+     "efficiency": 96.52568427009962,
+     "min_clearance": 14.85664263657473
+    }
+   }
+  },
+  "7": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0000095025498,
+     "efficiency": 93.41195436926473,
+     "min_clearance": 16.814760979306723
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 642.0001161599173,
+     "efficiency": 94.72145199253436,
+     "min_clearance": 12.680565598433741
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000431306571,
+     "efficiency": 96.52568098226514,
+     "min_clearance": 10.506334369663527
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 236,
+     "path_length": 708.0001106174826,
+     "efficiency": 85.89148824991932,
+     "min_clearance": 6.356955285369593
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.9999310596252,
+     "efficiency": 86.62562557556437,
+     "min_clearance": 5.144209884233432
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 102,
+     "path_length": 306.00000059731457,
+     "efficiency": 198.729356416141,
+     "min_clearance": 4.6026441705835826
+    }
+   }
+  },
+  "8": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 639.0001022150097,
+     "efficiency": 95.16615564105409,
+     "min_clearance": 12.941740089779271
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9998825033863,
+     "efficiency": 92.98347722826728,
+     "min_clearance": 10.59642075799369
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 250,
+     "path_length": 750.0000779795157,
+     "efficiency": 81.08156914578879,
+     "min_clearance": 17.051664263082124
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.0000367792768,
+     "efficiency": 97.45381345795242,
+     "min_clearance": 9.699976650141071
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0001026549303,
+     "efficiency": 94.28088915293796,
+     "min_clearance": 8.809180497910742
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 678.0001633509937,
+     "efficiency": 89.69198898343298,
+     "min_clearance": 7.754409628932819
+    }
+   }
+  },
+  "9": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 665.9999968709396,
+     "efficiency": 91.3080832849123,
+     "min_clearance": 13.47867555804386
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9999423238216,
+     "efficiency": 92.98346872320217,
+     "min_clearance": 10.62715068336762
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 698.9999027666049,
+     "efficiency": 86.99741293433034,
+     "min_clearance": 15.094398127403373
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 120,
+     "path_length": 360.0000203515775,
+     "efficiency": 168.91994373404378,
+     "min_clearance": 4.773739845670498
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 183,
+     "path_length": 549.0001271696941,
+     "efficiency": 110.76715682298295,
+     "min_clearance": 11.168668136746835
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999406256543,
+     "efficiency": 96.98754217003979,
+     "min_clearance": 8.439187940617602
+    }
+   }
+  },
+  "10": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 614.999935659064,
+     "efficiency": 98.87998299849389,
+     "min_clearance": 22.534302964127356
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 614.9999425398743,
+     "efficiency": 98.87998189219395,
+     "min_clearance": 11.708950093768664
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999736138284,
+     "efficiency": 97.45382332287883,
+     "min_clearance": 11.402407842933005
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0001074698696,
+     "efficiency": 96.5256711245108,
+     "min_clearance": 15.01424936377307
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0001246944327,
+     "efficiency": 96.52566848544384,
+     "min_clearance": 12.460292286583575
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.999980412951,
+     "efficiency": 96.98753601553861,
+     "min_clearance": 6.158131524675844
+    }
+   }
+  },
+  "11": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9999409705309,
+     "efficiency": 97.92461990737748,
+     "min_clearance": 19.418367199796837
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 239,
+     "path_length": 716.9998690189932,
+     "efficiency": 84.81338115897509,
+     "min_clearance": 11.953914391035813
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 265,
+     "path_length": 794.9998900469466,
+     "efficiency": 76.49206489632603,
+     "min_clearance": 8.937622843145187
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 642.0000110386096,
+     "efficiency": 94.72146750225824,
+     "min_clearance": 12.983609663623348
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 699.0000841273045,
+     "efficiency": 86.99739036221337,
+     "min_clearance": 15.007901698383025
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 275,
+     "path_length": 824.9998246448055,
+     "efficiency": 73.71054073644764,
+     "min_clearance": 6.925369597479357
+    }
+   }
+  },
+  "12": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 683.9997744314719,
+     "efficiency": 88.90526788928875,
+     "min_clearance": 17.13033567552088
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0000673775577,
+     "efficiency": 94.28089430949875,
+     "min_clearance": 21.325545966052207
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.999823047802,
+     "efficiency": 92.98348568146064,
+     "min_clearance": 9.705746302645231
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 255,
+     "path_length": 764.9999401379952,
+     "efficiency": 79.49174894193274,
+     "min_clearance": 10.091387233745177
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 231,
+     "path_length": 692.9998616073534,
+     "efficiency": 87.7506426061858,
+     "min_clearance": 13.913237124187765
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 235,
+     "path_length": 704.9999684332151,
+     "efficiency": 86.2570012835451,
+     "min_clearance": 13.03227265730084
+    }
+   }
+  },
+  "13": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 638.9998719975321,
+     "efficiency": 95.16618992730871,
+     "min_clearance": 17.850271454213264
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 686.9999905578268,
+     "efficiency": 88.51700730398254,
+     "min_clearance": 8.256030432311825
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0001302197363,
+     "efficiency": 90.09062437106036,
+     "min_clearance": 18.650101467263916
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999486503698,
+     "efficiency": 97.45382722157224,
+     "min_clearance": 17.000023219405783
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 184,
+     "path_length": 551.9999397735394,
+     "efficiency": 110.16519894366505,
+     "min_clearance": 6.986420402410297
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 674.9998105782483,
+     "efficiency": 90.09066703285193,
+     "min_clearance": 7.8422046372289245
+    }
+   }
+  },
+  "14": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 236,
+     "path_length": 707.9999154953513,
+     "efficiency": 85.89151192129256,
+     "min_clearance": 12.318052141213709
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 672.0000343489861,
+     "efficiency": 90.49282749063426,
+     "min_clearance": 12.417242987484798
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 192,
+     "path_length": 576.000165300904,
+     "efficiency": 105.574940504184,
+     "min_clearance": 11.301175953719603
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 256,
+     "path_length": 767.9999860566121,
+     "efficiency": 79.1812295391897,
+     "min_clearance": 10.813283844876997
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 47,
+     "path_length": 140.99999784854327,
+     "efficiency": 431.28499368747583,
+     "min_clearance": 3.595756525148343
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 167,
+     "path_length": 500.9999990254903,
+     "efficiency": 121.37960738588562,
+     "min_clearance": 4.37246032210101
+    }
+   }
+  },
+  "15": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 234,
+     "path_length": 702.0000534328367,
+     "efficiency": 86.62561047491594,
+     "min_clearance": 4.974370307082722
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 695.9998613546079,
+     "efficiency": 87.37240703423092,
+     "min_clearance": 10.837263701348824
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 197,
+     "path_length": 590.9999502370472,
+     "efficiency": 102.89541167922607,
+     "min_clearance": 26.21051633615836
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9998218376345,
+     "efficiency": 92.55890361119681,
+     "min_clearance": 21.009277609466434
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.0000374923263,
+     "efficiency": 95.61506225976726,
+     "min_clearance": 12.216804280882892
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 190,
+     "path_length": 570.0000588790398,
+     "efficiency": 106.68627526396078,
+     "min_clearance": 19.765368586779353
+    }
+   }
+  },
+  "16": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 662.9999731154053,
+     "efficiency": 91.72124532116379,
+     "min_clearance": 10.070208109830904
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 671.9999466357542,
+     "efficiency": 90.49283930226966,
+     "min_clearance": 11.97440919989481
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 696.0002146796439,
+     "efficiency": 87.37236267956233,
+     "min_clearance": 11.369069604503773
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0001169116447,
+     "efficiency": 91.72122542799966,
+     "min_clearance": 5.690056740878355
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0000483569709,
+     "efficiency": 91.72123491203922,
+     "min_clearance": 10.923021085635531
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 683.9999872460148,
+     "efficiency": 88.9052402279813,
+     "min_clearance": 8.374005703442327
+    }
+   }
+  },
+  "17": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000376067117,
+     "efficiency": 96.98752716851854,
+     "min_clearance": 13.094772066083458
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9999805875241,
+     "efficiency": 90.89863220719073,
+     "min_clearance": 11.851655762188058
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 275,
+     "path_length": 825.0000233698942,
+     "efficiency": 73.7105229811345,
+     "min_clearance": 17.936405139267347
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.000047685777,
+     "efficiency": 94.28089718788411,
+     "min_clearance": 13.393750901069627
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0000766459484,
+     "efficiency": 92.55886771351733,
+     "min_clearance": 12.89149967768737
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 187,
+     "path_length": 560.9999985829384,
+     "efficiency": 108.39783125784224,
+     "min_clearance": 6.270715882802335
+    }
+   }
+  },
+  "18": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 650.999981499623,
+     "efficiency": 93.41195838740327,
+     "min_clearance": 12.616380609974929
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9998763408438,
+     "efficiency": 96.9875521139425,
+     "min_clearance": 12.158614780499674
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 266,
+     "path_length": 798.0001068136996,
+     "efficiency": 76.2044800029582,
+     "min_clearance": 18.974780894121665
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9997893363386,
+     "efficiency": 97.4538521026096,
+     "min_clearance": 12.74826839439443
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 615.0000382694499,
+     "efficiency": 98.87996650074986,
+     "min_clearance": 11.217114418484039
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 177,
+     "path_length": 530.9999339470332,
+     "efficiency": 114.52201647186824,
+     "min_clearance": 17.616084663674037
+    }
+   }
+  },
+  "19": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999391266506,
+     "efficiency": 96.06822911538383,
+     "min_clearance": 13.019026020054973
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 642.0000385367948,
+     "efficiency": 94.7214634451425,
+     "min_clearance": 15.024631595928348
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 297,
+     "path_length": 891.0000033603033,
+     "efficiency": 68.25048591773374,
+     "min_clearance": 14.437105329321128
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 92,
+     "path_length": 276.0000150591754,
+     "efficiency": 220.3303618262664,
+     "min_clearance": 4.6932824686782055
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 648.0000569904091,
+     "efficiency": 93.84441023736382,
+     "min_clearance": 14.94781307106592
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 205,
+     "path_length": 614.9999120073281,
+     "efficiency": 98.87998680123141,
+     "min_clearance": 3.9468750025947856
+    }
+   }
+  },
+  "20": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 702.0000314521046,
+     "efficiency": 86.62561318730091,
+     "min_clearance": 10.385678011631352
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 638.9999933504544,
+     "efficiency": 95.16617185423301,
+     "min_clearance": 7.5082764998679705
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.000073612015,
+     "efficiency": 90.09063192635577,
+     "min_clearance": 11.110528491629053
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0001038245334,
+     "efficiency": 92.5588638845696,
+     "min_clearance": 12.468107520758778
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 648.0000234912704,
+     "efficiency": 93.8444150887632,
+     "min_clearance": 10.454282248424963
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0000290723899,
+     "efficiency": 90.0906378709525,
+     "min_clearance": 8.697718176164807
+    }
+   }
+  },
+  "21": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9999215710143,
+     "efficiency": 97.92462296646046,
+     "min_clearance": 9.674420674757808
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.9999137637677,
+     "efficiency": 86.62562770984451,
+     "min_clearance": 9.09460222372384
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 282,
+     "path_length": 845.9999195215742,
+     "efficiency": 71.88083802234017,
+     "min_clearance": 9.026767029600851
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 633.000119630738,
+     "efficiency": 96.06820172090555,
+     "min_clearance": 12.371271780734428
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 243,
+     "path_length": 729.0001673121335,
+     "efficiency": 83.41724173570151,
+     "min_clearance": 8.604259874933582
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 128,
+     "path_length": 384.0000016704673,
+     "efficiency": 158.36245551433277,
+     "min_clearance": 11.777207704686264
+    }
+   }
+  },
+  "22": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 672.00023196118,
+     "efficiency": 90.49280087980091,
+     "min_clearance": 11.695689845904548
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9998366466318,
+     "efficiency": 92.55890152488799,
+     "min_clearance": 11.243620703575264
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 230,
+     "path_length": 690.000197383071,
+     "efficiency": 88.13212432790395,
+     "min_clearance": 17.063931720001847
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 194,
+     "path_length": 581.9999434432922,
+     "efficiency": 104.48657919494849,
+     "min_clearance": 10.767652644426525
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 191,
+     "path_length": 573.0001603550683,
+     "efficiency": 106.1276896403668,
+     "min_clearance": 10.890517074928844
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 192,
+     "path_length": 575.9999280042719,
+     "efficiency": 105.57498399824816,
+     "min_clearance": 10.923037692747638
+    }
+   }
+  },
+  "23": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 654.0001120844695,
+     "efficiency": 92.98344458722175,
+     "min_clearance": 10.29903352838904
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0000503251795,
+     "efficiency": 90.09063503439364,
+     "min_clearance": 8.574624435763853
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 684.000008466979,
+     "efficiency": 88.9052374697139,
+     "min_clearance": 7.0675460033142405
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999781907031,
+     "efficiency": 96.06822318676696,
+     "min_clearance": 16.031271805019994
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 270,
+     "path_length": 810.0000323779484,
+     "efficiency": 75.07553179166838,
+     "min_clearance": 8.88082948756939
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 272,
+     "path_length": 816.0000877384903,
+     "efficiency": 74.52350078855838,
+     "min_clearance": 7.580758634275237
+    }
+   }
+  },
+  "24": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 227,
+     "path_length": 680.9999922835837,
+     "efficiency": 89.2968926154113,
+     "min_clearance": 15.084684459796414
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.999985222297,
+     "efficiency": 92.13815839944459,
+     "min_clearance": 10.84795212288233
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0002341493544,
+     "efficiency": 92.55884552427575,
+     "min_clearance": 7.366443024617174
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 257,
+     "path_length": 771.0000773077106,
+     "efficiency": 78.87312202923813,
+     "min_clearance": 6.640910529354415
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 639.000032821674,
+     "efficiency": 95.16616597579062,
+     "min_clearance": 13.208059662758362
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9998021881337,
+     "efficiency": 96.98756358426483,
+     "min_clearance": 7.969526481994815
+    }
+   }
+  },
+  "25": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 227,
+     "path_length": 681.0000073057886,
+     "efficiency": 89.29689064560776,
+     "min_clearance": 11.961150488052345
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999667586513,
+     "efficiency": 96.06822492177007,
+     "min_clearance": 11.526105300752077
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 639.000003155299,
+     "efficiency": 95.166170393999,
+     "min_clearance": 9.80597449562177
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 245,
+     "path_length": 734.9999565965868,
+     "efficiency": 82.73630853480445,
+     "min_clearance": 8.051966776695732
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 621.0001071949482,
+     "efficiency": 97.92459369568654,
+     "min_clearance": 9.488832740439676
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 235,
+     "path_length": 705.0000424673173,
+     "efficiency": 86.25699222544685,
+     "min_clearance": 9.40397681805675
+    }
+   }
+  },
+  "26": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 240,
+     "path_length": 720.0000001249517,
+     "efficiency": 84.45997662706898,
+     "min_clearance": 9.49589379298601
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 662.9999817173693,
+     "efficiency": 91.72124413114437,
+     "min_clearance": 7.69496089164024
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 672.0000924743008,
+     "efficiency": 90.49281966336736,
+     "min_clearance": 7.977298686746041
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 236,
+     "path_length": 707.9999999396505,
+     "efficiency": 85.89150167687373,
+     "min_clearance": 7.109103102588012
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 669.0001193180933,
+     "efficiency": 90.8986133575394,
+     "min_clearance": 6.558782414940781
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 244,
+     "path_length": 732.0001494241599,
+     "efficiency": 83.07536990242586,
+     "min_clearance": 10.636465757483196
+    }
+   }
+  },
+  "27": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9998688846824,
+     "efficiency": 92.55889698315413,
+     "min_clearance": 5.54291100164531
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9998711518913,
+     "efficiency": 97.45383932497752,
+     "min_clearance": 5.754805736106364
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 617.9999663825284,
+     "efficiency": 98.39997813916109,
+     "min_clearance": 6.677798420327814
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 185,
+     "path_length": 554.9998847140546,
+     "efficiency": 109.56972218719297,
+     "min_clearance": 2.4032450216243593
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 178,
+     "path_length": 534.0000039595725,
+     "efficiency": 113.87861934668996,
+     "min_clearance": 4.836290942365654
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 182,
+     "path_length": 546.0000801320177,
+     "efficiency": 111.37577702798049,
+     "min_clearance": 4.774720198943426
+    }
+   }
+  },
+  "28": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9998736813759,
+     "efficiency": 90.89864673278785,
+     "min_clearance": 12.69575885620579
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 42,
+     "path_length": 126.00000838914701,
+     "efficiency": 482.628405819067,
+     "min_clearance": 4.556456227862981
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 183,
+     "path_length": 548.9999533245096,
+     "efficiency": 110.76719189828067,
+     "min_clearance": 8.841908600089251
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.000014003789,
+     "efficiency": 90.09063988212263,
+     "min_clearance": 7.00137182233146
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 42,
+     "path_length": 125.99999198066251,
+     "efficiency": 482.6284686698703,
+     "min_clearance": 4.950613478726183
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 205,
+     "path_length": 615.000004285188,
+     "efficiency": 98.87997196475418,
+     "min_clearance": 7.699915660061183
+    }
+   }
+  },
+  "29": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999740274608,
+     "efficiency": 97.45382325827939,
+     "min_clearance": 11.034247112754517
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9999038583303,
+     "efficiency": 92.55889205602666,
+     "min_clearance": 8.779296677579183
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 686.9999124723686,
+     "efficiency": 88.51701736496064,
+     "min_clearance": 10.513606169389725
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 699.0001198369994,
+     "efficiency": 86.99738591779314,
+     "min_clearance": 6.221338947756326
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 227,
+     "path_length": 680.9999517109331,
+     "efficiency": 89.2968979355462,
+     "min_clearance": 8.553672482814873
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 281,
+     "path_length": 843.0002614298741,
+     "efficiency": 72.13661248324742,
+     "min_clearance": 8.906826062332321
+    }
+   }
+  },
+  "30": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 243,
+     "path_length": 728.9999703712803,
+     "efficiency": 83.4172642710423,
+     "min_clearance": 6.230286956983222
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000405827352,
+     "efficiency": 96.98752670817221,
+     "min_clearance": 7.099512954382886
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 618.0001177004776,
+     "efficiency": 98.39995404582767,
+     "min_clearance": 8.247805136841336
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 246,
+     "path_length": 737.9999242581863,
+     "efficiency": 82.39998566824858,
+     "min_clearance": 5.761239417735368
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 183,
+     "path_length": 549.0000342120177,
+     "efficiency": 110.76717557827781,
+     "min_clearance": 4.947185003976131
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 182,
+     "path_length": 545.9999834039907,
+     "efficiency": 111.37579675904186,
+     "min_clearance": 4.900912135880767
+    }
+   }
+  },
+  "31": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999746042195,
+     "efficiency": 97.45382316820351,
+     "min_clearance": 17.046313557416976
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0000088901929,
+     "efficiency": 90.09064056462209,
+     "min_clearance": 14.743954154337771
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 221,
+     "path_length": 663.0000110704457,
+     "efficiency": 91.7212400703591,
+     "min_clearance": 16.13684848735249
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 698.9999745617407,
+     "efficiency": 86.99740399872047,
+     "min_clearance": 11.892977828980621
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 204,
+     "path_length": 612.0000474434324,
+     "efficiency": 99.36467069908831,
+     "min_clearance": 10.39262967318934
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 246,
+     "path_length": 738.0001769119099,
+     "efficiency": 82.39995745868461,
+     "min_clearance": 15.396602472536628
+    }
+   }
+  },
+  "32": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999933842921,
+     "efficiency": 96.98753400906584,
+     "min_clearance": 12.85362917843709
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 639.0000637697032,
+     "efficiency": 95.16616136670615,
+     "min_clearance": 11.986046954858162
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 669.0000972493651,
+     "efficiency": 90.8986163560693,
+     "min_clearance": 10.189468534692889
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 210,
+     "path_length": 629.9999568676474,
+     "efficiency": 96.52569419908471,
+     "min_clearance": 4.882961824961349
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 154,
+     "path_length": 462.000050529897,
+     "efficiency": 131.62592322727002,
+     "min_clearance": 4.232550575783549
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 203,
+     "path_length": 609.0000178229218,
+     "efficiency": 99.85415665410552,
+     "min_clearance": 18.279511263313303
+    }
+   }
+  },
+  "33": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0001203059728,
+     "efficiency": 91.72122495841914,
+     "min_clearance": 11.32223068118882
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 684.000133897581,
+     "efficiency": 88.90522116644595,
+     "min_clearance": 9.019529725950093
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 699.0000959892427,
+     "efficiency": 86.99738888587927,
+     "min_clearance": 9.326161904853464
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0001003495955,
+     "efficiency": 92.5588643741225,
+     "min_clearance": 12.89191687865401
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 266,
+     "path_length": 797.999915447123,
+     "efficiency": 76.20449827738427,
+     "min_clearance": 9.092616569594155
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 249,
+     "path_length": 747.0001557676968,
+     "efficiency": 81.40718942628205,
+     "min_clearance": 14.868754462662071
+    }
+   }
+  },
+  "34": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 699.0000622082881,
+     "efficiency": 86.9973930902492,
+     "min_clearance": 15.414042664648786
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 247,
+     "path_length": 740.9998721493853,
+     "efficiency": 82.06638822440118,
+     "min_clearance": 7.037652871551404
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 278,
+     "path_length": 834.0001835512611,
+     "efficiency": 72.9150717007071,
+     "min_clearance": 8.131433968863522
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 687.0001237027498,
+     "efficiency": 88.51699014883262,
+     "min_clearance": 15.318184641449022
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9999185645545,
+     "efficiency": 90.89864063440118,
+     "min_clearance": 7.342079117231963
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 648.0000880721132,
+     "efficiency": 93.84440573606167,
+     "min_clearance": 19.018945585254414
+    }
+   }
+  },
+  "35": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 654.0001834862962,
+     "efficiency": 92.9834344355613,
+     "min_clearance": 17.820376457637597
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999542765515,
+     "efficiency": 96.0682268161354,
+     "min_clearance": 14.260251959290928
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 644.9999859834675,
+     "efficiency": 94.2809062070302,
+     "min_clearance": 7.591990558807652
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9999464029631,
+     "efficiency": 94.7214770386816,
+     "min_clearance": 16.95244293278677
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 633.0000577188691,
+     "efficiency": 96.06821111705305,
+     "min_clearance": 12.584840859060087
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999981103872,
+     "efficiency": 96.06822016362533,
+     "min_clearance": 8.900016889419495
+    }
+   }
+  },
+  "36": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 650.9999064570213,
+     "efficiency": 93.4119691552641,
+     "min_clearance": 18.144931663301648
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.0000285192409,
+     "efficiency": 97.45381474797158,
+     "min_clearance": 13.226866093551905
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9997631569856,
+     "efficiency": 96.0682558217036,
+     "min_clearance": 9.575081680416918
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9999365057231,
+     "efficiency": 92.98346955039946,
+     "min_clearance": 8.745399434214612
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 629.9998594157433,
+     "efficiency": 96.5257091302193,
+     "min_clearance": 8.193572644016694
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.000142858753,
+     "efficiency": 95.61504641917735,
+     "min_clearance": 9.773429153916442
+    }
+   }
+  },
+  "37": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9999432826382,
+     "efficiency": 90.89863727589534,
+     "min_clearance": 11.535760798511973
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 687.0000755529452,
+     "efficiency": 88.5169963527268,
+     "min_clearance": 16.158965475216313
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 683.9998570432097,
+     "efficiency": 88.9052571515399,
+     "min_clearance": 17.31377037483624
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 230,
+     "path_length": 689.999815696211,
+     "efficiency": 88.132173079908,
+     "min_clearance": 11.664891583035793
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 702.0000651229309,
+     "efficiency": 86.62560903237826,
+     "min_clearance": 8.181944137546616
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 274,
+     "path_length": 822.000040961329,
+     "efficiency": 73.97953789749745,
+     "min_clearance": 21.497406168595923
+    }
+   }
+  },
+  "38": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 696.0000866939713,
+     "efficiency": 87.37237874624223,
+     "min_clearance": 14.674465778926862
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 617.9999258852151,
+     "efficiency": 98.39998458727634,
+     "min_clearance": 12.753799226408976
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 187,
+     "path_length": 561.0002207038358,
+     "efficiency": 108.39778833910056,
+     "min_clearance": 15.832903617999603
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9999506403999,
+     "efficiency": 97.92461838254927,
+     "min_clearance": 17.558861796901915
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999909056239,
+     "efficiency": 97.45382062231536,
+     "min_clearance": 9.748960195134593
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0002240240154,
+     "efficiency": 92.55884695074357,
+     "min_clearance": 7.812185805226911
+    }
+   }
+  },
+  "39": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 647.9999617158832,
+     "efficiency": 93.8444240351759,
+     "min_clearance": 12.176688422224457
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 669.0000306678522,
+     "efficiency": 90.89862540265692,
+     "min_clearance": 8.168070517500855
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0000086993786,
+     "efficiency": 93.41195448451172,
+     "min_clearance": 8.855730219120218
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 204,
+     "path_length": 612.000155583079,
+     "efficiency": 99.36465314147779,
+     "min_clearance": 4.814395269621436
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 683.9999287323267,
+     "efficiency": 88.9052478334989,
+     "min_clearance": 6.616723746273839
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 677.9998133105989,
+     "efficiency": 89.69203528996377,
+     "min_clearance": 7.638309222095659
+    }
+   }
+  },
+  "40": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 678.0000013739473,
+     "efficiency": 89.69201041122565,
+     "min_clearance": 7.297105054673735
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 231,
+     "path_length": 693.0000078323383,
+     "efficiency": 87.75062409054908,
+     "min_clearance": 8.042788952511147
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0000465533931,
+     "efficiency": 91.72123516155109,
+     "min_clearance": 6.872712305971384
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000455157932,
+     "efficiency": 96.52568061682567,
+     "min_clearance": 16.42954336208395
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 281,
+     "path_length": 842.9997998253443,
+     "efficiency": 72.1366519833601,
+     "min_clearance": 6.640521050978356
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 665.999929152699,
+     "efficiency": 91.30809256903154,
+     "min_clearance": 17.279891779112006
+    }
+   }
+  },
+  "41": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 236,
+     "path_length": 707.9999092590366,
+     "efficiency": 85.8915126778555,
+     "min_clearance": 12.261324081715511
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9999136427969,
+     "efficiency": 92.98347280097208,
+     "min_clearance": 9.730805919934541
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0000107283022,
+     "efficiency": 93.41195419338159,
+     "min_clearance": 9.25766447418269
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 219,
+     "path_length": 657.000049418396,
+     "efficiency": 92.55887154936396,
+     "min_clearance": 4.1008769893590475
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 248,
+     "path_length": 744.0000308483081,
+     "efficiency": 81.73545787720766,
+     "min_clearance": 6.752616072837088
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 245,
+     "path_length": 734.9999613626449,
+     "efficiency": 82.7363079983064,
+     "min_clearance": 7.934471626957478
+    }
+   }
+  },
+  "42": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 247,
+     "path_length": 741.0000898262333,
+     "efficiency": 82.0663641165057,
+     "min_clearance": 10.129058435059662
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 621.0000773824897,
+     "efficiency": 97.9245983967695,
+     "min_clearance": 13.460149795843302
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 618.0001063916266,
+     "efficiency": 98.39995584645912,
+     "min_clearance": 10.193080598284345
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 188,
+     "path_length": 563.9999869307954,
+     "efficiency": 107.82124927514371,
+     "min_clearance": 4.84114793572769
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9999944794511,
+     "efficiency": 94.72146994541683,
+     "min_clearance": 13.547485866945278
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 26,
+     "path_length": 78.00001058157825,
+     "efficiency": 779.6304478502884,
+     "min_clearance": 4.332121080158549
+    }
+   }
+  },
+  "43": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 665.9998520357992,
+     "efficiency": 91.30810314170209,
+     "min_clearance": 16.61525408623574
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9999364224207,
+     "efficiency": 92.98346956224313,
+     "min_clearance": 12.129662465046144
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9999293252246,
+     "efficiency": 92.55888846822184,
+     "min_clearance": 14.473294486236966
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 702.0000442254332,
+     "efficiency": 86.62561161109386,
+     "min_clearance": 15.731524042700995
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999537060708,
+     "efficiency": 96.98754014669443,
+     "min_clearance": 8.251234743694768
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 650.9999720699504,
+     "efficiency": 93.4119597404666,
+     "min_clearance": 15.18077810802623
+    }
+   }
+  },
+  "44": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0000090000127,
+     "efficiency": 94.280902842657,
+     "min_clearance": 20.392841051399724
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.0000298205005,
+     "efficiency": 97.4538145447461,
+     "min_clearance": 13.042786304108631
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 633.0001549470005,
+     "efficiency": 96.06819636108091,
+     "min_clearance": 12.24253542926529
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 238,
+     "path_length": 714.0000991972979,
+     "efficiency": 85.16971251181756,
+     "min_clearance": 6.82444963516615
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.999974064446,
+     "efficiency": 86.62562026884123,
+     "min_clearance": 7.249103259717614
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 699.0000299431929,
+     "efficiency": 86.997397105956,
+     "min_clearance": 7.705925895949019
+    }
+   }
+  },
+  "45": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 695.999723590866,
+     "efficiency": 87.37242432841845,
+     "min_clearance": 14.339620734780311
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 686.9999095873134,
+     "efficiency": 88.51701773668773,
+     "min_clearance": 12.473423650926474
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 268,
+     "path_length": 804.0000424708107,
+     "efficiency": 75.63579598225064,
+     "min_clearance": 14.634813627648299
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 240,
+     "path_length": 719.9999626948663,
+     "efficiency": 84.45998101782496,
+     "min_clearance": 9.990186532707414
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 264,
+     "path_length": 791.9999688784446,
+     "efficiency": 76.78179996415673,
+     "min_clearance": 9.545939301273647
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 242,
+     "path_length": 726.0000432171062,
+     "efficiency": 83.7619553196884,
+     "min_clearance": 11.337526706628882
+    }
+   }
+  },
+  "46": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9998222754816,
+     "efficiency": 92.98348579126655,
+     "min_clearance": 12.376397505152575
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 647.99999727966,
+     "efficiency": 93.84441888477133,
+     "min_clearance": 10.616025637041247
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 187,
+     "path_length": 561.0000494114483,
+     "efficiency": 108.39782143663054,
+     "min_clearance": 19.843252314314096
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 239,
+     "path_length": 717.0001682533892,
+     "efficiency": 84.81334576277575,
+     "min_clearance": 14.228207960958283
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 660.0000621164488,
+     "efficiency": 92.13814766477054,
+     "min_clearance": 8.672461239510447
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 195,
+     "path_length": 585.0000043765422,
+     "efficiency": 103.95073970444153,
+     "min_clearance": 29.43084607405069
+    }
+   }
+  },
+  "47": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 696.0000654085175,
+     "efficiency": 87.372381418312,
+     "min_clearance": 12.343106369373182
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 662.99980021292,
+     "efficiency": 91.72126924097684,
+     "min_clearance": 10.976065932836189
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 248,
+     "path_length": 744.0000456121279,
+     "efficiency": 81.73545625526211,
+     "min_clearance": 17.79922505007275
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 686.9998918313381,
+     "efficiency": 88.51702002446972,
+     "min_clearance": 8.93900885927619
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 684.0000301020766,
+     "efficiency": 88.90523465761828,
+     "min_clearance": 7.377402598479261
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 221,
+     "path_length": 663.0001006670925,
+     "efficiency": 91.72122767531489,
+     "min_clearance": 19.31844835961508
+    }
+   }
+  },
+  "48": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 237,
+     "path_length": 710.9999165675582,
+     "efficiency": 85.52910030653273,
+     "min_clearance": 11.184867556298467
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 621.0000215535667,
+     "efficiency": 97.9246072003519,
+     "min_clearance": 15.145698797781396
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 289,
+     "path_length": 866.9998752673398,
+     "efficiency": 70.13978308046691,
+     "min_clearance": 15.94493657112994
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 696.0001296333846,
+     "efficiency": 87.37237335584283,
+     "min_clearance": 13.101048633661232
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 615.0000229691641,
+     "efficiency": 98.87996896073635,
+     "min_clearance": 14.594168734220835
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 662.9999650002982,
+     "efficiency": 91.72124644383011,
+     "min_clearance": 9.834208007973745
+    }
+   }
+  },
+  "49": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 245,
+     "path_length": 735.0001656828347,
+     "efficiency": 82.73628499872225,
+     "min_clearance": 10.735265979681595
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.0000600511429,
+     "efficiency": 95.61505886831686,
+     "min_clearance": 15.965793236115244
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 192,
+     "path_length": 575.9999804270801,
+     "efficiency": 105.5749743896764,
+     "min_clearance": 18.41885830639007
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 638.9999917083975,
+     "efficiency": 95.16617209878429,
+     "min_clearance": 15.401118162006263
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 199,
+     "path_length": 596.9998726867923,
+     "efficiency": 101.86130008430811,
+     "min_clearance": 11.068855443391657
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 255,
+     "path_length": 765.0000850145536,
+     "efficiency": 79.49173388769779,
+     "min_clearance": 6.15934952760216
+    }
+   }
+  },
+  "50": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 699.0000474971937,
+     "efficiency": 86.9973949211888,
+     "min_clearance": 14.660103378680077
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 665.9998763856349,
+     "efficiency": 91.30809980335717,
+     "min_clearance": 12.377408657411314
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 665.999974509208,
+     "efficiency": 91.30808635068848,
+     "min_clearance": 15.848727141127647
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 199,
+     "path_length": 596.9998798904371,
+     "efficiency": 101.86129885520799,
+     "min_clearance": 4.710391047661375
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 190,
+     "path_length": 569.9998650540313,
+     "efficiency": 106.68631154198377,
+     "min_clearance": 4.937906337390064
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 260,
+     "path_length": 779.9999989169303,
+     "efficiency": 77.96305546984938,
+     "min_clearance": 7.3555165117474965
+    }
+   }
+  },
+  "51": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.0000439145896,
+     "efficiency": 95.61506129425615,
+     "min_clearance": 10.140470729458656
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 639.0000229929037,
+     "efficiency": 95.16616743958774,
+     "min_clearance": 13.306711778913323
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 176,
+     "path_length": 527.999967494233,
+     "efficiency": 115.17270251102295,
+     "min_clearance": 15.593531447491383
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.999909203294,
+     "efficiency": 92.13816901194747,
+     "min_clearance": 6.227608905585118
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 148,
+     "path_length": 443.9998527770642,
+     "efficiency": 136.9621696982338,
+     "min_clearance": 4.266971776372945
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 180,
+     "path_length": 539.9999989644939,
+     "efficiency": 112.6133024049164,
+     "min_clearance": 7.601209761266569
+    }
+   }
+  },
+  "52": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000551611719,
+     "efficiency": 96.52567913900558,
+     "min_clearance": 12.932233885683447
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999893145507,
+     "efficiency": 96.06822149853902,
+     "min_clearance": 16.28540895348531
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9998942281693,
+     "efficiency": 92.55889341273469,
+     "min_clearance": 17.494696021213592
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 138,
+     "path_length": 414.0000290041555,
+     "efficiency": 146.88690560800106,
+     "min_clearance": 4.976491298300204
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 133,
+     "path_length": 399.00001106315665,
+     "efficiency": 152.4089761802474,
+     "min_clearance": 4.929860362227472
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 594.0000609106219,
+     "efficiency": 102.3757187647717,
+     "min_clearance": 2.5639384870628836
+    }
+   }
+  },
+  "53": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 677.9998657402023,
+     "efficiency": 89.69202835409538,
+     "min_clearance": 16.68443195382337
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 635.9999398417988,
+     "efficiency": 95.61507694036813,
+     "min_clearance": 12.703005596029634
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 647.9999440097897,
+     "efficiency": 93.84442659940164,
+     "min_clearance": 11.721747561706453
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.0001008128427,
+     "efficiency": 95.6150527402796,
+     "min_clearance": 7.140831161793342
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0001195671682,
+     "efficiency": 96.5256692710193,
+     "min_clearance": 7.574313491217993
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 145,
+     "path_length": 434.99996997261076,
+     "efficiency": 139.79583305688962,
+     "min_clearance": 4.100354844796544
+    }
+   }
+  },
+  "54": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0000548417131,
+     "efficiency": 94.28089614188718,
+     "min_clearance": 16.87610201076021
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000612016311,
+     "efficiency": 96.52567821351451,
+     "min_clearance": 9.901038353428362
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 639.0002633482719,
+     "efficiency": 95.16613164351608,
+     "min_clearance": 11.161452528393852
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 671.999982919359,
+     "efficiency": 90.49283441624807,
+     "min_clearance": 10.648625090552398
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.9999550737521,
+     "efficiency": 86.6256226122611,
+     "min_clearance": 10.495165656810592
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 284,
+     "path_length": 851.9999214016916,
+     "efficiency": 71.37463473235756,
+     "min_clearance": 8.533499319563981
+    }
+   }
+  },
+  "55": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999101974665,
+     "efficiency": 96.98754687682697,
+     "min_clearance": 15.365195444011402
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 182,
+     "path_length": 545.9999906218985,
+     "efficiency": 111.37579528669707,
+     "min_clearance": 8.004937678539465
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 269,
+     "path_length": 807.000010338601,
+     "efficiency": 75.35462503467372,
+     "min_clearance": 8.065031189906605
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.0001708404923,
+     "efficiency": 95.6150422124563,
+     "min_clearance": 14.622468419381613
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 271,
+     "path_length": 812.9998729770884,
+     "efficiency": 74.79851498544679,
+     "min_clearance": 7.768032932026452
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 149,
+     "path_length": 446.99992157437293,
+     "efficiency": 136.0429392646441,
+     "min_clearance": 19.022788416719767
+    }
+   }
+  },
+  "56": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.0000565913848,
+     "efficiency": 95.61505938845042,
+     "min_clearance": 8.796708665068103
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000760517546,
+     "efficiency": 96.98752122164582,
+     "min_clearance": 10.826405882655978
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 684.0000599272512,
+     "efficiency": 88.90523078098975,
+     "min_clearance": 9.24378307693831
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9997981701829,
+     "efficiency": 96.98756420578219,
+     "min_clearance": 8.399223654074225
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 642.0000228737479,
+     "efficiency": 94.72146575608748,
+     "min_clearance": 9.71074905188832
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 231,
+     "path_length": 693.0000251142737,
+     "efficiency": 87.75062190223657,
+     "min_clearance": 15.619524997987735
+    }
+   }
+  },
+  "57": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9999109375431,
+     "efficiency": 92.98347318559581,
+     "min_clearance": 6.370763214990515
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999729907556,
+     "efficiency": 96.06822397594506,
+     "min_clearance": 16.377954433103646
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 671.9999573633803,
+     "efficiency": 90.49283785766637,
+     "min_clearance": 14.811689509928648
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 617.9998607017593,
+     "efficiency": 98.39999496600205,
+     "min_clearance": 14.166825218932653
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 666.0000082902136,
+     "efficiency": 91.30808171933872,
+     "min_clearance": 5.19509556954425
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 648.0000667373038,
+     "efficiency": 93.84440882580289,
+     "min_clearance": 8.115415218923731
+    }
+   }
+  },
+  "58": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0000439570108,
+     "efficiency": 93.41194942539634,
+     "min_clearance": 10.766214690527924
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999278852414,
+     "efficiency": 97.45383046458741,
+     "min_clearance": 11.896832273802307
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 660.0001776633076,
+     "efficiency": 92.13813153405741,
+     "min_clearance": 11.151003734813088
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 95,
+     "path_length": 285.00001038856357,
+     "efficiency": 213.3725647909075,
+     "min_clearance": 4.788321610148224
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0001466393669,
+     "efficiency": 96.9875103028006,
+     "min_clearance": 6.0697622686978026
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 190,
+     "path_length": 570.0000802133397,
+     "efficiency": 106.6862712708438,
+     "min_clearance": 16.008886718236656
+    }
+   }
+  },
+  "59": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 242,
+     "path_length": 725.9999135624014,
+     "efficiency": 83.76197027854911,
+     "min_clearance": 11.489340089316505
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 242,
+     "path_length": 726.000033298071,
+     "efficiency": 83.76195646409299,
+     "min_clearance": 11.260939305247359
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 182,
+     "path_length": 545.9998563995853,
+     "efficiency": 111.37582266603923,
+     "min_clearance": 17.899598173179346
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 665.9998995919259,
+     "efficiency": 91.30809662179162,
+     "min_clearance": 16.574741073637604
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 94,
+     "path_length": 281.99994693727183,
+     "efficiency": 215.64253412987327,
+     "min_clearance": 4.6665152156015
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 248,
+     "path_length": 744.0000146629213,
+     "efficiency": 81.73545965532591,
+     "min_clearance": 10.101083900010458
+    }
+   }
+  },
+  "60": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999593517828,
+     "efficiency": 97.4538255502682,
+     "min_clearance": 20.370096677916777
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 202,
+     "path_length": 605.9998048068562,
+     "efficiency": 100.34851942142916,
+     "min_clearance": 17.869801683658633
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 184,
+     "path_length": 552.0000361200864,
+     "efficiency": 110.16517971533928,
+     "min_clearance": 19.440584060908602
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 238,
+     "path_length": 714.0001034304138,
+     "efficiency": 85.16971200686909,
+     "min_clearance": 12.64385403914331
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9998210364049,
+     "efficiency": 97.4538471518172,
+     "min_clearance": 8.17310164892071
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 192,
+     "path_length": 576.0000849443392,
+     "efficiency": 105.57495523272271,
+     "min_clearance": 19.973048500361898
+    }
+   }
+  },
+  "61": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.999936265925,
+     "efficiency": 97.45382915572554,
+     "min_clearance": 16.197775300645507
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.0000327996052,
+     "efficiency": 97.45381407948152,
+     "min_clearance": 11.664126887499199
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 678.0001691595107,
+     "efficiency": 89.69198821502987,
+     "min_clearance": 13.156831455082884
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999624753513,
+     "efficiency": 97.45382506244174,
+     "min_clearance": 15.731272456420045
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000572415431,
+     "efficiency": 96.52567882026077,
+     "min_clearance": 12.50640625988186
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0001027098499,
+     "efficiency": 90.09062804273808,
+     "min_clearance": 16.684386156713416
+    }
+   }
+  },
+  "62": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 230,
+     "path_length": 689.9998912221945,
+     "efficiency": 88.13216343313974,
+     "min_clearance": 11.202676861695142
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 239,
+     "path_length": 716.9999170462388,
+     "efficiency": 84.81337547786832,
+     "min_clearance": 9.506735839618415
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0000381581494,
+     "efficiency": 90.09063665829794,
+     "min_clearance": 9.393790932749692
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 242,
+     "path_length": 725.9999385868304,
+     "efficiency": 83.76196739136502,
+     "min_clearance": 13.179417447742537
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 678.0001017338075,
+     "efficiency": 89.69199713471198,
+     "min_clearance": 11.514670646747764
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 243,
+     "path_length": 729.0000445981432,
+     "efficiency": 83.41725577748748,
+     "min_clearance": 11.174625602019013
+    }
+   }
+  },
+  "63": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999510206121,
+     "efficiency": 96.98754056209484,
+     "min_clearance": 19.215730332431022
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 204,
+     "path_length": 612.000013433945,
+     "efficiency": 99.36467622088806,
+     "min_clearance": 13.00919353870497
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9997958116567,
+     "efficiency": 97.4538510913197,
+     "min_clearance": 9.535718594426083
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 311,
+     "path_length": 933.0001500123753,
+     "efficiency": 65.17810654289443,
+     "min_clearance": 6.338003953126341
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 615.0000502655364,
+     "efficiency": 98.87996457201403,
+     "min_clearance": 8.307190750654106
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9999121363069,
+     "efficiency": 97.92462445420651,
+     "min_clearance": 7.731849671974585
+    }
+   }
+  },
+  "64": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.9998276012441,
+     "efficiency": 92.1381804038648,
+     "min_clearance": 13.031267822079135
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0001213070636,
+     "efficiency": 94.28088642652031,
+     "min_clearance": 13.70654392064304
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 642.0000061987322,
+     "efficiency": 94.72146821633967,
+     "min_clearance": 10.274252687174904
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 644.999854042043,
+     "efficiency": 94.28092549316955,
+     "min_clearance": 11.754876699792309
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 638.9999818943093,
+     "efficiency": 95.16617356039498,
+     "min_clearance": 10.900344165960352
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9999503272302,
+     "efficiency": 90.89863631872964,
+     "min_clearance": 14.820519103171245
+    }
+   }
+  },
+  "65": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.0000545607788,
+     "efficiency": 97.4538106809091,
+     "min_clearance": 18.64922043340252
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 638.9999028879199,
+     "efficiency": 95.16618532680641,
+     "min_clearance": 24.314748582150653
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9999455978716,
+     "efficiency": 90.898636961319,
+     "min_clearance": 23.263558882132862
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000837662212,
+     "efficiency": 96.98752002833338,
+     "min_clearance": 16.821937460475755
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 654.0000285699062,
+     "efficiency": 92.98345646103128,
+     "min_clearance": 7.311883787717996
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0000931871731,
+     "efficiency": 91.7212287101072,
+     "min_clearance": 23.267779386128684
+    }
+   }
+  },
+  "66": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999510383827,
+     "efficiency": 96.98754055934597,
+     "min_clearance": 12.885287986081641
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 618.0001768799982,
+     "efficiency": 98.39994462307615,
+     "min_clearance": 13.030698145869856
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0000219938299,
+     "efficiency": 94.28090094332556,
+     "min_clearance": 10.824384992290609
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 259,
+     "path_length": 776.999947539962,
+     "efficiency": 78.26407630344852,
+     "min_clearance": 6.704962787691813
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 46,
+     "path_length": 138.00000275842757,
+     "efficiency": 440.6607388877707,
+     "min_clearance": 4.7223408424282525
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 638.9999189878033,
+     "efficiency": 95.16618292905261,
+     "min_clearance": 5.772483172277393
+    }
+   }
+  },
+  "67": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000542982509,
+     "efficiency": 96.98752458658716,
+     "min_clearance": 12.298500777051087
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 45,
+     "path_length": 135.000001824443,
+     "efficiency": 450.4532026682733,
+     "min_clearance": 4.027103494102249
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 273,
+     "path_length": 818.9999551270192,
+     "efficiency": 74.25053298398758,
+     "min_clearance": 11.14684087887437
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 190,
+     "path_length": 569.9998679046612,
+     "efficiency": 106.68631100843419,
+     "min_clearance": 4.120124161844444
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 42,
+     "path_length": 125.99997288072952,
+     "efficiency": 482.62854182997665,
+     "min_clearance": 3.1250532578016053
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 210,
+     "path_length": 629.9999919683312,
+     "efficiency": 96.52568882111977,
+     "min_clearance": 8.200853920179146
+    }
+   }
+  },
+  "68": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 617.999942988641,
+     "efficiency": 98.39998186401259,
+     "min_clearance": 16.79255180776887
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 699.0000886727942,
+     "efficiency": 86.99738979648276,
+     "min_clearance": 13.521331362169724
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 268,
+     "path_length": 803.9998414690738,
+     "efficiency": 75.63581489136676,
+     "min_clearance": 8.792203253083969
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.0000381576865,
+     "efficiency": 97.45381324267794,
+     "min_clearance": 22.79558577375152
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 253,
+     "path_length": 758.9998433039187,
+     "efficiency": 80.12015248558237,
+     "min_clearance": 4.048766603156468
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 283,
+     "path_length": 849.0000183013503,
+     "efficiency": 71.62683377052451,
+     "min_clearance": 10.04445754415484
+    }
+   }
+  },
+  "69": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 647.99996637081,
+     "efficiency": 93.84442336104172,
+     "min_clearance": 11.712293762409786
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0000648137282,
+     "efficiency": 92.5588693804531,
+     "min_clearance": 9.683679900469794
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 217,
+     "path_length": 651.000023507332,
+     "efficiency": 93.41195235971938,
+     "min_clearance": 15.085015621955101
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 69,
+     "path_length": 207.00001398118405,
+     "efficiency": 293.77381195525294,
+     "min_clearance": 4.277803060499067
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 66,
+     "path_length": 197.99996830648388,
+     "efficiency": 307.1272369494198,
+     "min_clearance": 4.983840329933061
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 69,
+     "path_length": 206.99998702392756,
+     "efficiency": 293.7738502129171,
+     "min_clearance": 3.1564618597644616
+    }
+   }
+  },
+  "70": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9998148847075,
+     "efficiency": 97.92463978968024,
+     "min_clearance": 14.624341304749052
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0001501556573,
+     "efficiency": 91.72122082893347,
+     "min_clearance": 11.46892591222435
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 191,
+     "path_length": 573.0000236995485,
+     "efficiency": 106.12771495089731,
+     "min_clearance": 17.44505140211437
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 161,
+     "path_length": 482.9999556077786,
+     "efficiency": 125.90308234194741,
+     "min_clearance": 4.0431398067050965
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999086663854,
+     "efficiency": 96.068233738234,
+     "min_clearance": 8.895330093960599
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 183,
+     "path_length": 549.0000546643821,
+     "efficiency": 110.76717145177433,
+     "min_clearance": 11.202373223040134
+    }
+   }
+  },
+  "71": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999512087104,
+     "efficiency": 96.98754053299884,
+     "min_clearance": 17.55689485161611
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 615.0000618940554,
+     "efficiency": 98.87996270237593,
+     "min_clearance": 6.5782236947760895
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 186,
+     "path_length": 558.0000506296153,
+     "efficiency": 108.98060513332791,
+     "min_clearance": 12.611125051730367
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 629.9998108460445,
+     "efficiency": 96.52571657184791,
+     "min_clearance": 15.017572546334495
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999968371857,
+     "efficiency": 97.4538196959478,
+     "min_clearance": 8.137907314863684
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999732820212,
+     "efficiency": 96.06822393174069,
+     "min_clearance": 7.925136945927617
+    }
+   }
+  },
+  "72": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 230,
+     "path_length": 690.0001083085056,
+     "efficiency": 88.13213570519301,
+     "min_clearance": 7.943448463466244
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9999748835266,
+     "efficiency": 96.98753687085801,
+     "min_clearance": 7.814629852672737
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 672.0000739603681,
+     "efficiency": 90.49282215648905,
+     "min_clearance": 14.852408196115071
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.9998787330339,
+     "efficiency": 86.6256320325793,
+     "min_clearance": 7.549202908820002
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0002662769887,
+     "efficiency": 92.55884099810294,
+     "min_clearance": 9.04535491898541
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 189,
+     "path_length": 566.9999289447826,
+     "efficiency": 107.25077742993015,
+     "min_clearance": 9.09932045178793
+    }
+   }
+  },
+  "73": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.0000116223415,
+     "efficiency": 97.45381738686145,
+     "min_clearance": 19.75019466773936
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000437774049,
+     "efficiency": 96.98752621400459,
+     "min_clearance": 15.680468474487478
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 245,
+     "path_length": 735.0001033498654,
+     "efficiency": 82.73629201531762,
+     "min_clearance": 11.485202529602192
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 702.0001100212144,
+     "efficiency": 86.62560349200712,
+     "min_clearance": 12.027930775018365
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0002221869486,
+     "efficiency": 93.4119238512024,
+     "min_clearance": 6.499124530430732
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 228,
+     "path_length": 683.9998690792329,
+     "efficiency": 88.905255587116,
+     "min_clearance": 8.619887865046362
+    }
+   }
+  },
+  "74": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 677.9999225619758,
+     "efficiency": 89.69202083719169,
+     "min_clearance": 13.240347948916401
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 178,
+     "path_length": 534.0000832810883,
+     "efficiency": 113.87860243091599,
+     "min_clearance": 9.584503068750323
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 672.0000275736546,
+     "efficiency": 90.49282840301353,
+     "min_clearance": 15.35472612498844
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 277,
+     "path_length": 830.9999321598616,
+     "efficiency": 73.17832508600577,
+     "min_clearance": 12.556705495074779
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 175,
+     "path_length": 525.0000649365431,
+     "efficiency": 115.83081078169647,
+     "min_clearance": 9.858360686470123
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 177,
+     "path_length": 531.0000468790657,
+     "efficiency": 114.52199211555384,
+     "min_clearance": 2.8104210264574476
+    }
+   }
+  },
+  "75": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000533708071,
+     "efficiency": 96.52567941331694,
+     "min_clearance": 18.42614710030242
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9997779520454,
+     "efficiency": 94.72150189214773,
+     "min_clearance": 9.198460394471914
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 227,
+     "path_length": 680.9999575181623,
+     "efficiency": 89.29689717406664,
+     "min_clearance": 11.782523318373597
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.9998763630902,
+     "efficiency": 86.62563232502647,
+     "min_clearance": 7.309710951599572
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 121,
+     "path_length": 363.00008427747696,
+     "efficiency": 167.52388171777687,
+     "min_clearance": 4.18447027139736
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 125,
+     "path_length": 375.0000392778676,
+     "efficiency": 162.16313816698886,
+     "min_clearance": 3.087059231975457
+    }
+   }
+  },
+  "76": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 629.9997884699028,
+     "efficiency": 96.52572000021908,
+     "min_clearance": 11.610888535715025
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 618.0000589605909,
+     "efficiency": 98.39996339858108,
+     "min_clearance": 10.59303633201164
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 187,
+     "path_length": 561.0000864290491,
+     "efficiency": 108.39781428399834,
+     "min_clearance": 15.623417052474991
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 197,
+     "path_length": 590.9999352379632,
+     "efficiency": 102.89541429062554,
+     "min_clearance": 13.151700929083818
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 192,
+     "path_length": 576.0000693847182,
+     "efficiency": 105.574958084643,
+     "min_clearance": 11.326707184761794
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 185,
+     "path_length": 554.9999908765951,
+     "efficiency": 109.56970122827357,
+     "min_clearance": 14.123583974890805
+    }
+   }
+  },
+  "77": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9998082045404,
+     "efficiency": 96.06824898498745,
+     "min_clearance": 13.758433190506254
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0001307676624,
+     "efficiency": 92.55886008879348,
+     "min_clearance": 13.59671019049645
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 185,
+     "path_length": 554.9999254179212,
+     "efficiency": 109.56971415131558,
+     "min_clearance": 20.133191172496584
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 624.000078773214,
+     "efficiency": 97.45380689950882,
+     "min_clearance": 17.43938833774938
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9998397515169,
+     "efficiency": 94.7214927741723,
+     "min_clearance": 9.051963100307193
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 178,
+     "path_length": 534.0001368735564,
+     "efficiency": 113.87859100201375,
+     "min_clearance": 24.60755300868407
+    }
+   }
+  },
+  "78": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 629.9998771484718,
+     "efficiency": 96.52570641329147,
+     "min_clearance": 10.501786086904197
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0001015378166,
+     "efficiency": 93.4119411631314,
+     "min_clearance": 12.184887609795126
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 183,
+     "path_length": 548.9998545650433,
+     "efficiency": 110.76721182416712,
+     "min_clearance": 13.83594720944945
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 148,
+     "path_length": 444.000030491276,
+     "efficiency": 136.96211487813838,
+     "min_clearance": 4.372377784103463
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 261,
+     "path_length": 783.0000816441857,
+     "efficiency": 77.6643382390823,
+     "min_clearance": 9.923213332497689
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 238,
+     "path_length": 713.9999935297922,
+     "efficiency": 85.16972511639904,
+     "min_clearance": 4.8761697321856445
+    }
+   }
+  },
+  "79": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 632.9999349991367,
+     "efficiency": 96.06822974180245,
+     "min_clearance": 12.645305389894638
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 211,
+     "path_length": 633.0001605374521,
+     "efficiency": 96.06819551263784,
+     "min_clearance": 14.22033794983944
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.9999330853934,
+     "efficiency": 92.13816567792757,
+     "min_clearance": 15.26833675444095
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0001739614615,
+     "efficiency": 94.2808787299281,
+     "min_clearance": 9.576340024770337
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0001501354369,
+     "efficiency": 94.2808822126227,
+     "min_clearance": 11.457033536788817
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0000391827657,
+     "efficiency": 92.55887299137055,
+     "min_clearance": 19.734268858687386
+    }
+   }
+  },
+  "80": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 660.000225005567,
+     "efficiency": 92.13812492492734,
+     "min_clearance": 13.230057877228804
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 644.9998608730875,
+     "efficiency": 94.28092449466205,
+     "min_clearance": 12.688888484092498
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 660.0001548054208,
+     "efficiency": 92.13813472509146,
+     "min_clearance": 22.90888263189063
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9999816359536,
+     "efficiency": 92.55888109862812,
+     "min_clearance": 8.860109676287847
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9998452535699,
+     "efficiency": 94.72149196239225,
+     "min_clearance": 13.043936333061692
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.0001281037744,
+     "efficiency": 94.28088543303227,
+     "min_clearance": 12.58049450538439
+    }
+   }
+  },
+  "81": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 614.9999791885473,
+     "efficiency": 98.8799759998033,
+     "min_clearance": 25.420813900620917
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000544517159,
+     "efficiency": 96.98752456284842,
+     "min_clearance": 11.482237563256454
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 250,
+     "path_length": 749.9998053933706,
+     "efficiency": 81.08159861474627,
+     "min_clearance": 10.523626434906216
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 669.0001151353181,
+     "efficiency": 90.89861392586288,
+     "min_clearance": 13.621335637478609
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0000670955304,
+     "efficiency": 92.55886905899037,
+     "min_clearance": 9.529535401956473
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 696.00006080856,
+     "efficiency": 87.37238199576775,
+     "min_clearance": 14.097728704745174
+    }
+   }
+  },
+  "82": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 650.99992495377,
+     "efficiency": 93.41196650116592,
+     "min_clearance": 17.94798633036161
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 656.9999099507751,
+     "efficiency": 92.55889119771614,
+     "min_clearance": 12.384099681338093
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 213,
+     "path_length": 639.0001485068358,
+     "efficiency": 95.16614874682233,
+     "min_clearance": 10.883704397042326
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0000183275065,
+     "efficiency": 93.41195310297222,
+     "min_clearance": 19.202316355504152
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 155,
+     "path_length": 465.00008807251845,
+     "efficiency": 130.77671325636257,
+     "min_clearance": 4.095487701718014
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 153,
+     "path_length": 459.00001124137316,
+     "efficiency": 132.48623462465335,
+     "min_clearance": 4.0814129377890715
+    }
+   }
+  },
+  "83": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9999876410463,
+     "efficiency": 90.89863124881175,
+     "min_clearance": 12.276028264283601
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 675.0000677433547,
+     "efficiency": 90.0906327096317,
+     "min_clearance": 13.688180859425891
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 669.0002148272097,
+     "efficiency": 90.89860038049387,
+     "min_clearance": 14.850125181957086
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.999935936,
+     "efficiency": 94.72147858299049,
+     "min_clearance": 14.000010152857868
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 671.9999453307591,
+     "efficiency": 90.49283947800286,
+     "min_clearance": 10.650703585118553
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 695.9999178629666,
+     "efficiency": 87.37239994044945,
+     "min_clearance": 6.952539388365283
+    }
+   }
+  },
+  "84": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 618.0000174660008,
+     "efficiency": 98.39997000548404,
+     "min_clearance": 17.83439217148672
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 629.9999919103658,
+     "efficiency": 96.52568883000096,
+     "min_clearance": 14.375445335453206
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 262,
+     "path_length": 785.9998626804758,
+     "efficiency": 77.3679310511076,
+     "min_clearance": 16.654111138408137
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 614.9998504234362,
+     "efficiency": 98.87999670272069,
+     "min_clearance": 24.099445131404178
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9998947408857,
+     "efficiency": 97.45383564094153,
+     "min_clearance": 21.079246852498844
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 114,
+     "path_length": 341.99997404756647,
+     "efficiency": 177.810490633503,
+     "min_clearance": 3.586743871047659
+    }
+   }
+  },
+  "85": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000053360943,
+     "efficiency": 96.98753216030059,
+     "min_clearance": 20.62927120045577
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 654.0000877223899,
+     "efficiency": 92.983448050937,
+     "min_clearance": 17.329650386513705
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 230,
+     "path_length": 690.0000673099289,
+     "efficiency": 88.13214094184775,
+     "min_clearance": 12.498587559492934
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000835757803,
+     "efficiency": 96.98752005779174,
+     "min_clearance": 20.5891893702752
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 662.9999428808476,
+     "efficiency": 91.7212495038961,
+     "min_clearance": 5.342706975468648
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 231,
+     "path_length": 693.0000865472742,
+     "efficiency": 87.75061412332846,
+     "min_clearance": 18.570331498246816
+    }
+   }
+  },
+  "86": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 669.0000028596241,
+     "efficiency": 90.89862918102716,
+     "min_clearance": 7.420512975673654
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 647.9999174957247,
+     "efficiency": 93.84443043921267,
+     "min_clearance": 15.054332460265014
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.9998785897216,
+     "efficiency": 92.9834777846988,
+     "min_clearance": 10.611527256331359
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9999413222267,
+     "efficiency": 94.72147778829982,
+     "min_clearance": 12.652387194492118
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0001748847505,
+     "efficiency": 96.98750593366397,
+     "min_clearance": 13.366696386031892
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 642.0000196801177,
+     "efficiency": 94.72146622727958,
+     "min_clearance": 16.12272268828826
+    }
+   }
+  },
+  "87": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 627.0000993156668,
+     "efficiency": 96.98751762306715,
+     "min_clearance": 19.875171687971616
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 648.0001319608784,
+     "efficiency": 93.84439938002116,
+     "min_clearance": 8.674832740538488
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 266,
+     "path_length": 797.999885280849,
+     "efficiency": 76.20450115809369,
+     "min_clearance": 20.394099933761776
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 618.0000922385598,
+     "efficiency": 98.39995809995578,
+     "min_clearance": 24.527230232749396
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.000074104907,
+     "efficiency": 93.4119450994771,
+     "min_clearance": 13.275954000762246
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 179,
+     "path_length": 537.0000418141504,
+     "efficiency": 113.24241796444616,
+     "min_clearance": 27.7350652951451
+    }
+   }
+  },
+  "88": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 687.0000503123545,
+     "efficiency": 88.51699960486816,
+     "min_clearance": 12.352180805621316
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 644.9999078865752,
+     "efficiency": 94.28091762260667,
+     "min_clearance": 11.42716247053836
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 230,
+     "path_length": 689.9999897813782,
+     "efficiency": 88.1321508443945,
+     "min_clearance": 11.162508121456389
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 229,
+     "path_length": 687.0001019645233,
+     "efficiency": 88.51699294970902,
+     "min_clearance": 12.670994530593585
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 647.9999784384054,
+     "efficiency": 93.8444216133927,
+     "min_clearance": 13.556689274700327
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 219,
+     "path_length": 657.0000811984785,
+     "efficiency": 92.55886707215207,
+     "min_clearance": 11.43230616242645
+    }
+   }
+  },
+  "89": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 650.9998114813898,
+     "efficiency": 93.41198278331838,
+     "min_clearance": 14.701837534665549
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 218,
+     "path_length": 653.999891214118,
+     "efficiency": 92.98347598980511,
+     "min_clearance": 9.601363053289324
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 279,
+     "path_length": 837.0000496681762,
+     "efficiency": 72.65373903639711,
+     "min_clearance": 8.676328182391053
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.9999392420575,
+     "efficiency": 92.13816481843698,
+     "min_clearance": 9.090774704294201
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 266,
+     "path_length": 797.9999016377857,
+     "efficiency": 76.20449959609826,
+     "min_clearance": 10.991830706250953
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 285,
+     "path_length": 855.0001581655483,
+     "efficiency": 71.12417769900412,
+     "min_clearance": 10.535147802850553
+    }
+   }
+  },
+  "90": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 678.000024284144,
+     "efficiency": 89.69200738045643,
+     "min_clearance": 11.81493332541683
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 206,
+     "path_length": 617.9998417066022,
+     "efficiency": 98.3999979904743,
+     "min_clearance": 11.446987301364693
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 276,
+     "path_length": 827.9999982874028,
+     "efficiency": 73.44345810123448,
+     "min_clearance": 15.576230059711003
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 207,
+     "path_length": 620.9998028063823,
+     "efficiency": 97.92464169429542,
+     "min_clearance": 21.728218146749278
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 100,
+     "path_length": 299.99997614243495,
+     "efficiency": 202.70396006022,
+     "min_clearance": 4.691549672997067
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0000876332617,
+     "efficiency": 91.72122947845034,
+     "min_clearance": 9.587331302714764
+    }
+   }
+  },
+  "91": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9999279832628,
+     "efficiency": 94.72147975634736,
+     "min_clearance": 10.230053261960437
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 644.9998463853483,
+     "efficiency": 94.28092661236403,
+     "min_clearance": 6.433136674870191
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000313348597,
+     "efficiency": 96.52568278956248,
+     "min_clearance": 8.696003873093915
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 275,
+     "path_length": 825.0000552546846,
+     "efficiency": 73.71052013235338,
+     "min_clearance": 6.362495942970359
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 38,
+     "path_length": 113.9999834844644,
+     "efficiency": 533.4315087013173,
+     "min_clearance": 4.2366315957173555
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 209,
+     "path_length": 626.9998500470377,
+     "efficiency": 96.98755618120326,
+     "min_clearance": 15.068401995661262
+    }
+   }
+  },
+  "92": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999090438574,
+     "efficiency": 97.45383340716002,
+     "min_clearance": 13.620811253947952
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 210,
+     "path_length": 630.0000660611283,
+     "efficiency": 96.52567746896496,
+     "min_clearance": 30.344511110314507
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 221,
+     "path_length": 663.0000727698452,
+     "efficiency": 91.72123153469572,
+     "min_clearance": 19.403224587650406
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 205,
+     "path_length": 614.999868800139,
+     "efficiency": 98.87999374810492,
+     "min_clearance": 44.90524177742422
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 177,
+     "path_length": 530.9999381184307,
+     "efficiency": 114.52201557221305,
+     "min_clearance": 8.194915886460965
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 674.9999802240105,
+     "efficiency": 90.09064439062922,
+     "min_clearance": 14.453425236656296
+    }
+   }
+  },
+  "93": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.9999561026219,
+     "efficiency": 86.62562248530027,
+     "min_clearance": 11.259847434474178
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 180,
+     "path_length": 540.0000087776909,
+     "efficiency": 112.61330035844138,
+     "min_clearance": 11.230081793088367
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 170,
+     "path_length": 509.99995191862047,
+     "efficiency": 119.23762532382864,
+     "min_clearance": 11.992257727349799
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 240,
+     "path_length": 720.0000109147496,
+     "efficiency": 84.45997536136612,
+     "min_clearance": 8.656446798599768
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 180,
+     "path_length": 540.0000584831957,
+     "efficiency": 112.61328999270002,
+     "min_clearance": 9.726689974204156
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 659.9998845312599,
+     "efficiency": 92.13817245624512,
+     "min_clearance": 15.36397628016601
+    }
+   }
+  },
+  "94": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 256,
+     "path_length": 768.0002180344245,
+     "efficiency": 79.18120562215428,
+     "min_clearance": 5.309879705331313
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 645.000076714542,
+     "efficiency": 94.28089294469389,
+     "min_clearance": 8.939694517684904
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 228,
+     "path_length": 683.9998943845626,
+     "efficiency": 88.90525229796813,
+     "min_clearance": 18.737149941032847
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 224,
+     "path_length": 672.000007126448,
+     "efficiency": 90.49283115647415,
+     "min_clearance": 8.565809282458341
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 177,
+     "path_length": 530.9999685000548,
+     "efficiency": 114.52200901973653,
+     "min_clearance": 8.49481084844685
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 164,
+     "path_length": 492.0000145867631,
+     "efficiency": 123.59996215268237,
+     "min_clearance": 3.463204419410264
+    }
+   }
+  },
+  "95": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 216,
+     "path_length": 648.0000473794668,
+     "efficiency": 93.84441162923596,
+     "min_clearance": 10.92835277373935
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 660.0000012455814,
+     "efficiency": 92.13815616254169,
+     "min_clearance": 10.646739762435699
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 180,
+     "path_length": 540.0000215814247,
+     "efficiency": 112.61329768831054,
+     "min_clearance": 13.50163826692822
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 212,
+     "path_length": 636.0000237259171,
+     "efficiency": 95.61506432938364,
+     "min_clearance": 14.004734977229013
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 644.999965611087,
+     "efficiency": 94.28090918490089,
+     "min_clearance": 12.900267499862748
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 172,
+     "path_length": 515.9998914187968,
+     "efficiency": 117.8511549970219,
+     "min_clearance": 15.776947668695172
+    }
+   }
+  },
+  "96": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 222,
+     "path_length": 666.0000314019917,
+     "efficiency": 91.30807855073208,
+     "min_clearance": 7.498813480371291
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 223,
+     "path_length": 668.9999861506747,
+     "efficiency": 90.89863145131213,
+     "min_clearance": 7.96802236543696
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 299,
+     "path_length": 896.9998660911399,
+     "efficiency": 67.79397130463379,
+     "min_clearance": 8.229914116932513
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 187,
+     "path_length": 561.0000193393148,
+     "efficiency": 108.39782724724311,
+     "min_clearance": 4.57225407317427
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 238,
+     "path_length": 714.0000157723301,
+     "efficiency": 85.16972246319062,
+     "min_clearance": 7.522098277835864
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 220,
+     "path_length": 660.0000101148831,
+     "efficiency": 92.1381549243582,
+     "min_clearance": 19.28023554145892
+    }
+   }
+  },
+  "97": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 225,
+     "path_length": 674.9998662898155,
+     "efficiency": 90.09065959715824,
+     "min_clearance": 9.09374891585043
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9999797470983,
+     "efficiency": 94.72147211904634,
+     "min_clearance": 8.901577654495766
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 214,
+     "path_length": 641.9997929762053,
+     "efficiency": 94.72149967546322,
+     "min_clearance": 11.370553289113138
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 204,
+     "path_length": 611.9999817746783,
+     "efficiency": 99.36468136110518,
+     "min_clearance": 7.001613159328166
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 52,
+     "path_length": 155.99999263827155,
+     "efficiency": 389.8152952035733,
+     "min_clearance": 3.3951763814683598
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 377,
+     "path_length": 1131.000042479693,
+     "efficiency": 53.76762236782581,
+     "min_clearance": 8.125230564573378
+    }
+   }
+  },
+  "98": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 234,
+     "path_length": 701.9999137638981,
+     "efficiency": 86.62562770982841,
+     "min_clearance": 10.629339592855489
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 217,
+     "path_length": 651.0001966088405,
+     "efficiency": 93.41192752140142,
+     "min_clearance": 10.276000645312088
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 233,
+     "path_length": 698.9999969454693,
+     "efficiency": 86.99740121284596,
+     "min_clearance": 17.75807045762214
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 45,
+     "path_length": 134.99998713486298,
+     "efficiency": 450.4532516828585,
+     "min_clearance": 6.8377550897770245
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 208,
+     "path_length": 623.9999291260293,
+     "efficiency": 97.4538302708061,
+     "min_clearance": 8.510241458881643
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 232,
+     "path_length": 695.9997577893109,
+     "efficiency": 87.372420035312,
+     "min_clearance": 20.547552673731253
+    }
+   }
+  },
+  "99": {
+   "static": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 215,
+     "path_length": 644.9999668162092,
+     "efficiency": 94.28090900874582,
+     "min_clearance": 11.880925826384482
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 183,
+     "path_length": 548.999971989791,
+     "efficiency": 110.76718813234095,
+     "min_clearance": 13.814061824113683
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 226,
+     "path_length": 677.9996785382232,
+     "efficiency": 89.69205311889358,
+     "min_clearance": 16.891269835263607
+    }
+   },
+   "dynamic": {
+    "out/arc_models/sacdyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 191,
+     "path_length": 572.9999883524025,
+     "efficiency": 106.12772149768948,
+     "min_clearance": 4.977206131359733
+    },
+    "out/arc_models/sacdyn_seed8/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 187,
+     "path_length": 560.9998997699105,
+     "efficiency": 108.39785035074748,
+     "min_clearance": 7.580807299672823
+    },
+    "out/arc_models/sacdyn_seed9/models/arc_best.pth": {
+     "outcome": "success",
+     "steps": 247,
+     "path_length": 741.0000445095426,
+     "efficiency": 82.06636913536644,
+     "min_clearance": 5.45085372344424
+    }
+   }
+  }
+ },
+ "success": {
+  "static": {
+   "out/arc_models/sacdyn_seed7/models/arc_best.pth": 99,
+   "out/arc_models/sacdyn_seed8/models/arc_best.pth": 94,
+   "out/arc_models/sacdyn_seed9/models/arc_best.pth": 72
+  },
+  "dynamic": {
+   "out/arc_models/sacdyn_seed7/models/arc_best.pth": 79,
+   "out/arc_models/sacdyn_seed8/models/arc_best.pth": 70,
+   "out/arc_models/sacdyn_seed9/models/arc_best.pth": 56
+  }
+ }
+}

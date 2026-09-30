@@ -1,0 +1,1067 @@
+{
+ "layout": "corridor",
+ "headings_rad": [
+  0.8605556614246863,
+  -1.4464727375963786,
+  -2.8841484100105235,
+  -3.03774645687452,
+  1.9683349641197863,
+  2.5934197786078093,
+  0.6700123395200417,
+  1.441969420022903,
+  0.27410390540137985,
+  2.7336406607023154
+ ],
+ "models": {
+  "out\\arc_models\\td3dyn_seed0\\models\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 237,
+    "path_length": 710.9999152714312,
+    "efficiency": 85.52910046244918,
+    "min_clearance": 21.90050563773657
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    84.79800660481754,
+    1.6418504201118467
+   ],
+   "random_heading_L_success": [
+    717.375026005393,
+    14.471028193483797
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed0\\models\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 244,
+    "path_length": 732.000018961176,
+    "efficiency": 83.07538470879248,
+    "min_clearance": 10.222682603782776
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    82.15597600944912,
+    2.0682447940085544
+   ],
+   "random_heading_L_success": [
+    740.6250754056061,
+    19.668235122868168
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed0\\models\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 240,
+    "path_length": 720.0001812701665,
+    "efficiency": 84.45995537774016,
+    "min_clearance": 7.65388986682786
+   },
+   "random_heading_success": 5,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "collision",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    84.18251320786696,
+    0.5732436127836793
+   ],
+   "random_heading_L_success": [
+    722.3999557505597,
+    4.929521932822846
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed0\\models\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 233,
+    "path_length": 698.9998204039005,
+    "efficiency": 86.99742318518021,
+    "min_clearance": 11.765346064409943
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    86.11628793951026,
+    2.000880718014682
+   ],
+   "random_heading_L_success": [
+    706.4999709577817,
+    17.121396369509863
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed0\\models\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 229,
+    "path_length": 687.0000579796604,
+    "efficiency": 88.5169986169688,
+    "min_clearance": 10.741832613165506
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    87.45361259973794,
+    1.8089684287854026
+   ],
+   "random_heading_L_success": [
+    695.6249623232577,
+    14.99465689242068
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed0\\models\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 236,
+    "path_length": 708.000222935282,
+    "efficiency": 85.8914746240155,
+    "min_clearance": 10.378974146086072
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    85.41806583460767,
+    1.5060897605211245
+   ],
+   "random_heading_L_success": [
+    712.1250283053374,
+    13.021300600265993
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed0\\models\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 162,
+    "path_length": 486.00001955452876,
+    "efficiency": 125.1258862865542,
+    "min_clearance": 2.8978177653122787
+   },
+   "random_heading_success": 5,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "collision",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    82.67068198745366,
+    0.43884148061101685
+   ],
+   "random_heading_L_success": [
+    735.6000328610623,
+    3.9114700649140035
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed1\\models\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 239,
+    "path_length": 716.9998893401391,
+    "efficiency": 84.81337875520192,
+    "min_clearance": 19.005144354233856
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    83.91895880315954,
+    1.5801199106562274
+   ],
+   "random_heading_L_success": [
+    724.874998102948,
+    14.15671092083771
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed1\\models\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 243,
+    "path_length": 728.999968909365,
+    "efficiency": 83.41726443832485,
+    "min_clearance": 15.707931269329354
+   },
+   "random_heading_success": 7,
+   "random_heading_outcomes": [
+    "success",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    83.32237796980566,
+    0.5465071006429909
+   ],
+   "random_heading_L_success": [
+    729.8571902577875,
+    4.8107171091504215
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed1\\models\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 240,
+    "path_length": 720.000055032859,
+    "efficiency": 84.45997018606869,
+    "min_clearance": 12.570132156500017
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    82.97712372079829,
+    1.6378165311785382
+   ],
+   "random_heading_L_success": [
+    733.1250389214586,
+    14.951754675566832
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed1\\models\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 234,
+    "path_length": 701.9999455997404,
+    "efficiency": 86.62562378133833,
+    "min_clearance": 10.752915387583235
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    85.88194800265708,
+    1.8369400252999801
+   ],
+   "random_heading_L_success": [
+    708.3749898301605,
+    15.82887144830735
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed1\\models\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 249,
+    "path_length": 746.9998860319592,
+    "efficiency": 81.40721882177286,
+    "min_clearance": 20.160613651719494
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    79.73291250766393,
+    2.0236030763208754
+   ],
+   "random_heading_L_success": [
+    763.1249993097824,
+    19.7660866511515
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed1\\models\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 236,
+    "path_length": 708.0000363933544,
+    "efficiency": 85.89149725446806,
+    "min_clearance": 10.898944467724048
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    85.06105760886635,
+    1.543256850886851
+   ],
+   "random_heading_L_success": [
+    715.1250183175705,
+    13.410436890690887
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed1\\models\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 237,
+    "path_length": 711.0003249700829,
+    "efficiency": 85.52905117814379,
+    "min_clearance": 12.660904746938312
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    84.61528756142835,
+    1.4707996963407997
+   ],
+   "random_heading_L_success": [
+    718.8749716229859,
+    12.922166860597407
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed2\\models\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed2\\models\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed2\\models\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed2\\models\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed2\\models\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed2\\models\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed2\\models\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed3\\models\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed3\\models\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed3\\models\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed3\\models\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed3\\models\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed3\\models\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed3\\models\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed4\\models\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed4\\models\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed4\\models\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed4\\models\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed4\\models\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "timeout",
+    "steps": 3600,
+    "path_length": 10799.999485023834,
+    "efficiency": 5.630665377935329,
+    "min_clearance": 145.04731238857084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "timeout",
+    "timeout",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds",
+    "timeout",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed4\\models\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 120,
+    "path_length": 360.0000325295929,
+    "efficiency": 168.91993801985078,
+    "min_clearance": 4.8246509655684084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "collision",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  },
+  "out\\arc_models\\td3dyn_seed4\\models\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 120,
+    "path_length": 360.0000325295929,
+    "efficiency": 168.91993801985078,
+    "min_clearance": 4.8246509655684084
+   },
+   "random_heading_success": 0,
+   "random_heading_outcomes": [
+    "collision",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "out_of_bounds",
+    "collision",
+    "collision",
+    "out_of_bounds"
+   ],
+   "random_heading_eff_success": [
+    NaN,
+    NaN
+   ],
+   "random_heading_L_success": [
+    NaN,
+    NaN
+   ]
+  }
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "full|nocap|apf": {
+  "success": 68,
+  "timeout": 32,
+  "collision": 0
+ },
+ "full|nocap|arc": {
+  "success": 69,
+  "timeout": 31,
+  "collision": 0
+ },
+ "full|cap|apf": {
+  "success": 81,
+  "timeout": 13,
+  "collision": 6
+ },
+ "full|cap|arc": {
+  "success": 83,
+  "timeout": 11,
+  "collision": 6
+ },
+ "range|nocap|apf": {
+  "success": 60,
+  "timeout": 40,
+  "collision": 0
+ },
+ "range|nocap|arc": {
+  "success": 62,
+  "timeout": 38,
+  "collision": 0
+ },
+ "range|cap|apf": {
+  "success": 80,
+  "timeout": 13,
+  "collision": 7
+ },
+ "range|cap|arc": {
+  "success": 80,
+  "timeout": 12,
+  "collision": 8
+ },
+ "rays|nocap|apf": {
+  "success": 68,
+  "timeout": 30,
+  "collision": 2
+ },
+ "rays|nocap|arc": {
+  "success": 68,
+  "timeout": 29,
+  "collision": 3
+ },
+ "rays|cap|apf": {
+  "success": 89,
+  "timeout": 3,
+  "collision": 8
+ },
+ "rays|cap|arc": {
+  "success": 90,
+  "timeout": 6,
+  "collision": 4
+ }
+}

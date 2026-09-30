@@ -1,0 +1,2362 @@
+{
+ "test": "layouts",
+ "models": [
+  "out/arc_models/td3_seed0/models/arc_best.pth",
+  "out/arc_models/td3_seed1/models/arc_best.pth",
+  "out/arc_models/td3_seed2/models/arc_best.pth",
+  "out/arc_models/td3_seed3/models/arc_best.pth",
+  "out/arc_models/td3_seed4/models/arc_best.pth",
+  "out/arc_models/td3_seed5/models/arc_best.pth",
+  "out/arc_models/td3_seed6/models/arc_best.pth",
+  "out/arc_models/td3_seed7/models/arc_best.pth",
+  "out/arc_models/td3_seed8/models/arc_best.pth",
+  "out/arc_models/td3_seed9/models/arc_best.pth",
+  "out/arc_models/td3dyn_seed2/models/arc_best.pth",
+  "out/arc_models/td3dyn_seed3/models/arc_best.pth",
+  "out/arc_models/td3dyn_seed4/models/arc_best.pth",
+  "out/arc_models/td3dyn_seed5/models/arc_best.pth",
+  "out/arc_models/td3dyn_seed7/models/arc_best.pth",
+  "out/arc_models/td3dyn_seed8/models/arc_best.pth"
+ ],
+ "apf_variants": [],
+ "results": {
+  "0": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 82.86901071631729
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 82.86901071631729
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 82.86901071631729
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 82.86901071631729
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 82.86901071631729
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 82.86901071631729
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 82.86901071631729
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 223,
+     "path_length": 669.0000381212424,
+     "efficiency": 90.89862438994709,
+     "min_clearance": 6.21398637820454
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 96.0699572890691
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 2529,
+     "path_length": 7586.999647317894,
+     "efficiency": 8.015182023046574,
+     "min_clearance": 4.051162513688546
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 2529,
+     "path_length": 7586.999654016539,
+     "efficiency": 8.015182015969883,
+     "min_clearance": 4.051182853329927
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 2529,
+     "path_length": 7586.999640590442,
+     "efficiency": 8.0151820301537,
+     "min_clearance": 4.051177655911083
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 2529,
+     "path_length": 7586.999654561236,
+     "efficiency": 8.015182015394446,
+     "min_clearance": 4.051162513688546
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999778972015,
+     "efficiency": 5.630665224683119,
+     "min_clearance": 14.141839040300454
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 14.141884816667641
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 14.141884816667641
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 14.141884816667641
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 14.141884816667641
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 2529,
+     "path_length": 7586.999648291925,
+     "efficiency": 8.015182022017573,
+     "min_clearance": 4.051162984309464
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 2529,
+     "path_length": 7586.999640590442,
+     "efficiency": 8.0151820301537,
+     "min_clearance": 4.051177655911083
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 2529,
+     "path_length": 7586.999640664117,
+     "efficiency": 8.015182030075866,
+     "min_clearance": 4.051177655911083
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 111,
+     "path_length": 333.0000255550994,
+     "efficiency": 182.61615169750505,
+     "min_clearance": 4.242814516669171
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 14.141884816667641
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 14.141884816667641
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 14.141884816667641
+    }
+   }
+  },
+  "1": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 50.27562746261333
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 50.27562746261333
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 50.27562746261333
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 50.27562746261333
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 50.27562746261333
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 50.27562746261333
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 50.27562746261333
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 218,
+     "path_length": 654.0000751963692,
+     "efficiency": 92.98344983184292,
+     "min_clearance": 6.434376197499406
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.200273050479296
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.9998502277385,
+     "efficiency": 18.130943916981384,
+     "min_clearance": 2.1587251884756
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999898477763,
+     "efficiency": 18.130943656152965,
+     "min_clearance": 2.158777967126337
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999840591847,
+     "efficiency": 18.130943969070778,
+     "min_clearance": 2.158718338649635
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.9998428613026,
+     "efficiency": 18.130943956802625,
+     "min_clearance": 2.1587236666709906
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.99985650677,
+     "efficiency": 20.049847035628225,
+     "min_clearance": 4.746557557778612
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.999855293907,
+     "efficiency": 20.049847043645936,
+     "min_clearance": 4.746560102810339
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.999855293907,
+     "efficiency": 20.049847043645936,
+     "min_clearance": 4.746560102810339
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.999855293907,
+     "efficiency": 20.049847043645936,
+     "min_clearance": 4.746560102810339
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.999855293907,
+     "efficiency": 20.049847043645936,
+     "min_clearance": 4.746560102810339
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999841032317,
+     "efficiency": 18.130943966689696,
+     "min_clearance": 2.1587269644834564
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999840591847,
+     "efficiency": 18.130943969070778,
+     "min_clearance": 2.158718338649635
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999840591847,
+     "efficiency": 18.130943969070778,
+     "min_clearance": 2.158718338649635
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 212,
+     "path_length": 635.9999808855902,
+     "efficiency": 95.6150707699194,
+     "min_clearance": 7.543448784404575
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.999855293907,
+     "efficiency": 20.049847043645936,
+     "min_clearance": 4.746560102810339
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.999855293907,
+     "efficiency": 20.049847043645936,
+     "min_clearance": 4.746560102810339
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1011,
+     "path_length": 3032.999855293907,
+     "efficiency": 20.049847043645936,
+     "min_clearance": 4.746560102810339
+    }
+   }
+  },
+  "2": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 84.30421455209262
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 84.30421455209262
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 84.30421455209262
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 84.30421455209262
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 84.30421455209262
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 84.30421455209262
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 84.30421455209262
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 157,
+     "path_length": 470.9999458902338,
+     "efficiency": 129.11080715116492,
+     "min_clearance": 4.246773071717906
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 99.02152693755373
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 411,
+     "path_length": 1232.9999408346287,
+     "efficiency": 49.319696755929655,
+     "min_clearance": 2.6617799689162878
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 411,
+     "path_length": 1232.9999408346287,
+     "efficiency": 49.319696755929655,
+     "min_clearance": 2.6617799689162878
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 411,
+     "path_length": 1232.9999408346287,
+     "efficiency": 49.319696755929655,
+     "min_clearance": 2.6617799689162878
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 411,
+     "path_length": 1232.9999408346287,
+     "efficiency": 49.319696755929655,
+     "min_clearance": 2.6617799689162878
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999346198065,
+     "efficiency": 42.854958410083555,
+     "min_clearance": 4.1676555643649005
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999320506397,
+     "efficiency": 42.854958487674494,
+     "min_clearance": 4.167651765649168
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999320506397,
+     "efficiency": 42.854958487674494,
+     "min_clearance": 4.167651765649168
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999320506397,
+     "efficiency": 42.854958487674494,
+     "min_clearance": 4.167651765649168
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999320506397,
+     "efficiency": 42.854958487674494,
+     "min_clearance": 4.167651765649168
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 411,
+     "path_length": 1232.9999408346287,
+     "efficiency": 49.319696755929655,
+     "min_clearance": 2.6617799689162878
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 411,
+     "path_length": 1232.9999408346287,
+     "efficiency": 49.319696755929655,
+     "min_clearance": 2.6617799689162878
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 411,
+     "path_length": 1232.9999408346287,
+     "efficiency": 49.319696755929655,
+     "min_clearance": 2.6617799689162878
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 81,
+     "path_length": 242.9999576618662,
+     "efficiency": 250.2518262437794,
+     "min_clearance": 4.081321454710211
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999320506397,
+     "efficiency": 42.854958487674494,
+     "min_clearance": 4.167651765649168
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999320506397,
+     "efficiency": 42.854958487674494,
+     "min_clearance": 4.167651765649168
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 473,
+     "path_length": 1418.9999320506397,
+     "efficiency": 42.854958487674494,
+     "min_clearance": 4.167651765649168
+    }
+   }
+  },
+  "3": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 107.84023118249448
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 107.84023118249448
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 107.84023118249448
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 107.84023118249448
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 107.84023118249448
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 107.84023118249448
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 107.84023118249448
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 193,
+     "path_length": 579.0000668072571,
+     "efficiency": 105.0279381095244,
+     "min_clearance": 6.569389017667281
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 134.79415726892026
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 815,
+     "path_length": 2444.999882945628,
+     "efficiency": 24.871650753938056,
+     "min_clearance": 4.928109146683212
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 815,
+     "path_length": 2444.999884822061,
+     "efficiency": 24.871650734850125,
+     "min_clearance": 4.928109146683212
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 815,
+     "path_length": 2444.9998837932235,
+     "efficiency": 24.87165074531593,
+     "min_clearance": 4.928124405472275
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 815,
+     "path_length": 2444.999884395382,
+     "efficiency": 24.871650739190496,
+     "min_clearance": 4.928116776077744
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.9998709231504,
+     "efficiency": 21.985244403408956,
+     "min_clearance": 3.9584439275695615
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.9584362981750303
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.9998680695144,
+     "efficiency": 21.985244426090766,
+     "min_clearance": 3.9584362981750303
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.9584362981750303
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.9584362981750303
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 815,
+     "path_length": 2444.999885781319,
+     "efficiency": 24.87165072509212,
+     "min_clearance": 4.928116776077744
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 815,
+     "path_length": 2444.9998837932235,
+     "efficiency": 24.87165074531593,
+     "min_clearance": 4.928124405472275
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 815,
+     "path_length": 2444.9998837932235,
+     "efficiency": 24.87165074531593,
+     "min_clearance": 4.928124405472275
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 185,
+     "path_length": 554.9999696606027,
+     "efficiency": 109.56970541679624,
+     "min_clearance": 11.396870902756175
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.9584362981750303
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.9584362981750303
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.9584362981750303
+    }
+   }
+  },
+  "4": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 47.04071946394447
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 47.04071946394447
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 47.04071946394447
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 47.04071946394447
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 47.04071946394447
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 47.04071946394447
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 47.04071946394447
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 211,
+     "path_length": 633.0000084972471,
+     "efficiency": 96.06821858724754,
+     "min_clearance": 8.278657783854046
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 60.68854807313136
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3318,
+     "path_length": 9953.999540323146,
+     "efficiency": 6.109221015703294,
+     "min_clearance": 2.8934023595316574
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3318,
+     "path_length": 9953.999534282219,
+     "efficiency": 6.109221019410885,
+     "min_clearance": 2.8934369730903606
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3318,
+     "path_length": 9953.999526273972,
+     "efficiency": 6.109221024325909,
+     "min_clearance": 2.893391180080955
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3318,
+     "path_length": 9953.999540644167,
+     "efficiency": 6.109221015506269,
+     "min_clearance": 2.8934097336952695
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999556730192,
+     "efficiency": 6.472029166762262,
+     "min_clearance": 4.812709592868988
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999553499001,
+     "efficiency": 6.472029168987929,
+     "min_clearance": 4.812718751470878
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999553499001,
+     "efficiency": 6.472029168987929,
+     "min_clearance": 4.812718751470878
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999553499001,
+     "efficiency": 6.472029168987929,
+     "min_clearance": 4.812718751470878
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999553499001,
+     "efficiency": 6.472029168987929,
+     "min_clearance": 4.812718751470878
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3318,
+     "path_length": 9953.999545284994,
+     "efficiency": 6.109221012657982,
+     "min_clearance": 2.8934003386828357
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3318,
+     "path_length": 9953.999526942534,
+     "efficiency": 6.109221023915582,
+     "min_clearance": 2.893387611204424
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3318,
+     "path_length": 9953.999526942534,
+     "efficiency": 6.109221023915582,
+     "min_clearance": 2.893387611204424
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 31,
+     "path_length": 93.00001440314925,
+     "efficiency": 653.883588860862,
+     "min_clearance": 4.298276803136673
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999553499001,
+     "efficiency": 6.472029168987929,
+     "min_clearance": 4.812718751470878
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999553499001,
+     "efficiency": 6.472029168987929,
+     "min_clearance": 4.812718751470878
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 3132,
+     "path_length": 9395.999553499001,
+     "efficiency": 6.472029168987929,
+     "min_clearance": 4.812718751470878
+    }
+   }
+  },
+  "5": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 132.28771646301396
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 132.28771646301396
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 132.28771646301396
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 132.28771646301396
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 132.28771646301396
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 132.28771646301396
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 132.28771646301396
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 180,
+     "path_length": 539.9997884087204,
+     "efficiency": 112.6133463148984,
+     "min_clearance": 5.77230642928518
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 115.08313745071584
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1402,
+     "path_length": 4205.999803494943,
+     "efficiency": 14.458199244686723,
+     "min_clearance": 4.6004091357954024
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1402,
+     "path_length": 4205.999900066254,
+     "efficiency": 14.45819891272113,
+     "min_clearance": 4.600420579887199
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1402,
+     "path_length": 4205.999799281115,
+     "efficiency": 14.458199259171831,
+     "min_clearance": 4.6003481006391524
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1402,
+     "path_length": 4205.999801802929,
+     "efficiency": 14.45819925050305,
+     "min_clearance": 4.600351915336418
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.999947261788,
+     "efficiency": 14.839234740028743,
+     "min_clearance": 2.515396092786588
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.999806197216,
+     "efficiency": 14.839235250836554,
+     "min_clearance": 2.515396092786588
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.999758233474,
+     "efficiency": 14.839235424517689,
+     "min_clearance": 2.515396092786588
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.9998113167985,
+     "efficiency": 14.839235232298073,
+     "min_clearance": 2.515396092786588
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.999806197216,
+     "efficiency": 14.839235250836554,
+     "min_clearance": 2.515396092786588
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1402,
+     "path_length": 4205.999807436818,
+     "efficiency": 14.458199231136458,
+     "min_clearance": 4.600355730033684
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1402,
+     "path_length": 4205.999799281115,
+     "efficiency": 14.458199259171831,
+     "min_clearance": 4.6003481006391524
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1402,
+     "path_length": 4205.999799281115,
+     "efficiency": 14.458199259171831,
+     "min_clearance": 4.6003481006391524
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 192,
+     "path_length": 575.9998504221985,
+     "efficiency": 105.57499821826252,
+     "min_clearance": 4.3337234921359595
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.999806197216,
+     "efficiency": 14.839235250836554,
+     "min_clearance": 2.515396092786588
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.999806197216,
+     "efficiency": 14.839235250836554,
+     "min_clearance": 2.515396092786588
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 1366,
+     "path_length": 4097.999806197216,
+     "efficiency": 14.839235250836554,
+     "min_clearance": 2.515396092786588
+    }
+   }
+  },
+  "6": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 51.646832411023105
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 51.646832411023105
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 51.646832411023105
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 51.646832411023105
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 51.646832411023105
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 51.646832411023105
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 51.646832411023105
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 106,
+     "path_length": 318.0000093084863,
+     "efficiency": 191.2301301949058,
+     "min_clearance": 4.561080239507413
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 70.57181628931708
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 774,
+     "path_length": 2321.9998914840344,
+     "efficiency": 26.18914126786522,
+     "min_clearance": 3.9940523432772825
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 774,
+     "path_length": 2321.9998879392574,
+     "efficiency": 26.1891413078457,
+     "min_clearance": 3.994052033627819
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 774,
+     "path_length": 2321.9998894959385,
+     "efficiency": 26.189141290288358,
+     "min_clearance": 3.9940601811095506
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 774,
+     "path_length": 2321.999889370994,
+     "efficiency": 26.18914129169757,
+     "min_clearance": 3.9940523432772825
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.999878831093,
+     "efficiency": 24.160185184547604,
+     "min_clearance": 3.6557931806524895
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.9998806698395,
+     "efficiency": 24.16018516689784,
+     "min_clearance": 3.6557887972621654
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.9998806698395,
+     "efficiency": 24.16018516689784,
+     "min_clearance": 3.6557887972621654
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.9998806698395,
+     "efficiency": 24.16018516689784,
+     "min_clearance": 3.6557887972621654
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.9998806698395,
+     "efficiency": 24.16018516689784,
+     "min_clearance": 3.6557887972621654
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 774,
+     "path_length": 2321.999889370994,
+     "efficiency": 26.18914129169757,
+     "min_clearance": 3.9940523432772825
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 774,
+     "path_length": 2321.9998894959385,
+     "efficiency": 26.189141290288358,
+     "min_clearance": 3.9940601811095506
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 774,
+     "path_length": 2321.9998894959385,
+     "efficiency": 26.189141290288358,
+     "min_clearance": 3.9940601811095506
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 202,
+     "path_length": 606.0000171787106,
+     "efficiency": 100.34848425443155,
+     "min_clearance": 5.828140510683565
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.9998806698395,
+     "efficiency": 24.16018516689784,
+     "min_clearance": 3.6557887972621654
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.9998806698395,
+     "efficiency": 24.16018516689784,
+     "min_clearance": 3.6557887972621654
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 839,
+     "path_length": 2516.9998806698395,
+     "efficiency": 24.16018516689784,
+     "min_clearance": 3.6557887972621654
+    }
+   }
+  },
+  "7": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 77.79099016297705
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 77.79099016297705
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 77.79099016297705
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 77.79099016297705
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 77.79099016297705
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 77.79099016297705
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 77.79099016297705
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 112,
+     "path_length": 335.9999421665827,
+     "efficiency": 180.98569538412005,
+     "min_clearance": 4.781687124064339
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 97.13604247656055
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 319,
+     "path_length": 956.9999531487592,
+     "efficiency": 63.543559204950554,
+     "min_clearance": 2.7814817620074486
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 319,
+     "path_length": 956.9999541391305,
+     "efficiency": 63.54355913919118,
+     "min_clearance": 2.7814817620074486
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 319,
+     "path_length": 956.9999548051312,
+     "efficiency": 63.543559094969595,
+     "min_clearance": 2.7814778109942324
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 319,
+     "path_length": 956.9999501825002,
+     "efficiency": 63.543559401906315,
+     "min_clearance": 2.7814817620074486
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999649900835,
+     "efficiency": 81.08158136093664,
+     "min_clearance": 2.8152825432085606
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999634864982,
+     "efficiency": 81.08158152348742,
+     "min_clearance": 2.8152898685827346
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999634864982,
+     "efficiency": 81.08158152348742,
+     "min_clearance": 2.8152898685827346
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999634864982,
+     "efficiency": 81.08158152348742,
+     "min_clearance": 2.8152898685827346
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999634864982,
+     "efficiency": 81.08158152348742,
+     "min_clearance": 2.8152898685827346
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 319,
+     "path_length": 956.9999503783326,
+     "efficiency": 63.5435593889033,
+     "min_clearance": 2.7814855741771254
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 319,
+     "path_length": 956.9999548051312,
+     "efficiency": 63.543559094969595,
+     "min_clearance": 2.7814778109942324
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 319,
+     "path_length": 956.9999548051312,
+     "efficiency": 63.543559094969595,
+     "min_clearance": 2.7814778109942324
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 197,
+     "path_length": 590.9999505984731,
+     "efficiency": 102.8954116163004,
+     "min_clearance": 7.6317258695466155
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999634864982,
+     "efficiency": 81.08158152348742,
+     "min_clearance": 2.8152898685827346
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999634864982,
+     "efficiency": 81.08158152348742,
+     "min_clearance": 2.8152898685827346
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 250,
+     "path_length": 749.9999634864982,
+     "efficiency": 81.08158152348742,
+     "min_clearance": 2.8152898685827346
+    }
+   }
+  },
+  "8": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 90.01898501528348
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 90.01898501528348
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 90.01898501528348
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 90.01898501528348
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 90.01898501528348
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 90.01898501528348
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 90.01898501528348
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "out_of_bounds",
+     "steps": 215,
+     "path_length": 644.9999515283954,
+     "efficiency": 94.28091124339556,
+     "min_clearance": 5.596999302014548
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 63.065058928857695
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999732430224,
+     "efficiency": 102.37573387425641,
+     "min_clearance": 4.128641029479866
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999754625687,
+     "efficiency": 102.37573349171821,
+     "min_clearance": 4.1286524735716625
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999717542863,
+     "efficiency": 102.37573413083967,
+     "min_clearance": 4.128635307433967
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999748949019,
+     "efficiency": 102.37573358955542,
+     "min_clearance": 4.1286372147826
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.99998085051595,
+     "efficiency": 154.735842608536,
+     "min_clearance": 2.996037757255124
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.9999807536319,
+     "efficiency": 154.73584264668213,
+     "min_clearance": 2.9960492013469207
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.9999807536319,
+     "efficiency": 154.73584264668213,
+     "min_clearance": 2.9960492013469207
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.9999807536319,
+     "efficiency": 154.73584264668213,
+     "min_clearance": 2.9960492013469207
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.9999807536319,
+     "efficiency": 154.73584264668213,
+     "min_clearance": 2.9960492013469207
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999752643679,
+     "efficiency": 102.37573352587806,
+     "min_clearance": 4.128635307433967
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999717542863,
+     "efficiency": 102.37573413083967,
+     "min_clearance": 4.128635307433967
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999717542863,
+     "efficiency": 102.37573413083967,
+     "min_clearance": 4.128635307433967
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 110,
+     "path_length": 329.9999613607548,
+     "efficiency": 184.27633424951986,
+     "min_clearance": 4.745481769368546
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.9999807536319,
+     "efficiency": 154.73584264668213,
+     "min_clearance": 2.9960492013469207
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.9999807536319,
+     "efficiency": 154.73584264668213,
+     "min_clearance": 2.9960492013469207
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 131,
+     "path_length": 392.9999807536319,
+     "efficiency": 154.73584264668213,
+     "min_clearance": 2.9960492013469207
+    }
+   }
+  },
+  "9": {
+   "static": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 54.14022289470259
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 54.14022289470259
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 54.14022289470259
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 54.14022289470259
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 54.14022289470259
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 54.14022289470259
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 54.14022289470259
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 120,
+     "path_length": 359.9999633021344,
+     "efficiency": 168.91997050290405,
+     "min_clearance": 4.445748015116972
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "timeout",
+     "steps": 3600,
+     "path_length": 10799.999485023834,
+     "efficiency": 5.630665377935329,
+     "min_clearance": 67.35580613099191
+    }
+   },
+   "dynamic": {
+    "out/arc_models/td3_seed0/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 683,
+     "path_length": 2048.9999011525088,
+     "efficiency": 29.678470529861126,
+     "min_clearance": 4.665959451456099
+    },
+    "out/arc_models/td3_seed1/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 683,
+     "path_length": 2048.999898377683,
+     "efficiency": 29.678470570052724,
+     "min_clearance": 4.665960524991417
+    },
+    "out/arc_models/td3_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 683,
+     "path_length": 2048.9999010939673,
+     "efficiency": 29.67847053070906,
+     "min_clearance": 4.665955851911257
+    },
+    "out/arc_models/td3_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 683,
+     "path_length": 2048.999900425405,
+     "efficiency": 29.678470540392762,
+     "min_clearance": 4.665959451456099
+    },
+    "out/arc_models/td3_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.9999021772082,
+     "efficiency": 29.63508093617419,
+     "min_clearance": 4.610114005950663
+    },
+    "out/arc_models/td3_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.999902118667,
+     "efficiency": 29.635080937019648,
+     "min_clearance": 4.610110191253398
+    },
+    "out/arc_models/td3_seed6/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.999902118667,
+     "efficiency": 29.635080937019648,
+     "min_clearance": 4.610110191253398
+    },
+    "out/arc_models/td3_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.999902118667,
+     "efficiency": 29.635080937019648,
+     "min_clearance": 4.610110191253398
+    },
+    "out/arc_models/td3_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.999902118667,
+     "efficiency": 29.635080937019648,
+     "min_clearance": 4.610110191253398
+    },
+    "out/arc_models/td3_seed9/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 683,
+     "path_length": 2048.999900425405,
+     "efficiency": 29.678470540392762,
+     "min_clearance": 4.665959451456099
+    },
+    "out/arc_models/td3dyn_seed2/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 683,
+     "path_length": 2048.9999010939673,
+     "efficiency": 29.67847053070906,
+     "min_clearance": 4.665955851911257
+    },
+    "out/arc_models/td3dyn_seed3/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 683,
+     "path_length": 2048.9999010939673,
+     "efficiency": 29.67847053070906,
+     "min_clearance": 4.665955851911257
+    },
+    "out/arc_models/td3dyn_seed4/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 125,
+     "path_length": 374.9999708762226,
+     "efficiency": 162.1631677462589,
+     "min_clearance": 4.254443915144564
+    },
+    "out/arc_models/td3dyn_seed5/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.999902118667,
+     "efficiency": 29.635080937019648,
+     "min_clearance": 4.610110191253398
+    },
+    "out/arc_models/td3dyn_seed7/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.999902118667,
+     "efficiency": 29.635080937019648,
+     "min_clearance": 4.610110191253398
+    },
+    "out/arc_models/td3dyn_seed8/models/arc_best.pth": {
+     "outcome": "collision",
+     "steps": 684,
+     "path_length": 2051.999902118667,
+     "efficiency": 29.635080937019648,
+     "min_clearance": 4.610110191253398
+    }
+   }
+  }
+ },
+ "success": {
+  "static": {
+   "out/arc_models/td3_seed0/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed1/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed2/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed3/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed4/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed5/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed6/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed7/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed8/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed9/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed2/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed3/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed4/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed5/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed7/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed8/models/arc_best.pth": 0
+  },
+  "dynamic": {
+   "out/arc_models/td3_seed0/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed1/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed2/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed3/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed4/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed5/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed6/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed7/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed8/models/arc_best.pth": 0,
+   "out/arc_models/td3_seed9/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed2/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed3/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed4/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed5/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed7/models/arc_best.pth": 0,
+   "out/arc_models/td3dyn_seed8/models/arc_best.pth": 0
+  }
+ }
+}

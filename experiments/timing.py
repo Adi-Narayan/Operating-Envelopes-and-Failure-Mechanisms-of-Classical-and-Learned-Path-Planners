@@ -62,6 +62,8 @@ def arc_step_cost(planner, path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", nargs="+", required=True)
+    ap.add_argument("--out", default="timing", help="output name: out/<out>.json")
+    ap.add_argument("--no-3d", action="store_true", help="skip the 3D APF wall times")
     args = ap.parse_args()
     models = []
     for m in args.models:
@@ -97,13 +99,14 @@ def main():
                                       "arc": res["arc_steps_per_100m"][0] * res["arc_step_ms"][0]}
 
     # 3D APF wall times
-    import run_apf3d as A3
-    for mode in ("static", "dynamic"):
-        rows = [A3.one(mode, s) for s in range(REPEATS)]
-        res[f"apf3d_{mode}_run_ms"] = H.mean_sd([r["time_ms"] for r in rows])
-        res[f"apf3d_{mode}_ms_per_step"] = float(np.mean([r["time_ms"] / r["steps"] for r in rows]))
+    if not args.no_3d:
+        import run_apf3d as A3
+        for mode in ("static", "dynamic"):
+            rows = [A3.one(mode, s) for s in range(REPEATS)]
+            res[f"apf3d_{mode}_run_ms"] = H.mean_sd([r["time_ms"] for r in rows])
+            res[f"apf3d_{mode}_ms_per_step"] = float(np.mean([r["time_ms"] / r["steps"] for r in rows]))
 
-    with open(os.path.join(HERE, "out", "timing.json"), "w") as f:
+    with open(os.path.join(HERE, "out", f"{args.out}.json"), "w") as f:
         json.dump(res, f, indent=1, default=float)
     print(json.dumps({k: v for k, v in res.items() if not k.endswith("_all")}, indent=1, default=float))
 

@@ -1,0 +1,228 @@
+{
+ "layout": "corridor",
+ "headings_rad": [
+  0.8605556614246863,
+  -1.4464727375963786,
+  -2.8841484100105235,
+  -3.03774645687452,
+  1.9683349641197863,
+  2.5934197786078093,
+  0.6700123395200417,
+  1.441969420022903,
+  0.27410390540137985,
+  2.7336406607023154
+ ],
+ "note": "TD3 static seed 2 trained on CUDA; archived, replaced by a CPU retrain",
+ "models": {
+  "out\\arc_models_gpu\\td3_seed2\\models\\arc_checkpoint_ep50.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 245,
+    "path_length": 735.0000681880499,
+    "efficiency": 82.73629597335567,
+    "min_clearance": 30.17916627035541
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    81.93447302572181,
+    1.742593756588835
+   ],
+   "random_heading_L_success": [
+    742.5001183080371,
+    16.509716122203034
+   ]
+  },
+  "out\\arc_models_gpu\\td3_seed2\\models\\arc_checkpoint_ep100.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 230,
+    "path_length": 689.9999275372948,
+    "efficiency": 88.13215879469237,
+    "min_clearance": 12.170668455767135
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    86.8397128447373,
+    1.660184003864717
+   ],
+   "random_heading_L_success": [
+    700.5000007747012,
+    13.794370756832942
+   ]
+  },
+  "out\\arc_models_gpu\\td3_seed2\\models\\arc_checkpoint_ep150.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 240,
+    "path_length": 719.9999675907411,
+    "efficiency": 84.45998044351175,
+    "min_clearance": 9.539853902147543
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    83.53374206558436,
+    1.6750415758761088
+   ],
+   "random_heading_L_success": [
+    728.2500000756188,
+    15.191701679928965
+   ]
+  },
+  "out\\arc_models_gpu\\td3_seed2\\models\\arc_checkpoint_ep200.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 233,
+    "path_length": 699.0000823126447,
+    "efficiency": 86.9973905880655,
+    "min_clearance": 8.410026075604405
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    86.42909793026993,
+    1.8011310302935195
+   ],
+   "random_heading_L_success": [
+    703.8750015370351,
+    15.29183750902989
+   ]
+  },
+  "out\\arc_models_gpu\\td3_seed2\\models\\arc_checkpoint_ep250.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 234,
+    "path_length": 702.0000405326676,
+    "efficiency": 86.62561206677485,
+    "min_clearance": 7.140160947566966
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    85.86857985515883,
+    1.4644616876440433
+   ],
+   "random_heading_L_success": [
+    708.3750164597927,
+    12.466393740432611
+   ]
+  },
+  "out\\arc_models_gpu\\td3_seed2\\models\\arc_checkpoint_ep300.pth": {
+   "deterministic": {
+    "outcome": "collision",
+    "steps": 70,
+    "path_length": 210.0000008500519,
+    "efficiency": 289.57706159946457,
+    "min_clearance": 4.947453360114842
+   },
+   "random_heading_success": 7,
+   "random_heading_outcomes": [
+    "success",
+    "collision",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    86.31232616133939,
+    0.5350546345334698
+   ],
+   "random_heading_L_success": [
+    704.5714088374186,
+    4.391585922926512
+   ]
+  },
+  "out\\arc_models_gpu\\td3_seed2\\models\\arc_best.pth": {
+   "deterministic": {
+    "outcome": "success",
+    "steps": 232,
+    "path_length": 696.0001614354064,
+    "efficiency": 87.37236936357634,
+    "min_clearance": 7.486421051952056
+   },
+   "random_heading_success": 8,
+   "random_heading_outcomes": [
+    "success",
+    "success",
+    "out_of_bounds",
+    "out_of_bounds",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success",
+    "success"
+   ],
+   "random_heading_eff_success": [
+    86.4671619569863,
+    1.5841380691564593
+   ],
+   "random_heading_L_success": [
+    703.4999604143413,
+    13.320195301173708
+   ]
+  }
+ }
+}

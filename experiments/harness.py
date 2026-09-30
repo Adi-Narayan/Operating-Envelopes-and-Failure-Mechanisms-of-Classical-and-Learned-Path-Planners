@@ -201,9 +201,14 @@ class ARCPlanner:
         self.env = UAVEnvironment(ENVIRONMENTS["corridor_gauntlet"], ENV_CONFIG)
         self.speed = ENV_CONFIG["uav_speed"] * ENV_CONFIG["sampling_interval"]  # 3.0 m per step
         assert abs(self.speed - ARC_STEP) < 1e-9
-        self.agent = ARCAgent(self.obs_dim, 1, {**NETWORK_CONFIG, **TRAIN_CONFIG}, torch.device("cpu"))
-        self.agent.load(model_path)
-        self.agent.policy_net.eval()
+        from baselines import load_agent
+        agent = load_agent(model_path)            # TD3 / SAC checkpoints carry an "algo" key
+        if agent is None:
+            agent = ARCAgent(self.obs_dim, 1, {**NETWORK_CONFIG, **TRAIN_CONFIG}, torch.device("cpu"))
+            agent.load(model_path)
+            agent.policy_net.eval()
+        self.agent = agent
+        self.algo = getattr(agent, "algo", None) or "arc"
         self.model_path = model_path
         self._static_cache = None
 
@@ -214,8 +219,24 @@ class ARCPlanner:
             return self._static_cache
         return _to_shapely(obstacles)
 
-    def run(self, timeline, heading0=None, max_steps=ARC_MAX_STEPS, static=False):
+    def run(self, timeline, heading0=None, max_steps=ARC_MAX_STEPS, static=False,
+            range_noise=0.0, heading_noise=0.0, noise_seed=0):
+        """range_noise: SD (m) of Gaussian noise on each ray reading that hits an obstacle;
+        heading_noise: SD (rad) of Gaussian noise on the executed heading. Collisions are
+        judged on the true state (exact clearance and the noise-free ray readings)."""
         env = self.env
+        nrng = np.random.default_rng(noise_seed)
+
+        def perceive(ob):
+            if range_noise <= 0:
+                return ob
+            ob = ob.copy()
+            d = ob[3:] * env.sensor_range
+            hit = d < env.sensor_range - 1e-6
+            d[hit] = np.clip(d[hit] + nrng.normal(0.0, range_noise, size=int(hit.sum())), 0.1, env.sensor_range)
+            ob[3:] = d / env.sensor_range
+            return ob
+
         g0 = _gen_time(timeline)
         t0 = time.perf_counter()
         env.uav_pos = START.astype(np.float32).copy()
@@ -224,20 +245,23 @@ class ARCPlanner:
         env.uav_heading = float(math.atan2(g[1], g[0]) if heading0 is None else heading0)
         env.obstacles = self._geoms(timeline.at(0.0), static)
         hist = self.ObservationHistory(self.hist_len, self.obs_dim)
-        hist.reset(env._get_observation())
+        hist.reset(perceive(env._get_observation()))
         path = [env.uav_pos.astype(float).copy()]
         min_c = clearance(env.uav_pos, timeline.at(0.0))
         outcome = "timeout"
         for k in range(max_steps):
             a, _ = self.agent.select_action(hist.get_tensor(self.agent.device), None, noise_scale=0.0)
-            env.uav_heading = env._normalize_angle(env.uav_heading + float(a[0]) * env.action_range)
+            turn = float(a[0]) * env.action_range
+            if heading_noise > 0:
+                turn += nrng.normal(0.0, heading_noise)     # actuation noise on the executed heading
+            env.uav_heading = env._normalize_angle(env.uav_heading + turn)
             env.uav_pos[0] += self.speed * np.cos(env.uav_heading)
             env.uav_pos[1] += self.speed * np.sin(env.uav_heading)
             path.append(env.uav_pos.astype(float).copy())
             obs_now = timeline.at((k + 1) * ARC_DT)
             env.obstacles = self._geoms(obs_now, static)
             ob = env._get_observation()
-            hist.append(ob)
+            hist.append(perceive(ob))
             p = env.uav_pos
             if p[0] < 0 or p[0] > env.width or p[1] < 0 or p[1] > env.height:
                 outcome = "out_of_bounds"
