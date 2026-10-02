@@ -1,9 +1,10 @@
 """
 Regenerate the paper's 2D figures under the corrected protocol.
 
-    python figures.py --tag final
+    python figures.py --tag final_corridor_a
 Reads out/<tag>.json, out/<tag>_static_paths.npz, out/<tag>_dynamic_paths.npz,
-out/arc_models/seed*/train_summary.json; writes out/figures/*.png
+out/arc_models/seed*/train_summary.json; writes out/figures/*.pdf (vector, fonts embedded, used by the
+paper) and a 200 dpi *.png preview of each.
 """
 import argparse
 import glob
@@ -26,6 +27,17 @@ OUT = os.path.join(HERE, "out")
 FIG = os.path.join(OUT, "figures")
 os.makedirs(FIG, exist_ok=True)
 APF_C, ARC_C = "#1f5fa8", "#c2452d"
+# Elsevier artwork guidance: Arial/Helvetica lettering, vector files with embedded (TrueType) fonts.
+plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
+                     "pdf.fonttype": 42, "ps.fonttype": 42})
+
+
+def save(fig, name, dpi=200, **kw):
+    """Write <name>.pdf (vector) and <name>.png (preview)."""
+    base = os.path.join(FIG, os.path.splitext(name)[0])
+    fig.savefig(base + ".pdf", **kw)
+    fig.savefig(base + ".png", dpi=dpi, **kw)
+    plt.close(fig)
 
 
 def draw_obs(ax, obstacles, **kw):
@@ -68,13 +80,12 @@ def fig1(sp, obstacles, res=None):
                         label=None if drawn else "ARC (successful arc_best policies)")
                 drawn = True
     frame(ax); ax.legend(loc="upper left", fontsize=8)
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, f"fig1_static_{TAG}.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(); save(fig, f"fig1_static_{TAG}.png")
 
 
-def fig_pair(dp, seed, name, title, obstacles):
+def draw_pair(ax, dp, seed, title, obstacles):
     tl = H.ObstacleTimeline(seed, obstacles)
     a, r = dp[f"apf_{seed}"], dp[f"arc_{seed}"]
-    fig, ax = plt.subplots(figsize=(5.2, 5.2))
     draw_obs(ax, tl.at(0.0), alpha=0.35)
     t_end = (len(r) - 1) * H.ARC_DT
     draw_obs(ax, tl.at(t_end), facecolor="none", ls="--", alpha=1.0)
@@ -82,7 +93,12 @@ def fig_pair(dp, seed, name, title, obstacles):
     ax.plot(r[:, 0], r[:, 1], color=ARC_C, lw=2, label="ARC")
     ax.plot(*r[-1], "x", color=ARC_C, ms=9, mew=2)
     frame(ax, title); ax.legend(loc="upper left", fontsize=8)
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, name), dpi=200); plt.close(fig)
+
+
+def fig_pair(dp, seed, name, title, obstacles):
+    fig, ax = plt.subplots(figsize=(5.2, 5.2))
+    draw_pair(ax, dp, seed, title, obstacles)
+    fig.tight_layout(); save(fig, name)
 
 
 def fig5():
@@ -100,7 +116,7 @@ def fig5():
         ax.plot(ep, M.mean(0), color=ARC_C, lw=1.6, label=f"mean of {len(runs)} seeds")
         ax.set_ylabel(lab); ax.grid(alpha=0.2)
     axes[0].legend(fontsize=8); axes[-1].set_xlabel("Episode")
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig5_arc_training.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(); save(fig, "fig5_arc_training.png")
 
 
 def fig6():
@@ -116,7 +132,7 @@ def fig6():
         eff = 100 * H.D_STRAIGHT / sta.path_length(p)
         ax.plot(p[:, 0], p[:, 1], color=cmap(i / (len(thetas) - 1)), lw=1.6, label=f"θ={th}°  η={eff:.1f}%")
     frame(ax); ax.legend(loc="upper left", fontsize=7)
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig6_theta_sweep.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(); save(fig, "fig6_theta_sweep.png")
 
 
 TD3_C, SAC_C = "#7a3fa0", "#2a8a3e"
@@ -177,7 +193,7 @@ def fig_speed():
     ax.set_ylabel("success over 50 paired environments (%)")
     ax.set_ylim(-3, 103); ax.grid(alpha=0.25)
     fig.legend(*ax.get_legend_handles_labels(), fontsize=7.5, loc="lower center", ncol=2, frameon=False)
-    fig.tight_layout(rect=(0, 0.11, 1, 1)); fig.savefig(os.path.join(FIG, "fig_speed_envelope.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(rect=(0, 0.11, 1, 1)); save(fig, "fig_speed_envelope.png")
 
 
 def fig_baselines_seeds():
@@ -206,7 +222,7 @@ def fig_baselines_seeds():
     ax.set_xticks(range(len(groups))); ax.set_xticklabels([g[0] for g in groups], fontsize=8)
     ax.set_ylabel("success over 50 paired\ndynamic environments (%)"); ax.set_ylim(-5, 105)
     ax.grid(alpha=0.2, axis="y"); ax.legend(fontsize=7, loc="upper left")
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_baselines_seeds.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(); save(fig, "fig_baselines_seeds.png")
 
 
 def fig_baselines_training():
@@ -229,20 +245,16 @@ def fig_baselines_training():
             ax.plot(np.arange(10, 10 + len(sm)), sm, color="0.55" if collapsed else c, lw=1.0, ls="--" if collapsed else "-")
         ax.set_title(f"{title}\n({n_col} of 10 seeds collapsed)", fontsize=9); ax.set_xlabel("episode"); ax.grid(alpha=0.2)
     axes[0].set_ylabel("episode reward\n(10-episode moving mean)")
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_baselines_training.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(); save(fig, "fig_baselines_training.png")
 
 
-def fig_dyn_examples(tag):
-    """The paper's two-panel figure: the shared-success and ARC-collision examples side by side."""
-    import matplotlib.image as mpimg
-    a = os.path.join(FIG, f"fig3_shared_success_{tag}.png"); b = os.path.join(FIG, f"fig4_arc_collision_{tag}.png")
-    if not (os.path.exists(a) and os.path.exists(b)):
-        return
+def fig_dyn_examples(dp, panels, obstacles):
+    """The paper's two-panel figure: the shared-success and ARC-collision examples side by side.
+    panels: [(seed, title), (seed, title)]."""
     fig, axes = plt.subplots(1, 2, figsize=(10.4, 5.2))
-    for ax, im, lab in zip(axes, (mpimg.imread(a), mpimg.imread(b)), ("(a)", "(b)")):
-        ax.imshow(im); ax.axis("off")
-        ax.text(0.01, 0.99, lab, transform=ax.transAxes, va="top", fontsize=13, fontweight="bold")
-    fig.tight_layout(pad=0.2); fig.savefig(os.path.join(FIG, "fig_dyn_examples.png"), dpi=220); plt.close(fig)
+    for ax, (seed, title), lab in zip(axes, panels, ("(a)", "(b)")):
+        draw_pair(ax, dp, seed, f"{lab} {title}", obstacles)
+    fig.tight_layout(pad=0.4); save(fig, "fig_dyn_examples.png")
 
 
 def fig_arc3d():
@@ -278,7 +290,7 @@ def fig_arc3d():
     ax.set_xlim(0, 500); ax.set_ylim(0, 500); ax.set_zlim(0, 500)
     ax.set_xlabel("x (m)"); ax.set_ylabel("y (m)"); ax.set_zlabel("z (m)"); ax.legend(fontsize=8)
     ax.set_title("APF in the 3D ARC arena, stage 2 (23 obstacles)", fontsize=10)
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_apf_in_arc3d_stage2.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(); save(fig, "fig_apf_in_arc3d_stage2.png")
 
 
 def fig_env3d():
@@ -308,11 +320,11 @@ def fig_env3d():
     ax.scatter(*A3.START, color="k", s=20); ax.scatter(*A3.GOAL, color="#2a8a3e", marker="*", s=120)
     ax.set_xlim(0, 500); ax.set_ylim(0, 500); ax.set_zlim(0, 500)
     ax.set_xlabel("x (m)"); ax.set_ylabel("y (m)"); ax.set_zlabel("z (m)"); ax.legend(fontsize=8)
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_env3d.png"), dpi=200); plt.close(fig)
+    fig.tight_layout(); save(fig, "fig_env3d.png")
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="final"); args = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="final_corridor_a"); args = ap.parse_args()
     TAG = args.tag
     res = json.load(open(os.path.join(OUT, f"{args.tag}.json")))
     sp = np.load(os.path.join(OUT, f"{args.tag}_static_paths.npz"))
@@ -322,14 +334,18 @@ if __name__ == "__main__":
     apf = res["dynamic"]["apf_runs"]; arc = res["dynamic"]["arc_runs_per_model"][res["models"].index(res["primary"])]
     shared = [s for s in range(len(apf)) if apf[s]["success"] and arc[s]["success"]]
     arc_coll = [s for s in range(len(apf)) if apf[s]["success"] and arc[s]["outcome"] == "collision"]
+    panels = []
     if shared:   # the shared-success environment with median ARC-APF efficiency gap
         gaps = sorted(shared, key=lambda s: arc[s]["efficiency"] - apf[s]["efficiency"])
         s = gaps[len(gaps) // 2]
-        fig_pair(dp, s, f"fig3_shared_success_{args.tag}.png", f"Environment {s}: both planners reach the goal", obstacles)
+        panels.append((s, f"Environment {s}: both planners reach the goal"))
+        fig_pair(dp, s, f"fig3_shared_success_{args.tag}.png", *panels[-1][1:], obstacles)
     if arc_coll:  # the ARC collision closest to the median collision step
         steps = sorted(arc_coll, key=lambda s: arc[s]["steps"])
         s = steps[len(steps) // 2]
-        fig_pair(dp, s, f"fig4_arc_collision_{args.tag}.png", f"Environment {s}: APF reaches the goal, ARC collides", obstacles)
+        panels.append((s, f"Environment {s}: APF reaches the goal, ARC collides"))
+        fig_pair(dp, s, f"fig4_arc_collision_{args.tag}.png", *panels[-1][1:], obstacles)
     fig5(); fig6(); fig_speed(); fig_arc3d(); fig_env3d(); fig_baselines_seeds(); fig_baselines_training()
-    fig_dyn_examples(args.tag)
+    if len(panels) == 2:
+        fig_dyn_examples(dp, panels, obstacles)
     print("figures ->", FIG, os.listdir(FIG))

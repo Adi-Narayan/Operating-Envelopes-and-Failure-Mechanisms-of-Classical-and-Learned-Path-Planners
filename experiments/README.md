@@ -45,16 +45,16 @@ The model list used for `final_*_a` is in `out/final_model_list_a.txt`. Seed 1 (
 
 **Stored models.** For each retrained seed, `out/arc_models/<seed>/models/` keeps only the checkpoints the paper evaluates: `arc_best.pth`, `arc_checkpoint_ep300.pth` and the best-by-evaluation checkpoint named in `out/oracle_checkpoints.json`. The per-checkpoint results for every checkpoint (ep50–ep300) are preserved in `out/checkpoints_*.json`. Re-running `train_arc_seed.py` with the same seed regenerates all of them. All seven original checkpoints are in `arc_2d/models_original/`. For the TD3 and SAC runs the same three checkpoints are stored as actor-only files (`publish_models.py`, `baselines.export_actor`): evaluation uses only the deterministic actor, and each file was checked to reproduce the full checkpoint's actions and runs exactly. The full training checkpoints (critics, targets, optimisers; 1.6 GB) are not in the repository.
 
-**Figures in the paper.** `figures.py` writes to `out/figures/`. The paper uses them under these names:
-- `env2d_apf.png` ← `fig1_static_final_corridor_a.png`
-- `env3d.png` ← `fig_env3d.png`
-- `dyn_examples.png` ← `fig_dyn_examples.png` (panels: `fig3_shared_success_final_corridor_a.png`, `fig4_arc_collision_final_corridor_a.png`)
-- `speed_envelope.png` ← `fig_speed_envelope.png`
-- `arc_training.png` ← `fig5_arc_training.png`
-- `theta_sweep.png` ← `fig6_theta_sweep.png`
-- `apf_arc3d.png` ← `fig_apf_in_arc3d_stage2.png`
-- `baselines_seeds.png` ← `fig_baselines_seeds.png`
-- `baselines_training.png` ← `fig_baselines_training.png`
+**Figures in the paper.** `figures.py` writes each figure to `out/figures/` as a vector PDF (Arial, fonts embedded), which the paper uses, and as a 200 dpi PNG preview. The paper uses them under these names:
+- `env2d_apf.pdf` ← `fig1_static_final_corridor_a.pdf`
+- `env3d.pdf` ← `fig_env3d.pdf`
+- `dyn_examples.pdf` ← `fig_dyn_examples.pdf` (both panels drawn directly; the single panels are `fig3_shared_success_final_corridor_a.pdf` and `fig4_arc_collision_final_corridor_a.pdf`)
+- `speed_envelope.pdf` ← `fig_speed_envelope.pdf`
+- `arc_training.pdf` ← `fig5_arc_training.pdf`
+- `theta_sweep.pdf` ← `fig6_theta_sweep.pdf`
+- `apf_arc3d.pdf` ← `fig_apf_in_arc3d_stage2.pdf`
+- `baselines_seeds.pdf` ← `fig_baselines_seeds.pdf`
+- `baselines_training.pdf` ← `fig_baselines_training.pdf`
 
 **Baseline evaluations.** TD3/SAC Table 3/4 files are `out/final_corridor_{td3dyn,td3,sacdyn}_{a,b,c}.json` and `out/final_urban_learned_{a,b}.json`; the non-learning TD3 seeds were spot-checked on 10 environments (`*_collapsed10.json`, `out/spot_urban_collapsed10.json`, named `spot_` so that `report.py` does not merge it with the 50-environment files). The one GPU-trained TD3 run (static seed 2) was replaced by a CPU retrain; it is not used and not published (its checkpoint results are in `out/gpu_run_td3_seed2_checkpoints.json`).
 
