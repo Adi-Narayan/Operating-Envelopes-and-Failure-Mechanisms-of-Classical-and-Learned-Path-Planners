@@ -1,0 +1,34 @@
+{
+ "DWA": {
+  "static_ms_per_step": [
+   2.325129454937886,
+   0.07930252878472295
+  ],
+  "static_run_ms": [
+   1109.0867500053719,
+   37.82730623031284
+  ],
+  "static_outcome": "success",
+  "static_steps": 477,
+  "static_L": 841.5000000000009,
+  "dynamic_ms_per_step": 2.433544558515587
+ },
+ "DWA-CV": {
+  "static_ms_per_step": [
+   2.611692186714424,
+   0.1397615897783818
+  ],
+  "static_run_ms": [
+   1146.532869967632,
+   61.355337912709594
+  ],
+  "static_outcome": "success",
+  "static_steps": 439,
+  "static_L": 717.4175000000005,
+  "dynamic_ms_per_step": 2.67016161147849
+ },
+ "APF_same_session": {
+  "static_ms_per_step": 0.816754805708521,
+  "static_run_ms": 336.5029799519107
+ }
+}

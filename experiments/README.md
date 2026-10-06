@@ -15,6 +15,7 @@ Dependencies: Python 3.12, NumPy, PyTorch (CPU build is enough), Shapely, SciPy,
 - **Budget:** 10.8 km travel.
 - **Speed:** both planners at the same ground speed (default 18 m/s).
 - **Obstacle motion:** one timeline per seed on a common grid, so APF and ARC see identical motion.
+- **DWA** (`dwa.py`) uses the same timeline, collision and goal criteria; its speed is capped at the ground speed (it may slow down), so it gets APF's time budget (6000 decisions) instead of the distance budget.
 
 ## Reproducing each result
 
@@ -37,6 +38,10 @@ Dependencies: Python 3.12, NumPy, PyTorch (CPU build is enough), Shapely, SciPy,
 | Sensing noise / 100 random layouts | `python robustness_suite.py --test {noise,layouts} --models <ckpts> --tag <name> [--no-apf] [--n-envs 10] [--n-layouts 10]` | `out/noise_*.json`, `out/layouts_*.json` |
 | Training-collapse diagnostic | `python collapse_diagnostic.py` | `out/collapse.json` |
 | Timing of the baselines | `python timing.py --no-3d --out timing_baselines --models <ckpts>` | `out/timing_baselines.json` |
+| DWA / DWA-CV classical baseline: weight selection on 20 held-out motion seeds (1000–1019) + the static custom environment | `python dwa_tune.py --workers 4` | `out/dwa_tune.json` |
+| DWA / DWA-CV on every test (static, both layouts' dynamic suites, speed sweep, noise, random layouts) | `python dwa_eval.py --workers 4` | `out/dwa_eval.json` |
+| DWA numbers for the paper (paired tests vs APF and SAC) | `python dwa_report.py` | `out/dwa_report.json` |
+| DWA timing (idle machine; APF re-timed in the same session) | `python dwa_timing.py` | `out/timing_dwa.json` |
 | All tables (incl. learned baselines, seed-level tests, envelope summary) | `python report.py` | `out/report.md`, `out/report.json` |
 | Figures | `python figures.py --tag final_corridor_a` | `out/figures/` |
 | Supplementary: original model on its own layout | `python urban_head_to_head.py`; `python evaluate.py --layout urban [--speed 3] --models ../arc_2d/models_original/arc_best.pth` | `out/urban_*.json` |

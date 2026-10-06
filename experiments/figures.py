@@ -73,12 +73,11 @@ def fig1(sp, obstacles, res=None):
     draw_obs(ax, obstacles)
     ax.plot(sp["apf"][:, 0], sp["apf"][:, 1], color=APF_C, lw=2, label="APF")
     if res is not None:
-        drawn = False
-        for i, (m, r) in enumerate(zip(res["models"], res["static"]["arc_runs"])):
-            if r["success"] and f"arc{i}" in sp.files and "arc_best" in m and "seed" in m and "urban" not in m:
-                ax.plot(sp[f"arc{i}"][:, 0], sp[f"arc{i}"][:, 1], color=ARC_C, lw=2,
-                        label=None if drawn else "ARC (successful arc_best policies)")
-                drawn = True
+        idx = [i for i, (m, r) in enumerate(zip(res["models"], res["static"]["arc_runs"]))
+               if r["success"] and f"arc{i}" in sp.files and "arc_best" in m and "seed" in m and "urban" not in m]
+        lab = "ARC (the successful arc_best policy)" if len(idx) == 1 else "ARC (successful arc_best policies)"
+        for n, i in enumerate(idx):
+            ax.plot(sp[f"arc{i}"][:, 0], sp[f"arc{i}"][:, 1], color=ARC_C, lw=2, label=lab if n == 0 else None)
     frame(ax); ax.legend(loc="upper left", fontsize=8)
     fig.tight_layout(); save(fig, f"fig1_static_{TAG}.png")
 
@@ -91,7 +90,8 @@ def draw_pair(ax, dp, seed, title, obstacles):
     draw_obs(ax, tl.at(t_end), facecolor="none", ls="--", alpha=1.0)
     ax.plot(a[:, 0], a[:, 1], color=APF_C, lw=2, label="APF")
     ax.plot(r[:, 0], r[:, 1], color=ARC_C, lw=2, label="ARC")
-    ax.plot(*r[-1], "x", color=ARC_C, ms=9, mew=2)
+    if np.linalg.norm(r[-1] - H.GOAL) > H.GOAL_RADIUS:      # collision (or other failure) point
+        ax.plot(*r[-1], "x", color=ARC_C, ms=9, mew=2)
     frame(ax, title); ax.legend(loc="upper left", fontsize=8)
 
 
@@ -121,7 +121,7 @@ def fig5():
 
 def fig6():
     sta = H.sta
-    fig, ax = plt.subplots(figsize=(5.6, 5.2))
+    fig, ax = plt.subplots(figsize=(7.2, 5.2))
     draw_obs(ax, H.OBSTACLES)
     cmap = plt.get_cmap("viridis")
     thetas = list(range(0, 91, 15))
@@ -131,12 +131,12 @@ def fig6():
                                              rng=np.random.default_rng(0))
         eff = 100 * H.D_STRAIGHT / sta.path_length(p)
         ax.plot(p[:, 0], p[:, 1], color=cmap(i / (len(thetas) - 1)), lw=1.6, label=f"θ={th}°  η={eff:.1f}%")
-    frame(ax); ax.legend(loc="upper left", fontsize=7)
+    frame(ax); ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0), fontsize=8, frameon=False)
     fig.tight_layout(); save(fig, "fig6_theta_sweep.png")
 
 
 TD3_C, SAC_C = "#7a3fa0", "#2a8a3e"
-METH = {"corridor": ("ARC (DDPG, static training)", ARC_C, "s"), "td3dyn": ("TD3, moving-obstacle training", TD3_C, "^"),
+METH = {"corridor": ("ARC (DDPG), static training", ARC_C, "s"), "td3dyn": ("TD3, moving-obstacle training", TD3_C, "^"),
         "sacdyn": ("SAC, moving-obstacle training", SAC_C, "D")}
 
 
@@ -176,6 +176,12 @@ def fig_speed():
     r = np.array([rows[x]["ratio"] for x in v])
     fig, ax = plt.subplots(figsize=(6.4, 4.6))
     ax.plot(r, [rows[x]["apf"] for x in v], "o-", color=APF_C, lw=2, label="APF")
+    dp = os.path.join(OUT, "dwa_report.json")
+    if os.path.exists(dp):                       # classical velocity-space planner (dwa_eval.py)
+        D = json.load(open(dp))
+        for var, col, ls in (("DWA", "#5b5b5b", "--"), ("DWA-CV", "#000000", "-")):
+            sp = D[var]["speed"]
+            ax.plot(r, [2 * sp[str(x)] for x in v], "v" + ls, color=col, lw=1.8, ms=5, label=var)
     for meth, (lab, col, mk) in METH.items():
         seeds = sorted({k[1] for x in v for k in rows[x] if isinstance(k, tuple) and k[0] == meth})
         if not seeds:
@@ -184,12 +190,12 @@ def fig_speed():
         for row in M:
             ax.plot(r, row, "-", color=col, alpha=0.22, lw=0.7)
         m = np.nanmean(M, 0)       # no SD band: seed outcomes are bimodal (collapsed vs learned)
-        ax.plot(r, m, mk + "-", color=col, lw=2, ms=5, label=f"{lab} (mean of {len(seeds)} seed{'s' if len(seeds) != 1 else ''})")
+        ax.plot(r, m, mk + "-", color=col, lw=2, ms=5, label=f"{lab}, mean of {len(seeds)} seed{'s' if len(seeds) != 1 else ''}")
     ax.axvline(1.0, color="0.5", ls=":", lw=1)
     ax.set_xscale("log")
     ax.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
     ax.set_xticks([0.2, 0.3, 0.5, 1.0, 1.5]); ax.set_xticklabels(["0.2", "0.3", "0.5", "1.0", "1.5"])
-    ax.set_xlabel("obstacle-to-agent speed ratio  r = v_obs,max / v_agent")
+    ax.set_xlabel(r"obstacle-to-agent speed ratio  $r = v_{\mathrm{obs,max}}\,/\,v_{\mathrm{agent}}$")
     ax.set_ylabel("success over 50 paired environments (%)")
     ax.set_ylim(-3, 103); ax.grid(alpha=0.25)
     fig.legend(*ax.get_legend_handles_labels(), fontsize=7.5, loc="lower center", ncol=2, frameon=False)
@@ -207,6 +213,10 @@ def fig_baselines_seeds():
               ("SAC\n(moving obstacles)", B.get("sacdyn/best", {}).get("dynamic", {}).get("per_seed", {}), "sacdyn_seed", SAC_C)]
     fig, ax = plt.subplots(figsize=(6.4, 3.8))
     ax.axhline(100, color=APF_C, lw=2, label="APF (50/50)")
+    dp = os.path.join(OUT, "dwa_report.json")
+    if os.path.exists(dp):
+        k = json.load(open(dp))["DWA-CV"]["dynamic"]["success"]
+        ax.axhline(2 * k, color="k", lw=1.4, ls="--", label=f"DWA-CV ({k}/50)")
     rng = np.random.default_rng(0)
     for i, (lab, per, pre, c) in enumerate(groups):
         for s, d in per.items():
@@ -287,9 +297,8 @@ def fig_arc3d():
                         [c[2], c[2] + o["height"]], color="0.45", lw=0.6)
     ax.plot(path[:, 0], path[:, 1], path[:, 2], color=APF_C, lw=2, label="APF")
     ax.scatter(*A.START, color="k", s=20); ax.scatter(*A.GOAL, color="#2a8a3e", marker="*", s=120)
-    ax.set_xlim(0, 500); ax.set_ylim(0, 500); ax.set_zlim(0, 500)
+    ax.set_xlim(0, 500); ax.set_ylim(0, 500); ax.set_zlim(0, 500); ax.set_box_aspect((1, 1, 1))
     ax.set_xlabel("x (m)"); ax.set_ylabel("y (m)"); ax.set_zlabel("z (m)"); ax.legend(fontsize=8)
-    ax.set_title("APF in the 3D ARC arena, stage 2 (23 obstacles)", fontsize=10)
     fig.tight_layout(); save(fig, "fig_apf_in_arc3d_stage2.png")
 
 
@@ -318,7 +327,7 @@ def fig_env3d():
                         [cz + dz * hz] * 5, color=col, lw=0.7)
     ax.plot(path[:, 0], path[:, 1], path[:, 2], color=APF_C, lw=2, label="APF (static)")
     ax.scatter(*A3.START, color="k", s=20); ax.scatter(*A3.GOAL, color="#2a8a3e", marker="*", s=120)
-    ax.set_xlim(0, 500); ax.set_ylim(0, 500); ax.set_zlim(0, 500)
+    ax.set_xlim(0, 500); ax.set_ylim(0, 500); ax.set_zlim(0, 500); ax.set_box_aspect((1, 1, 1))
     ax.set_xlabel("x (m)"); ax.set_ylabel("y (m)"); ax.set_zlabel("z (m)"); ax.legend(fontsize=8)
     fig.tight_layout(); save(fig, "fig_env3d.png")
 

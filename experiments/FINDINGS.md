@@ -152,7 +152,7 @@ Also undocumented in 6.2, and it must be disclosed:
 ## 2. Other claims checked
 
 ### 2.1 Static 2D APF under the corrected protocol — [FINAL]
-10 seeded runs per layout (bias seeds 0–9), k_a = 5.0, k_r = 0.85, θ = 25°, same gains on every layout. The initial bias b has no measurable effect: all 10 runs are identical to within 1e−13 m.
+10 seeded runs per layout (bias seeds 0–9), k_a = 5.0, k_r = 0.85, θ = 25°, same gains on every layout. The initial bias b does not change the outcome or the step count of any run (path lengths agree to < 1e−10 m), but it moves the trajectories by up to 2.8 cm (see §4.15).
 
 | Layout | obstacles | success | steps | L (m) | η (%) | escapes / push-outs | min clearance (m) |
 |---|---|---|---|---|---|---|---|
@@ -702,3 +702,20 @@ The paper's APF fails on 32/100 random static layouts, all timeouts, all solvabl
 
 ### 4.13 Independent audit of the paper's numbers (after the second revision round)
 An independent pass checked ~290 numeric claims in `paper.tex` against the JSON outputs. Corrected in the paper: the 36/50 matched-APF figure needs all three constraints (rays + turn cap at 10 Hz gives 35); Narrow Passage efficiency for θ ≥ 50° is 60.8–66.9% (not 66.6–66.9%); the three gain pairs agree to within 6 mm (1.4 mm holds only for the first two); SAC per-seed Wilcoxon p < 0.005 (max 0.0042); APF shared-pair path ~1070 m; "never succeeds where APF fails" scoped to the custom suite (on the second layout the learned policies solve some of APF's two failures); the 15.3 m kernel-distance claim scoped to the five static layouts; transfer wording (best ckpt worse in both transferred rows). The stall analysis was made reproducible (§4.12).
+
+### 4.14 Classical velocity-space baseline: Dynamic Window Approach (DWA, DWA-CV) [FINAL; in the paper]
+`dwa.py` (planner), `dwa_tune.py` → `out/dwa_tune.json`, `dwa_eval.py` → `out/dwa_eval.json`, `dwa_report.py` → `out/dwa_report.json`, `dwa_timing.py` → `out/timing_dwa.json`.
+- **Planner.** Unicycle; v ≤ ground speed (it may slow down and stop, starts from rest); 90°/s turn rate, 9 m/s², 360°/s²; 7×21 velocity samples over the dynamic window; 3 s constant-(v, ω) rollouts; inadmissible if the rollout comes within APF's 6 m margin, leaves the arena or cannot brake before the nearest obstacle; objective w_h·heading + w_c·clearance (capped at 30 m) + w_v·velocity, each term normalised over the admissible set. Limits and horizon scale with the ground speed in the speed sweep. Same information as APF (exact geometry of every obstacle now); DWA-CV also translates each obstacle along the rollout with the velocity estimated from its last displacement. Evaluation = harness protocol with APF's time budget (6000 decisions).
+- **Kernel check.** Vectorised distance kernels agree with `apf.get_distance` to 1e−13 m on 1,200 random points over three layouts.
+- **Tuning.** 3×4×3 grid of (w_h, w_c, w_v) on 20 held-out motion seeds (1000–1019, not evaluation seeds) + the static custom environment; selection by successes then efficiency. Selected: DWA (0.5, 0.2, 0.5), DWA-CV (0.5, 0.2, 0.2); both 21/21.
+- **Static custom environment.** DWA: success, 841.5 m (72.3%); DWA-CV: success, 717.4 m (84.8%) (in-sample: part of the tuning set).
+- **Paired dynamic suite (50 envs, 18 m/s).** DWA 47/50 and DWA-CV 47/50 (all failures collisions, in environments APF solves; exact McNemar vs APF p = 0.25 each). On the 47 shared successes: DWA η 62.7 ± 14.4 vs APF 73.3 ± 19.3 (DWA more efficient in 10, Wilcoxon p = 1.5e−4); DWA-CV 88.0 ± 18.4 vs 74.3 ± 17.5 (37/47, p = 7.3e−4). Mean speed on successes 17.3 / 15.2 m/s; time to goal 60.7 vs APF 60.6 s (DWA) and 49.3 vs 52.5 s (DWA-CV).
+- **Against SAC (arc_best, 10 seeds).** DWA-CV's 47 successes exceed 7 seeds, equal 1 and are below 2 (48, 49); per-seed McNemar significant only for seeds 5 (p = 0.022) and 9 (p = 3e−6). On the 389 (seed, environment) pairs both solve: η 88.9 vs 88.1%, DWA-CV more efficient in 259. (No pooled test: pooled pairs reuse each DWA-CV run ten times.)
+- **Second layout.** DWA 46/50, DWA-CV 48/50 dynamic; both succeed on the static layout.
+- **Speed sweep (successes /50 at v = 3, 4, 4.75, 6, 9, 12, 18, 27 m/s).** DWA 7, 18, 26, 34, 43, 43, 47, 48; DWA-CV 23, 38, 40, 44, 41, 46, 47, 47 (APF 30, 37, 47, 46, 48, 46, 50, 49).
+- **Noise (L0–L3).** DWA 94, 82, 82, 54%; DWA-CV 94, 92, 90, 70% (APF 100, 96, 96, 94%).
+- **100 random layouts.** Static: DWA 99, DWA-CV 98 (APF 68); each solves 31 of APF's 32 stall layouts, together all 32. Dynamic: DWA 90, DWA-CV 99 (APF 98).
+- **Timing (idle session; APF re-timed in the same session at 0.82 ms/step, 337 ms/run).** DWA 2.33 ms/step, 1109 ± 38 ms/run; DWA-CV 2.61 ms/step, 1147 ± 61 ms/run: 2.8× / 3.2× APF per step, 2.9× / 3.5× per 100 m. APF's own per-step cost varies by up to 2× between sessions on this thermally limited laptop (0.39–0.82 ms), so planners are compared within a session only.
+
+### 4.15 Correction: run-to-run repeatability of static APF
+Re-checked directly (ten runs with perturbation seeds 0–9 on each of the five static layouts): outcome and step count never change, path lengths agree to < 1e−10 m, but trajectories differ pointwise by up to 2.8 cm (Corridor Gauntlet 2.2 cm, Wall Maze 2.8 cm, Narrow Passage 1.2 cm). The earlier wording "identical to within 1e−13 m" described path length, not the trajectory; the paper now says "same outcome and step count, differ by at most 3 cm".
