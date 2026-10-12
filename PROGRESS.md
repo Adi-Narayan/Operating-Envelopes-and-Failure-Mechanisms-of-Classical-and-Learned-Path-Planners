@@ -51,7 +51,7 @@ Code at commit `1e801cf` (HEAD before this block). Machine idle (no training) th
 **WS-D.** `experiments/arbiter.py` (L = learned, C = APF with ARC's rays at 6 Hz, or DWA-CV). Reproduces SAC alone, ray-APF alone and DWA-CV alone path for path on 10 environments (`results/v2/ws_d/identity/`).
 
 ### 2026-10-12 night: Day 1 outcomes
-**B3 done; rule applied** (`scripts/ws_b_b3_select.py`, outcome appended to `prereg.md`, `c7235e6`). Collapsed ep-50 checkpoints over seeds 10-12 and both training settings: (a) baseline 2, (b) gamma 0.9 2, (c) pre-tanh penalty 0, (d) exploration noise 0.3 3. Candidate (c) has strictly fewer collapses than (a): **B4 runs with `--pretanh-penalty 0.002`.** Under (c) E[u^2] stays near 4; collapsed runs reach 140-4,847.
+**B3 done; rule applied** (`scripts/ws_b_b3_select.py`, outcome appended to `prereg.md`, `c7235e6`). Collapsed ep-50 checkpoints, TD3 with moving obstacles, seeds 10-12 (3 per condition): (a) baseline 2, (b) gamma 0.9 2, (c) pre-tanh penalty 0, (d) exploration noise 0.3 3. Candidate (c) has strictly fewer collapses than (a): **B4 runs with `--pretanh-penalty 0.002`.** Under (c) E[u^2] over the last 10 episodes is 3.6-4.9 and 11-21% of pre-tanh outputs have |u| > 3; collapsed runs reach E[u^2] 146-4,847 with 100% |u| > 3.
 
 **B2 done** (`results/v2/ws_b/b2_returns/`). Discounted return of fixed behaviours, gamma = 0.9 / 0.99. Static: circling -0.82 / -4.78, greedy 8.79 / -2.61, random -5.19 / -52.68, SAC 6.90 / 72.28. Moving: circling -0.82 / -10.28, greedy 8.39 / 0.70, random -5.18 / -54.47, SAC 6.88 / 85.40. Circling never has a higher return than heading to the goal.
 
@@ -67,7 +67,22 @@ Code at commit `1e801cf` (HEAD before this block). Machine idle (no training) th
 
 **WS-A.** `scripts/make_numbers.py` (`results/numbers.json`, `numbers.tex`), `scripts/make_figures.py` (envelope heatmap), `scripts/build_envelope_v2.py` (v2 rows: APF-D now; TD3 fixed, SAC static, arbiters when their evaluations exist).
 
+### 2026-10-13 early: WS-A/E/F/G
+**Queues.** b45 (B4+B5 training, ~0.8 episodes/min per run, ~19 h for three waves), d3 (90 jobs at 2 workers, ~19 h), d4 (C-alone and SAC-alone evaluations now; D1/D2 wait for `d3_select` via the new `after` dependency in `scripts/jobqueue.py`), evalb45 (waits for each B4/B5 seed), misc (TD3-static second-layout cell). RAM (about 1 GB free) is the limit.
+
+**Evaluation wrappers checked against stored results** before use: `scripts/ws_b_eval.py` reproduces `collapse.json` for three runs and SAC seed 0's 40/50; its static-layout runs match `layouts_learnedA.json` 15/15. Found and fixed in the wrapper (not in the paper's scripts, which already reset it): `ARCPlanner` caches static geometry across runs, so the cache must be reset per layout.
+
+**WS-F.** `scripts/stats_v2.py`: IQM + stratified bootstrap, Newcombe paired interval (method 10, checked against Newcombe 1998 Table III to 4 decimals), Holm, Wilson. `scripts/ws_c_apfd_compare.py`: APF-D vs APF on seven axes (static layouts +20 points, 95% CI 12 to 28, Holm p = 1.3e-5; dynamic axes all lower, none significant after Holm; r = 1.58: -16 points, CI -30 to 0). APF-D removes 20 of 32 stalls, adds no static failure.
+
+**WS-E.** E1 proposition and proof in `notes/e1_proposition.md` and the paper's new Appendix F. E2 (latency) not run (P2).
+
+**References (WS-G, Section 7).** Added after Crossref lookup: Seto et al. 1998 (Simplex), Phan et al. 2020 (Neural Simplex), Rimon and Koditschek 1992, Ren et al. 2006, Matheron et al. 2020, Newcombe 1998; Bjorck et al. ICLR 2022 (no DOI; content checked on arXiv: tanh saturation in failing runs and a squared pre-tanh penalty, i.e. our B3 (c) is their penalty, cited as such); Holm 1979 (not in Crossref; volume/pages from the JSTOR scan). No paper found that evaluates heading momentum against APF stalls; the text says "we did not find". **[ASK ADI] confirm each new reference.**
+
+**Paper (outside the repo, `../paper.tex`; backups in `../paper_backups/`).** Restructured per WS-G: new abstract and contributions; protocol section (with metrics); planners section with APF-D and the arbiter; results ordered in distribution, matched constraints, collapse mechanism (figure, returns table, 2x2 table), speed ratio with Proposition 1, noise and layouts, transfer (one paragraph), stalls and APF-D (table), arbiter (placeholder), 3D (one paragraph, tables to the appendix), cost; Appendix F proofs. Specific fixes done: "find", pooled 23% (one ARC seed 52%), `sel` macro for the reward-selected checkpoint, no em dashes, no marketing words, "stable equilibria". Length 45 pages (was 45) after cutting five appendix figures and condensing the introduction, related work, planners and discussion. 18 `\PH{}` placeholders remain (B4, B5, arbiter, IQM, timing).
+
 ## Next
-- B4/B5 finish -> evaluate every new policy on every axis with the paper's scripts (`results/v2/ws_b/eval_b4`, `eval_b5`), oracle checkpoints, collapse diagnostic, TD3-static second-layout spot check.
-- D3 finishes -> selection script (mean success over the five sets and 10 SAC seeds; ties -> fewer switches) -> D4 evaluation.
-- WS-E E1, WS-F statistics, WS-G writing, references.
+- B4/B5 finish -> evalb45 runs automatically -> fill the 2x2 table, abstract, contributions, discussion, conclusion.
+- D3 finishes -> d3_select -> D1/D2 evaluations -> arbiter section and table; title question **[ASK ADI]**.
+- Idle timing session (APF-D, arbiter, against APF) once the machine is free.
+- WS-A: macros for every number (v2 numbers first); WS-F: Holm within each table's family (existing tables still report unadjusted p).
+- Before submission: recheck the RAS guide (abstract limit, highlights; the guide page returns 403 to automated fetches).
