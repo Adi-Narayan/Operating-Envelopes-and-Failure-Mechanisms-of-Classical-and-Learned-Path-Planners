@@ -168,6 +168,18 @@ def v2_numbers():
             u = mannwhitneyu(kept, rem)       # AUC = P(nearest saddle of a removed stall < that of a kept one)
             n[f"cTwoAuc{nm}"] = f"{u.statistic / (len(rem) * len(kept)):.2f}"
             n[f"cTwoAucP{nm}"] = f"{u.pvalue:.2f}" if u.pvalue >= 0.01 else f"{u.pvalue:.3f}"
+    # E1: extended scale-invariance test (50 environments, APF, SAC, DWA-CV, no noise and L2)
+    e1 = J(V2, "verification", "scale_invariance_ext", "result.json")
+    if e1:
+        sm = e1["summary"]
+        keys = [k for k in sm if k.split()[0] in ("APF", "SAC", "DWA-CV")]
+        n["eOneRuns"] = str(sum(sm[k]["n"] for k in keys))
+        n["eOneEnvs"] = str(sm["APF none"]["n"])
+        n["eOneSameOutcome"] = str(sum(sm[k]["same_outcome"] for k in keys))
+        n["eOneDwaBit"] = str(sm["DWA-CV none"]["bit_identical"] + sm["DWA-CV L2"]["bit_identical"])
+        n["eOneSacBit"] = str(sm["SAC none"]["bit_identical"] + sm["SAC L2"]["bit_identical"])
+        n["eOneSacDevMm"] = f"{1000 * max(sm['SAC none']['max_dev_m'], sm['SAC L2']['max_dev_m']):.0f}"
+        n["eOneApfStepDiff"] = str(sm["APF none"]["n"] - sm["APF none"]["same_steps"])
     # C4: APF-D against APF, paired on every axis
     cmp_ = J(V2, "ws_c", "apfd_compare", "result.json")
     if cmp_:
