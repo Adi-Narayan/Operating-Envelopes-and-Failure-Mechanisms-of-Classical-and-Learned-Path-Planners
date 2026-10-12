@@ -1,0 +1,21 @@
+{
+ "git_commit": "30a34187fbee31b576cf1efd3cda892370d4a71d",
+ "script": "scripts/ws_b_b2_returns.py",
+ "config": {
+  "gammas": [
+   0.9,
+   0.99
+  ],
+  "sac_best": "sacdyn_seed3/arc_best",
+  "reward": "training reward (arc_2d/code/environment.py)",
+  "max_steps": 500
+ },
+ "seeds": {
+  "starts": "np.random.seed(0-99)",
+  "random_policy": "default_rng(1000+start)"
+ },
+ "start": "2026-10-12T19:42:33+05:30",
+ "end": "2026-10-12T19:59:02+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

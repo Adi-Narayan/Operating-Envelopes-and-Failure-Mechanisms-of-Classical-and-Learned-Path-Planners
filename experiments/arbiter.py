@@ -47,23 +47,33 @@ class Learned:
         self.hist = self.P.ObservationHistory(self.P.hist_len, self.P.obs_dim)
         self.started = False
 
-    def observe(self, q32, psi, obs_list):
+    def observe(self, q32, psi, obs_list, nrng=None, range_noise=0.0):
         env = self.env
         env.uav_pos = q32
         env.uav_heading = psi
         env.target_pos = H.GOAL.astype(np.float32).copy()
         env.obstacles = H._to_shapely(obs_list)
-        ob = env._get_observation()
+        raw = env._get_observation()
+        ob = raw
+        if range_noise > 0:                       # as harness.ARCPlanner.run's perceive()
+            ob = raw.copy()
+            d = ob[3:] * env.sensor_range
+            hit = d < env.sensor_range - 1e-6
+            d[hit] = np.clip(d[hit] + nrng.normal(0.0, range_noise, size=int(hit.sum())), 0.1, env.sensor_range)
+            ob[3:] = d / env.sensor_range
         if not self.started:
             self.hist.reset(ob)
             self.started = True
         else:
             self.hist.append(ob)
-        return ob
+        return raw, ob
 
-    def act(self, psi):
+    def act(self, psi, nrng=None, heading_noise=0.0):
         a, _ = self.P.agent.select_action(self.hist.get_tensor(self.P.agent.device), None, noise_scale=0.0)
-        return self.env._normalize_angle(psi + float(a[0]) * self.env.action_range)
+        turn = float(a[0]) * self.env.action_range
+        if heading_noise > 0:
+            turn += nrng.normal(0.0, heading_noise)
+        return self.env._normalize_angle(psi + turn)
 
 
 class APFRays:
@@ -80,9 +90,15 @@ class APFRays:
         self.bias = rng.normal(0, 0.06, size=2)
         self.d_prev, self.big_turns, self.cap_left = None, 0, 0
 
-    def decide(self, q, heading, obs):
+    def decide(self, q, heading, obs, nrng=None, range_noise=0.0, heading_noise=0.0):
         cfg, goal, step, rng = self.cfg, H.GOAL.copy(), self.step, self.rng
         hits = V._rays(q, heading, H._to_shapely(obs))
+        if range_noise > 0:
+            noisy = []
+            for d, p in hits:
+                dn = max(d + nrng.normal(0.0, range_noise), 0.0)
+                noisy.append((dn, q + (p - q) * (dn / d) if d > 1e-9 else p))
+            hits = noisy
         Ft = dyn.F_att(q, goal, cfg.k_a) + V._rep_points(q, goal, hits, cfg)
         pts = [p for _, p in hits]
         margin_bad = lambda x: any(np.linalg.norm(x - p) <= dyn.COLLISION_MARGIN for p in pts)
@@ -118,6 +134,12 @@ class APFRays:
                 if d_ < dyn.COLLISION_MARGIN:
                     q_next = q_next + (dyn.COLLISION_MARGIN - d_ + 3.0) * ((q_next - p_) / (d_ + 1e-12))
             new_h = math.atan2(q_next[1] - q[1], q_next[0] - q[0]) if np.linalg.norm(q_next - q) > 1e-9 else heading
+        if heading_noise > 0 and np.linalg.norm(q_next - q) > 1e-9:
+            a = nrng.normal(0.0, heading_noise)
+            c_, s_ = math.cos(a), math.sin(a)
+            dvec = q_next - q
+            q_next = np.clip(q + np.array([c_ * dvec[0] - s_ * dvec[1], s_ * dvec[0] + c_ * dvec[1]]), self.lo, self.hi)
+            new_h = math.atan2(q_next[1] - q[1], q_next[0] - q[0])
         turn = abs(math.degrees(math.atan2(math.sin(new_h - heading), math.cos(new_h - heading))))
         if self.osc_cap_K is not None:
             self.big_turns = self.big_turns + 1 if turn > 150.0 else 0
@@ -138,7 +160,7 @@ class DWACV:
     def reset(self, v=0.0, w=0.0):
         self.v, self.w, self.prev = v, w, None
 
-    def decide(self, q, psi, obs):
+    def decide(self, q, psi, obs, nrng=None, range_noise=0.0, heading_noise=0.0):
         w8 = self.w8
         v_max = H.GROUND_SPEED
         s = v_max / DW.V_REF
@@ -157,13 +179,14 @@ class DWACV:
         X = q[0] + np.cumsum(stp * np.cos(ang), axis=1)
         Y = q[1] + np.cumsum(stp * np.sin(ang), axis=1)
         P = np.stack([X, Y], axis=-1)
+        eps = nrng.normal(0.0, range_noise, size=len(obs)) if range_noise > 0 else np.zeros(len(obs))
         clr = np.full(P.shape[:2], np.inf)
         for i, o in enumerate(obs):
             Q = P
             if self.prev is not None:
                 vel = (DW._centroid(o) - DW._centroid(self.prev[i])) / dt
                 Q = P - vel[None, None, :] * tau[None, :, None]
-            clr = np.minimum(clr, np.maximum(DW.dist(Q, o), 0.0))
+            clr = np.minimum(clr, np.maximum(DW.dist(Q, o) + eps[i], 0.0))
         cmin = clr.min(axis=1)
         inb = np.all((P >= lo) & (P <= hi), axis=(1, 2))
         brake_ok = VV <= np.sqrt(2.0 * a_max * np.maximum(cmin - DW.MARGIN, 0.0)) + 1e-9
@@ -186,11 +209,16 @@ class DWACV:
         self.prev = obs
         psi_n = psi + self.w * dt
         d = self.v * dt * np.array([math.cos(psi_n), math.sin(psi_n)])
+        if heading_noise > 0 and self.v > 0:
+            a = nrng.normal(0.0, heading_noise)
+            c_, s_ = math.cos(a), math.sin(a)
+            d = np.array([c_ * d[0] - s_ * d[1], s_ * d[0] + c_ * d[1]])
+            psi_n += a
         return np.clip(q + d, lo, hi), math.atan2(math.sin(psi_n), math.cos(psi_n))
 
 
 def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0, l_enabled=True,
-        max_time_s=None, log_signals=False):
+        max_time_s=None, log_signals=False, range_noise=0.0, heading_noise=0.0, noise_seed=0):
     """One arbitrated run. c_kind in {'apf_rays', 'dwa_cv'}; l_enabled=False gives C alone."""
     d_off = d_on + 5.0 if d_off is None else d_off
     rho_off = 0.8 * rho_on if rho_off is None else rho_off
@@ -217,12 +245,14 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
     outcome, t0, g0 = "timeout", time.perf_counter(), H._gen_time(timeline)
     last_learned_obs_tick = -10 ** 9
     sig_log = []
+    nrng = np.random.default_rng(noise_seed)
+    nz = {"nrng": nrng, "range_noise": range_noise}
     for k in range(max_ticks + 1):
         obs = timeline.at(k * tick)
         learned_instant = l_enabled and ((active == "L" and k == next_dec) or (active == "C" and k - last_learned_obs_tick >= TICKS["L"]))
-        ob = None
+        ob = raw = None
         if learned_instant:
-            ob = L.observe(q32 if active == "L" else q.astype(np.float32), psi, obs)
+            raw, ob = L.observe(q32 if active == "L" else q.astype(np.float32), psi, obs, **nz)
             last_learned_obs_tick = k
             rays = np.asarray(ob[3:], float) * L.env.sensor_range
             i_min = int(np.argmin(rays))
@@ -243,7 +273,7 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
                 p = q32
                 if p[0] < 0 or p[0] > L.env.width or p[1] < 0 or p[1] > L.env.height:
                     outcome = "out_of_bounds"; break
-                native = ob is not None and bool(np.any(np.asarray(ob[3:]) * L.env.sensor_range < L.env.d_min_obstacle))
+                native = raw is not None and bool(np.any(np.asarray(raw[3:]) * L.env.sensor_range < L.env.d_min_obstacle))
                 if c < H.COLLISION_RADIUS or native:
                     outcome = "collision"; break
             elif c < H.COLLISION_RADIUS:
@@ -274,11 +304,11 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
                     switch_ticks.append(k)
                     q32 = q.astype(np.float32)
                     if ob is None:                          # L needs a fresh observation to act on
-                        ob = L.observe(q32, psi, obs)
+                        raw, ob = L.observe(q32, psi, obs, **nz)
                         last_learned_obs_tick = k
         # ---- decision of the active planner
         if active == "L":
-            psi = L.act(psi)
+            psi = L.act(psi, nrng, heading_noise)
             q32 = q32.copy()
             q32[0] += 3.0 * np.cos(psi)
             q32[1] += 3.0 * np.sin(psi)
@@ -286,7 +316,7 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
             info["decisions"]["L"] += 1
             per = TICKS["L"]
         else:
-            q, psi = C.decide(q, psi, obs)
+            q, psi = C.decide(q, psi, obs, nrng, range_noise, heading_noise)
             q32 = q.astype(np.float32)
             c_hist.append(q.copy())
             info["decisions"]["C"] += 1
