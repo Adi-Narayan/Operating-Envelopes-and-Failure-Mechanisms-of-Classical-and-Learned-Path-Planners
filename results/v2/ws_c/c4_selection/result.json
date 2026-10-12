@@ -1,0 +1,63 @@
+{
+ "table": [
+  {
+   "variant": "apf",
+   "static_tuning": 30,
+   "dynamic_tuning": 50,
+   "heldout_dynamic": 50,
+   "heldout_lost_vs_apf": 0,
+   "feasible": true
+  },
+  {
+   "variant": "osc10",
+   "static_tuning": 37,
+   "dynamic_tuning": 45,
+   "heldout_dynamic": 44,
+   "heldout_lost_vs_apf": 6,
+   "feasible": false
+  },
+  {
+   "variant": "osc30",
+   "static_tuning": 44,
+   "dynamic_tuning": 44,
+   "heldout_dynamic": 42,
+   "heldout_lost_vs_apf": 8,
+   "feasible": false
+  },
+  {
+   "variant": "mom050",
+   "static_tuning": 33,
+   "dynamic_tuning": 50,
+   "heldout_dynamic": 50,
+   "heldout_lost_vs_apf": 0,
+   "feasible": true
+  },
+  {
+   "variant": "mom070",
+   "static_tuning": 43,
+   "dynamic_tuning": 49,
+   "heldout_dynamic": 50,
+   "heldout_lost_vs_apf": 0,
+   "feasible": true
+  },
+  {
+   "variant": "mom085",
+   "static_tuning": 47,
+   "dynamic_tuning": 48,
+   "heldout_dynamic": 50,
+   "heldout_lost_vs_apf": 0,
+   "feasible": true
+  },
+  {
+   "variant": "cap",
+   "static_tuning": 44,
+   "dynamic_tuning": 40,
+   "heldout_dynamic": 44,
+   "heldout_lost_vs_apf": 6,
+   "feasible": false
+  }
+ ],
+ "apf_heldout_dynamic": 50,
+ "selected": "mom085",
+ "carried_forward": true
+}

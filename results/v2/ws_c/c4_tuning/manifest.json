@@ -1,0 +1,39 @@
+{
+ "git_commit": "b7dd89ee5bdecee47df32245b5839e2bc1e604eb",
+ "script": "scripts/ws_c_c4_tune.py mom085",
+ "config": {
+  "variants": {
+   "apf": {},
+   "osc10": {
+    "osc_cap_K": 10
+   },
+   "osc30": {
+    "osc_cap_K": 30
+   },
+   "mom050": {
+    "momentum": 0.5
+   },
+   "mom070": {
+    "momentum": 0.7
+   },
+   "mom085": {
+    "momentum": 0.85
+   },
+   "cap": {
+    "always_cap": true
+   }
+  },
+  "speed": 18.0
+ },
+ "seeds": {
+  "tuning_layouts": "500000-500049",
+  "tuning_layout_motion": "510000-510049",
+  "tuning_layout_planner": "0 (static), 520000-520049 (dynamic)",
+  "heldout_motion": "500000-500049",
+  "heldout_planner": "501000-501049"
+ },
+ "start": "2026-10-12T20:13:32+05:30",
+ "end": "2026-10-12T20:21:37+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

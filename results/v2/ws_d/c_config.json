@@ -1,0 +1,6 @@
+{
+ "kind": "apf_rays",
+ "momentum": 0.85,
+ "osc_cap_K": null,
+ "source": "C4 rule selected mom085 (results/v2/ws_c/c4_selection)"
+}

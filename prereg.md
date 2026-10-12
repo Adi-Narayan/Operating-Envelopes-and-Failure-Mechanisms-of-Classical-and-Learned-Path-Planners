@@ -149,3 +149,9 @@ Objective: mean success over the five sets and the 10 SAC seeds. Ties: fewer swi
 component succeeds), plus the fraction of time in C, switches per run, chattering (switches less
 than 1 s apart) and per-step compute. If the arbiter does not beat its components, that is reported
 with the oracle headroom and where it failed.
+
+### Outcome of the C4 rule (recorded 2026-10-12, before D3 starts)
+The rule selected **mom085** (momentum, beta = 0.85): 47/50 static tuning layouts against 30/50 for
+plain APF, 0 held-out dynamic successes lost (50/50). It is the largest beta in the pre-registered
+grid. Per the WS-D entry, the D1 fallback C is therefore APF under ARC's nine rays at 6 Hz with
+momentum beta = 0.85 (`results/v2/ws_d/c_config.json`).
