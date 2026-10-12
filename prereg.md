@@ -67,3 +67,37 @@ The paper's protocol and scripts, unchanged:
   three noise levels, 100 random layouts (static and dynamic), second layout (static and dynamic),
   with the frozen seeds of `notes/seed_map.md`.
 No evaluation result is used to change any B4/B5 setting.
+
+---
+
+## WS-C, C4: damped APF (APF-D) selection (registered 2026-10-12, before any C4 tuning run)
+
+**Candidates** (`experiments/apf_damped.py`; identical to the paper's APF when damping is off,
+checked path for path in `results/v2/ws_c/c4_identity/`), all with full sensing, 1.8 m steps at
+10 Hz, the paper's gains and theta = 25 deg:
+
+| Name | Change |
+|---|---|
+| apf | none (plain APF, the reference for the constraint) |
+| osc10 | oscillation-triggered 54 deg/s cap for K = 10 steps (trigger: heading change > 150 deg on two consecutive steps) |
+| osc30 | as osc10 with K = 30 |
+| mom050 | momentum, beta = 0.5 |
+| mom070 | momentum, beta = 0.7 |
+| mom085 | momentum, beta = 0.85 |
+| cap | the existing always-on 54 deg/s cap |
+
+**Tuning data (held-out only; see `notes/seed_map.md`).**
+- 50 tuning layouts, static: `make_layout(500000 + j)`, planner seed 0.
+- 50 tuning layouts, dynamic: same layouts, motion seed 510000 + j, planner seed 520000 + j (reported; not used by the rule).
+- 50 held-out custom-environment motion seeds 500000-500049, planner seed 501000 + s, 18 m/s.
+
+**Rule.**
+1. Feasible: at most 1 dynamic success lost against `apf` on the 50 held-out motion seeds.
+2. Among feasible candidates (including `apf` itself), take the one with the most successes on the
+   50 static tuning layouts.
+3. Ties: the smaller change, in this pre-set order (smallest first): apf, osc10, osc30, mom050,
+   mom070, mom085, cap. (The oscillation-triggered cap acts only after a detected oscillation;
+   momentum acts at every step, more so with larger beta; the always-on cap constrains every step.)
+4. If the rule selects `apf`, no damped variant is carried forward and that is reported.
+
+The selected variant is then evaluated once on every axis with the frozen evaluation sets.

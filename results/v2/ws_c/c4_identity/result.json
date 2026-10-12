@@ -1,0 +1,85 @@
+{
+ "rows": [
+  {
+   "case": "dynamic seed 0",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 1",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 2",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 3",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 4",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 5",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 6",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 7",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 8",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "dynamic seed 9",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "random layout 0 (static)",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "random layout 1 (static)",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "random layout 2 (static)",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "random layout 3 (static)",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "random layout 8 (static)",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  },
+  {
+   "case": "random layout 15 (static)",
+   "apf_vs_run_apf": true,
+   "cap_vs_apf_variants": true
+  }
+ ],
+ "all_identical": true
+}

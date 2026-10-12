@@ -1,0 +1,25 @@
+{
+ "git_commit": "39a16ca19d81dc4e5ec78c31129e3f59aacf897e",
+ "script": "scripts/ws_c_apfd_identity.py",
+ "config": {
+  "variants": [
+   "apf (no damping)",
+   "always-on cap"
+  ]
+ },
+ "seeds": {
+  "motion": "0-9 (planner 1000+s)",
+  "layouts": [
+   0,
+   1,
+   2,
+   3,
+   8,
+   15
+  ]
+ },
+ "start": "2026-10-12T19:45:06+05:30",
+ "end": "2026-10-12T19:47:21+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}
