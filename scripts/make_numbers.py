@@ -109,6 +109,94 @@ def numbers(cells):
         n["stallNodes"] = str(t.get("stable node", 0))
         n["stallFoci"] = str(t.get("stable focus", 0))
         n["stallBoundary"] = str(t.get("arena-boundary trap", 0))
+        S = list(c1["stalls"].values())
+        node = [v for v in S if v["type"] == "stable node"]
+        eq = [v for v in S if v["newton_converged"] and not v["arena_boundary_trap"]]
+        n["eqGoalMin"] = f"{min(v['dist_goal_eq'] for v in eq):.0f}"
+        n["eqGoalMax"] = f"{max(v['dist_goal_eq'] for v in eq):.0f}"
+        n["eqClearMin"] = f"{min(v['clearance_at_eq'] for v in eq):.0f}"
+        n["eqClearMax"] = f"{max(v['clearance_at_eq'] for v in eq):.0f}"
+        n["nodeMidMin"] = f"{min(v['dist_midpoint_to_eq'] for v in node):.2f}"
+        n["nodeMidMax"] = f"{max(v['dist_midpoint_to_eq'] for v in node):.2f}"
+        cd = [v["curl_over_div"] for v in eq]
+        n["curlDiv"] = f"{np.median(cd):.7f}"
+        n["nEquilibria"] = str(len(eq))
+    n.update(v2_numbers())
+    return n
+
+
+def v2_numbers():
+    """Numbers of the sections added in v2 (WS-B, WS-C, WS-D, WS-F)."""
+    from stats_v2 import iqm_ci, wilson
+    n = {}
+    f2 = lambda x: f"{x:.2f}".replace("-", "$-$")
+    f1 = lambda x: f"{x:.1f}".replace("-", "$-$")
+    # C3: stalls (timeouts) against theta on the 100 random layouts
+    c3 = J(V2, "ws_c", "c3_theta_sweep", "result.json")
+    if c3:
+        to = {int(k): v["timeout"] for k, v in c3["summary"].items()}
+        n["thetaStallsZero"], n["thetaStallsAdopted"] = str(to[0]), str(to[25])
+        n["thetaStallsMidMin"] = str(min(to[t] for t in (35, 40, 45)))
+        n["thetaStallsMidMax"] = str(max(to[t] for t in (35, 40, 45)))
+        n["thetaStallsFifty"], n["thetaStallsNinety"] = str(to[50]), str(to[90])
+    # C4: APF-D against APF, paired on every axis
+    cmp_ = J(V2, "ws_c", "apfd_compare", "result.json")
+    if cmp_:
+        n["apfdStallsRemoved"] = str(cmp_["stalls_removed_by_apfd"])
+        n["apfdNewStaticFailures"] = str(len(cmp_["new_static_failures"]))
+        names = {"indist": "Indist", "r100": "Rone", "r158": "Rhigh", "noise5": "Noise", "lay_static": "LayStatic",
+                 "lay_dynamic": "LayDynamic", "second_dyn": "Second"}
+        for ax, nm in names.items():
+            r = cmp_["axes"][ax]
+            pts = lambda x: "0" if round(100 * x) == 0 else f"{round(100 * x):+d}".replace("-", "$-$")
+            n[f"apfdN{nm}"] = str(r["n"])
+            n[f"apfdA{nm}"], n[f"apfdD{nm}"] = str(r["apf"]), str(r["apfd"])
+            n[f"apfdOnlyA{nm}"], n[f"apfdOnlyD{nm}"] = str(r["apf_only"]), str(r["apfd_only"])
+            n[f"apfdDiff{nm}"] = pts(r["diff"])
+            n[f"apfdLo{nm}"], n[f"apfdHi{nm}"] = pts(r["newcombe95"][0]), pts(r["newcombe95"][1])
+            hp = r["holm_p"]
+            n[f"apfdHolm{nm}"] = ("1" if hp >= 0.995 else f"{hp:.2f}") if hp >= 0.01 else \
+                f"${hp / 10 ** int(np.floor(np.log10(hp))):.1f} \\times 10^{{{int(np.floor(np.log10(hp)))}}}$"
+    # B1: actor saturation and critic values
+    b1 = J(V2, "ws_b", "b1_summary.json")
+    if b1:
+        cs, cd_, ld, sd = b1["td3"]["collapsed_runs"], b1["td3dyn"]["collapsed_runs"], b1["td3dyn"]["learned_runs"], b1["sacdyn"]["learned_runs"]
+        n["bOneStatQBound"], n["bOneStatQZero"] = f2(cs["mean_Q_bound"]), f2(cs["mean_Q_zero"])
+        n["bOneStatQBoundWins"] = f"{100 * cs['frac_Q_bound_gt_Q_zero']:.0f}\\%"
+        n["bOneDynQPolicy"], n["bOneDynReturn"] = f2(cd_["mean_Q_policy"]), f2(cd_["mean_G"])
+        n["bOneLearnedBound"] = f"{100 * ld['frac_action_at_bound']:.0f}\\%"
+        n["bOneSacBound"] = f"{100 * sd['frac_action_at_bound']:.1f}\\%"
+        n["bOneSacUsat"] = f"{100 * sd['frac_abs_u_gt3']:.1f}\\%"
+        n["bOneSacQ"], n["bOneSacReturn"] = f1(sd["mean_Q_policy"]), f1(sd["mean_G"])
+    # B2: discounted returns of scripted behaviours
+    b2 = J(V2, "ws_b", "b2_returns", "result.json")
+    if b2:
+        pol = {"circling": "Circ", "greedy": "Greedy", "random": "Rand", "sac_best": "Sac"}
+        for env, en in (("static", "Stat"), ("moving", "Mov")):
+            for p, pn in pol.items():
+                for g, gn in (("0.9", "Short"), ("0.99", "Long")):
+                    v = b2[env][p]
+                    n[f"bTwo{en}{pn}{gn}"] = f"{f1(v['mean_return'][g])} ({v['se_return'][g]:.1f})"
+    # B3: ablation collapses and pre-tanh magnitudes
+    b3 = J(V2, "ws_b", "b3_selection", "result.json")
+    if b3:
+        rows = b3["rows"]
+        for c, cn in (("a", "Base"), ("b", "Gamma"), ("c", "Pen"), ("d", "Noise")):
+            n[f"bThree{cn}"] = str(sum(r["collapsed"] for r in rows if r["condition"] == c))
+        pen = [r["u2_last10"] for r in rows if r["condition"] == "c"]
+        col = [r["u2_last10"] for r in rows if r["collapsed"]]
+        n["bThreePenUMin"], n["bThreePenUMax"] = f"{min(pen):.1f}", f"{max(pen):.1f}"
+        n["bThreeColUMin"], n["bThreeColUMax"] = f"{min(col):.0f}", f"{max(col):.0f}"
+    # D2: initial arbiter thresholds
+    d2 = J(V2, "ws_d", "d2_thresholds", "result.json")
+    if d2:
+        n["dTwoColl"], n["dTwoDon"], n["dTwoRhoOn"] = str(d2["n_collisions"]), f"{d2['d_on']:.1f}", f"{d2['rho_on']:.2f}"
+    # WS-F: IQM over seeds with a 95% bootstrap interval, dynamic suite, reward-selected checkpoint
+    rep = J(OUT, "report.json")
+    for grp, nm in (("td3dyn/best", "TdDyn"), ("sacdyn/best", "SacDyn")):
+        x = [v["success"] for v in rep["baselines"]["corridor"][grp]["dynamic"]["per_seed"].values()]
+        m, lo, hi = iqm_ci([x])
+        n[f"iqm{nm}"] = f"{m:.1f} ({lo:.1f}--{hi:.1f})"
     return n
 
 
