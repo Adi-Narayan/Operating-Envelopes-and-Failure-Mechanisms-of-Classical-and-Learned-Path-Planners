@@ -1,0 +1,15 @@
+{
+ "git_commit": "525f5f62b0b46518adf394834ed14c49294fc4b6",
+ "script": "scripts/ws_b_proxy_check.py",
+ "config": {
+  "checkpoint": "arc_checkpoint_ep50.pth (full, checkpoints_full)",
+  "collapse_rule": ">= 0.99 of heading changes at 9 deg, static custom env"
+ },
+ "seeds": {
+  "runs": "td3dyn_seed0-9, td3_seed0-9"
+ },
+ "start": "2026-10-12T19:20:27+05:30",
+ "end": "2026-10-12T19:22:29+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

@@ -1,0 +1,15 @@
+{
+ "git_commit": "525f5f62b0b46518adf394834ed14c49294fc4b6",
+ "script": "experiments/train_arc_seed.py --algo td3 --dynamic --seed 0 --episodes 3 --name td3dyn_seed0_identity",
+ "config": {
+  "purpose": "patched code with default flags reproduces the paper's TD3 moving seed 0 training",
+  "result": "episode rewards 1-3 identical to experiments/out/arc_models/td3dyn_seed0"
+ },
+ "seeds": {
+  "seed": 0
+ },
+ "start": "2026-10-12",
+ "end": "2026-10-12T19:23:18+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}

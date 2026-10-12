@@ -1,0 +1,45 @@
+{
+ "name": "b1",
+ "jobs": [
+  {
+   "name": "b1_arc",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_b_b1_diagnostics.py",
+    "arc"
+   ],
+   "clean": []
+  },
+  {
+   "name": "b1_td3dyn",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_b_b1_diagnostics.py",
+    "td3dyn"
+   ],
+   "clean": []
+  },
+  {
+   "name": "b1_td3",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_b_b1_diagnostics.py",
+    "td3"
+   ],
+   "clean": []
+  },
+  {
+   "name": "b1_sacdyn",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_b_b1_diagnostics.py",
+    "sacdyn"
+   ],
+   "clean": []
+  }
+ ]
+}

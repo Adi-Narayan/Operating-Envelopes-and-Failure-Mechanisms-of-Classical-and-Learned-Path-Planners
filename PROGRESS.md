@@ -34,5 +34,24 @@ Code at commit `1e801cf` (HEAD before this block). Machine idle (no training) th
 - Every time-carrying quantity is tied to the decision period (obstacle tick = APF period / 3; goal push-away per tick; DWA limits scale with v; budgets and noise per decision).
 - Bit-identity test (motion seeds 0-9; 18 m/s vs 9 m/s with obstacle speeds x0.5): SAC bit-identical 10/10; APF same outcome and step count 10/10, max pointwise difference 4.8 cm, traced to floating-point rounding in obstacle positions (<= 2.3e-8 m) amplified by the field, not to a time dependence. **Passed.**
 
+### 2026-10-12 evening: Day 1 work blocks
+**Infrastructure.** `scripts/jobqueue.py` (resumable queue: `.done` markers in `results/v2/queue/<name>/`, RAM gate, below-normal priority for evaluation), `scripts/v2common.py` (manifests). Named `jobqueue.py`, not `queue.py`, because a `queue.py` in `scripts/` shadows Python's `queue` module and breaks torch imports.
+- Free RAM is the binding constraint (1.2-2.5 GB free with Adi's applications open; a training process uses ~0.36 GB, an APF job ~0.08 GB). Training runs 4 at a time, not 20.
+
+**WS-B code changes (opt-in; defaults unchanged).** `baselines.py`: `Actor.pre()`, TD3 `pretanh_penalty` (default 0), logging of E[u^2] and |u| > 3 (TD3, SAC). `train_arc_seed.py`: `--gamma`, `--exploration-noise`, `--pretanh-penalty`, `--out-root`, per-episode `train_log.jsonl`. **Identity check passed:** with default flags, TD3 moving seed 0 reproduces the stored run's episode rewards 1-3 exactly (`results/v2/ws_b/checks/`).
+
+**B3 pre-requisites.** 50-episode proxy valid: collapse at the ep-50 checkpoint matches the final status in 9/10 TD3-moving and 10/10 TD3-static seeds (`results/v2/ws_b/proxy_check/`). lambda = 2.0e-3 from a 10-episode TD3 run, seed 100 (`results/v2/ws_b/lambda_calibration/`); the pre-tanh output is already saturated at episode 0 (95% of |u| > 3). `prereg.md` B3/B4/B5 committed (`39a16ca`) before any B3 run.
+
+**Running.** B3 (12 jobs, `jobs/b3.json`), B1 (`jobs/b1.json`), C3 theta sweep (`jobs/c3.json`), C4 tuning (`jobs/c4.json`; prereg `f762095`).
+
+**C1 done** (`results/v2/ws_c/c1_classify/`): of the 32 stalls, 27 period-2 orbits around stable nodes, 4 non-periodic orbits around stable foci, 1 arena-boundary trap (layout 99: pinned at x = 500 m, force points out of the arena; the paper's "all in open space" needs this exception). curl/div = tan(theta) at every equilibrium to 1e-9; derived in `notes/c2_proposition.md` (Lemma 1: exact for goal exponent n = 2). **[ASK ADI]** check the C2 math before it goes into the paper.
+
+**C4.** `experiments/apf_damped.py`; reproduces plain APF and the always-on cap path for path (`results/v2/ws_c/c4_identity/`).
+
+**WS-D.** `experiments/arbiter.py` (L = learned, C = APF with ARC's rays at 6 Hz, or DWA-CV). Reproduces SAC alone, ray-APF alone and DWA-CV alone path for path on 10 environments (`results/v2/ws_d/identity/`).
+
 ## Next
-Day 1 per `instructions.md` Section 5: `prereg.md` for B3 (commit before launching), B1 and B2 diagnostics, C1 stall classification, WS-A skeleton; background C3 theta sweep; then B3 short runs.
+- Pre-register D1-D3 (D2 thresholds from SAC on the held-out seeds, not from the evaluation logs: avoids tuning on evaluation data).
+- When B3 finishes: apply the B4 rule; launch B4 + B5.
+- When C4 finishes: apply the C4 rule (`scripts/ws_c_c4_select.py`).
+- WS-A numbers pipeline.

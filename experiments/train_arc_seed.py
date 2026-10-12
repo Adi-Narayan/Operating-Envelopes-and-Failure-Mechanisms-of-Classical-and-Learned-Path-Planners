@@ -56,11 +56,16 @@ def main():
     ap.add_argument("--dynamic", action="store_true",
                     help="train with moving obstacles (dyn_train_env.py; corridor layout only)")
     ap.add_argument("--name", default=None, help="override the output folder name (e.g. for timing benchmarks)")
+    ap.add_argument("--out-root", default=None, help="folder that holds the run folder (default experiments/out/arc_models)")
+    # Diagnostic overrides (instructions.md WS-B); defaults leave the paper's configuration unchanged.
+    ap.add_argument("--gamma", type=float, default=None, help="override the discount factor")
+    ap.add_argument("--exploration-noise", type=float, default=None, help="override the exploration noise scale")
+    ap.add_argument("--pretanh-penalty", type=float, default=0.0, help="TD3: lambda * E[u^2] added to the actor loss")
     args = ap.parse_args()
     if args.dynamic:
         assert args.env == "corridor_gauntlet"
 
-    out = os.path.join(HERE, "out", "arc_models",
+    out = os.path.join(os.path.abspath(args.out_root) if args.out_root else os.path.join(HERE, "out", "arc_models"),
                        args.name or run_name(args.algo, args.env, args.seed, args.episodes, args.dynamic))
     os.makedirs(out, exist_ok=True)
     marker = os.path.join(out, "STARTED")
@@ -81,6 +86,13 @@ def main():
     if args.algo != "arc":
         from baselines import BASELINE_TRAIN_CONFIG
         config.TRAIN_CONFIG.update(BASELINE_TRAIN_CONFIG)   # same dict object train.py reads
+    if args.gamma is not None:
+        config.TRAIN_CONFIG["gamma"] = args.gamma
+    if args.exploration_noise is not None:
+        config.TRAIN_CONFIG["exploration_noise"] = args.exploration_noise
+    if args.pretanh_penalty:
+        assert args.algo == "td3", "--pretanh-penalty is a TD3 option"
+        config.TRAIN_CONFIG["pretanh_penalty"] = args.pretanh_penalty
     from train import ARCTrainer
 
     t0 = time.time()
@@ -97,7 +109,25 @@ def main():
     if args.dynamic:
         from dyn_train_env import make_dynamic
         make_dynamic(trainer.env)
+
+    # per-episode update statistics (log only; does not touch learning)
+    log_f = open(os.path.join(out, "train_log.jsonl"), "w")
+    _orig_log = trainer._log_episode
+
+    def _log_episode(episode, stats):
+        L = stats.get("losses") or []
+        row = {"episode": episode, "reward": float(np.mean(stats["rewards"])), "n_updates": len(L)}
+        for k in ("actor_loss", "critic_loss", "avg_q", "u2", "u_sat", "alpha"):
+            vals = [l[k] for l in L if k in l]
+            if vals:
+                row[k] = float(np.mean(vals))
+        log_f.write(json.dumps(row) + "\n")
+        log_f.flush()
+        return _orig_log(episode, stats)
+
+    trainer._log_episode = _log_episode
     trainer.train(num_episodes=args.episodes)
+    log_f.close()
     wall = time.time() - t0
 
     with open(os.path.join(out, "train_summary.json"), "w") as f:

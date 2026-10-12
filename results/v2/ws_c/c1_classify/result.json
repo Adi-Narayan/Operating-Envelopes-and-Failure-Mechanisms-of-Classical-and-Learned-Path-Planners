@@ -1,0 +1,1108 @@
+{
+ "summary": {
+  "n_stalls": 32,
+  "types": {
+   "stable node": 27,
+   "stable focus": 4,
+   "arena-boundary trap": 1
+  },
+  "periods": {
+   "2": 27,
+   "None": 4,
+   "1": 1
+  },
+  "newton_converged": 31,
+  "max_dist_midpoint_to_eq_m": 23.360555936590742,
+  "eq_within_half_step_of_last_point": 14
+ },
+ "stalls": {
+  "2": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    234.2472954191187,
+    96.93003137864443
+   ],
+   "equilibrium": [
+    234.5908998928393,
+    97.08488056383601
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.37688500171180717,
+   "eq_to_last_point": 0.5234575617489536,
+   "eigenvalues": [
+    [
+     -91.07659082128444,
+     0.0
+    ],
+    [
+     -53.60726820986279,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -67.46719148168268,
+   "divergence": -144.68385903114722,
+   "curl_over_div": 0.4663076581829248,
+   "F_att_at_eq": 2170.540765120056,
+   "clearance_at_eq": 29.007417357384924,
+   "dist_goal_eq": 434.10815302401136,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "8": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    168.83233090320982,
+    252.41996712613926
+   ],
+   "equilibrium": [
+    168.65847293988318,
+    252.3521909125266
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.18660173242431635,
+   "eq_to_last_point": 1.0864136258000314,
+   "eigenvalues": [
+    [
+     -124.14570303587888,
+     0.0
+    ],
+    [
+     -11.164173558768116,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -63.09603167892419,
+   "divergence": -135.309876594647,
+   "curl_over_div": 0.4663076581463702,
+   "F_att_at_eq": 1823.7145566811196,
+   "clearance_at_eq": 25.2519137716923,
+   "dist_goal_eq": 364.7429113362239,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "15": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    230.97803565939597,
+    40.709668910711315
+   ],
+   "equilibrium": [
+    230.92848111099002,
+    40.6412021428512
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.08451835048632153,
+   "eq_to_last_point": 0.9841985176914791,
+   "eigenvalues": [
+    [
+     -111.50234980826905,
+     0.0
+    ],
+    [
+     -18.045546634276576,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -60.40917619202446,
+   "divergence": -129.5478964425456,
+   "curl_over_div": 0.4663076580237324,
+   "F_att_at_eq": 2423.168717164431,
+   "clearance_at_eq": 31.58658384560045,
+   "dist_goal_eq": 484.63374343288626,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "16": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    226.7211457931801,
+    283.10294709223155
+   ],
+   "equilibrium": [
+    226.47399737096785,
+    283.05431252620787
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.2518881966554258,
+   "eq_to_last_point": 1.1472530724533996,
+   "eigenvalues": [
+    [
+     -141.25828910440845,
+     0.0
+    ],
+    [
+     -6.783599533795538,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -69.03306639856055,
+   "divergence": -148.041888638204,
+   "curl_over_div": 0.46630765814713965,
+   "F_att_at_eq": 1499.9907259754632,
+   "clearance_at_eq": 21.631074958365474,
+   "dist_goal_eq": 299.99814519509266,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "21": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    275.3176921058523,
+    295.85888039688547
+   ],
+   "equilibrium": [
+    274.73324724725563,
+    295.6367445652719
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.6252360517650376,
+   "eq_to_last_point": 1.5251751357631893,
+   "eigenvalues": [
+    [
+     -169.70640681579943,
+     0.0
+    ],
+    [
+     -32.32835434216152,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -94.21035634090913,
+   "divergence": -202.03476115796093,
+   "curl_over_div": 0.4663076581522065,
+   "F_att_at_eq": 1273.630141510114,
+   "clearance_at_eq": 18.336140056082172,
+   "dist_goal_eq": 254.7260283020228,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "22": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    223.39793305038933,
+    345.94574906535865
+   ],
+   "equilibrium": [
+    222.9805114414295,
+    345.74390178140584
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.4636627283551352,
+   "eq_to_last_point": 0.43636966806043603,
+   "eigenvalues": [
+    [
+     -134.2575318408032,
+     0.0
+    ],
+    [
+     -7.227864604856508,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -65.97572388159278,
+   "divergence": -141.48539644565972,
+   "curl_over_div": 0.46630765816832603,
+   "F_att_at_eq": 1349.031595297855,
+   "clearance_at_eq": 20.264453810417507,
+   "dist_goal_eq": 269.80631905957097,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "23": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    254.74053665923662,
+    66.45632436417549
+   ],
+   "equilibrium": [
+    255.0067951076032,
+    66.82401335618079
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.453969994788702,
+   "eq_to_last_point": 1.3539458781643583,
+   "eigenvalues": [
+    [
+     -57.92756484832424,
+     0.0
+    ],
+    [
+     -36.92491187327434,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -44.23043629344647,
+   "divergence": -94.85247672159858,
+   "curl_over_div": 0.4663076581886964,
+   "F_att_at_eq": 2250.784654519169,
+   "clearance_at_eq": 32.86098259934515,
+   "dist_goal_eq": 450.1569309038339,
+   "last_steps_heading_flip_deg": 179.99995499227944
+  },
+  "26": {
+   "outcome": "timeout",
+   "period": null,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    72.23659447944304,
+    72.3530675320203
+   ],
+   "equilibrium": [
+    72.38188217951189,
+    72.73469703222881
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.40834983925635193,
+   "eq_to_last_point": 0.8475388092503849,
+   "eigenvalues": [
+    [
+     -46.90528301978247,
+     16.825595248496676
+    ],
+    [
+     -46.90528301978247,
+     -16.825595248496676
+    ]
+   ],
+   "type": "stable focus",
+   "curl": -43.744585352669674,
+   "divergence": -93.81056603956495,
+   "curl_over_div": 0.46630765807574637,
+   "F_att_at_eq": 2774.9822267597497,
+   "clearance_at_eq": 39.053656671098715,
+   "dist_goal_eq": 554.99644535195,
+   "last_steps_heading_flip_deg": 154.74787671827258
+  },
+  "34": {
+   "outcome": "timeout",
+   "period": null,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    384.9813127778921,
+    189.1533131415843
+   ],
+   "equilibrium": [
+    385.396883310163,
+    189.2230871272132
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.42138732344777197,
+   "eq_to_last_point": 0.9806413624828901,
+   "eigenvalues": [
+    [
+     -74.92253395412263,
+     34.91403320800299
+    ],
+    [
+     -74.92253395412263,
+     -34.91403320800299
+    ]
+   ],
+   "type": "stable focus",
+   "curl": -69.87390270410287,
+   "divergence": -149.84506790824526,
+   "curl_over_div": 0.46630765816655917,
+   "F_att_at_eq": 1435.1790991055825,
+   "clearance_at_eq": 24.095713720171915,
+   "dist_goal_eq": 287.0358198211165,
+   "last_steps_heading_flip_deg": 132.14304836466312
+  },
+  "35": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    354.5676552853575,
+    222.46073100472532
+   ],
+   "equilibrium": [
+    354.92238392472086,
+    223.2044045511585
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.823943415077201,
+   "eq_to_last_point": 0.0760604010295018,
+   "eigenvalues": [
+    [
+     -115.06837116168892,
+     0.0
+    ],
+    [
+     -9.32203636384974,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -58.004199619290375,
+   "divergence": -124.39040752553865,
+   "curl_over_div": 0.46630765806745594,
+   "F_att_at_eq": 1328.3654574257453,
+   "clearance_at_eq": 20.803613499054524,
+   "dist_goal_eq": 265.67309148514903,
+   "last_steps_heading_flip_deg": 179.9999549760867
+  },
+  "36": {
+   "outcome": "timeout",
+   "period": null,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    373.65543562661026,
+    144.39225064740245
+   ],
+   "equilibrium": [
+    373.87359091878324,
+    144.69737593163643
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.3750908830962783,
+   "eq_to_last_point": 1.0249961872841271,
+   "eigenvalues": [
+    [
+     -80.07840329725013,
+     36.59020301300675
+    ],
+    [
+     -80.07840329725013,
+     -36.59020301300675
+    ]
+   ],
+   "type": "stable focus",
+   "curl": -74.6823454198875,
+   "divergence": -160.15680659450027,
+   "curl_over_div": 0.46630765815014735,
+   "F_att_at_eq": 1665.066015336304,
+   "clearance_at_eq": 27.412244854547815,
+   "dist_goal_eq": 333.01320306726086,
+   "last_steps_heading_flip_deg": 131.40468022798515
+  },
+  "41": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    148.20067268874584,
+    112.94466667246931
+   ],
+   "equilibrium": [
+    148.08247388017796,
+    112.3132155904615
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.6424184207474954,
+   "eq_to_last_point": 1.5412139898727402,
+   "eigenvalues": [
+    [
+     -319.0756132724141,
+     0.0
+    ],
+    [
+     -41.43939575530791,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -168.11090958412933,
+   "divergence": -360.51500902772204,
+   "curl_over_div": 0.46630765814025327,
+   "F_att_at_eq": 2370.784080526147,
+   "clearance_at_eq": 23.161218385336774,
+   "dist_goal_eq": 474.15681610522944,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "46": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    236.7364388919034,
+    102.0325049384999
+   ],
+   "equilibrium": [
+    236.4133760401431,
+    101.67742214761724
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.48005561612016096,
+   "eq_to_last_point": 1.3800232170415745,
+   "eigenvalues": [
+    [
+     -77.58830306346044,
+     0.0
+    ],
+    [
+     -47.42860255743562,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -58.296340536116986,
+   "divergence": -125.01690562089607,
+   "curl_over_div": 0.46630765852496825,
+   "F_att_at_eq": 2146.247540654769,
+   "clearance_at_eq": 29.757046001835594,
+   "dist_goal_eq": 429.2495081309538,
+   "last_steps_heading_flip_deg": 179.9999549760867
+  },
+  "47": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    304.3698304845879,
+    390.4712901693017
+   ],
+   "equilibrium": [
+    305.14730958155127,
+    390.8223208766886
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.8530511729922768,
+   "eq_to_last_point": 1.7530413713528,
+   "eigenvalues": [
+    [
+     -106.14559925807887,
+     0.0
+    ],
+    [
+     -4.768772892921988,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -51.7202211312906,
+   "divergence": -110.91437215100086,
+   "curl_over_div": 0.46630765813539243,
+   "F_att_at_eq": 881.1244338079803,
+   "clearance_at_eq": 16.409528168324186,
+   "dist_goal_eq": 176.22488676159608,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "51": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    87.98125593328724,
+    63.688591916353914
+   ],
+   "equilibrium": [
+    88.24308894236454,
+    63.82774279347307
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.2965122109551315,
+   "eq_to_last_point": 0.6035280519761382,
+   "eigenvalues": [
+    [
+     -134.4567043973408,
+     0.0
+    ],
+    [
+     -18.63757829840633,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -71.38903643976846,
+   "divergence": -153.0942826957471,
+   "curl_over_div": 0.466307658148436,
+   "F_att_at_eq": 2751.7492163252764,
+   "clearance_at_eq": 32.46981117869848,
+   "dist_goal_eq": 550.3498432650553,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "52": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    134.0886655141452,
+    141.7365685533698
+   ],
+   "equilibrium": [
+    134.49599067861567,
+    142.1960543459617
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.6140366301815398,
+   "eq_to_last_point": 1.5140328689761713,
+   "eigenvalues": [
+    [
+     -110.10962234863578,
+     0.0
+    ],
+    [
+     -16.977693029640122,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -59.26178841150431,
+   "divergence": -127.08731537827589,
+   "curl_over_div": 0.46630765812552866,
+   "F_att_at_eq": 2309.9528539957532,
+   "clearance_at_eq": 30.089194546265013,
+   "dist_goal_eq": 461.99057079915065,
+   "last_steps_heading_flip_deg": 179.9999549760867
+  },
+  "53": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    191.00731675340253,
+    92.86021707015462
+   ],
+   "equilibrium": [
+    190.7462047750147,
+    92.701729424263
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.3054468843479726,
+   "eq_to_last_point": 0.5946098373871821,
+   "eigenvalues": [
+    [
+     -110.59064339775797,
+     0.0
+    ],
+    [
+     -54.94277922451691,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -77.1895026537095,
+   "divergence": -165.53342262227488,
+   "curl_over_div": 0.46630765818118564,
+   "F_att_at_eq": 2312.039935149223,
+   "clearance_at_eq": 29.92587875269561,
+   "dist_goal_eq": 462.4079870298445,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "55": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    285.71483413791873,
+    180.73237121019093
+   ],
+   "equilibrium": [
+    285.74119159044716,
+    180.46461071166075
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.2690546410618461,
+   "eq_to_last_point": 0.6414873018998921,
+   "eigenvalues": [
+    [
+     -191.49972761632864,
+     0.0
+    ],
+    [
+     -29.019689294418527,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -102.82989286508837,
+   "divergence": -220.51941691074717,
+   "curl_over_div": 0.4663076580993666,
+   "F_att_at_eq": 1681.473372892651,
+   "clearance_at_eq": 21.323510653681165,
+   "dist_goal_eq": 336.2946745785302,
+   "last_steps_heading_flip_deg": 179.9999549760867
+  },
+  "59": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    139.00843597144936,
+    164.72898860041278
+   ],
+   "equilibrium": [
+    139.55930109021676,
+    164.97958859903454
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.6051881842731697,
+   "eq_to_last_point": 0.29481658112277803,
+   "eigenvalues": [
+    [
+     -117.08774832244995,
+     0.0
+    ],
+    [
+     -16.998576425618417,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -62.52548008660597,
+   "divergence": -134.08632474806836,
+   "curl_over_div": 0.4663076581753107,
+   "F_att_at_eq": 2213.1645655265493,
+   "clearance_at_eq": 28.961134553571355,
+   "dist_goal_eq": 442.63291310530985,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "66": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    118.96714077711984,
+    97.08475279953035
+   ],
+   "equilibrium": [
+    118.77966663228395,
+    96.9639893178115
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.22300307957247525,
+   "eq_to_last_point": 1.12270090072723,
+   "eigenvalues": [
+    [
+     -104.2835886566991,
+     0.0
+    ],
+    [
+     -37.57929141397651,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -66.15174738840324,
+   "divergence": -141.8628800706756,
+   "curl_over_div": 0.466307658179833,
+   "F_att_at_eq": 2526.4551470197944,
+   "clearance_at_eq": 31.457130148784728,
+   "dist_goal_eq": 505.2910294039589,
+   "last_steps_heading_flip_deg": 179.9999549760867
+  },
+  "67": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    365.02977511213,
+    89.01824999909167
+   ],
+   "equilibrium": [
+    364.7519705948597,
+    88.46652284571023
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.6177201644710627,
+   "eq_to_last_point": 1.5177008748025167,
+   "eigenvalues": [
+    [
+     -136.8470831277309,
+     0.0
+    ],
+    [
+     -7.800110075282646,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -67.45009390471068,
+   "divergence": -144.64719320301356,
+   "curl_over_div": 0.46630765804106483,
+   "F_att_at_eq": 1948.2500277012311,
+   "clearance_at_eq": 25.733616825491183,
+   "dist_goal_eq": 389.65000554024624,
+   "last_steps_heading_flip_deg": 179.99995499227944
+  },
+  "72": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    159.83895297076265,
+    133.39793385674727
+   ],
+   "equilibrium": [
+    159.22117581811762,
+    133.04079829557867
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.7135786007031168,
+   "eq_to_last_point": 0.18648325926027054,
+   "eigenvalues": [
+    [
+     -141.51727426417096,
+     0.0
+    ],
+    [
+     -11.953439004972788,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -71.56456889788387,
+   "divergence": -153.47071326914374,
+   "curl_over_div": 0.46630765814178554,
+   "F_att_at_eq": 2256.6435303027547,
+   "clearance_at_eq": 28.18094508125704,
+   "dist_goal_eq": 451.328706060551,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "73": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    195.84373100902098,
+    218.39810218410713
+   ],
+   "equilibrium": [
+    195.28113509579418,
+    218.31120525980683
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.5692672808377018,
+   "eq_to_last_point": 1.4624321957627713,
+   "eigenvalues": [
+    [
+     -220.94399989033053,
+     0.0
+    ],
+    [
+     -6.2009685423093455,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -105.9194382946771,
+   "divergence": -227.14496843263987,
+   "curl_over_div": 0.46630765816891795,
+   "F_att_at_eq": 1827.5914993207755,
+   "clearance_at_eq": 21.626064405246808,
+   "dist_goal_eq": 365.51829986415504,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "75": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    194.96786001099127,
+    56.81248625642718
+   ],
+   "equilibrium": [
+    194.7096395207774,
+    56.7375438536995
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.26887578041336796,
+   "eq_to_last_point": 0.632161139261322,
+   "eigenvalues": [
+    [
+     -94.14377942572632,
+     0.0
+    ],
+    [
+     -39.81381610163675,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -62.46545267003967,
+   "divergence": -133.95759552736308,
+   "curl_over_div": 0.46630765821173653,
+   "F_att_at_eq": 2448.137619020825,
+   "clearance_at_eq": 32.12066497519467,
+   "dist_goal_eq": 489.62752380416487,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "76": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    128.11335477024198,
+    107.65854498313738
+   ],
+   "equilibrium": [
+    128.69183871877894,
+    107.88846080740666
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.6224989678419811,
+   "eq_to_last_point": 0.28083226929184785,
+   "eigenvalues": [
+    [
+     -168.38219340329297,
+     0.0
+    ],
+    [
+     -13.161716559718206,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -84.65531550200467,
+   "divergence": -181.54390996301117,
+   "curl_over_div": 0.4663076581266364,
+   "F_att_at_eq": 2452.7119213681563,
+   "clearance_at_eq": 28.22014975670413,
+   "dist_goal_eq": 490.5423842736312,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "80": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    101.1406259090173,
+    100.52900799049576
+   ],
+   "equilibrium": [
+    100.64569409947227,
+    100.2405830991273
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.5728406532888763,
+   "eq_to_last_point": 1.4728321559697068,
+   "eigenvalues": [
+    [
+     -121.56927352036394,
+     0.0
+    ],
+    [
+     -32.451231517442345,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -71.82094101608527,
+   "divergence": -154.0205050378063,
+   "curl_over_div": 0.4663076581813305,
+   "F_att_at_eq": 2577.806686148711,
+   "clearance_at_eq": 31.584664662443245,
+   "dist_goal_eq": 515.5613372297422,
+   "last_steps_heading_flip_deg": 179.9999549760867
+  },
+  "85": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    221.71607870819014,
+    209.14408386308907
+   ],
+   "equilibrium": [
+    221.86433734643285,
+    209.76606287444469
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.6394048126034844,
+   "eq_to_last_point": 1.5391909913504942,
+   "eigenvalues": [
+    [
+     -80.18902625876645,
+     0.0
+    ],
+    [
+     -20.08270930305234,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -46.75747819078424,
+   "divergence": -100.27173556181879,
+   "curl_over_div": 0.4663076581731017,
+   "F_att_at_eq": 1762.5217240831469,
+   "clearance_at_eq": 26.434591113405638,
+   "dist_goal_eq": 352.5043448166294,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "87": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    120.0579425911692,
+    96.15534044786034
+   ],
+   "equilibrium": [
+    120.76471997528795,
+    96.38385920664761
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.7428021902360156,
+   "eq_to_last_point": 0.1625437580296702,
+   "eigenvalues": [
+    [
+     -177.08012716376874,
+     0.0
+    ],
+    [
+     -13.020590381878346,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -88.64542041010282,
+   "divergence": -190.10071754564706,
+   "curl_over_div": 0.4663076581434641,
+   "F_att_at_eq": 2521.7840275640006,
+   "clearance_at_eq": 28.634906268207956,
+   "dist_goal_eq": 504.3568055128001,
+   "last_steps_heading_flip_deg": 179.99995499227944
+  },
+  "89": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    214.84400835163217,
+    164.70361386463418
+   ],
+   "equilibrium": [
+    214.22016081373027,
+    164.24962358417775
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.7715522829304301,
+   "eq_to_last_point": 1.670970877622782,
+   "eigenvalues": [
+    [
+     -375.32775397742193,
+     0.0
+    ],
+    [
+     -72.8382352415563,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -208.98323290111875,
+   "divergence": -448.1659892189782,
+   "curl_over_div": 0.46630765816325154,
+   "F_att_at_eq": 1957.9409890019035,
+   "clearance_at_eq": 18.77974047267947,
+   "dist_goal_eq": 391.58819780038067,
+   "last_steps_heading_flip_deg": 179.99995498418232
+  },
+  "91": {
+   "outcome": "timeout",
+   "period": 2,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    92.3116480438697,
+    193.22422603916235
+   ],
+   "equilibrium": [
+    92.08625641574156,
+    192.93829506221593
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.36408503073840437,
+   "eq_to_last_point": 0.5363944838307584,
+   "eigenvalues": [
+    [
+     -74.01199818693073,
+     0.0
+    ],
+    [
+     -46.09350440867586,
+     0.0
+    ]
+   ],
+   "type": "stable node",
+   "curl": -56.006115642048826,
+   "divergence": -120.1055025956066,
+   "curl_over_div": 0.46630765811472075,
+   "F_att_at_eq": 2308.0415477612178,
+   "clearance_at_eq": 32.48154487252869,
+   "dist_goal_eq": 461.60830955224355,
+   "last_steps_heading_flip_deg": 179.9999549760867
+  },
+  "97": {
+   "outcome": "timeout",
+   "period": null,
+   "arena_boundary_trap": false,
+   "midpoint": [
+    150.42553319668735,
+    136.7238755344877
+   ],
+   "equilibrium": [
+    150.4575643023184,
+    136.36733172777232
+   ],
+   "newton_converged": true,
+   "dist_midpoint_to_eq": 0.35797971707211296,
+   "eq_to_last_point": 0.6406461697854225,
+   "eigenvalues": [
+    [
+     -84.15464577410602,
+     25.63842570279167
+    ],
+    [
+     -84.15464577410602,
+     -25.63842570279167
+    ]
+   ],
+   "type": "stable focus",
+   "curl": -78.48391157381229,
+   "divergence": -168.30929154821206,
+   "curl_over_div": 0.4663076580732362,
+   "F_att_at_eq": 2274.5129946339844,
+   "clearance_at_eq": 28.674461853538997,
+   "dist_goal_eq": 454.9025989267968,
+   "last_steps_heading_flip_deg": 166.69125124771853
+  },
+  "99": {
+   "outcome": "timeout",
+   "period": 1,
+   "arena_boundary_trap": true,
+   "midpoint": [
+    500.0,
+    250.4458882683227
+   ],
+   "equilibrium": [
+    523.3172310693712,
+    249.0238091832739
+   ],
+   "newton_converged": false,
+   "dist_midpoint_to_eq": 23.360555936590742,
+   "eq_to_last_point": 23.360555936590742,
+   "eigenvalues": [
+    [
+     -104.17642515148478,
+     0.0
+    ],
+    [
+     -5.106737861689311,
+     0.0
+    ]
+   ],
+   "type": "arena-boundary trap",
+   "curl": -48.54654178643614,
+   "divergence": -109.28316301317409,
+   "curl_over_div": 0.4442270927003078,
+   "F_att_at_eq": 1118.5550326124026,
+   "clearance_at_eq": 19.235510443758074,
+   "dist_goal_eq": 223.71100652248052,
+   "last_steps_heading_flip_deg": 90.0
+  }
+ }
+}

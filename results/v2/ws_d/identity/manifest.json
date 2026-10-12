@@ -1,0 +1,19 @@
+{
+ "git_commit": "f762095b34bb7b069b88006d9972f18a23eb0a13",
+ "script": "scripts/ws_d_identity.py",
+ "config": {
+  "L": "sacdyn_seed0/arc_best",
+  "dwa_cv_weights": {
+   "alpha": 0.5,
+   "beta": 0.2,
+   "gamma": 0.2
+  }
+ },
+ "seeds": {
+  "motion": "0-9"
+ },
+ "start": "2026-10-12T19:52:53+05:30",
+ "end": "2026-10-12T19:57:42+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

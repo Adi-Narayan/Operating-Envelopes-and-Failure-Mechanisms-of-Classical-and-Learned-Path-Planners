@@ -40,6 +40,10 @@ class Actor(nn.Module):
             return torch.tanh(self.mu(z))
         return self.mu(z), torch.clamp(self.log_std(z), LOG_STD_MIN, LOG_STD_MAX)
 
+    def pre(self, h):
+        """Pre-tanh mean output u (deterministic actor: action = tanh(u))."""
+        return self.mu(self.body(self.enc(h)))
+
 
 class Critic(nn.Module):
     def __init__(self, obs_dim, act_dim, lstm_h, mlp_h):
@@ -92,8 +96,12 @@ class _Base:
 class TD3Agent(_Base):
     algo = "td3"
 
-    def __init__(self, obs_dim, act_dim, config, device, policy_delay=2, target_noise=0.2, noise_clip=0.5):
+    def __init__(self, obs_dim, act_dim, config, device, policy_delay=2, target_noise=0.2, noise_clip=0.5,
+                 pretanh_penalty=None):
         super().__init__(obs_dim, act_dim, config, device)
+        # lambda * E[u^2] added to the actor loss (B3 condition c); 0 = the paper's TD3
+        self.pretanh_penalty = float(config.get("pretanh_penalty", 0.0) if pretanh_penalty is None else pretanh_penalty)
+        self._last_u2, self._last_usat = 0.0, 0.0
         self.actor = Actor(obs_dim, act_dim, self.lstm_h, self.mlp_h).to(device)
         self.q1 = Critic(obs_dim, act_dim, self.lstm_h, self.mlp_h).to(device)
         self.q2 = Critic(obs_dim, act_dim, self.lstm_h, self.mlp_h).to(device)
@@ -132,14 +140,20 @@ class TD3Agent(_Base):
         self.opt_c.step()
         self.n_updates += 1
         if self.n_updates % self.policy_delay == 0:
-            la = -self.q1(h, self.actor(h)).mean()
+            u = self.actor.pre(h)
+            la = -self.q1(h, torch.tanh(u)).mean()
+            if self.pretanh_penalty > 0:
+                la = la + self.pretanh_penalty * u.pow(2).mean()
+            self._last_u2 = u.detach().pow(2).mean().item()
+            self._last_usat = (u.detach().abs() > 3).float().mean().item()
             self.opt_a.zero_grad(); la.backward()
             torch.nn.utils.clip_grad_norm_(self.actor.parameters(), 1.0)
             self.opt_a.step()
             self._last_actor_loss = la.item()
             for t, s in ((self.actor_t, self.actor), (self.q1_t, self.q1), (self.q2_t, self.q2)):
                 soft_update(t, s, tau)
-        return {"critic_loss": lc.item(), "actor_loss": self._last_actor_loss, "avg_q": q1.mean().item()}
+        return {"critic_loss": lc.item(), "actor_loss": self._last_actor_loss, "avg_q": q1.mean().item(),
+                "u2": self._last_u2, "u_sat": self._last_usat}
 
 
 class SACAgent(_Base):
@@ -167,6 +181,7 @@ class SACAgent(_Base):
 
     def _sample(self, h):
         mu, log_std = self.actor(h)
+        self._last_mu = mu.detach()
         std = log_std.exp()
         u = mu + std * torch.randn_like(mu)
         a = torch.tanh(u)
@@ -204,7 +219,9 @@ class SACAgent(_Base):
         self.opt_al.zero_grad(); lal.backward(); self.opt_al.step()
         soft_update(self.q1_t, self.q1, tau); soft_update(self.q2_t, self.q2, tau)
         self.n_updates += 1
-        return {"critic_loss": lc.item(), "actor_loss": la.item(), "avg_q": q1.mean().item()}
+        return {"critic_loss": lc.item(), "actor_loss": la.item(), "avg_q": q1.mean().item(),
+                "u2": self._last_mu.pow(2).mean().item(), "u_sat": (self._last_mu.abs() > 3).float().mean().item(),
+                "alpha": alpha.item()}
 
 
 class _AlphaHolder:

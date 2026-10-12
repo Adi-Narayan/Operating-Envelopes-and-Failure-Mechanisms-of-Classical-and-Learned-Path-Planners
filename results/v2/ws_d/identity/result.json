@@ -1,0 +1,115 @@
+{
+ "rows": [
+  {
+   "seed": 0,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "success",
+    "success",
+    "success"
+   ]
+  },
+  {
+   "seed": 1,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "success",
+    "success",
+    "success"
+   ]
+  },
+  {
+   "seed": 2,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "collision",
+    "success",
+    "success"
+   ]
+  },
+  {
+   "seed": 3,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "success",
+    "success",
+    "success"
+   ]
+  },
+  {
+   "seed": 4,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "success",
+    "success",
+    "success"
+   ]
+  },
+  {
+   "seed": 5,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "success",
+    "collision",
+    "success"
+   ]
+  },
+  {
+   "seed": 6,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "success",
+    "collision",
+    "success"
+   ]
+  },
+  {
+   "seed": 7,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "collision",
+    "collision",
+    "success"
+   ]
+  },
+  {
+   "seed": 8,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "success",
+    "success",
+    "success"
+   ]
+  },
+  {
+   "seed": 9,
+   "L_alone": true,
+   "apf_rays_alone": true,
+   "dwa_cv_alone": true,
+   "outcomes": [
+    "collision",
+    "success",
+    "success"
+   ]
+  }
+ ],
+ "all_identical": true
+}
