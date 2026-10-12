@@ -87,9 +87,11 @@ sel` macro for the reward-selected checkpoint, no em dashes, no marketing words,
 
 **README** rewritten: six planners, arbiter, how to use the harness (example checked to run).
 
+**Consistency review of the restructured paper** (read-only review pass, findings verified before editing). Fixed: the "disjoint from evaluation sets" claim now states that DWA's weights and APF's gains used the static custom environment; "moving-obstacle training is necessary" softened to "helps but does not suffice" (TD3 static vs moving is not significant); algorithm/collapse claims hedged to the Holm result; DWA-CV noise wording (it degrades faster than APF only at the highest level); APF-D point estimates "lower on five of six dynamic axes, equal on one"; H2 verdict wording; stale appendix pointers (theta sweep, gain sweep results moved into Appendix B, ARC training table); duplicated footnote and cost numbers removed; notation clashes (circle radius a, closing threshold kappa_on, orbit period l, eigenvector xi). Still 45 pages.
+
 ## Next
 - B4/B5 finish -> evalb45 runs automatically -> fill the 2x2 table, abstract, contributions, discussion, conclusion.
 - D3 finishes -> d3_select -> D1/D2 evaluations -> arbiter section and table; title question **[ASK ADI]**.
-- Idle timing session (APF-D, arbiter, against APF) once the machine is free.
+- Idle timing session: `python scripts/ws_x_timing.py` once nothing else runs (it refuses while training runs).
 - WS-A: macros for every number (v2 numbers first); WS-F: Holm within each table's family (existing tables still report unadjusted p).
 - Before submission: recheck the RAS guide (abstract limit, highlights; the guide page returns 403 to automated fetches).
