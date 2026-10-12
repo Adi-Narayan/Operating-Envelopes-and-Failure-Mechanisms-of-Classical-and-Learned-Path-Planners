@@ -5,12 +5,14 @@ Resumable job queue for v2 experiments (instructions.md compute rules).
     python scripts/jobqueue.py status --jobs <jobs.json>
 
 jobs.json: {"name": "<queue name>", "jobs": [{"name": ..., "cmd": [...], "priority": "normal"|"below",
-            "clean": ["<path removed before a (re)start>", ...]}, ...]}
+            "clean": ["<path removed before a (re)start>", ...],
+            "after": ["<queue>/<job>", ...]}, ...]}
 
 * State lives in results/v2/queue/<queue name>/: <job>.done (exit code 0), <job>.failed, <job>.log.
 * On restart finished jobs are skipped; a job that was running when the queue died is restarted
   from scratch after its "clean" paths are removed, so a crash loses at most one job per worker.
 * A job starts only while fewer than --max-parallel run and free RAM is at least --min-free-gb.
+* A job with "after" starts only when each listed job has a .done marker; other jobs are not held up.
 * One thread per process (OMP/MKL/OPENBLAS = 1); "below" jobs run at below-normal priority.
 """
 import argparse
@@ -48,6 +50,10 @@ def status(spec, state):
     return rows
 
 
+def ready(j):
+    return all(os.path.exists(os.path.join(ROOT, "results", "v2", "queue", *a.split("/")) + ".done") for a in j.get("after", []))
+
+
 def run(spec, state, max_parallel, min_free, poll):
     env = dict(os.environ, OMP_NUM_THREADS="1", MKL_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", PYTHONUNBUFFERED="1")
     pending = []
@@ -72,8 +78,11 @@ def run(spec, state, max_parallel, min_free, poll):
             open(os.path.join(state, n + (".done" if rc == 0 else ".failed")), "w").write(f"exit {rc} at {time.ctime()}\n")
             print(f"[{time.strftime('%H:%M:%S')}] {'DONE' if rc == 0 else 'FAILED'} {n} (exit {rc})", flush=True)
             del running[n]
-        while pending and len(running) < max_parallel and free_gb() >= min_free:
-            j = pending.pop(0)
+        while len(running) < max_parallel and free_gb() >= min_free:
+            j = next((x for x in pending if ready(x)), None)
+            if j is None:
+                break
+            pending.remove(j)
             for p in j.get("clean", []):
                 p = os.path.join(ROOT, p)
                 if os.path.isdir(p):

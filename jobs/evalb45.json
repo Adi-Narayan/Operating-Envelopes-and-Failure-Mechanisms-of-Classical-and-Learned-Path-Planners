@@ -1,0 +1,285 @@
+{
+ "name": "evalb45",
+ "jobs": [
+  {
+   "name": "eval_b4_td3fix_seed0",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed0"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "0"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed0",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed0"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "0"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed1",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed1"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "1"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed1",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed1"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "1"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed2",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed2"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "2"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed2",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed2"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "2"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed3",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed3"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "3"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed3",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed3"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "3"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed4",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed4"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "4"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed4",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed4"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "4"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed5",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed5"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "5"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed5",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed5"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "5"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed6",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed6"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "6"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed6",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed6"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "6"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed7",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed7"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "7"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed7",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed7"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "7"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed8",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed8"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "8"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed8",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed8"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "8"
+   ]
+  },
+  {
+   "name": "eval_b4_td3fix_seed9",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b4_td3fix_seed9"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b4",
+    "9"
+   ]
+  },
+  {
+   "name": "eval_b5_sacstatic_seed9",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "b45/b5_sacstatic_seed9"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_b_eval.py",
+    "b5",
+    "9"
+   ]
+  }
+ ]
+}

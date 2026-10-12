@@ -45,13 +45,13 @@ def outdir(workstream, experiment):
     return d
 
 
-def write_manifest(d, script, config, seeds, start, busy=None, extra=None):
+def write_manifest(d, script, config, seeds, start, busy=None, extra=None, name="manifest.json"):
     m = {"git_commit": git_head(), "script": script, "config": config, "seeds": seeds,
          "start": start, "end": now(), "machine_also_training": training_active() if busy is None else busy,
          "threads_per_process": 1}
     if extra:
         m.update(extra)
-    json.dump(m, open(os.path.join(d, "manifest.json"), "w"), indent=1, default=str)
+    json.dump(m, open(os.path.join(d, name), "w"), indent=1, default=str)
 
 
 def dump(d, name, obj):
