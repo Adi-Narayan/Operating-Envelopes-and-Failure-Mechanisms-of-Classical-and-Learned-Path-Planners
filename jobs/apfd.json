@@ -1,0 +1,65 @@
+{
+ "name": "apfd",
+ "jobs": [
+  {
+   "name": "apfd_static",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_apfd_eval.py",
+    "static"
+   ],
+   "clean": []
+  },
+  {
+   "name": "apfd_dynamic",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_apfd_eval.py",
+    "dynamic"
+   ],
+   "clean": []
+  },
+  {
+   "name": "apfd_second",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_apfd_eval.py",
+    "second"
+   ],
+   "clean": []
+  },
+  {
+   "name": "apfd_noise",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_apfd_eval.py",
+    "noise"
+   ],
+   "clean": []
+  },
+  {
+   "name": "apfd_layouts",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_apfd_eval.py",
+    "layouts"
+   ],
+   "clean": []
+  },
+  {
+   "name": "apfd_speed",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_apfd_eval.py",
+    "speed"
+   ],
+   "clean": []
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "git_commit": "3825659b5632deb6978b5a8785f3773fc4063a24",
+ "script": "scripts/ws_c_theta_sweep.py",
+ "config": {
+  "thetas_deg": [
+   0,
+   5,
+   10,
+   15,
+   20,
+   25,
+   30,
+   35,
+   40,
+   45,
+   50,
+   55,
+   60,
+   65,
+   70,
+   75,
+   80,
+   85,
+   90
+  ],
+  "gains": [
+   5.0,
+   0.85
+  ],
+  "sensing": "full",
+  "turn_cap": false,
+  "rate": "10 Hz, 1.8 m"
+ },
+ "seeds": {
+  "layout_generator": "0-99",
+  "planner_seed": 0
+ },
+ "start": "2026-10-12T19:36:01+05:30",
+ "end": "2026-10-12T21:50:27+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

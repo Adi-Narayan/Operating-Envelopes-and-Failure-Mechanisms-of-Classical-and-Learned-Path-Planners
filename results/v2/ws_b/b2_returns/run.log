@@ -1,0 +1,8 @@
+static circling {'0.9': -0.82, '0.99': -4.78} {'out_of_bounds': 5, 'timeout': 95}
+static greedy {'0.9': 8.79, '0.99': -2.61} {'collision': 100}
+static random {'0.9': -5.19, '0.99': -52.68} {'collision': 21, 'out_of_bounds': 79}
+static sac_best {'0.9': 6.9, '0.99': 72.28} {'collision': 29, 'success': 71}
+moving circling {'0.9': -0.82, '0.99': -10.28} {'collision': 52, 'out_of_bounds': 5, 'timeout': 43}
+moving greedy {'0.9': 8.39, '0.99': 0.7} {'collision': 97, 'success': 3}
+moving random {'0.9': -5.18, '0.99': -54.47} {'collision': 25, 'out_of_bounds': 75}
+moving sac_best {'0.9': 6.88, '0.99': 85.4} {'collision': 18, 'success': 82}

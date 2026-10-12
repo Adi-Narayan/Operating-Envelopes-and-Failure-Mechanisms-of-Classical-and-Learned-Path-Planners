@@ -1,0 +1,15 @@
+{
+ "git_commit": "3825659b5632deb6978b5a8785f3773fc4063a24",
+ "script": "scripts/ws_d_d2_signals.py 9",
+ "config": {
+  "L": "sacdyn_seed9/arc_best",
+  "mode": "L alone"
+ },
+ "seeds": {
+  "heldout_motion": "500000-500049"
+ },
+ "start": "2026-10-12T20:39:40+05:30",
+ "end": "2026-10-12T20:41:57+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

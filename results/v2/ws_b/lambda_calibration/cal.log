@@ -1,0 +1,18 @@
+Using device: cpu
+
+Starting training for 10 episodes...
+Environment: Corridor Gauntlet (shared APF/ARC layout)
+Number of parallel UAVs: 5
+Training:   0%|          | 0/10 [00:00<?, ?it/s]Training:  10%|#         | 1/10 [00:43<06:33, 43.70s/it]Training:  20%|##        | 2/10 [01:24<05:34, 41.82s/it]Training:  30%|###       | 3/10 [01:35<03:15, 27.99s/it]Training:  40%|####      | 4/10 [01:50<02:16, 22.72s/it]Training:  50%|#####     | 5/10 [02:01<01:32, 18.50s/it]Training:  60%|######    | 6/10 [02:11<01:02, 15.66s/it]Training:  70%|#######   | 7/10 [02:23<00:43, 14.50s/it]Training:  80%|########  | 8/10 [02:34<00:26, 13.38s/it]Training:  90%|######### | 9/10 [02:50<00:14, 14.22s/it]Training: 100%|##########| 10/10 [03:14<00:00, 17.32s/it]Training: 100%|##########| 10/10 [03:14<00:00, 19.50s/it]
+
+Episode 10:
+  Avg Reward: 2.47
+  Avg Steps: 166.2
+  Success Rate: 0.00%
+  Collision Rate: 20.00%
+
+Training completed!
+
+Checkpoint saved: results/v2/ws_b/lambda_calibration\td3dyn_seed100_cal\models\arc_checkpoint_ep10.pth
+Saved training metrics CSV: results\corridor_gauntlet_training_metrics.csv
+DONE td3dyn_seed100_cal wall=3.28 min

@@ -5,8 +5,8 @@ Paper source: `paper.tex` in the paper folder (outside the repository).
 
 ## Status
 - **Section 3 (verification pass): complete, all checks passed.** Nothing blocks the workstreams.
-- No `[ASK ADI]` items open.
-- Job queue: empty. No training or evaluation running.
+- `[ASK ADI]` open: (1) the C2 math in `notes/c2_proposition.md`; (2) every new reference (WS-G) before it goes in.
+- Job queue: `b45` (B4 TD3-fixed + B5 SAC-static training, 20 jobs, 7 at a time) and `d3` (arbiter threshold tuning, 90 jobs, 2 at a time) running.
 
 ## Log
 
@@ -50,8 +50,24 @@ Code at commit `1e801cf` (HEAD before this block). Machine idle (no training) th
 
 **WS-D.** `experiments/arbiter.py` (L = learned, C = APF with ARC's rays at 6 Hz, or DWA-CV). Reproduces SAC alone, ray-APF alone and DWA-CV alone path for path on 10 environments (`results/v2/ws_d/identity/`).
 
+### 2026-10-12 night: Day 1 outcomes
+**B3 done; rule applied** (`scripts/ws_b_b3_select.py`, outcome appended to `prereg.md`, `c7235e6`). Collapsed ep-50 checkpoints over seeds 10-12 and both training settings: (a) baseline 2, (b) gamma 0.9 2, (c) pre-tanh penalty 0, (d) exploration noise 0.3 3. Candidate (c) has strictly fewer collapses than (a): **B4 runs with `--pretanh-penalty 0.002`.** Under (c) E[u^2] stays near 4; collapsed runs reach 140-4,847.
+
+**B2 done** (`results/v2/ws_b/b2_returns/`). Discounted return of fixed behaviours, gamma = 0.9 / 0.99. Static: circling -0.82 / -4.78, greedy 8.79 / -2.61, random -5.19 / -52.68, SAC 6.90 / 72.28. Moving: circling -0.82 / -10.28, greedy 8.39 / 0.70, random -5.18 / -54.47, SAC 6.88 / 85.40. Circling never has a higher return than heading to the goal.
+
+**B1 done** (`results/v2/ws_b/b1_summary.json`, figure `results/v2/ws_b/figures/collapse_mechanism.pdf`). Collapsed TD3 (static): 100% of actions at the bound, 100% of pre-tanh outputs |u| > 3 from the first checkpoint; critic Q(bound) = -0.32 > Q(zero) = -1.12 in 70% of states, Monte Carlo return -0.60. Collapsed TD3 (moving): Q(bound) -5.02, Q(zero) -6.15, return -12.65 (critic overestimates). TD3 seeds that learned: 23% of actions at the bound. SAC: 0.5% at the bound, 1.7% |u| > 3, Q 81 vs return 82.7.
+
+**Hypothesis verdicts (numbers above).** H1 (tanh saturation locks the actor at the bound): supported (B1; B3 (c) removes collapse at the proxy). H2 (the reward does not favour circling): supported (B2). H3 (short horizon makes circling attractive): not supported (B2: circling is worse than greedy at both discounts; B3 (b) gamma 0.9 does not reduce collapse).
+
+**C3 done** (`results/v2/ws_c/c3_theta_sweep/`, 100 static layouts, theta 0-90 deg in 5 deg steps). Successes: theta 0: 64, 5: 64, 10: 69, 15: 68, 20: 63, 25 (paper): 68, 30: 60, 35: 58, 40: 55, 45: 61, 50: 69, 55: 71, 60: 73, 65: 78, 70: 76, 75: 83, 80: 89, 85: 92, 90: 95. Stalls exist without rotation (36 at theta 0); rotation does not cause them, and only large rotation (>= 65 deg) removes most of them. Diagnostic only: theta stays at 25 deg.
+
+**C4 done; rule applied** (`3825659`): **mom085 selected** (static tuning successes 47 vs apf 30; no held-out dynamic loss). Frozen-set evaluation (`results/v2/ws_c/apfd_eval/`, summary `results/v2/ws_c/summary.json`), APF -> APF-D success %: in distribution 100 -> 98, r = 1.0 94 -> 86, r = 1.58 60 -> 44, noise 5 m/10 deg 94 -> 86, unseen static layouts 68 -> 88, unseen dynamic layouts 98 -> 98, second layout dynamic 96 -> 94. **Negative on the dynamic axes:** damping trades reactivity for stall removal. Reported as a trade-off, not an improvement. Note: `ws_c_apfd_eval.py` wrote one `manifest.json` per run, so the stored manifest covers the last part only; config and seeds are the same for every part.
+
+**D2 done** (`results/v2/ws_d/d2_thresholds/`): 58 SAC collisions on the held-out seeds; d_on = 22.97 m, rho_on = 1.004; the trigger fires in 44.6% of 2 s windows before successful arrivals. Grid d_on {17.97, 22.97, 27.97} x rho_on {0.753, 1.004, 1.255}. Fallback C = ray-APF with momentum 0.85 (C4 selected APF-D).
+
+**WS-A.** `scripts/make_numbers.py` (`results/numbers.json`, `numbers.tex`), `scripts/make_figures.py` (envelope heatmap), `scripts/build_envelope_v2.py` (v2 rows: APF-D now; TD3 fixed, SAC static, arbiters when their evaluations exist).
+
 ## Next
-- Pre-register D1-D3 (D2 thresholds from SAC on the held-out seeds, not from the evaluation logs: avoids tuning on evaluation data).
-- When B3 finishes: apply the B4 rule; launch B4 + B5.
-- When C4 finishes: apply the C4 rule (`scripts/ws_c_c4_select.py`).
-- WS-A numbers pipeline.
+- B4/B5 finish -> evaluate every new policy on every axis with the paper's scripts (`results/v2/ws_b/eval_b4`, `eval_b5`), oracle checkpoints, collapse diagnostic, TD3-static second-layout spot check.
+- D3 finishes -> selection script (mean success over the five sets and 10 SAC seeds; ties -> fewer switches) -> D4 evaluation.
+- WS-E E1, WS-F statistics, WS-G writing, references.

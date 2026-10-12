@@ -20,6 +20,6 @@ experiments/out/arc_models_gpu/
 experiments/watch_progress.cmd
 
 # v2 job-queue logs and per-run training artefacts that are large
-results/v2/queue/*/*.log
+results/v2/queue/
 results/v2/**/runs/
 results/v2/**/models/*.pth

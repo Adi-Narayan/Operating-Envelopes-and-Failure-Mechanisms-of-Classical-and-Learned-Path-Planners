@@ -1,0 +1,46 @@
+{
+ "APF-D": {
+  "indist": {
+   "mean": 98.0,
+   "min": 98.0,
+   "max": 98.0,
+   "n_seeds": 1
+  },
+  "r100": {
+   "mean": 86.0,
+   "min": 86.0,
+   "max": 86.0,
+   "n_seeds": 1
+  },
+  "r158": {
+   "mean": 44.0,
+   "min": 44.0,
+   "max": 44.0,
+   "n_seeds": 1
+  },
+  "noise5": {
+   "mean": 86.0,
+   "min": 86.0,
+   "max": 86.0,
+   "n_seeds": 1
+  },
+  "lay_static": {
+   "mean": 88.0,
+   "min": 88.0,
+   "max": 88.0,
+   "n_seeds": 1
+  },
+  "lay_dynamic": {
+   "mean": 98.0,
+   "min": 98.0,
+   "max": 98.0,
+   "n_seeds": 1
+  },
+  "second_dyn": {
+   "mean": 94.0,
+   "min": 94.0,
+   "max": 94.0,
+   "n_seeds": 1
+  }
+ }
+}
