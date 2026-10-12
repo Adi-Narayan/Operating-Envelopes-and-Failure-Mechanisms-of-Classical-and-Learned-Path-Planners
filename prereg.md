@@ -101,3 +101,49 @@ checked path for path in `results/v2/ws_c/c4_identity/`), all with full sensing,
 4. If the rule selects `apf`, no damped variant is carried forward and that is reported.
 
 The selected variant is then evaluated once on every axis with the frozen evaluation sets.
+
+---
+
+## WS-D: envelope-derived arbiter, D1-D4 (registered 2026-10-12, before thresholds are computed or any tuning run)
+
+**Planners** (`experiments/arbiter.py`; with switching disabled it reproduces each component path for
+path, `results/v2/ws_d/identity/`).
+- Default L: SAC trained with moving obstacles, the `arc_best` checkpoint of each of the 10 seeds;
+  every result is reported per seed.
+- D1 (matched information): C = APF under ARC's nine-ray sensing, 3.0 m steps at 6 Hz, no turn cap.
+  If the C4 rule (above) selects a damped variant before D3 starts, C uses that variant's damping
+  (momentum beta or oscillation-triggered cap K, with the cap scaled to 9 deg per 3.0 m step), and
+  this file records which.
+- D2 (privileged information, P1): C = DWA-CV (exact geometry and velocity estimates). It uses the
+  thresholds selected for D1 (no separate tuning) and is labelled privileged wherever it appears.
+
+**Signals and switching** exactly as in `experiments/arbiter.py`: d_min = minimum ray range; v_c =
+closing speed of the minimum-range ray over the last two learned observations divided by the agent
+speed, (d_prev - d_now) / 3.0 m; L -> C when d_min < d_on or v_c > rho_on; C -> L when d_min > d_off,
+v_c < rho_off and C has been active for at least 1 s, or when C's goal progress over its last 20
+decisions is below 10% of the distance travelled in them. d_off = d_on + 5 m, rho_off = 0.8 rho_on.
+
+**D2, initial thresholds (deviation from instructions.md, recorded here).** instructions.md takes
+the initial thresholds from SAC's existing dynamic-suite logs, which are evaluation data. To keep
+every design choice off the evaluation sets they come instead from SAC alone (10 seeds) on the 50
+held-out motion seeds 500000-500049:
+- for every SAC collision, the learned observation 12 steps (2 s) before the collision;
+- d_on = the median, over collisions, of d_min at that observation;
+- rho_on = the median, over collisions, of the largest v_c over the 12 observations before the collision.
+The same quantities over successful runs are reported (false-alarm view), not used.
+
+**D3, tuning.** Grid: d_on in {d_on - 5 m, d_on, d_on + 5 m} x rho_on in {0.75, 1.0, 1.25} x rho_on,
+with d_off and rho_off following the rule above. Held-out sets only:
+1. the 50 held-out custom motion seeds 500000-500049 (18 m/s);
+2. the 50 tuning layouts, static (`make_layout(500000 + j)`);
+3. the 50 tuning layouts, dynamic (motion seed 510000 + j);
+4. the held-out seeds with noise 2.5 m / 5 deg (noise seed 502000 + s);
+5. the held-out seeds at r = 1.0 (agent speed 4.75 m/s).
+APF's planner-perturbation seed: 501000 + s (sets 1, 4, 5), 0 (set 2), 520000 + j (set 3).
+Objective: mean success over the five sets and the 10 SAC seeds. Ties: fewer switches per run.
+
+**D4, evaluation (once, on every axis, frozen sets)**: per SAC seed, the arbiter against SAC alone
+(same seed), C alone, and the oracle reference (an environment counts as a success if either
+component succeeds), plus the fraction of time in C, switches per run, chattering (switches less
+than 1 s apart) and per-step compute. If the arbiter does not beat its components, that is reported
+with the oracle headroom and where it failed.
