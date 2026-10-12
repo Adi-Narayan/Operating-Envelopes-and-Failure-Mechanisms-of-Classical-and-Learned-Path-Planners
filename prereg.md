@@ -92,7 +92,9 @@ checked path for path in `results/v2/ws_c/c4_identity/`), all with full sensing,
 - 50 held-out custom-environment motion seeds 500000-500049, planner seed 501000 + s, 18 m/s.
 
 **Rule.**
-1. Feasible: at most 1 dynamic success lost against `apf` on the 50 held-out motion seeds.
+1. Feasible: at most 1 dynamic success lost against `apf` on the 50 held-out motion seeds, counted
+   per environment: environments that `apf` solves and the candidate does not (clarified
+   2026-10-12 before any C4 result was inspected).
 2. Among feasible candidates (including `apf` itself), take the one with the most successes on the
    50 static tuning layouts.
 3. Ties: the smaller change, in this pre-set order (smallest first): apf, osc10, osc30, mom050,

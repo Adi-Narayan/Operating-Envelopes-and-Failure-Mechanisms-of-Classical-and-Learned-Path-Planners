@@ -1,0 +1,105 @@
+{
+ "name": "d2",
+ "jobs": [
+  {
+   "name": "d2_sac0",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "0"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac1",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "1"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac2",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "2"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac3",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "3"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac4",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "4"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac5",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "5"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac6",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "6"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac7",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "7"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac8",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "8"
+   ],
+   "clean": []
+  },
+  {
+   "name": "d2_sac9",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_d_d2_signals.py",
+    "9"
+   ],
+   "clean": []
+  }
+ ]
+}
