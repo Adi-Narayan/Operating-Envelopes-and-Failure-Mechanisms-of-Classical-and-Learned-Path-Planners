@@ -139,6 +139,35 @@ def v2_numbers():
         n["thetaStallsMidMin"] = str(min(to[t] for t in (35, 40, 45)))
         n["thetaStallsMidMax"] = str(max(to[t] for t in (35, 40, 45)))
         n["thetaStallsFifty"], n["thetaStallsNinety"] = str(to[50]), str(to[90])
+    # C2 follow-ups (Adi's review): shifted equilibria, cycle alignment, transverse multipliers, nearest saddles
+    c2 = J(V2, "ws_c", "c2_followup", "result.json")
+    if c2:
+        sm, st = c2["summary"], c2["stalls"]
+        nodes = [v for v in st.values() if "m" in v]
+        n["cTwoBias"] = f"{np.linalg.norm(sm['bias']):.3f}"
+        n["cTwoShiftMin"], n["cTwoShiftMax"] = f"{1000 * sm['shift_exact_range'][0]:.1f}", f"{1000 * sm['shift_exact_range'][1]:.1f}"
+        n["cTwoAngleMax"] = f"{sm['angle_osc_fast_deg_range'][1]:.1f}"
+        n["cTwoRhoMin"], n["cTwoRhoMax"] = f"{sm['rho_range'][0]:.2f}", f"{sm['rho_range'][1]:.2f}"
+        n["cTwoStableCycles"] = str(sum(abs(v["m"]) < 1 for v in nodes))
+        n["cTwoNodes"] = str(len(nodes))
+        bad = [v for v in nodes if abs(v["m"]) >= 1]
+        if bad:
+            n["cTwoBadXzero"] = f"{min(min(abs(v['x0']), abs(v['x_other'])) for v in bad):.2f}"
+        n["cTwoMidMin"], n["cTwoMidMax"] = f"{sm['mid_to_shifted_eq_range'][0]:.2f}", f"{sm['mid_to_shifted_eq_range'][1]:.2f}"
+        n["cTwoSinks"] = str(sm["det_sign"]["positive"])
+        n["cTwoCapRemoved"] = str(sm["cap_outcomes"]["success"])
+        n["cTwoApfdRemoved"] = str(sm["apfd_outcomes"]["success"])
+        n["cTwoBothRemoved"] = str(sum(v["cap_outcome"] == "success" and v["apfd_outcome"] == "success" for v in st.values()))
+        n["cTwoInterior"] = str(len(st))
+        n["cTwoDiamCap"], n["cTwoDiamApfd"] = f"{sm['turn_diameter_cap_m']:.1f}", f"{sm['turn_diameter_apfd_m']:.1f}"
+        n["cTwoTurnApfd"] = f"{sm['turn_deg_apfd']:.1f}"
+        from scipy.stats import mannwhitneyu
+        for fix, key, nm in (("cap", "cap_outcome", "Cap"), ("apfd", "apfd_outcome", "Apfd")):
+            rem = [v["nearest_saddle_m"] for v in st.values() if v[key] == "success"]
+            kept = [v["nearest_saddle_m"] for v in st.values() if v[key] != "success"]
+            u = mannwhitneyu(kept, rem)       # AUC = P(nearest saddle of a removed stall < that of a kept one)
+            n[f"cTwoAuc{nm}"] = f"{u.statistic / (len(rem) * len(kept)):.2f}"
+            n[f"cTwoAucP{nm}"] = f"{u.pvalue:.2f}" if u.pvalue >= 0.01 else f"{u.pvalue:.3f}"
     # C4: APF-D against APF, paired on every axis
     cmp_ = J(V2, "ws_c", "apfd_compare", "result.json")
     if cmp_:

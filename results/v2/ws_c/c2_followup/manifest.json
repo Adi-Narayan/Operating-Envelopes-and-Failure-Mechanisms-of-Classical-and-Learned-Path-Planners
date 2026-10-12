@@ -1,0 +1,17 @@
+{
+ "git_commit": "05b949c1490a824260b93cd8a0e21c69dbdd2fd5",
+ "script": "scripts/ws_c_c2_followup.py",
+ "config": {
+  "beta": 0.85,
+  "cap_deg_per_step": 5.4,
+  "saddle_search_radius_m": 80
+ },
+ "seeds": {
+  "layouts": "the 31 interior stalls of c1",
+  "planner_seed": 0
+ },
+ "start": "2026-10-13T01:22:04+05:30",
+ "end": "2026-10-13T01:59:06+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

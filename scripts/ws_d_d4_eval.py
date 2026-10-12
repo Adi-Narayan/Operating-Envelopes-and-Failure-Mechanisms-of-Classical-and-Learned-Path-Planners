@@ -29,11 +29,12 @@ from random_layouts import make_layout                              # noqa: E402
 V2 = os.path.join(ROOT, "results", "v2", "ws_d")
 SPEEDS = [3.0, 4.0, 4.75, 6.0, 9.0, 12.0, 18.0, 27.0]
 NOISE = {"L1": (1.0, 2.0), "L2": (2.5, 5.0), "L3": (5.0, 10.0)}
-KEEP = ("outcome", "steps", "path_length", "efficiency", "min_clearance", "frac_time_C", "switches", "chatter", "ms_per_step")
+KEEP = ("outcome", "steps", "path_length", "efficiency", "min_clearance", "frac_time_C", "switches", "chatter", "ms_per_step",
+        "switch_log")
 
 
 def brief(r):
-    return {k: (float(r[k]) if isinstance(r[k], (np.floating, float)) else r[k]) for k in KEEP if k in r}
+    return {k: (float(r[k]) if isinstance(r[k], (np.floating, float)) else r[k]) for k in KEEP if k in r}   # switch_log: where switches occur (Adi's item 9)
 
 
 def build(mode, seed):

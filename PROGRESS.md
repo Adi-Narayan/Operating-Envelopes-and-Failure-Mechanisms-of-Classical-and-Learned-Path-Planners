@@ -89,6 +89,29 @@ sel` macro for the reward-selected checkpoint, no em dashes, no marketing words,
 
 **Consistency review of the restructured paper** (read-only review pass, findings verified before editing). Fixed: the "disjoint from evaluation sets" claim now states that DWA's weights and APF's gains used the static custom environment; "moving-obstacle training is necessary" softened to "helps but does not suffice" (TD3 static vs moving is not significant); algorithm/collapse claims hedged to the Holm result; DWA-CV noise wording (it degrades faster than APF only at the highest level); APF-D point estimates "lower on five of six dynamic axes, equal on one"; H2 verdict wording; stale appendix pointers (theta sweep, gain sweep results moved into Appendix B, ARC training table); duplicated footnote and cost numbers removed; notation clashes (circle radius a, closing threshold kappa_on, orbit period l, eigenvector xi). Still 45 pages.
 
+### 2026-10-13: Adi's review of C2, E1 and WS-B (follow-ups, in order)
+Backup: `../backup_20261013_0118.zip` (paper, figures, results/v2, scripts, notes; no checkpoints), copied to OneDrive `Documents/APF_backups/`. Push to GitHub waits for Adi (repo visibility not confirmed).
+1. WS-B: pre-tanh E[u^2] and |u|>3 at step 0, before any gradient update (TD3, 3 seeds): is saturation present at initialisation?
+2. C2: the field is not a gradient field at any theta (goal scaling: curl = grad(D^n) x grad(Phi), nonzero off equilibria). Fix note and paper wording.
+3. C2: Corollary 1 needs n = 2 and d = 2. Add Corollary 3: tr S < 0 outside obstacles, so div F(q*) < 0 for theta < 90 deg; sink iff det J > 0, saddle iff det J < 0.
+4. C2: bias b handled as a shifted equilibrium (F + b = 0); |J^-1 b| per stall; midpoints re-measured from the shifted point.
+5. C2 Prop 1: 2-cycles of the linearised map lie on real eigenlines with lambda < 0; transverse multiplier m; check on the 27 cycles (angle to the fast eigenvector, |m| < 1).
+6. C2 Prop 2: nearest-saddle distance per sink against turning diameters 38.2 m (cap) and 20.3 m (APF-D); does it predict which stalls each fix removes?
+7. WS-B text: H2 as originally stated, marked refuted; mechanism = optimiser trap (saturation + critic overvaluing the bound).
+8. E1: speed-independent draw order stated; bit-identity test extended to DWA-CV and noise L2; push-away and separation event counts logged.
+9. D3 thresholds untouched (pre-registered); in D4 report where switches occur relative to the goal.
+
+**Follow-up outcomes (2026-10-13).**
+1. Step-0 saturation (`scripts/ws_b_init_saturation.py`, `results/v2/ws_b/init_saturation/`, TD3 moving, seeds 10-12): before any update |u| <= 0.035 on a probe of the first 64 buffer states, still < 0.14 after 20 updates; 100% |u| > 3 by update 100-200 in all three seeds, including seed 11, which escaped later. Not an initialisation or input-scaling artefact: training dynamics. The output is then almost state-independent. The earlier "95% at episode 0" was an average over the 540-1370 updates of episode 0.
+2-3. Paper and note: field non-conservative at any theta (goal factor); Corollary 1 scoped to the plane; Corollary 3 (tr S < 0) added with proof; all 31 interior equilibria have negative divergence and det J > 0 (sinks).
+4. Bias as shifted equilibrium: |b| = 0.011, shift 0.1-2.4 mm; midpoints from the shifted point 0.08-0.85 m.
+5. Proposition 1 exact for the linearised map (Appendix F): all 27 node cycles within 3.3 deg of the fast eigenvector, rho 0.03-0.64, |m| < 1 for 26 of 27 (exception: layout 89, most asymmetric cycle).
+6. One-mechanism hypothesis not supported: APF-D (turning diameter 20.3 m) removes 20 of 31 interior stalls, the 54 deg/s cap (38.2 m) 15, both 14; nearest-saddle distance AUC 0.72 (cap, p = 0.04) and 0.65 (APF-D, p = 0.19). Reported as measured.
+7. H2 as originally stated, marked refuted; collapse framed as an optimiser trap (saturation + critic overvaluing the bound).
+8. `scripts/verify_scaleinv_ext.py`: first run (`results/v2/verification/scale_invariance_ext/`, 50 envs): outcomes identical in all 300 compared runs (APF, SAC, DWA-CV; no noise and L2); DWA-CV bit-identical 100/100; SAC bit-identical 96/100 (<= 4 mm); APF: rounding of order 1e-8 m in the obstacle timeline amplified by the field (step count differs by one in 5 of 50 noise-free runs; up to 5.7 m apart under noise). Its separation counter also counted contact-level overlaps that flip with rounding; fixed (material overlaps > 1 um match exactly) and rerun as `scale_invariance_ext2` with a timeline-only check of the goal push-away branch, which no planner run reaches. Draw order stated in the proof.
+9. `experiments/arbiter.py` now logs every switch (direction, distance to goal, d_min, v_c, reason); behaviour unchanged (10/10 D3 runs identical to stored results). D3 thresholds untouched. D4 results will report switch locations.
+Paper: 45 pages after cutting two hand-built-layout and ARC-training tables, Table A.1 and the custom-3D table (their numbers moved into text) and condensing the contributions, matched-constraints section and conclusion.
+
 ## Next
 - B4/B5 finish -> evalb45 runs automatically -> fill the 2x2 table, abstract, contributions, discussion, conclusion.
 - D3 finishes -> d3_select -> D1/D2 evaluations -> arbiter section and table; title question **[ASK ADI]**.

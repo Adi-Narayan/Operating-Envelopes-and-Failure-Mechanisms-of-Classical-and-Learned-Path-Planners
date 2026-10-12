@@ -241,6 +241,7 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
     d_prev_min, sig = None, (50.0, 0.0)
     path, mode_ticks = [q.copy()], {"L": 0, "C": 0}
     switches, switch_ticks = 0, []
+    switch_log = []                                         # (direction, tick, distance to goal, d_min, v_c, reason)
     info = {"min_clearance": H.clearance(q, timeline.at(0.0)), "decisions": {"L": 0, "C": 0}}
     outcome, t0, g0 = "timeout", time.perf_counter(), H._gen_time(timeline)
     last_learned_obs_tick = -10 ** 9
@@ -289,6 +290,7 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
             if active == "L" and (d_min < d_on or v_c > rho_on):
                 active, switches, c_since, c_hist = "C", switches + 1, k, [q.copy()]
                 switch_ticks.append(k)
+                switch_log.append(("L->C", k, float(np.linalg.norm(q - H.GOAL)), float(d_min), float(v_c), "trigger"))
                 if c_kind == "dwa_cv":
                     C.reset(v=H.GROUND_SPEED)
             elif active == "C":
@@ -302,6 +304,8 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
                 if (held and d_min > d_off and v_c < rho_off) or stall:
                     active, switches = "L", switches + 1
                     switch_ticks.append(k)
+                    switch_log.append(("C->L", k, float(np.linalg.norm(q - H.GOAL)), float(d_min), float(v_c),
+                                       "stall_guard" if stall and not (held and d_min > d_off and v_c < rho_off) else "release"))
                     q32 = q.astype(np.float32)
                     if ob is None:                          # L needs a fresh observation to act on
                         raw, ob = L.observe(q32, psi, obs, **nz)
@@ -325,7 +329,7 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
         path.append(q.copy())
         next_dec = k + per
     tot = max(1, mode_ticks["L"] + mode_ticks["C"])
-    info.update({"frac_time_C": mode_ticks["C"] / tot, "switches": switches,
+    info.update({"frac_time_C": mode_ticks["C"] / tot, "switches": switches, "switch_log": switch_log,
                  "chatter": int(sum(1 for a, b in zip(switch_ticks, switch_ticks[1:]) if (b - a) * tick < 1.0))})
     if log_signals:
         info["signals"] = sig_log
