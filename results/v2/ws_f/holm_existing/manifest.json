@@ -1,0 +1,15 @@
+{
+ "git_commit": "c1c7ea2e3ec4d8990ca16bd965f96019e4bea63d",
+ "script": "scripts/ws_f_holm_existing.py",
+ "config": {
+  "inputs": [
+   "experiments/out/report.json",
+   "experiments/out/dwa_report.json"
+  ]
+ },
+ "seeds": {},
+ "start": "2026-10-13T00:32:35+05:30",
+ "end": "2026-10-13T00:32:35+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

@@ -191,6 +191,43 @@ def v2_numbers():
     d2 = J(V2, "ws_d", "d2_thresholds", "result.json")
     if d2:
         n["dTwoColl"], n["dTwoDon"], n["dTwoRhoOn"] = str(d2["n_collisions"]), f"{d2['d_on']:.1f}", f"{d2['rho_on']:.2f}"
+    # WS-F: Holm-corrected p-values of the existing test families
+    h = J(V2, "ws_f", "holm_existing", "result.json")
+    if h:
+        g = lambda x: (f"{x:.2f}" if x >= 0.1 else f"{x:.3f}" if x >= 0.01 else f"{x:.4f}" if x >= 1e-3 else
+                       f"${x / 10 ** int(np.floor(np.log10(x))):.0f} \\times 10^{{{int(np.floor(np.log10(x)))}}}$")
+        n["holmArcMcnemarMax"] = g(max(r["holm_p"] for k, r in h["paired_mcnemar"].items() if k.startswith("ARC")))
+        n["holmDwaVsApf"] = g(h["paired_mcnemar"]["DWA"]["holm_p"])
+        n["sacVsApfSigRaw"] = str(sum(r["p"] < 0.05 for r in h["sac_vs_apf_mcnemar"].values()))
+        n["sacVsApfSigHolm"] = str(sum(r["significant_05"] for r in h["sac_vs_apf_mcnemar"].values()))
+        n["sacVsApfWilcoxonMaxHolm"] = g(max(r["holm_p"] for r in h["sac_vs_apf_wilcoxon"].values()))
+        dv = h["dwacv_vs_sac_mcnemar"]
+        n["dwacvSacSigHolm"] = str(sum(r["significant_05"] for r in dv.values()))
+        n["dwacvSacSeedNineHolm"], n["dwacvSacSeedFiveHolm"] = g(dv["SAC seed9"]["holm_p"]), g(dv["SAC seed5"]["holm_p"])
+        n["dwacvSacSeedFiveRaw"] = g(dv["SAC seed5"]["p"])
+        lt = h["learner_tests"]
+        n["holmPermSacTd"] = g(lt["perm SAC vs TD3 (moving)"]["holm_p"])
+        n["holmPermTdTd"] = g(lt["perm TD3 moving vs static"]["holm_p"])
+        n["holmFisherCollapse"] = g(lt["Fisher collapse TD3 (moving) vs SAC"]["holm_p"])
+        pw = h["paired_wilcoxon"]
+        n["holmWilcoxonDwa"], n["holmWilcoxonDwacv"] = g(pw["DWA"]["holm_p"]), g(pw["DWA-CV"]["holm_p"])
+        n["holmWilcoxonArcA"], n["holmWilcoxonArcB"] = g(pw["ARC seed 0"]["holm_p"]), g(pw["ARC seed 3"]["holm_p"])
+    # WS-F: Newcombe intervals (method 10) for the paired success differences against APF
+    from stats_v2 import newcombe_counts
+    dwa = J(OUT, "dwa_report.json")
+    pt = lambda x: f"{100 * x:.0f}".replace("-", "$-$")
+    for v, nm in (("DWA", "Dwa"), ("DWA-CV", "Dwacv")):
+        x = dwa[v]["vs_apf"]          # a = the DWA variant, b = APF
+        both, a_only, b_only = x["shared"], x["a_only"], x["b_only"]
+        t, lo, hi = newcombe_counts(both, a_only, b_only, 50 - both - a_only - b_only)
+        n[f"ncDiff{nm}"] = f"{pt(t)} ({pt(lo)}, {pt(hi)})"
+    arc = J(OUT, "report.json")["corridor"]["arc"]["corridor/best"]["dynamic"]["per_seed"]
+    diffs = []
+    for v in arc.values():
+        b_, c_ = v["mcnemar_arc_only"], v["mcnemar_apf_only"]
+        a_ = v["success"] - b_
+        diffs.append(newcombe_counts(a_, b_, c_, 50 - a_ - b_ - c_))
+    n["ncDiffArcMin"], n["ncDiffArcMax"] = pt(min(d[0] for d in diffs)), pt(max(d[0] for d in diffs))
     # WS-F: IQM over seeds with a 95% bootstrap interval, dynamic suite, reward-selected checkpoint
     rep = J(OUT, "report.json")
     for grp, nm in (("td3dyn/best", "TdDyn"), ("sacdyn/best", "SacDyn")):

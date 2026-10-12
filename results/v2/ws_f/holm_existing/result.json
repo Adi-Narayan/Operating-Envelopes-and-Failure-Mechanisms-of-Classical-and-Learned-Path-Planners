@@ -1,0 +1,239 @@
+{
+ "paired_mcnemar": {
+  "DWA": {
+   "p": 0.25,
+   "holm_p": 0.5,
+   "significant_05": false
+  },
+  "DWA-CV": {
+   "p": 0.25,
+   "holm_p": 0.5,
+   "significant_05": false
+  },
+  "ARC seed 0": {
+   "p": 1.1920928955078125e-07,
+   "holm_p": 4.76837158203125e-07,
+   "significant_05": true
+  },
+  "ARC seed 1": {
+   "p": 1.7763568394002505e-15,
+   "holm_p": 1.2434497875801753e-14,
+   "significant_05": true
+  },
+  "ARC seed 2": {
+   "p": 3.552713678800501e-15,
+   "holm_p": 2.1316282072803006e-14,
+   "significant_05": true
+  },
+  "ARC seed 3": {
+   "p": 1.1920928955078125e-07,
+   "holm_p": 4.76837158203125e-07,
+   "significant_05": true
+  },
+  "ARC seed 4": {
+   "p": 5.684341886080802e-14,
+   "holm_p": 2.8421709430404007e-13,
+   "significant_05": true
+  }
+ },
+ "paired_wilcoxon": {
+  "DWA": {
+   "p": 0.00015193739301366804,
+   "holm_p": 0.00045581217904100413,
+   "significant_05": true
+  },
+  "DWA-CV": {
+   "p": 0.0007268544013925293,
+   "holm_p": 0.0014537088027850587,
+   "significant_05": true
+  },
+  "ARC seed 0": {
+   "p": 2.6226043701171875e-06,
+   "holm_p": 1.049041748046875e-05,
+   "significant_05": true
+  },
+  "ARC seed 3": {
+   "p": 2.086162567138672e-07,
+   "holm_p": 1.043081283569336e-06,
+   "significant_05": true
+  },
+  "ARC seed 4": {
+   "p": 0.0625,
+   "holm_p": 0.0625,
+   "significant_05": false
+  }
+ },
+ "sac_vs_apf_mcnemar": {
+  "SAC seed 0": {
+   "p": 0.001953125,
+   "holm_p": 0.013671875,
+   "significant_05": true
+  },
+  "SAC seed 1": {
+   "p": 0.5,
+   "holm_p": 1.0,
+   "significant_05": false
+  },
+  "SAC seed 2": {
+   "p": 0.03125,
+   "holm_p": 0.125,
+   "significant_05": false
+  },
+  "SAC seed 3": {
+   "p": 1.0,
+   "holm_p": 1.0,
+   "significant_05": false
+  },
+  "SAC seed 4": {
+   "p": 0.00390625,
+   "holm_p": 0.0234375,
+   "significant_05": true
+  },
+  "SAC seed 5": {
+   "p": 0.00048828125,
+   "holm_p": 0.00439453125,
+   "significant_05": true
+  },
+  "SAC seed 6": {
+   "p": 0.0009765625,
+   "holm_p": 0.0078125,
+   "significant_05": true
+  },
+  "SAC seed 7": {
+   "p": 0.25,
+   "holm_p": 0.75,
+   "significant_05": false
+  },
+  "SAC seed 8": {
+   "p": 0.0078125,
+   "holm_p": 0.0390625,
+   "significant_05": true
+  },
+  "SAC seed 9": {
+   "p": 5.960464477539063e-08,
+   "holm_p": 5.960464477539062e-07,
+   "significant_05": true
+  }
+ },
+ "sac_vs_apf_wilcoxon": {
+  "SAC seed 0": {
+   "p": 2.4920154828578234e-10,
+   "holm_p": 2.313527147634886e-09,
+   "significant_05": true
+  },
+  "SAC seed 1": {
+   "p": 2.568754773335513e-06,
+   "holm_p": 6.806131636949431e-06,
+   "significant_05": true
+  },
+  "SAC seed 2": {
+   "p": 2.3135271476348862e-10,
+   "holm_p": 2.313527147634886e-09,
+   "significant_05": true
+  },
+  "SAC seed 3": {
+   "p": 2.9561306291725487e-08,
+   "holm_p": 2.069291440420784e-07,
+   "significant_05": true
+  },
+  "SAC seed 4": {
+   "p": 1.2371801858535036e-06,
+   "holm_p": 4.948720743414015e-06,
+   "significant_05": true
+  },
+  "SAC seed 5": {
+   "p": 4.1245220927521586e-07,
+   "holm_p": 2.0622610463760793e-06,
+   "significant_05": true
+  },
+  "SAC seed 6": {
+   "p": 6.122354534454644e-08,
+   "holm_p": 3.673412720672786e-07,
+   "significant_05": true
+  },
+  "SAC seed 7": {
+   "p": 2.2687105456498102e-06,
+   "holm_p": 6.806131636949431e-06,
+   "significant_05": true
+  },
+  "SAC seed 8": {
+   "p": 5.908077582716942e-09,
+   "holm_p": 4.7264620661735535e-08,
+   "significant_05": true
+  },
+  "SAC seed 9": {
+   "p": 0.0041751861572265625,
+   "holm_p": 0.0041751861572265625,
+   "significant_05": true
+  }
+ },
+ "dwacv_vs_sac_mcnemar": {
+  "SAC seed0": {
+   "p": 0.0654296875,
+   "holm_p": 0.458984375,
+   "significant_05": false
+  },
+  "SAC seed1": {
+   "p": 1.0,
+   "holm_p": 1.0,
+   "significant_05": false
+  },
+  "SAC seed2": {
+   "p": 0.5078125,
+   "holm_p": 1.0,
+   "significant_05": false
+  },
+  "SAC seed3": {
+   "p": 0.625,
+   "holm_p": 1.0,
+   "significant_05": false
+  },
+  "SAC seed4": {
+   "p": 0.109375,
+   "holm_p": 0.65625,
+   "significant_05": false
+  },
+  "SAC seed5": {
+   "p": 0.0224609375,
+   "holm_p": 0.2021484375,
+   "significant_05": false
+  },
+  "SAC seed6": {
+   "p": 0.057373046875,
+   "holm_p": 0.458984375,
+   "significant_05": false
+  },
+  "SAC seed7": {
+   "p": 1.0,
+   "holm_p": 1.0,
+   "significant_05": false
+  },
+  "SAC seed8": {
+   "p": 0.1796875,
+   "holm_p": 0.8984375,
+   "significant_05": false
+  },
+  "SAC seed9": {
+   "p": 2.9802322387695312e-06,
+   "holm_p": 2.9802322387695312e-05,
+   "significant_05": true
+  }
+ },
+ "learner_tests": {
+  "perm SAC vs TD3 (moving)": {
+   "p": 0.003593929290523718,
+   "holm_p": 0.010781787871571153,
+   "significant_05": true
+  },
+  "perm TD3 moving vs static": {
+   "p": 0.08668730650154799,
+   "holm_p": 0.08668730650154799,
+   "significant_05": false
+  },
+  "Fisher collapse TD3 (moving) vs SAC": {
+   "p": 0.032507739938080496,
+   "holm_p": 0.06501547987616099,
+   "significant_05": false
+  }
+ }
+}
