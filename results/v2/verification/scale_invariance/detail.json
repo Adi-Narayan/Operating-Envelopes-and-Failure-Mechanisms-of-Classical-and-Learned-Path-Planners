@@ -1,0 +1,40 @@
+{
+ "5": {
+  "steps": 456,
+  "escape_steps": [
+   0,
+   0
+  ],
+  "pushouts": [
+   0,
+   0
+  ],
+  "max_obstacle_centroid_dev_m": 1.3979672530695098e-08,
+  "first_step_path_dev_exceeds": {
+   "1e-09": 265,
+   "1e-06": 284,
+   "0.001": 292
+  },
+  "final_dev_m": 0.00023087963154466706,
+  "max_dev_m": 0.004234488915756174
+ },
+ "9": {
+  "steps": 955,
+  "escape_steps": [
+   0,
+   0
+  ],
+  "pushouts": [
+   0,
+   0
+  ],
+  "max_obstacle_centroid_dev_m": 2.2556434942089254e-08,
+  "first_step_path_dev_exceeds": {
+   "1e-09": 236,
+   "1e-06": 437,
+   "0.001": 454
+  },
+  "final_dev_m": 0.0013627376316094342,
+  "max_dev_m": 0.04841160053629778
+ }
+}

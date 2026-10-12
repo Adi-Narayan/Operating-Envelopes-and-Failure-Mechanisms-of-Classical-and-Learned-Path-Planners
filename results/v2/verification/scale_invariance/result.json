@@ -1,0 +1,210 @@
+{
+ "envs": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "apf": [
+  {
+   "env": 0,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 343,
+   "steps_9_half": 343,
+   "max_pointwise_dev_m": 2.0683046386693604e-09,
+   "bit_identical": false
+  },
+  {
+   "env": 1,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 422,
+   "steps_9_half": 422,
+   "max_pointwise_dev_m": 2.1629489310726058e-09,
+   "bit_identical": false
+  },
+  {
+   "env": 2,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 426,
+   "steps_9_half": 426,
+   "max_pointwise_dev_m": 2.4436985768261366e-10,
+   "bit_identical": false
+  },
+  {
+   "env": 3,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 386,
+   "steps_9_half": 386,
+   "max_pointwise_dev_m": 1.3943690646556206e-10,
+   "bit_identical": false
+  },
+  {
+   "env": 4,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 400,
+   "steps_9_half": 400,
+   "max_pointwise_dev_m": 2.5653434931882657e-10,
+   "bit_identical": false
+  },
+  {
+   "env": 5,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 456,
+   "steps_9_half": 456,
+   "max_pointwise_dev_m": 0.004234488915756174,
+   "bit_identical": false
+  },
+  {
+   "env": 6,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 434,
+   "steps_9_half": 434,
+   "max_pointwise_dev_m": 5.47174749954138e-10,
+   "bit_identical": false
+  },
+  {
+   "env": 7,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 423,
+   "steps_9_half": 423,
+   "max_pointwise_dev_m": 2.4431301426375285e-10,
+   "bit_identical": false
+  },
+  {
+   "env": 8,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 413,
+   "steps_9_half": 413,
+   "max_pointwise_dev_m": 1.3449152902467176e-10,
+   "bit_identical": false
+  },
+  {
+   "env": 9,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 955,
+   "steps_9_half": 955,
+   "max_pointwise_dev_m": 0.04841160053629778,
+   "bit_identical": false
+  }
+ ],
+ "sac": [
+  {
+   "env": 0,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 207,
+   "steps_9_half": 207,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 1,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 205,
+   "steps_9_half": 205,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 2,
+   "outcome_18": "collision",
+   "outcome_9_half": "collision",
+   "steps_18": 188,
+   "steps_9_half": 188,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 3,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 207,
+   "steps_9_half": 207,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 4,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 217,
+   "steps_9_half": 217,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 5,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 276,
+   "steps_9_half": 276,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 6,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 207,
+   "steps_9_half": 207,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 7,
+   "outcome_18": "collision",
+   "outcome_9_half": "collision",
+   "steps_18": 88,
+   "steps_9_half": 88,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 8,
+   "outcome_18": "success",
+   "outcome_9_half": "success",
+   "steps_18": 215,
+   "steps_9_half": 215,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  },
+  {
+   "env": 9,
+   "outcome_18": "collision",
+   "outcome_9_half": "collision",
+   "steps_18": 163,
+   "steps_9_half": 163,
+   "max_pointwise_dev_m": 0.0,
+   "bit_identical": true
+  }
+ ],
+ "apf_summary": {
+  "same_outcome_all": true,
+  "same_steps_all": true,
+  "max_dev_m": 0.04841160053629778,
+  "bit_identical_envs": 0
+ },
+ "sac_summary": {
+  "same_outcome_all": true,
+  "same_steps_all": true,
+  "max_dev_m": 0.0,
+  "bit_identical_envs": 10
+ }
+}
