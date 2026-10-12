@@ -80,6 +80,10 @@ def heatmap_cells():
         learned.setdefault(s, 100.0 * sum(r["success"] for r in rr) / len(rr))
     v = list(learned.values())
     cells["TD3 moving"]["second_dyn"] = cell(np.mean(v), min(v), max(v), len(v))
+    t3 = J(V2, "ws_a", "td3static_second", "result.json")
+    if t3:
+        v = [2.0 * x["success"] for x in t3["per_seed"].values()]
+        cells["TD3 static"]["second_dyn"] = cell(np.mean(v), min(v), max(v), len(v))
     # v2 rows are filled in when their result files exist (APF-D, TD3 fixed, SAC static, arbiters)
     v2 = J(V2, "envelope_v2.json") or {}
     for row, axes in v2.items():

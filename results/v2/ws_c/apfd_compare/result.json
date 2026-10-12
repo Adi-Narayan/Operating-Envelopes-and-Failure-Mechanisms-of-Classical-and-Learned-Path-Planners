@@ -1,0 +1,106 @@
+{
+ "family": "the seven heatmap axes, APF-D vs APF (Holm within this family)",
+ "axes": {
+  "indist": {
+   "n": 50,
+   "apf": 50,
+   "apfd": 49,
+   "apfd_only": 0,
+   "apf_only": 1,
+   "diff": -0.02,
+   "newcombe95": [
+    -0.1049544369389651,
+    0.05322182760531238
+   ],
+   "mcnemar_p": 1.0,
+   "holm_p": 1.0
+  },
+  "r100": {
+   "n": 50,
+   "apf": 47,
+   "apfd": 43,
+   "apfd_only": 2,
+   "apf_only": 6,
+   "diff": -0.08,
+   "newcombe95": [
+    -0.2073386578909739,
+    0.04299711755391167
+   ],
+   "mcnemar_p": 0.2890625,
+   "holm_p": 1.0
+  },
+  "r158": {
+   "n": 50,
+   "apf": 30,
+   "apfd": 22,
+   "apfd_only": 4,
+   "apf_only": 12,
+   "diff": -0.16,
+   "newcombe95": [
+    -0.30347244871695994,
+    -0.003591940580991826
+   ],
+   "mcnemar_p": 0.076812744140625,
+   "holm_p": 0.46087646484375
+  },
+  "noise5": {
+   "n": 50,
+   "apf": 47,
+   "apfd": 43,
+   "apfd_only": 0,
+   "apf_only": 4,
+   "diff": -0.08,
+   "newcombe95": [
+    -0.1874972768378561,
+    0.010201315724093885
+   ],
+   "mcnemar_p": 0.125,
+   "holm_p": 0.625
+  },
+  "lay_static": {
+   "n": 100,
+   "apf": 68,
+   "apfd": 88,
+   "apfd_only": 20,
+   "apf_only": 0,
+   "diff": 0.2,
+   "newcombe95": [
+    0.11958982909678957,
+    0.28339010498368666
+   ],
+   "mcnemar_p": 1.9073486328125e-06,
+   "holm_p": 1.33514404296875e-05
+  },
+  "lay_dynamic": {
+   "n": 100,
+   "apf": 98,
+   "apfd": 98,
+   "apfd_only": 2,
+   "apf_only": 2,
+   "diff": 0.0,
+   "newcombe95": [
+    -0.052354245445424094,
+    0.052354245445424094
+   ],
+   "mcnemar_p": 1.0,
+   "holm_p": 1.0
+  },
+  "second_dyn": {
+   "n": 50,
+   "apf": 48,
+   "apfd": 47,
+   "apfd_only": 1,
+   "apf_only": 2,
+   "diff": -0.02,
+   "newcombe95": [
+    -0.12154402544564814,
+    0.07635135853168759
+   ],
+   "mcnemar_p": 1.0,
+   "holm_p": 1.0
+  }
+ },
+ "apf_static_stalls": 32,
+ "stalls_removed_by_apfd": 20,
+ "new_static_failures": []
+}

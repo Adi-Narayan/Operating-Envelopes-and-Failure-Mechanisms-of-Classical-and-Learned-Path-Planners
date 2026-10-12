@@ -1,0 +1,14 @@
+{
+ "name": "misc",
+ "jobs": [
+  {
+   "name": "td3static_second",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_a_td3static_second.py"
+   ]
+  }
+ ]
+}
