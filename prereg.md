@@ -155,3 +155,8 @@ The rule selected **mom085** (momentum, beta = 0.85): 47/50 static tuning layout
 plain APF, 0 held-out dynamic successes lost (50/50). It is the largest beta in the pre-registered
 grid. Per the WS-D entry, the D1 fallback C is therefore APF under ARC's nine rays at 6 Hz with
 momentum beta = 0.85 (`results/v2/ws_d/c_config.json`).
+
+### Outcome of the B3 rule (recorded 2026-10-12, before B4 starts)
+Collapses at the episode-50 checkpoint (of 3 seeds): (a) 2, (b) 2, (c) 0, (d) 3
+(`results/v2/ws_b/b3_selection/`). The candidate is (c), the pre-tanh penalty with lambda = 2.0e-3,
+with strictly fewer collapses than (a), so **B4 runs with `--pretanh-penalty 0.002`**.

@@ -1,0 +1,16 @@
+{
+ "git_commit": "3825659b5632deb6978b5a8785f3773fc4063a24",
+ "script": "scripts/ws_d_d2_thresholds.py",
+ "config": {
+  "rule": "prereg.md WS-D D2",
+  "lead_steps": 12
+ },
+ "seeds": {
+  "heldout_motion": "500000-500049",
+  "sac_seeds": "0-9"
+ },
+ "start": "2026-10-12T23:35:22+05:30",
+ "end": "2026-10-12T23:35:23+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}

@@ -1,0 +1,23 @@
+{
+ "git_commit": "3825659b5632deb6978b5a8785f3773fc4063a24",
+ "script": "scripts/ws_b_b3_select.py",
+ "config": {
+  "rule": "prereg.md WS-B B3",
+  "tie_order": [
+   "d",
+   "b",
+   "c"
+  ]
+ },
+ "seeds": {
+  "learner_seeds": [
+   10,
+   11,
+   12
+  ]
+ },
+ "start": "2026-10-12T23:36:03+05:30",
+ "end": "2026-10-12T23:37:04+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}
