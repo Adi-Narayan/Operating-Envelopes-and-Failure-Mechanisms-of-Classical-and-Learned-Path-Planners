@@ -1,6 +1,6 @@
-# Operating Envelopes of Classical and Learned Path Planners
+# Operating Envelopes and Failure Mechanisms of Classical and Learned Path Planners
 
-Code, trained models and evaluation logs for the paper *Operating Envelopes of Classical and Learned Path Planners* (submitted to Robotics and Autonomous Systems).
+Code, trained models and evaluation logs for the paper *Operating Envelopes and Failure Mechanisms of Classical and Learned Path Planners* (submitted to Robotics and Autonomous Systems).
 
 The paper measures where each of six planners stops working, under one paired protocol:
 - a goal-scaled **Artificial Potential Field (APF)** planner with a fixed rotational deflection, and **APF-D**, the same planner with heading momentum;

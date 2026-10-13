@@ -1,0 +1,18 @@
+{
+ "git_commit": "05b949c1490a824260b93cd8a0e21c69dbdd2fd5",
+ "script": "scripts/ws_d_d4_eval.py sac 8",
+ "config": {
+  "mode": "sac",
+  "sac_seed": 8,
+  "c_kind": "dwa_cv",
+  "c_config": "DWA-CV (dwa_tune.json)",
+  "thresholds": null
+ },
+ "seeds": {
+  "see": "notes/seed_map.md (frozen evaluation sets)"
+ },
+ "start": "2026-10-13T03:49:03+05:30",
+ "end": "2026-10-13T04:31:35+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

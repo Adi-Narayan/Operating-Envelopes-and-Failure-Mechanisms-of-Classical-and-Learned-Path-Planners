@@ -3,6 +3,8 @@ WS-D, D4: evaluation of the arbiter once on every axis with the frozen evaluatio
 Thresholds from results/v2/ws_d/d3_selection; fallback C from results/v2/ws_d/c_config.json.
 
     python scripts/ws_d_d4_eval.py d1 <sac seed>     arbiter, C = ray-APF (matched information)
+    python scripts/ws_d_d4_eval.py d1fix <sac seed>  as d1, with APF-D's momentum reset at every L -> C handover (sensitivity
+                                                     check for the handover bug, prereg.md WS-D deviation of 2026-10-13)
     python scripts/ws_d_d4_eval.py d2 <sac seed>     arbiter, C = DWA-CV (privileged), D1's thresholds
     python scripts/ws_d_d4_eval.py sac <sac seed>    SAC alone (the arbiter with switching disabled)
     python scripts/ws_d_d4_eval.py capf              ray-APF alone
@@ -40,12 +42,12 @@ def brief(r):
 def build(mode, seed):
     cc = json.load(open(os.path.join(V2, "c_config.json")))
     L = A.Learned(os.path.join(OUT, "arc_models", f"sacdyn_seed{seed}", "models", "arc_best.pth")) if seed is not None else None
-    if mode in ("d1", "capf"):
+    if mode in ("d1", "d1fix", "capf"):
         C, kind = A.APFRays(momentum=cc.get("momentum"), osc_cap_K=cc.get("osc_cap_K")), "apf_rays"
     else:
         w = json.load(open(os.path.join(OUT, "dwa_tune.json")))["selected"]["DWA-CV"]["weights"]
         C, kind = A.DWACV(w), "dwa_cv"
-    if mode in ("d1", "d2"):
+    if mode in ("d1", "d1fix", "d2"):
         sel = json.load(open(os.path.join(V2, "d3_selection", "result.json")))["selected"]
         th = (sel["d_on"], sel["rho_on"], sel["d_off"], sel["rho_off"])
         on = True
@@ -54,16 +56,18 @@ def build(mode, seed):
     else:
         th, on = (0.0, 0.0, None, None), False
     cfg = {"mode": mode, "sac_seed": seed, "c_kind": kind, "c_config": cc if kind == "apf_rays" else "DWA-CV (dwa_tune.json)",
-           "thresholds": dict(zip(("d_on", "rho_on", "d_off", "rho_off"), th)) if mode in ("d1", "d2") else None}
+           "thresholds": dict(zip(("d_on", "rho_on", "d_off", "rho_off"), th)) if mode in ("d1", "d1fix", "d2") else None,
+           "handover_reset": mode == "d1fix"}
 
     def go(tl, c_seed, **nz):
-        return brief(A.run(tl, L, C, kind, th[0], th[1], d_off=th[2], rho_off=th[3], c_seed=c_seed, l_enabled=on, **nz))
+        return brief(A.run(tl, L, C, kind, th[0], th[1], d_off=th[2], rho_off=th[3], c_seed=c_seed, l_enabled=on,
+                           handover_reset=(mode == "d1fix"), **nz))
     return go, cfg
 
 
 def main():
     mode = sys.argv[1]
-    seed = int(sys.argv[2]) if mode in ("d1", "d2", "sac") else None
+    seed = int(sys.argv[2]) if mode in ("d1", "d1fix", "d2", "sac") else None
     t0 = now()
     go, cfg = build(mode, seed)
     urban = H.LAYOUTS["urban"]

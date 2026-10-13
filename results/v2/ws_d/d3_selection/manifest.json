@@ -1,0 +1,14 @@
+{
+ "git_commit": "8ab63ffdd4b1da6b82b87b96b3d4403408732359",
+ "script": "scripts/ws_d_d3_select.py",
+ "config": {
+  "rule": "prereg.md WS-D D3: max mean success over five sets x 10 SAC seeds; ties -> fewer switches"
+ },
+ "seeds": {
+  "inputs": "results/v2/ws_d/d3_tuning"
+ },
+ "start": "2026-10-13T13:29:14+05:30",
+ "end": "2026-10-13T13:29:16+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

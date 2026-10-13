@@ -160,3 +160,19 @@ momentum beta = 0.85 (`results/v2/ws_d/c_config.json`).
 Collapses at the episode-50 checkpoint (of 3 seeds): (a) 2, (b) 2, (c) 0, (d) 3
 (`results/v2/ws_b/b3_selection/`). The candidate is (c), the pre-tanh penalty with lambda = 2.0e-3,
 with strictly fewer collapses than (a), so **B4 runs with `--pretanh-penalty 0.002`**.
+
+### WS-D deviation: handover bug, sensitivity check (recorded 2026-10-13, before the check runs)
+`experiments/arbiter.py` cleared APF-D's momentum memory (`d_prev`) only at the start of a run, so at
+every L -> C handover after the first, APF-D blended its first steps with the direction of its last
+step in an earlier C segment. APF-D alone is not affected; neither is D2 (DWA-CV is reset at handover).
+D3 and D4 ran with the bug. Decision (Adi, 2026-10-13): D1 is reported as registered (D3 thresholds and
+D4 results unchanged), and the bug is described in the paper. As a sensitivity check, D1 is rerun on the
+same frozen evaluation sets for the 10 SAC seeds with the momentum reset to the agent's current heading at
+every handover (`handover_reset=True`; `scripts/ws_d_d4_eval.py d1fix <seed>`, output
+`results/v2/ws_d/d4_eval/d1fix_sac<seed>.json`), with the D3 thresholds unchanged (not re-tuned).
+Reported for each axis, on the same runs: d1fix against SAC alone (same seed) and against ray-sensed
+APF-D alone (`capf`), plus d1 against d1fix; paired exact McNemar per seed and axis, Holm within each
+comparison family. Exact-geometry APF-D is not the reference for this check (it sees more than the
+arbiter). Reading: if d1fix loses to both of its components, the negative result stands as is; if it
+beats SAC alone but loses to ray-APF-D, the finding is the narrower one that handing control back to
+SAC costs successes.
