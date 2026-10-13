@@ -1,0 +1,14 @@
+{
+ "git_commit": "33f38a20141f64e6d695ba4eb0e50e0539acd11c",
+ "script": "scripts/verify_scaleinv_onset.py",
+ "config": {
+  "ticks": 20000
+ },
+ "seeds": {
+  "motion": "0-6"
+ },
+ "start": "2026-10-13T06:01:18+05:30",
+ "end": "2026-10-13T06:05:47+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

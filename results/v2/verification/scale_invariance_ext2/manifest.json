@@ -1,0 +1,21 @@
+{
+ "git_commit": "0b0b95facf2a6b4796368fc0e0cc539df6b5608c",
+ "script": "scripts/verify_scaleinv_ext.py",
+ "config": {
+  "A": "18 m/s",
+  "B": "9 m/s, obstacle velocities x0.5",
+  "noise_L2": [
+   2.5,
+   5.0
+  ]
+ },
+ "seeds": {
+  "motion": "0-9",
+  "apf_planner": "1000+s",
+  "noise": "50000+s"
+ },
+ "start": "2026-10-13T04:58:50+05:30",
+ "end": "2026-10-13T05:23:17+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

@@ -180,6 +180,17 @@ def v2_numbers():
         n["eOneSacBit"] = str(sm["SAC none"]["bit_identical"] + sm["SAC L2"]["bit_identical"])
         n["eOneSacDevMm"] = f"{1000 * max(sm['SAC none']['max_dev_m'], sm['SAC L2']['max_dev_m']):.0f}"
         n["eOneApfStepDiff"] = str(sm["APF none"]["n"] - sm["APF none"]["same_steps"])
+    on = J(V2, "verification", "scale_invariance_onset", "result.json")
+    if on:
+        sd = on["seeds"].values()
+        stay = [r for r in sd if not r["first_tick_over"]]
+        n["eOneLongSeeds"], n["eOneLongStable"] = str(len(on["seeds"])), str(len(stay))
+        mx = max(r["max_dev_m"] for r in stay)
+        e = int(np.floor(np.log10(mx)))
+        n["eOneLongDev"] = f"${mx / 10 ** e:.0f} \\times 10^{{{e}}}$"
+        ons = sorted(r["first_tick_over"]["1e-6"] for r in sd if r["first_tick_over"])
+        n["eOneOnsetMin"] = f"{ons[0]:,}".replace(",", "{,}")
+        n["eOneTicks"] = f"{on['ticks']:,}".replace(",", "{,}")
     # C4: APF-D against APF, paired on every axis
     cmp_ = J(V2, "ws_c", "apfd_compare", "result.json")
     if cmp_:

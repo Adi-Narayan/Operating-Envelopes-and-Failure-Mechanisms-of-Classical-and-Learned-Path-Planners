@@ -1,0 +1,61 @@
+{
+ "summary": {
+  "seeds": 7,
+  "bit_identical": 0,
+  "onsets_1e-6": [
+   2104,
+   10502,
+   15918
+  ]
+ },
+ "seeds": {
+  "0": {
+   "first_tick_over": {
+    "1e-6": 2104,
+    "1e-3": 2104,
+    "0.1": 8081
+   },
+   "max_dev_m": 5.0498289010944575,
+   "bit_identical": false
+  },
+  "1": {
+   "first_tick_over": {},
+   "max_dev_m": 2.534686132094066e-07,
+   "bit_identical": false
+  },
+  "2": {
+   "first_tick_over": {},
+   "max_dev_m": 2.2352315909301979e-07,
+   "bit_identical": false
+  },
+  "3": {
+   "first_tick_over": {
+    "1e-6": 10502,
+    "1e-3": 10508,
+    "0.1": 11583
+   },
+   "max_dev_m": 0.7189709923960663,
+   "bit_identical": false
+  },
+  "4": {
+   "first_tick_over": {
+    "1e-6": 15918,
+    "1e-3": 16449,
+    "0.1": 17165
+   },
+   "max_dev_m": 3.1750573478242927,
+   "bit_identical": false
+  },
+  "5": {
+   "first_tick_over": {},
+   "max_dev_m": 3.2263750426864135e-07,
+   "bit_identical": false
+  },
+  "6": {
+   "first_tick_over": {},
+   "max_dev_m": 2.6420184440212324e-07,
+   "bit_identical": false
+  }
+ },
+ "ticks": 20000
+}

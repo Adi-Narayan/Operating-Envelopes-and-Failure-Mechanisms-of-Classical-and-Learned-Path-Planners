@@ -1,0 +1,123 @@
+0 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 60}
+0 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 60}
+0 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 60}
+0 SAC L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 60}
+0 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 60}
+0 DWA-CV L2 collision collision 0.0 {'push_away': 0, 'wall': 5, 'separation': 71}
+1 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1706}
+1 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1742}
+1 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 983}
+1 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 1028}
+1 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1418}
+1 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 2603}
+2 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 22}
+2 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 22}
+3 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 259}
+3 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 283}
+3 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 44}
+3 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 44}
+3 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 553}
+3 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1213}
+4 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+4 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+4 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 30}
+4 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+4 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+4 DWA-CV L2 success success 0.0 {'push_away': 20, 'wall': 29, 'separation': 79}
+5 APF none success success 0.004234 {'push_away': 0, 'wall': 2, 'separation': 734}
+5 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 827}
+5 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 758}
+5 SAC L2 success success 3.1e-05 {'push_away': 0, 'wall': 2, 'separation': 805}
+5 DWA-CV none success success 0.0 {'push_away': 15, 'wall': 10, 'separation': 839}
+5 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 8, 'separation': 829}
+6 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 21}
+6 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 22}
+6 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 21}
+6 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 21}
+6 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 21}
+6 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 14, 'separation': 36}
+7 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 776}
+7 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 776}
+7 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 39}
+7 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 39}
+7 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 777}
+7 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 18, 'separation': 790}
+8 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 815}
+8 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 851}
+8 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 487}
+8 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 507}
+8 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 773}
+8 DWA-CV L2 collision collision 0.0 {'push_away': 0, 'wall': 6, 'separation': 1722}
+9 APF none success success 0.048412 {'push_away': 0, 'wall': 12, 'separation': 273}
+9 APF L2 success success 0.0 {'push_away': 0, 'wall': 12, 'separation': 273}
+9 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 54}
+9 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 54}
+9 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 54}
+9 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 6, 'separation': 238}
+timeline 0 {'push_away': 0, 'wall': 67, 'separation': 5548} {'push_away': 1, 'wall': 67, 'separation': 5542} 5.0498289010944575
+timeline 1 {'push_away': 16, 'wall': 62, 'separation': 2944} {'push_away': 16, 'wall': 62, 'separation': 2944} 2.534686132094066e-07
+timeline 2 {'push_away': 14, 'wall': 59, 'separation': 2787} {'push_away': 14, 'wall': 59, 'separation': 2787} 2.2352315909301979e-07
+timeline 3 {'push_away': 0, 'wall': 54, 'separation': 4367} {'push_away': 0, 'wall': 54, 'separation': 4361} 0.7189709923960663
+timeline 4 {'push_away': 20, 'wall': 68, 'separation': 2563} {'push_away': 20, 'wall': 68, 'separation': 2583} 3.1750573478242927
+timeline 5 {'push_away': 35, 'wall': 54, 'separation': 1428} {'push_away': 35, 'wall': 54, 'separation': 1428} 3.2263750426864135e-07
+timeline 6 {'push_away': 22, 'wall': 55, 'separation': 1376} {'push_away': 22, 'wall': 55, 'separation': 1376} 2.6420184440212324e-07
+{
+ "APF none": {
+  "n": 10,
+  "same_outcome": 10,
+  "same_steps": 10,
+  "bit_identical": 0,
+  "max_dev_m": 0.04841160053629778
+ },
+ "APF L2": {
+  "n": 10,
+  "same_outcome": 10,
+  "same_steps": 10,
+  "bit_identical": 0,
+  "max_dev_m": 6.28345446784806e-08
+ },
+ "SAC none": {
+  "n": 10,
+  "same_outcome": 10,
+  "same_steps": 10,
+  "bit_identical": 10,
+  "max_dev_m": 0.0
+ },
+ "SAC L2": {
+  "n": 10,
+  "same_outcome": 10,
+  "same_steps": 10,
+  "bit_identical": 9,
+  "max_dev_m": 3.0517578125e-05
+ },
+ "DWA-CV none": {
+  "n": 10,
+  "same_outcome": 10,
+  "same_steps": 10,
+  "bit_identical": 10,
+  "max_dev_m": 0.0
+ },
+ "DWA-CV L2": {
+  "n": 10,
+  "same_outcome": 10,
+  "same_steps": 10,
+  "bit_identical": 10,
+  "max_dev_m": 0.0
+ },
+ "runs_with_event": {
+  "push_away": 2,
+  "wall": 47,
+  "separation": 60
+ },
+ "events_equal_A_B": true,
+ "timeline_only": {
+  "seeds": 7,
+  "with_push_away": 5,
+  "events_equal": false,
+  "max_obstacle_dev_m": 5.0498289010944575
+ }
+}

@@ -112,6 +112,8 @@ Backup: `../backup_20261013_0118.zip` (paper, figures, results/v2, scripts, note
 9. `experiments/arbiter.py` now logs every switch (direction, distance to goal, d_min, v_c, reason); behaviour unchanged (10/10 D3 runs identical to stored results). D3 thresholds untouched. D4 results will report switch locations.
 Paper: 45 pages after cutting two hand-built-layout and ARC-training tables, Table A.1 and the custom-3D table (their numbers moved into text) and condensing the contributions, matched-constraints section and conclusion.
 
+**E1 extension, rerun with the fixed counter (`scale_invariance_ext2`, 10 envs) and onset check (`scripts/verify_scaleinv_onset.py`).** Planner runs: events equal at both speeds in every run; push-away fires in 2 runs; outcomes and step counts identical. Long timelines (20,000 ticks, 7 seeds): 4 stay within 3e-7 m at the two speeds (including up to 35 push-away events each); 3 diverge after a contact decided by a near-zero overlap flips (first deviation > 1e-6 m at ticks 2,104, 10,502, 15,918; up to 5 m by 20,000). Floating-point sensitivity of the obstacle-contact dynamics, not a time dependence; no outcome changed in the 300 compared runs. Stated in the paper.
+
 ## Next
 - B4/B5 finish -> evalb45 runs automatically -> fill the 2x2 table, abstract, contributions, discussion, conclusion.
 - D3 finishes -> d3_select -> D1/D2 evaluations -> arbiter section and table; title question **[ASK ADI]**.
