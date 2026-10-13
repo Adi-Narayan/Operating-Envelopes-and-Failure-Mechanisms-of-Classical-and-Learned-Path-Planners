@@ -1,0 +1,3555 @@
+{
+ "per_seed": {
+  "td3_seed0": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 931,
+     "path_length": 2792.999866180364,
+     "efficiency": 21.772712529774278,
+     "min_clearance": 4.698971631886323
+    },
+    {
+     "outcome": "collision",
+     "steps": 798,
+     "path_length": 2393.9998939968973,
+     "efficiency": 25.401497859098026,
+     "min_clearance": 4.434265490725968
+    },
+    {
+     "outcome": "collision",
+     "steps": 285,
+     "path_length": 854.9999638530041,
+     "efficiency": 71.12419386312168,
+     "min_clearance": 4.812232997222459
+    },
+    {
+     "outcome": "collision",
+     "steps": 960,
+     "path_length": 2879.9998650868993,
+     "efficiency": 21.114995149559917,
+     "min_clearance": 3.3020876863619435
+    },
+    {
+     "outcome": "collision",
+     "steps": 130,
+     "path_length": 389.9999805946426,
+     "efficiency": 155.92611848165424,
+     "min_clearance": 4.821602286694571
+    },
+    {
+     "outcome": "collision",
+     "steps": 1238,
+     "path_length": 3713.9999453287965,
+     "efficiency": 16.373501367044188,
+     "min_clearance": 4.115461808480954
+    },
+    {
+     "outcome": "collision",
+     "steps": 1283,
+     "path_length": 3848.9998162260595,
+     "efficiency": 15.79921696168549,
+     "min_clearance": 4.952197033520861
+    },
+    {
+     "outcome": "collision",
+     "steps": 493,
+     "path_length": 1478.9999305053948,
+     "efficiency": 41.116420581076746,
+     "min_clearance": 4.3123120909513375
+    },
+    {
+     "outcome": "collision",
+     "steps": 642,
+     "path_length": 1925.9999069641322,
+     "efficiency": 31.573824568816853,
+     "min_clearance": 4.167413354498805
+    },
+    {
+     "outcome": "collision",
+     "steps": 1575,
+     "path_length": 4724.999779362515,
+     "efficiency": 12.870092279718069,
+     "min_clearance": 4.745660609128095
+    },
+    {
+     "outcome": "collision",
+     "steps": 1760,
+     "path_length": 5279.999759112547,
+     "efficiency": 11.517270067501695,
+     "min_clearance": 3.9352966086929797
+    },
+    {
+     "outcome": "collision",
+     "steps": 194,
+     "path_length": 581.9999734175509,
+     "efficiency": 104.48657381366344,
+     "min_clearance": 3.387725319546309
+    },
+    {
+     "outcome": "collision",
+     "steps": 1114,
+     "path_length": 3341.999842255111,
+     "efficiency": 18.19604609586366,
+     "min_clearance": 3.5780904272648373
+    },
+    {
+     "outcome": "collision",
+     "steps": 1481,
+     "path_length": 4442.9997874267065,
+     "efficiency": 13.686965134262064,
+     "min_clearance": 3.1495668182265733
+    },
+    {
+     "outcome": "collision",
+     "steps": 163,
+     "path_length": 488.9999745238593,
+     "efficiency": 124.35825429491099,
+     "min_clearance": 3.126127088772698
+    },
+    {
+     "outcome": "collision",
+     "steps": 1249,
+     "path_length": 3746.999825159094,
+     "efficiency": 16.229299711659607,
+     "min_clearance": 4.2253433419386965
+    },
+    {
+     "outcome": "collision",
+     "steps": 721,
+     "path_length": 2162.999901696258,
+     "efficiency": 28.114279216727667,
+     "min_clearance": 4.624633371188804
+    },
+    {
+     "outcome": "collision",
+     "steps": 1967,
+     "path_length": 5900.9997177416135,
+     "efficiency": 10.305234043514968,
+     "min_clearance": 3.987034158343912
+    },
+    {
+     "outcome": "collision",
+     "steps": 562,
+     "path_length": 1685.9999190966653,
+     "efficiency": 36.06831915782348,
+     "min_clearance": 4.085823729486736
+    },
+    {
+     "outcome": "collision",
+     "steps": 1049,
+     "path_length": 3146.999859734565,
+     "efficiency": 19.323541751658112,
+     "min_clearance": 2.455486421661405
+    },
+    {
+     "outcome": "collision",
+     "steps": 1128,
+     "path_length": 3383.9998401363227,
+     "efficiency": 17.970208645043357,
+     "min_clearance": 4.654366593540374
+    },
+    {
+     "outcome": "collision",
+     "steps": 806,
+     "path_length": 2417.999906940376,
+     "efficiency": 25.149373665192037,
+     "min_clearance": 4.144652787339719
+    },
+    {
+     "outcome": "collision",
+     "steps": 168,
+     "path_length": 503.9999768916237,
+     "efficiency": 120.65711502030378,
+     "min_clearance": 3.918636702602612
+    },
+    {
+     "outcome": "collision",
+     "steps": 1717,
+     "path_length": 5150.999813927734,
+     "efficiency": 11.80570479106141,
+     "min_clearance": 3.2237444222815483
+    },
+    {
+     "outcome": "collision",
+     "steps": 680,
+     "path_length": 2039.999907991814,
+     "efficiency": 29.809404865074683,
+     "min_clearance": 3.128922518975685
+    },
+    {
+     "outcome": "collision",
+     "steps": 884,
+     "path_length": 2651.99988021622,
+     "efficiency": 22.93031143616986,
+     "min_clearance": 4.60220683638888
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.9998087583162,
+     "efficiency": 14.882815963841868,
+     "min_clearance": 2.0555768127672556
+    },
+    {
+     "outcome": "collision",
+     "steps": 1393,
+     "path_length": 4178.999814826926,
+     "efficiency": 14.551611839341897,
+     "min_clearance": 3.1856662897383394
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.9998501541645,
+     "efficiency": 19.25013803944163,
+     "min_clearance": 4.126368744426364
+    },
+    {
+     "outcome": "collision",
+     "steps": 2686,
+     "path_length": 8057.999615463481,
+     "efficiency": 7.546684795733308,
+     "min_clearance": 2.7358373969660104
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.9999758313178,
+     "efficiency": 126.68997134160989,
+     "min_clearance": 2.2398053688280015
+    },
+    {
+     "outcome": "collision",
+     "steps": 1123,
+     "path_length": 3368.9998450935163,
+     "efficiency": 18.050218455962884,
+     "min_clearance": 4.105907482269498
+    },
+    {
+     "outcome": "collision",
+     "steps": 483,
+     "path_length": 1448.9999289389789,
+     "efficiency": 41.96769231491384,
+     "min_clearance": 3.7972685534982475
+    },
+    {
+     "outcome": "collision",
+     "steps": 726,
+     "path_length": 2177.9999792952885,
+     "efficiency": 27.920653700703475,
+     "min_clearance": 4.58060666353424
+    },
+    {
+     "outcome": "collision",
+     "steps": 735,
+     "path_length": 2204.999895155317,
+     "efficiency": 27.578769194344854,
+     "min_clearance": 4.906911957719927
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998690319508,
+     "efficiency": 21.937657307061787,
+     "min_clearance": 4.925215863698887
+    },
+    {
+     "outcome": "collision",
+     "steps": 732,
+     "path_length": 2195.999897074127,
+     "efficiency": 27.69179691814456,
+     "min_clearance": 3.750184924696242
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.9999532058036,
+     "efficiency": 19.25013741147129,
+     "min_clearance": 3.8422978736669324
+    },
+    {
+     "outcome": "collision",
+     "steps": 1728,
+     "path_length": 5183.999751186085,
+     "efficiency": 11.730552874376519,
+     "min_clearance": 3.193352976186418
+    },
+    {
+     "outcome": "collision",
+     "steps": 203,
+     "path_length": 608.9999668618925,
+     "efficiency": 99.85416500988693,
+     "min_clearance": 3.4740651076452695
+    },
+    {
+     "outcome": "collision",
+     "steps": 1482,
+     "path_length": 4445.999846900014,
+     "efficiency": 13.677729481804608,
+     "min_clearance": 4.863840426089737
+    },
+    {
+     "outcome": "collision",
+     "steps": 235,
+     "path_length": 704.9999701223383,
+     "efficiency": 86.25700107688027,
+     "min_clearance": 2.795375695795858
+    },
+    {
+     "outcome": "collision",
+     "steps": 717,
+     "path_length": 2150.999901439741,
+     "efficiency": 28.271123183845802,
+     "min_clearance": 3.658925262060339
+    },
+    {
+     "outcome": "collision",
+     "steps": 1051,
+     "path_length": 3152.999849222729,
+     "efficiency": 19.28677008882006,
+     "min_clearance": 4.827230354838221
+    },
+    {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999716738627,
+     "efficiency": 102.37573414470066,
+     "min_clearance": 3.0880726591601
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999580103663,
+     "efficiency": 31.18522281615342,
+     "min_clearance": 2.4137519316352183
+    },
+    {
+     "outcome": "collision",
+     "steps": 1293,
+     "path_length": 3878.9998154981154,
+     "efficiency": 15.677026572437235,
+     "min_clearance": 4.212580542662877
+    },
+    {
+     "outcome": "collision",
+     "steps": 446,
+     "path_length": 1337.9999422547762,
+     "efficiency": 45.449316746281056,
+     "min_clearance": 3.6082815087586937
+    },
+    {
+     "outcome": "collision",
+     "steps": 852,
+     "path_length": 2555.999880399939,
+     "efficiency": 23.791543829230513,
+     "min_clearance": 3.846006080651378
+    },
+    {
+     "outcome": "collision",
+     "steps": 921,
+     "path_length": 2762.9999093189754,
+     "efficiency": 22.009115156660226,
+     "min_clearance": 2.900744781669843
+    }
+   ]
+  },
+  "td3_seed1": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 931,
+     "path_length": 2792.999863650924,
+     "efficiency": 21.772712549492418,
+     "min_clearance": 4.698960187794526
+    },
+    {
+     "outcome": "collision",
+     "steps": 798,
+     "path_length": 2393.999898586338,
+     "efficiency": 25.40149781040184,
+     "min_clearance": 4.434295662316272
+    },
+    {
+     "outcome": "collision",
+     "steps": 285,
+     "path_length": 854.999961720243,
+     "efficiency": 71.12419404053796,
+     "min_clearance": 4.81224062661699
+    },
+    {
+     "outcome": "collision",
+     "steps": 960,
+     "path_length": 2879.9998650665575,
+     "efficiency": 21.114995149709053,
+     "min_clearance": 3.3020953157564747
+    },
+    {
+     "outcome": "collision",
+     "steps": 130,
+     "path_length": 389.9999832920421,
+     "efficiency": 155.92611740320538,
+     "min_clearance": 4.821598471997305
+    },
+    {
+     "outcome": "collision",
+     "steps": 1238,
+     "path_length": 3714.0000891786103,
+     "efficiency": 16.373500732869427,
+     "min_clearance": 4.115511160702785
+    },
+    {
+     "outcome": "collision",
+     "steps": 1283,
+     "path_length": 3848.9998234448344,
+     "efficiency": 15.799216932054158,
+     "min_clearance": 4.9521894041263295
+    },
+    {
+     "outcome": "collision",
+     "steps": 493,
+     "path_length": 1478.999932401735,
+     "efficiency": 41.116420528358205,
+     "min_clearance": 4.312304461556806
+    },
+    {
+     "outcome": "collision",
+     "steps": 642,
+     "path_length": 1925.9999076912356,
+     "efficiency": 31.5738245568971,
+     "min_clearance": 4.167413354498805
+    },
+    {
+     "outcome": "collision",
+     "steps": 1575,
+     "path_length": 4724.999784496968,
+     "efficiency": 12.870092265732698,
+     "min_clearance": 4.745637720944501
+    },
+    {
+     "outcome": "collision",
+     "steps": 1760,
+     "path_length": 5279.999757038837,
+     "efficiency": 11.51727007202508,
+     "min_clearance": 3.9353194968765735
+    },
+    {
+     "outcome": "collision",
+     "steps": 194,
+     "path_length": 581.9999769305746,
+     "efficiency": 104.48657318296958,
+     "min_clearance": 3.3877340896806847
+    },
+    {
+     "outcome": "collision",
+     "steps": 1114,
+     "path_length": 3341.9998450707153,
+     "efficiency": 18.19604608053366,
+     "min_clearance": 3.5780946845638923
+    },
+    {
+     "outcome": "collision",
+     "steps": 1481,
+     "path_length": 4442.999793837775,
+     "efficiency": 13.68696511451233,
+     "min_clearance": 3.1495705066459436
+    },
+    {
+     "outcome": "collision",
+     "steps": 163,
+     "path_length": 488.99997851690864,
+     "efficiency": 124.35825327943314,
+     "min_clearance": 3.126127088772698
+    },
+    {
+     "outcome": "collision",
+     "steps": 1249,
+     "path_length": 3746.999827000064,
+     "efficiency": 16.229299703685854,
+     "min_clearance": 4.225335712544165
+    },
+    {
+     "outcome": "collision",
+     "steps": 721,
+     "path_length": 2162.9999061351887,
+     "efficiency": 28.114279159031252,
+     "min_clearance": 4.624633281174974
+    },
+    {
+     "outcome": "collision",
+     "steps": 1967,
+     "path_length": 5900.999741965487,
+     "efficiency": 10.30523400121151,
+     "min_clearance": 3.987034158343912
+    },
+    {
+     "outcome": "collision",
+     "steps": 562,
+     "path_length": 1685.9999171128927,
+     "efficiency": 36.068319200262,
+     "min_clearance": 4.0858200058654575
+    },
+    {
+     "outcome": "collision",
+     "steps": 1049,
+     "path_length": 3146.99984632369,
+     "efficiency": 19.32354183400499,
+     "min_clearance": 2.455505495147733
+    },
+    {
+     "outcome": "collision",
+     "steps": 1128,
+     "path_length": 3383.999845161872,
+     "efficiency": 17.970208618355954,
+     "min_clearance": 4.654366593540374
+    },
+    {
+     "outcome": "collision",
+     "steps": 806,
+     "path_length": 2417.9999597026217,
+     "efficiency": 25.14937311641724,
+     "min_clearance": 4.144591333444048
+    },
+    {
+     "outcome": "collision",
+     "steps": 168,
+     "path_length": 503.9999771760449,
+     "efficiency": 120.65711495221362,
+     "min_clearance": 3.918636702602612
+    },
+    {
+     "outcome": "collision",
+     "steps": 1717,
+     "path_length": 5150.999817543116,
+     "efficiency": 11.805704782775228,
+     "min_clearance": 3.2237599465021773
+    },
+    {
+     "outcome": "collision",
+     "steps": 680,
+     "path_length": 2039.999909512276,
+     "efficiency": 29.809404842857003,
+     "min_clearance": 3.1289339630674817
+    },
+    {
+     "outcome": "collision",
+     "steps": 884,
+     "path_length": 2651.999881665729,
+     "efficiency": 22.930311423636795,
+     "min_clearance": 4.602201511616363
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.999819760088,
+     "efficiency": 14.882815923769094,
+     "min_clearance": 2.0555835979920127
+    },
+    {
+     "outcome": "collision",
+     "steps": 1393,
+     "path_length": 4178.999808413684,
+     "efficiency": 14.551611861673317,
+     "min_clearance": 3.1856793171717697
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999861284873,
+     "efficiency": 19.250137971613935,
+     "min_clearance": 4.126353466677846
+    },
+    {
+     "outcome": "collision",
+     "steps": 2686,
+     "path_length": 8057.999625204648,
+     "efficiency": 7.5466847866102595,
+     "min_clearance": 2.7358261327121802
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.99997478874263,
+     "efficiency": 126.68997161678452,
+     "min_clearance": 2.2398053688280015
+    },
+    {
+     "outcome": "collision",
+     "steps": 1123,
+     "path_length": 3368.999889929928,
+     "efficiency": 18.050218215741143,
+     "min_clearance": 4.105982650777593
+    },
+    {
+     "outcome": "collision",
+     "steps": 483,
+     "path_length": 1448.9999296660824,
+     "efficiency": 41.96769229385459,
+     "min_clearance": 3.7972685534982475
+    },
+    {
+     "outcome": "collision",
+     "steps": 726,
+     "path_length": 2177.999968841151,
+     "efficiency": 27.920653834719253,
+     "min_clearance": 4.580610478231506
+    },
+    {
+     "outcome": "collision",
+     "steps": 735,
+     "path_length": 2204.999901295143,
+     "efficiency": 27.578769117551722,
+     "min_clearance": 4.906904328325396
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998769829904,
+     "efficiency": 21.937657244137114,
+     "min_clearance": 4.925215863698887
+    },
+    {
+     "outcome": "collision",
+     "steps": 732,
+     "path_length": 2195.99990665133,
+     "efficiency": 27.691796797374995,
+     "min_clearance": 3.750177295301711
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.9999323999173,
+     "efficiency": 19.250137538257036,
+     "min_clearance": 3.842307963640447
+    },
+    {
+     "outcome": "collision",
+     "steps": 1728,
+     "path_length": 5183.999760514365,
+     "efficiency": 11.73055285326813,
+     "min_clearance": 3.193352976186418
+    },
+    {
+     "outcome": "collision",
+     "steps": 203,
+     "path_length": 608.9999688579824,
+     "efficiency": 99.85416468259974,
+     "min_clearance": 3.4740651076452695
+    },
+    {
+     "outcome": "collision",
+     "steps": 1482,
+     "path_length": 4445.9999289840125,
+     "efficiency": 13.677729229280372,
+     "min_clearance": 4.863848055484269
+    },
+    {
+     "outcome": "collision",
+     "steps": 235,
+     "path_length": 704.9999943909229,
+     "efficiency": 86.25699810761027,
+     "min_clearance": 2.795381860443548
+    },
+    {
+     "outcome": "collision",
+     "steps": 717,
+     "path_length": 2150.9999041297788,
+     "efficiency": 28.271123148489966,
+     "min_clearance": 3.658936580714699
+    },
+    {
+     "outcome": "collision",
+     "steps": 1051,
+     "path_length": 3152.9998515400403,
+     "efficiency": 19.286770074645162,
+     "min_clearance": 4.8272265401409555
+    },
+    {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999717356943,
+     "efficiency": 102.375734134044,
+     "min_clearance": 3.0880697981371545
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999713554857,
+     "efficiency": 31.185222602732637,
+     "min_clearance": 2.413755746332484
+    },
+    {
+     "outcome": "collision",
+     "steps": 1293,
+     "path_length": 3878.9998191113805,
+     "efficiency": 15.677026557834179,
+     "min_clearance": 4.212572913268346
+    },
+    {
+     "outcome": "collision",
+     "steps": 446,
+     "path_length": 1337.9999441433001,
+     "efficiency": 45.44931668213149,
+     "min_clearance": 3.6082853234559593
+    },
+    {
+     "outcome": "collision",
+     "steps": 852,
+     "path_length": 2555.999887883084,
+     "efficiency": 23.791543759576527,
+     "min_clearance": 3.8459908218623156
+    },
+    {
+     "outcome": "collision",
+     "steps": 921,
+     "path_length": 2762.999924276086,
+     "efficiency": 22.009115037516985,
+     "min_clearance": 2.900775719059073
+    }
+   ]
+  },
+  "td3_seed2": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 931,
+     "path_length": 2792.999866699336,
+     "efficiency": 21.77271252572865,
+     "min_clearance": 4.698975446583589
+    },
+    {
+     "outcome": "collision",
+     "steps": 798,
+     "path_length": 2393.9998865875773,
+     "efficiency": 25.4014979377145,
+     "min_clearance": 4.434252589071554
+    },
+    {
+     "outcome": "collision",
+     "steps": 285,
+     "path_length": 854.9999591458147,
+     "efficiency": 71.12419425469486,
+     "min_clearance": 4.812236811919725
+    },
+    {
+     "outcome": "collision",
+     "steps": 960,
+     "path_length": 2879.9998614030096,
+     "efficiency": 21.114995176568705,
+     "min_clearance": 3.302083871664678
+    },
+    {
+     "outcome": "collision",
+     "steps": 130,
+     "path_length": 389.9999805946426,
+     "efficiency": 155.92611848165424,
+     "min_clearance": 4.821602286694571
+    },
+    {
+     "outcome": "collision",
+     "steps": 1238,
+     "path_length": 3713.999823483702,
+     "efficiency": 16.373501904209217,
+     "min_clearance": 4.115436766338403
+    },
+    {
+     "outcome": "collision",
+     "steps": 1283,
+     "path_length": 3848.9998155532458,
+     "efficiency": 15.799216964447227,
+     "min_clearance": 4.952197033520861
+    },
+    {
+     "outcome": "collision",
+     "steps": 493,
+     "path_length": 1478.9999296773558,
+     "efficiency": 41.116420604096355,
+     "min_clearance": 4.312319720345869
+    },
+    {
+     "outcome": "collision",
+     "steps": 642,
+     "path_length": 1925.9999076326947,
+     "efficiency": 31.573824557856792,
+     "min_clearance": 4.167409723066953
+    },
+    {
+     "outcome": "collision",
+     "steps": 1575,
+     "path_length": 4724.999775441644,
+     "efficiency": 12.870092290397855,
+     "min_clearance": 4.745668238522626
+    },
+    {
+     "outcome": "collision",
+     "steps": 1760,
+     "path_length": 5279.999744684061,
+     "efficiency": 11.517270098974569,
+     "min_clearance": 3.935281349903917
+    },
+    {
+     "outcome": "collision",
+     "steps": 194,
+     "path_length": 581.9999720524099,
+     "efficiency": 104.48657405874746,
+     "min_clearance": 3.387712292112875
+    },
+    {
+     "outcome": "collision",
+     "steps": 1114,
+     "path_length": 3341.99984088997,
+     "efficiency": 18.19604610329639,
+     "min_clearance": 3.5780773998314066
+    },
+    {
+     "outcome": "collision",
+     "steps": 1481,
+     "path_length": 4442.9997874267065,
+     "efficiency": 13.686965134262064,
+     "min_clearance": 3.1495668182265733
+    },
+    {
+     "outcome": "collision",
+     "steps": 163,
+     "path_length": 488.99997522925946,
+     "efficiency": 124.3582541155197,
+     "min_clearance": 3.126127088772698
+    },
+    {
+     "outcome": "collision",
+     "steps": 1249,
+     "path_length": 3746.9998230773144,
+     "efficiency": 16.229299720676376,
+     "min_clearance": 4.225339527241431
+    },
+    {
+     "outcome": "collision",
+     "steps": 721,
+     "path_length": 2162.9998957782877,
+     "efficiency": 28.114279293648366,
+     "min_clearance": 4.624629377526035
+    },
+    {
+     "outcome": "collision",
+     "steps": 1967,
+     "path_length": 5900.999719820481,
+     "efficiency": 10.305234039884528,
+     "min_clearance": 3.9870573036208214
+    },
+    {
+     "outcome": "collision",
+     "steps": 562,
+     "path_length": 1685.9999190381243,
+     "efficiency": 36.068319159075834,
+     "min_clearance": 4.085819915851627
+    },
+    {
+     "outcome": "collision",
+     "steps": 1049,
+     "path_length": 3146.999851875309,
+     "efficiency": 19.32354179991635,
+     "min_clearance": 2.455486421661405
+    },
+    {
+     "outcome": "collision",
+     "steps": 1128,
+     "path_length": 3383.999840026469,
+     "efficiency": 17.97020864562672,
+     "min_clearance": 4.654370408237639
+    },
+    {
+     "outcome": "collision",
+     "steps": 806,
+     "path_length": 2417.9998860352225,
+     "efficiency": 25.149373882624438,
+     "min_clearance": 4.1446716227845215
+    },
+    {
+     "outcome": "collision",
+     "steps": 168,
+     "path_length": 503.9999768916237,
+     "efficiency": 120.65711502030378,
+     "min_clearance": 3.918636702602612
+    },
+    {
+     "outcome": "collision",
+     "steps": 1717,
+     "path_length": 5150.999755468065,
+     "efficiency": 11.805704925046586,
+     "min_clearance": 3.2237127578890394
+    },
+    {
+     "outcome": "collision",
+     "steps": 680,
+     "path_length": 2039.999901322013,
+     "efficiency": 29.809404962536842,
+     "min_clearance": 3.128922518975685
+    },
+    {
+     "outcome": "collision",
+     "steps": 884,
+     "path_length": 2651.999873605093,
+     "efficiency": 22.930311493332457,
+     "min_clearance": 4.602208569176119
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.9998049838287,
+     "efficiency": 14.882815977590035,
+     "min_clearance": 2.0555786526816053
+    },
+    {
+     "outcome": "collision",
+     "steps": 1393,
+     "path_length": 4178.999801244023,
+     "efficiency": 14.551611886638652,
+     "min_clearance": 3.1856399793352126
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999849839349,
+     "efficiency": 19.250138041360035,
+     "min_clearance": 4.126375257544004
+    },
+    {
+     "outcome": "collision",
+     "steps": 2686,
+     "path_length": 8057.999618007628,
+     "efficiency": 7.546684793350598,
+     "min_clearance": 2.735839804501195
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.99997545730514,
+     "efficiency": 126.68997144032583,
+     "min_clearance": 2.2398053688280015
+    },
+    {
+     "outcome": "collision",
+     "steps": 1123,
+     "path_length": 3368.999838364105,
+     "efficiency": 18.050218492017308,
+     "min_clearance": 4.10601312142397
+    },
+    {
+     "outcome": "collision",
+     "steps": 483,
+     "path_length": 1448.9999296075414,
+     "efficiency": 41.96769229555012,
+     "min_clearance": 3.797264739863139
+    },
+    {
+     "outcome": "collision",
+     "steps": 726,
+     "path_length": 2177.9998974406517,
+     "efficiency": 27.920654750030874,
+     "min_clearance": 4.58069440157135
+    },
+    {
+     "outcome": "collision",
+     "steps": 735,
+     "path_length": 2204.999895198653,
+     "efficiency": 27.57876919380283,
+     "min_clearance": 4.90692721650899
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998679023784,
+     "efficiency": 21.937657316001243,
+     "min_clearance": 4.925221134745677
+    },
+    {
+     "outcome": "collision",
+     "steps": 732,
+     "path_length": 2195.999895661888,
+     "efficiency": 27.691796935953054,
+     "min_clearance": 3.7501925540907735
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999849839349,
+     "efficiency": 19.250138041360035,
+     "min_clearance": 3.8424135247313935
+    },
+    {
+     "outcome": "collision",
+     "steps": 1728,
+     "path_length": 5183.999754485748,
+     "efficiency": 11.730552866909916,
+     "min_clearance": 3.1933567908836835
+    },
+    {
+     "outcome": "collision",
+     "steps": 203,
+     "path_length": 608.9999695265448,
+     "efficiency": 99.85416457297949,
+     "min_clearance": 3.474061311405327
+    },
+    {
+     "outcome": "collision",
+     "steps": 1482,
+     "path_length": 4445.999788249697,
+     "efficiency": 13.677729662237176,
+     "min_clearance": 4.863832796695206
+    },
+    {
+     "outcome": "collision",
+     "steps": 235,
+     "path_length": 704.999966349695,
+     "efficiency": 86.25700153846454,
+     "min_clearance": 2.7953591092014247
+    },
+    {
+     "outcome": "collision",
+     "steps": 717,
+     "path_length": 2150.999898035935,
+     "efficiency": 28.271123228582862,
+     "min_clearance": 3.658925083757005
+    },
+    {
+     "outcome": "collision",
+     "steps": 1051,
+     "path_length": 3152.9998495911923,
+     "efficiency": 19.286770086566186,
+     "min_clearance": 4.827234169535487
+    },
+    {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999717542863,
+     "efficiency": 102.37573413083967,
+     "min_clearance": 3.088066750048675
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999064593505,
+     "efficiency": 31.185223640579057,
+     "min_clearance": 2.413828225580531
+    },
+    {
+     "outcome": "collision",
+     "steps": 1293,
+     "path_length": 3878.9998156230604,
+     "efficiency": 15.677026571932268,
+     "min_clearance": 4.2125881720574085
+    },
+    {
+     "outcome": "collision",
+     "steps": 446,
+     "path_length": 1337.9999373596552,
+     "efficiency": 45.44931691255902,
+     "min_clearance": 3.6082853234559593
+    },
+    {
+     "outcome": "collision",
+     "steps": 852,
+     "path_length": 2555.9998785537437,
+     "efficiency": 23.79154384641511,
+     "min_clearance": 3.846006080651378
+    },
+    {
+     "outcome": "collision",
+     "steps": 921,
+     "path_length": 2762.9998672647134,
+     "efficiency": 22.009115491650142,
+     "min_clearance": 2.9007698857670334
+    }
+   ]
+  },
+  "td3_seed3": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 931,
+     "path_length": 2792.9998676954847,
+     "efficiency": 21.772712517963217,
+     "min_clearance": 4.698967817189057
+    },
+    {
+     "outcome": "collision",
+     "steps": 798,
+     "path_length": 2393.999887242572,
+     "efficiency": 25.401497930764688,
+     "min_clearance": 4.434267619324223
+    },
+    {
+     "outcome": "collision",
+     "steps": 285,
+     "path_length": 854.999966380745,
+     "efficiency": 71.12419365284853,
+     "min_clearance": 4.812232997222459
+    },
+    {
+     "outcome": "collision",
+     "steps": 960,
+     "path_length": 2879.999866214516,
+     "efficiency": 21.114995141292688,
+     "min_clearance": 3.3020876863619435
+    },
+    {
+     "outcome": "collision",
+     "steps": 130,
+     "path_length": 389.9999805946426,
+     "efficiency": 155.92611848165424,
+     "min_clearance": 4.821602286694571
+    },
+    {
+     "outcome": "collision",
+     "steps": 1238,
+     "path_length": 3713.9999535640563,
+     "efficiency": 16.373501330738307,
+     "min_clearance": 4.115442875326158
+    },
+    {
+     "outcome": "collision",
+     "steps": 1283,
+     "path_length": 3848.9998161411563,
+     "efficiency": 15.799216962033997,
+     "min_clearance": 4.952200848218126
+    },
+    {
+     "outcome": "collision",
+     "steps": 493,
+     "path_length": 1478.9999302209735,
+     "efficiency": 41.1164205889837,
+     "min_clearance": 4.3123120909513375
+    },
+    {
+     "outcome": "collision",
+     "steps": 642,
+     "path_length": 1925.9999049680423,
+     "efficiency": 31.573824601539695,
+     "min_clearance": 4.167413354498805
+    },
+    {
+     "outcome": "collision",
+     "steps": 1575,
+     "path_length": 4724.999779790709,
+     "efficiency": 12.870092278551743,
+     "min_clearance": 4.745660609128095
+    },
+    {
+     "outcome": "collision",
+     "steps": 1760,
+     "path_length": 5279.999752140773,
+     "efficiency": 11.517270082709233,
+     "min_clearance": 3.9352966086929797
+    },
+    {
+     "outcome": "collision",
+     "steps": 194,
+     "path_length": 581.9999723004566,
+     "efficiency": 104.48657401421559,
+     "min_clearance": 3.3877314841939956
+    },
+    {
+     "outcome": "collision",
+     "steps": 1114,
+     "path_length": 3341.999841103082,
+     "efficiency": 18.196046102136066,
+     "min_clearance": 3.578096591912527
+    },
+    {
+     "outcome": "collision",
+     "steps": 1481,
+     "path_length": 4442.9997874267065,
+     "efficiency": 13.686965134262064,
+     "min_clearance": 3.1495668182265733
+    },
+    {
+     "outcome": "collision",
+     "steps": 163,
+     "path_length": 488.9999725646071,
+     "efficiency": 124.3582547931711,
+     "min_clearance": 3.126127088772698
+    },
+    {
+     "outcome": "collision",
+     "steps": 1249,
+     "path_length": 3746.999826810234,
+     "efficiency": 16.229299704508062,
+     "min_clearance": 4.2253433419386965
+    },
+    {
+     "outcome": "collision",
+     "steps": 721,
+     "path_length": 2162.9999035704795,
+     "efficiency": 28.114279192366876,
+     "min_clearance": 4.624621930283477
+    },
+    {
+     "outcome": "collision",
+     "steps": 1967,
+     "path_length": 5900.99972889013,
+     "efficiency": 10.305234024045712,
+     "min_clearance": 3.987045612659895
+    },
+    {
+     "outcome": "collision",
+     "steps": 562,
+     "path_length": 1685.9999183695618,
+     "efficiency": 36.068319173378285,
+     "min_clearance": 4.085823729486736
+    },
+    {
+     "outcome": "collision",
+     "steps": 1049,
+     "path_length": 3146.999857474041,
+     "efficiency": 19.32354176553842,
+     "min_clearance": 2.455486421661405
+    },
+    {
+     "outcome": "collision",
+     "steps": 1128,
+     "path_length": 3383.9998367268063,
+     "efficiency": 17.97020866314907,
+     "min_clearance": 4.654366593540374
+    },
+    {
+     "outcome": "collision",
+     "steps": 806,
+     "path_length": 2417.999922871739,
+     "efficiency": 25.14937349949154,
+     "min_clearance": 4.144609556650817
+    },
+    {
+     "outcome": "collision",
+     "steps": 168,
+     "path_length": 503.9999768916237,
+     "efficiency": 120.65711502030378,
+     "min_clearance": 3.918636702602612
+    },
+    {
+     "outcome": "collision",
+     "steps": 1717,
+     "path_length": 5150.999802329905,
+     "efficiency": 11.805704817642765,
+     "min_clearance": 3.223736001444454
+    },
+    {
+     "outcome": "collision",
+     "steps": 680,
+     "path_length": 2039.999904442525,
+     "efficiency": 29.809404916938508,
+     "min_clearance": 3.1289263336729505
+    },
+    {
+     "outcome": "collision",
+     "steps": 884,
+     "path_length": 2651.9998761291004,
+     "efficiency": 22.930311471508823,
+     "min_clearance": 4.602213027551096
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.999808667718,
+     "efficiency": 14.882815964171863,
+     "min_clearance": 2.055580301105571
+    },
+    {
+     "outcome": "collision",
+     "steps": 1393,
+     "path_length": 4178.999815544386,
+     "efficiency": 14.551611836843643,
+     "min_clearance": 3.185656064030461
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.9998506344623,
+     "efficiency": 19.250138036514816,
+     "min_clearance": 4.1263678438196445
+    },
+    {
+     "outcome": "collision",
+     "steps": 2686,
+     "path_length": 8057.999615469523,
+     "efficiency": 7.546684795727649,
+     "min_clearance": 2.7358329686019305
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.9999757417264,
+     "efficiency": 126.68997136525641,
+     "min_clearance": 2.2398053688280015
+    },
+    {
+     "outcome": "collision",
+     "steps": 1123,
+     "path_length": 3368.9998476106284,
+     "efficiency": 18.050218442476858,
+     "min_clearance": 4.1060082548636645
+    },
+    {
+     "outcome": "collision",
+     "steps": 483,
+     "path_length": 1448.999926942889,
+     "efficiency": 41.967692372727015,
+     "min_clearance": 3.7972685534982475
+    },
+    {
+     "outcome": "collision",
+     "steps": 726,
+     "path_length": 2177.999975822064,
+     "efficiency": 27.920653745228133,
+     "min_clearance": 4.58060666353424
+    },
+    {
+     "outcome": "collision",
+     "steps": 735,
+     "path_length": 2204.9998925235586,
+     "efficiency": 27.578769227261255,
+     "min_clearance": 4.906911957719927
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998663345514,
+     "efficiency": 21.937657328409053,
+     "min_clearance": 4.9252126537418235
+    },
+    {
+     "outcome": "collision",
+     "steps": 732,
+     "path_length": 2195.999900094603,
+     "efficiency": 27.69179688005603,
+     "min_clearance": 3.750184924696242
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999939043386,
+     "efficiency": 19.250137497773437,
+     "min_clearance": 3.8422997025302257
+    },
+    {
+     "outcome": "collision",
+     "steps": 1728,
+     "path_length": 5183.999751186085,
+     "efficiency": 11.730552874376519,
+     "min_clearance": 3.193352976186418
+    },
+    {
+     "outcome": "collision",
+     "steps": 203,
+     "path_length": 608.9999696002202,
+     "efficiency": 99.85416456089935,
+     "min_clearance": 3.474061311405327
+    },
+    {
+     "outcome": "collision",
+     "steps": 1482,
+     "path_length": 4445.999894956541,
+     "efficiency": 13.67772933396291,
+     "min_clearance": 4.863924349429581
+    },
+    {
+     "outcome": "collision",
+     "steps": 235,
+     "path_length": 704.9999735236285,
+     "efficiency": 86.2570006607312,
+     "min_clearance": 2.795374742121544
+    },
+    {
+     "outcome": "collision",
+     "steps": 717,
+     "path_length": 2150.999904388624,
+     "efficiency": 28.2711231450879,
+     "min_clearance": 3.658926922072458
+    },
+    {
+     "outcome": "collision",
+     "steps": 1051,
+     "path_length": 3152.9998508040553,
+     "efficiency": 19.286770079147153,
+     "min_clearance": 4.827230354838221
+    },
+    {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999717497803,
+     "efficiency": 102.37573413161627,
+     "min_clearance": 3.088075962784841
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999611235326,
+     "efficiency": 31.18522276636635,
+     "min_clearance": 2.4137595610297495
+    },
+    {
+     "outcome": "collision",
+     "steps": 1293,
+     "path_length": 3878.9998165406905,
+     "efficiency": 15.677026568223654,
+     "min_clearance": 4.212580542662877
+    },
+    {
+     "outcome": "collision",
+     "steps": 446,
+     "path_length": 1337.9999415546267,
+     "efficiency": 45.4493167700638,
+     "min_clearance": 3.6082853234559593
+    },
+    {
+     "outcome": "collision",
+     "steps": 852,
+     "path_length": 2555.9998781402383,
+     "efficiency": 23.791543850264066,
+     "min_clearance": 3.845998451256847
+    },
+    {
+     "outcome": "collision",
+     "steps": 921,
+     "path_length": 2762.9998907822005,
+     "efficiency": 22.009115304317856,
+     "min_clearance": 2.900748205680319
+    }
+   ]
+  },
+  "td3_seed4": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 891,
+     "path_length": 2672.9998795023885,
+     "efficiency": 22.750163083944408,
+     "min_clearance": 3.76913363165977
+    },
+    {
+     "outcome": "collision",
+     "steps": 692,
+     "path_length": 2075.9999075294218,
+     "efficiency": 29.292478752762783,
+     "min_clearance": 4.579112210795415
+    },
+    {
+     "outcome": "collision",
+     "steps": 175,
+     "path_length": 524.9999756388186,
+     "efficiency": 115.8308304834647,
+     "min_clearance": 4.279497569689289
+    },
+    {
+     "outcome": "collision",
+     "steps": 889,
+     "path_length": 2666.999884425562,
+     "efficiency": 22.801344513421697,
+     "min_clearance": 4.013883276691999
+    },
+    {
+     "outcome": "collision",
+     "steps": 453,
+     "path_length": 1359.0000090117965,
+     "efficiency": 44.74700719557922,
+     "min_clearance": 4.794206232971745
+    },
+    {
+     "outcome": "collision",
+     "steps": 1205,
+     "path_length": 3614.9998253187227,
+     "efficiency": 16.821904874277987,
+     "min_clearance": 2.35583431707369
+    },
+    {
+     "outcome": "collision",
+     "steps": 1213,
+     "path_length": 3638.9998284390717,
+     "efficiency": 16.71096071695274,
+     "min_clearance": 4.281951313581089
+    },
+    {
+     "outcome": "collision",
+     "steps": 564,
+     "path_length": 1691.9999203698858,
+     "efficiency": 35.940417283677675,
+     "min_clearance": 4.483381753157737
+    },
+    {
+     "outcome": "collision",
+     "steps": 607,
+     "path_length": 1820.999917634613,
+     "efficiency": 33.39439095693851,
+     "min_clearance": 4.52180397665304
+    },
+    {
+     "outcome": "collision",
+     "steps": 1683,
+     "path_length": 5048.999763855473,
+     "efficiency": 12.04420400598454,
+     "min_clearance": 4.06433040484265
+    },
+    {
+     "outcome": "collision",
+     "steps": 1649,
+     "path_length": 4946.999772188713,
+     "efficiency": 12.292538100348093,
+     "min_clearance": 3.647198487707442
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.99997948070865,
+     "efficiency": 159.6094132732681,
+     "min_clearance": 2.8308761277837524
+    },
+    {
+     "outcome": "collision",
+     "steps": 1047,
+     "path_length": 3140.999850277521,
+     "efficiency": 19.360454021247456,
+     "min_clearance": 3.987783619525844
+    },
+    {
+     "outcome": "collision",
+     "steps": 1450,
+     "path_length": 4349.999830295088,
+     "efficiency": 13.979582886079763,
+     "min_clearance": 2.7561260820760163
+    },
+    {
+     "outcome": "collision",
+     "steps": 199,
+     "path_length": 596.9999730382629,
+     "efficiency": 101.86128296214443,
+     "min_clearance": 2.672216297273387
+    },
+    {
+     "outcome": "collision",
+     "steps": 1319,
+     "path_length": 3956.999809903419,
+     "efficiency": 15.36800255331004,
+     "min_clearance": 4.191383904456984
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999095125734,
+     "efficiency": 31.185223591750628,
+     "min_clearance": 2.7954143192020817
+    },
+    {
+     "outcome": "collision",
+     "steps": 2004,
+     "path_length": 6011.999714361633,
+     "efficiency": 10.11496774305821,
+     "min_clearance": 3.2789813541341717
+    },
+    {
+     "outcome": "collision",
+     "steps": 528,
+     "path_length": 1583.9999215681692,
+     "efficiency": 38.3909003744392,
+     "min_clearance": 4.279718985051766
+    },
+    {
+     "outcome": "collision",
+     "steps": 1120,
+     "path_length": 3359.9998730913217,
+     "efficiency": 18.098567106817953,
+     "min_clearance": 4.6235778049740475
+    },
+    {
+     "outcome": "collision",
+     "steps": 1197,
+     "path_length": 3590.9998353379488,
+     "efficiency": 16.93433193274434,
+     "min_clearance": 3.340418585438087
+    },
+    {
+     "outcome": "collision",
+     "steps": 170,
+     "path_length": 509.99998069691793,
+     "efficiency": 119.23761859548358,
+     "min_clearance": 4.18985024235605
+    },
+    {
+     "outcome": "collision",
+     "steps": 280,
+     "path_length": 839.9999723546172,
+     "efficiency": 72.39426807548851,
+     "min_clearance": 4.7069911941991975
+    },
+    {
+     "outcome": "collision",
+     "steps": 1648,
+     "path_length": 4943.9997703935205,
+     "efficiency": 12.299997169539267,
+     "min_clearance": 4.802995330232896
+    },
+    {
+     "outcome": "collision",
+     "steps": 610,
+     "path_length": 1829.9999223032198,
+     "efficiency": 33.23015615514712,
+     "min_clearance": 3.554077563085798
+    },
+    {
+     "outcome": "collision",
+     "steps": 809,
+     "path_length": 2426.999894334078,
+     "efficiency": 25.056112826378392,
+     "min_clearance": 3.2416104542820676
+    },
+    {
+     "outcome": "collision",
+     "steps": 1253,
+     "path_length": 3758.9998301644237,
+     "efficiency": 16.177490271230774,
+     "min_clearance": 4.412245032723632
+    },
+    {
+     "outcome": "collision",
+     "steps": 1287,
+     "path_length": 3860.9998171224556,
+     "efficiency": 15.750112940270673,
+     "min_clearance": 3.07580860130538
+    },
+    {
+     "outcome": "collision",
+     "steps": 1166,
+     "path_length": 3497.9998324255803,
+     "efficiency": 17.38455863214706,
+     "min_clearance": 4.274479456570926
+    },
+    {
+     "outcome": "collision",
+     "steps": 2764,
+     "path_length": 8291.9996195284,
+     "efficiency": 7.333717555754262,
+     "min_clearance": 4.770690533762149
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.9999757082834,
+     "efficiency": 126.68997137408327,
+     "min_clearance": 2.2398053688280015
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999850441508,
+     "efficiency": 19.250138037690633,
+     "min_clearance": 4.809428795951584
+    },
+    {
+     "outcome": "collision",
+     "steps": 482,
+     "path_length": 1445.9999297749914,
+     "efficiency": 42.054762195946836,
+     "min_clearance": 3.096645753086593
+    },
+    {
+     "outcome": "collision",
+     "steps": 763,
+     "path_length": 2288.999888244555,
+     "efficiency": 26.56670430363344,
+     "min_clearance": 4.136710659623986
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998620913602,
+     "efficiency": 21.937657361989746,
+     "min_clearance": 4.062381533905665
+    },
+    {
+     "outcome": "collision",
+     "steps": 962,
+     "path_length": 2885.9998620695173,
+     "efficiency": 21.071097050724074,
+     "min_clearance": 4.446805086683099
+    },
+    {
+     "outcome": "collision",
+     "steps": 1288,
+     "path_length": 3863.9998937171376,
+     "efficiency": 15.737884279169378,
+     "min_clearance": 3.2055166654830876
+    },
+    {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999789346933,
+     "efficiency": 18.13094424608888,
+     "min_clearance": 4.141997258638464
+    },
+    {
+     "outcome": "collision",
+     "steps": 1798,
+     "path_length": 5393.999749387018,
+     "efficiency": 11.273857250170202,
+     "min_clearance": 3.094265609934368
+    },
+    {
+     "outcome": "collision",
+     "steps": 169,
+     "path_length": 506.99998151998045,
+     "efficiency": 119.9431664666571,
+     "min_clearance": 4.126637430559509
+    },
+    {
+     "outcome": "collision",
+     "steps": 414,
+     "path_length": 1241.9999408203712,
+     "efficiency": 48.96230763253968,
+     "min_clearance": 3.344884893080766
+    },
+    {
+     "outcome": "collision",
+     "steps": 129,
+     "path_length": 386.9999827533278,
+     "efficiency": 157.13484726639868,
+     "min_clearance": 3.6091538664259004
+    },
+    {
+     "outcome": "collision",
+     "steps": 651,
+     "path_length": 1952.9999082736108,
+     "efficiency": 31.13732004001896,
+     "min_clearance": 2.9050859199713996
+    },
+    {
+     "outcome": "collision",
+     "steps": 1117,
+     "path_length": 3350.9998424910777,
+     "efficiency": 18.147175780479017,
+     "min_clearance": 3.3104789970678397
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.99998221903644,
+     "efficiency": 159.60941212612133,
+     "min_clearance": 2.1795836780112468
+    },
+    {
+     "outcome": "collision",
+     "steps": 177,
+     "path_length": 530.9999725664024,
+     "efficiency": 114.5220081427378,
+     "min_clearance": 4.515529875011741
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.9998711560856,
+     "efficiency": 14.882815736564691,
+     "min_clearance": 3.924685474289305
+    },
+    {
+     "outcome": "collision",
+     "steps": 335,
+     "path_length": 1004.9999501047662,
+     "efficiency": 60.508642986204954,
+     "min_clearance": 3.7423780468952876
+    },
+    {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.9998701678805,
+     "efficiency": 21.985244409412136,
+     "min_clearance": 3.454836186935765
+    },
+    {
+     "outcome": "collision",
+     "steps": 410,
+     "path_length": 1229.9999407341802,
+     "efficiency": 49.43998870906061,
+     "min_clearance": 3.036430185965916
+    }
+   ]
+  },
+  "td3_seed5": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 891,
+     "path_length": 2672.999872402051,
+     "efficiency": 22.750163144376074,
+     "min_clearance": 3.769141261054301
+    },
+    {
+     "outcome": "collision",
+     "steps": 692,
+     "path_length": 2075.999901364603,
+     "efficiency": 29.292478839748732,
+     "min_clearance": 4.5791198401899464
+    },
+    {
+     "outcome": "collision",
+     "steps": 175,
+     "path_length": 524.9999750366599,
+     "efficiency": 115.83083061631908,
+     "min_clearance": 4.27950513061308
+    },
+    {
+     "outcome": "collision",
+     "steps": 889,
+     "path_length": 2666.999874401747,
+     "efficiency": 22.80134459911966,
+     "min_clearance": 4.013883276691999
+    },
+    {
+     "outcome": "collision",
+     "steps": 453,
+     "path_length": 1358.9999353800704,
+     "efficiency": 44.74700962000861,
+     "min_clearance": 4.794256161473899
+    },
+    {
+     "outcome": "collision",
+     "steps": 1205,
+     "path_length": 3614.9998279833753,
+     "efficiency": 16.82190486187839,
+     "min_clearance": 2.3558344070875203
+    },
+    {
+     "outcome": "collision",
+     "steps": 1213,
+     "path_length": 3638.99982702849,
+     "efficiency": 16.710960723430393,
+     "min_clearance": 4.281958942975621
+    },
+    {
+     "outcome": "collision",
+     "steps": 564,
+     "path_length": 1691.9999192268115,
+     "efficiency": 35.94041730795815,
+     "min_clearance": 4.483381753157737
+    },
+    {
+     "outcome": "collision",
+     "steps": 607,
+     "path_length": 1820.9999137127838,
+     "efficiency": 33.39439102885894,
+     "min_clearance": 4.5218032602717635
+    },
+    {
+     "outcome": "collision",
+     "steps": 1683,
+     "path_length": 5048.999758526098,
+     "efficiency": 12.04420401869757,
+     "min_clearance": 4.06433040484265
+    },
+    {
+     "outcome": "collision",
+     "steps": 1649,
+     "path_length": 4946.999766050167,
+     "efficiency": 12.292538115601442,
+     "min_clearance": 3.647209931799239
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.83087803513239
+    },
+    {
+     "outcome": "collision",
+     "steps": 1047,
+     "path_length": 3140.999850982921,
+     "efficiency": 19.36045401689952,
+     "min_clearance": 3.9877855268744815
+    },
+    {
+     "outcome": "collision",
+     "steps": 1450,
+     "path_length": 4349.999792405055,
+     "efficiency": 13.979583007846863,
+     "min_clearance": 2.756280467235202
+    },
+    {
+     "outcome": "collision",
+     "steps": 199,
+     "path_length": 596.9999719132757,
+     "efficiency": 101.86128315409191,
+     "min_clearance": 2.672197223787059
+    },
+    {
+     "outcome": "collision",
+     "steps": 1319,
+     "path_length": 3956.9998122372617,
+     "efficiency": 15.368002544245977,
+     "min_clearance": 4.191319054603468
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999064593505,
+     "efficiency": 31.185223640579057,
+     "min_clearance": 2.7954181328371837
+    },
+    {
+     "outcome": "collision",
+     "steps": 2004,
+     "path_length": 6011.999713929079,
+     "efficiency": 10.114967743785966,
+     "min_clearance": 3.278979604774668
+    },
+    {
+     "outcome": "collision",
+     "steps": 528,
+     "path_length": 1583.9999255671908,
+     "efficiency": 38.39090027751619,
+     "min_clearance": 4.2797267023358145
+    },
+    {
+     "outcome": "collision",
+     "steps": 1120,
+     "path_length": 3359.999838592151,
+     "efficiency": 18.098567292646997,
+     "min_clearance": 4.623554916790454
+    },
+    {
+     "outcome": "collision",
+     "steps": 1197,
+     "path_length": 3590.999829603358,
+     "efficiency": 16.934331959787354,
+     "min_clearance": 3.3403937899058604
+    },
+    {
+     "outcome": "collision",
+     "steps": 170,
+     "path_length": 509.9999748919279,
+     "efficiency": 119.23761995268598,
+     "min_clearance": 4.18985024235605
+    },
+    {
+     "outcome": "collision",
+     "steps": 280,
+     "path_length": 839.9999583491608,
+     "efficiency": 72.39426928252995,
+     "min_clearance": 4.706987379501932
+    },
+    {
+     "outcome": "collision",
+     "steps": 1648,
+     "path_length": 4943.999765891177,
+     "efficiency": 12.299997180740483,
+     "min_clearance": 4.803006266068429
+    },
+    {
+     "outcome": "collision",
+     "steps": 610,
+     "path_length": 1829.9999121620654,
+     "efficiency": 33.23015633929584,
+     "min_clearance": 3.554085192480329
+    },
+    {
+     "outcome": "collision",
+     "steps": 809,
+     "path_length": 2426.9998858071767,
+     "efficiency": 25.056112914409297,
+     "min_clearance": 3.2416142689793332
+    },
+    {
+     "outcome": "collision",
+     "steps": 1253,
+     "path_length": 3758.999821325775,
+     "efficiency": 16.177490309269388,
+     "min_clearance": 4.412275550301757
+    },
+    {
+     "outcome": "collision",
+     "steps": 1287,
+     "path_length": 3860.9998167666326,
+     "efficiency": 15.750112941722175,
+     "min_clearance": 3.07580860130538
+    },
+    {
+     "outcome": "collision",
+     "steps": 1166,
+     "path_length": 3497.9998347107894,
+     "efficiency": 17.384558620789896,
+     "min_clearance": 4.27448533691192
+    },
+    {
+     "outcome": "collision",
+     "steps": 2764,
+     "path_length": 8291.9996055775,
+     "efficiency": 7.333717568092898,
+     "min_clearance": 4.770690533762149
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.99997545730514,
+     "efficiency": 126.68997144032583,
+     "min_clearance": 2.239801554130736
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999849839349,
+     "efficiency": 19.250138041360035,
+     "min_clearance": 4.809436468228713
+    },
+    {
+     "outcome": "collision",
+     "steps": 482,
+     "path_length": 1445.9999304435537,
+     "efficiency": 42.05476217650269,
+     "min_clearance": 3.0966458431004233
+    },
+    {
+     "outcome": "collision",
+     "steps": 763,
+     "path_length": 2288.999889688538,
+     "efficiency": 26.566704286874213,
+     "min_clearance": 4.136706844926721
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998679023784,
+     "efficiency": 21.937657316001243,
+     "min_clearance": 4.062385859675465
+    },
+    {
+     "outcome": "collision",
+     "steps": 962,
+     "path_length": 2885.9998620109764,
+     "efficiency": 21.07109705115149,
+     "min_clearance": 4.446803337323599
+    },
+    {
+     "outcome": "collision",
+     "steps": 1288,
+     "path_length": 3863.9998172156097,
+     "efficiency": 15.7378845907564,
+     "min_clearance": 3.2056120963746273
+    },
+    {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999840591847,
+     "efficiency": 18.130943969070778,
+     "min_clearance": 4.141927700502234
+    },
+    {
+     "outcome": "collision",
+     "steps": 1798,
+     "path_length": 5393.999743645695,
+     "efficiency": 11.27385726216999,
+     "min_clearance": 3.0942484437966726
+    },
+    {
+     "outcome": "collision",
+     "steps": 169,
+     "path_length": 506.9999770506131,
+     "efficiency": 119.94316752399457,
+     "min_clearance": 4.12663082331003
+    },
+    {
+     "outcome": "collision",
+     "steps": 414,
+     "path_length": 1241.9999408203712,
+     "efficiency": 48.96230763253968,
+     "min_clearance": 3.344884893080766
+    },
+    {
+     "outcome": "collision",
+     "steps": 129,
+     "path_length": 386.9999827533278,
+     "efficiency": 157.13484726639868,
+     "min_clearance": 3.6091538664259004
+    },
+    {
+     "outcome": "collision",
+     "steps": 651,
+     "path_length": 1952.99990661834,
+     "efficiency": 31.137320066409487,
+     "min_clearance": 2.905097495897468
+    },
+    {
+     "outcome": "collision",
+     "steps": 1117,
+     "path_length": 3350.9998410087874,
+     "efficiency": 18.14717578850629,
+     "min_clearance": 3.3104694603246756
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.1795836780112468
+    },
+    {
+     "outcome": "collision",
+     "steps": 177,
+     "path_length": 530.9999746083595,
+     "efficiency": 114.52200770234414,
+     "min_clearance": 4.515537912772699
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.9998049838287,
+     "efficiency": 14.882815977590035,
+     "min_clearance": 3.9246778448947737
+    },
+    {
+     "outcome": "collision",
+     "steps": 335,
+     "path_length": 1004.9999522258008,
+     "efficiency": 60.50864285850253,
+     "min_clearance": 3.742385607819085
+    },
+    {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.4548285575412336
+    },
+    {
+     "outcome": "collision",
+     "steps": 410,
+     "path_length": 1229.9999406756392,
+     "efficiency": 49.43998871141367,
+     "min_clearance": 3.036428369054541
+    }
+   ]
+  },
+  "td3_seed6": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 891,
+     "path_length": 2672.9998724757265,
+     "efficiency": 22.750163143749013,
+     "min_clearance": 3.769141261054301
+    },
+    {
+     "outcome": "collision",
+     "steps": 692,
+     "path_length": 2075.999901364603,
+     "efficiency": 29.292478839748732,
+     "min_clearance": 4.5791198401899464
+    },
+    {
+     "outcome": "collision",
+     "steps": 175,
+     "path_length": 524.9999750366599,
+     "efficiency": 115.83083061631908,
+     "min_clearance": 4.27950513061308
+    },
+    {
+     "outcome": "collision",
+     "steps": 889,
+     "path_length": 2666.9998737331844,
+     "efficiency": 22.801344604835496,
+     "min_clearance": 4.013883276691999
+    },
+    {
+     "outcome": "collision",
+     "steps": 453,
+     "path_length": 1358.9999375150107,
+     "efficiency": 44.74700954971266,
+     "min_clearance": 4.794256161473899
+    },
+    {
+     "outcome": "collision",
+     "steps": 1205,
+     "path_length": 3614.9998279833753,
+     "efficiency": 16.82190486187839,
+     "min_clearance": 2.3558344070875203
+    },
+    {
+     "outcome": "collision",
+     "steps": 1213,
+     "path_length": 3638.99982702849,
+     "efficiency": 16.710960723430393,
+     "min_clearance": 4.281958942975621
+    },
+    {
+     "outcome": "collision",
+     "steps": 564,
+     "path_length": 1691.9999192268115,
+     "efficiency": 35.94041730795815,
+     "min_clearance": 4.483381753157737
+    },
+    {
+     "outcome": "collision",
+     "steps": 607,
+     "path_length": 1820.9999137127838,
+     "efficiency": 33.39439102885894,
+     "min_clearance": 4.5218032602717635
+    },
+    {
+     "outcome": "collision",
+     "steps": 1683,
+     "path_length": 5048.999758526098,
+     "efficiency": 12.04420401869757,
+     "min_clearance": 4.06433040484265
+    },
+    {
+     "outcome": "collision",
+     "steps": 1649,
+     "path_length": 4946.999766334588,
+     "efficiency": 12.292538114894699,
+     "min_clearance": 3.647209931799239
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.83087803513239
+    },
+    {
+     "outcome": "collision",
+     "steps": 1047,
+     "path_length": 3140.999850982921,
+     "efficiency": 19.36045401689952,
+     "min_clearance": 3.9877855268744815
+    },
+    {
+     "outcome": "collision",
+     "steps": 1450,
+     "path_length": 4349.999792405055,
+     "efficiency": 13.979583007846863,
+     "min_clearance": 2.756280467235202
+    },
+    {
+     "outcome": "collision",
+     "steps": 199,
+     "path_length": 596.9999712447132,
+     "efficiency": 101.86128326816333,
+     "min_clearance": 2.6722010384843244
+    },
+    {
+     "outcome": "collision",
+     "steps": 1319,
+     "path_length": 3956.9998115686994,
+     "efficiency": 15.368002546842506,
+     "min_clearance": 4.191322869300734
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999064593505,
+     "efficiency": 31.185223640579057,
+     "min_clearance": 2.7954181328371837
+    },
+    {
+     "outcome": "collision",
+     "steps": 2004,
+     "path_length": 6011.999713929079,
+     "efficiency": 10.114967743785966,
+     "min_clearance": 3.278979604774668
+    },
+    {
+     "outcome": "collision",
+     "steps": 528,
+     "path_length": 1583.9999255671908,
+     "efficiency": 38.39090027751619,
+     "min_clearance": 4.2797267023358145
+    },
+    {
+     "outcome": "collision",
+     "steps": 1120,
+     "path_length": 3359.999838947974,
+     "efficiency": 18.098567290730365,
+     "min_clearance": 4.623554916790454
+    },
+    {
+     "outcome": "collision",
+     "steps": 1197,
+     "path_length": 3590.9998289347955,
+     "efficiency": 16.934331962940142,
+     "min_clearance": 3.340397604603126
+    },
+    {
+     "outcome": "collision",
+     "steps": 170,
+     "path_length": 509.9999748919279,
+     "efficiency": 119.23761995268598,
+     "min_clearance": 4.18985024235605
+    },
+    {
+     "outcome": "collision",
+     "steps": 280,
+     "path_length": 839.9999576805983,
+     "efficiency": 72.39426934014911,
+     "min_clearance": 4.7069911941991975
+    },
+    {
+     "outcome": "collision",
+     "steps": 1648,
+     "path_length": 4943.9997662470005,
+     "efficiency": 12.299997179855243,
+     "min_clearance": 4.803006266068429
+    },
+    {
+     "outcome": "collision",
+     "steps": 610,
+     "path_length": 1829.9999121620654,
+     "efficiency": 33.23015633929584,
+     "min_clearance": 3.554085192480329
+    },
+    {
+     "outcome": "collision",
+     "steps": 809,
+     "path_length": 2426.9998858071767,
+     "efficiency": 25.056112914409297,
+     "min_clearance": 3.2416142689793332
+    },
+    {
+     "outcome": "collision",
+     "steps": 1253,
+     "path_length": 3758.9998213994504,
+     "efficiency": 16.177490308952315,
+     "min_clearance": 4.412275550301757
+    },
+    {
+     "outcome": "collision",
+     "steps": 1287,
+     "path_length": 3860.9998167666326,
+     "efficiency": 15.750112941722175,
+     "min_clearance": 3.07580860130538
+    },
+    {
+     "outcome": "collision",
+     "steps": 1166,
+     "path_length": 3497.9998347107894,
+     "efficiency": 17.384558620789896,
+     "min_clearance": 4.27448533691192
+    },
+    {
+     "outcome": "collision",
+     "steps": 2764,
+     "path_length": 8291.999605933323,
+     "efficiency": 7.333717567778196,
+     "min_clearance": 4.770690533762149
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.99997545730514,
+     "efficiency": 126.68997144032583,
+     "min_clearance": 2.239801554130736
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999849839349,
+     "efficiency": 19.250138041360035,
+     "min_clearance": 4.809436468228713
+    },
+    {
+     "outcome": "collision",
+     "steps": 482,
+     "path_length": 1445.9999304435537,
+     "efficiency": 42.05476217650269,
+     "min_clearance": 3.0966458431004233
+    },
+    {
+     "outcome": "collision",
+     "steps": 763,
+     "path_length": 2288.999889688538,
+     "efficiency": 26.566704286874213,
+     "min_clearance": 4.136706844926721
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998679023784,
+     "efficiency": 21.937657316001243,
+     "min_clearance": 4.062385859675465
+    },
+    {
+     "outcome": "collision",
+     "steps": 962,
+     "path_length": 2885.9998620109764,
+     "efficiency": 21.07109705115149,
+     "min_clearance": 4.446803337323599
+    },
+    {
+     "outcome": "collision",
+     "steps": 1288,
+     "path_length": 3863.9998172156097,
+     "efficiency": 15.7378845907564,
+     "min_clearance": 3.2056120963746273
+    },
+    {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999840591847,
+     "efficiency": 18.130943969070778,
+     "min_clearance": 4.141927700502234
+    },
+    {
+     "outcome": "collision",
+     "steps": 1798,
+     "path_length": 5393.999742977132,
+     "efficiency": 11.273857263567336,
+     "min_clearance": 3.0942522584939383
+    },
+    {
+     "outcome": "collision",
+     "steps": 169,
+     "path_length": 506.9999749725296,
+     "efficiency": 119.94316801561573,
+     "min_clearance": 4.126628915961396
+    },
+    {
+     "outcome": "collision",
+     "steps": 414,
+     "path_length": 1241.9999408203712,
+     "efficiency": 48.96230763253968,
+     "min_clearance": 3.344884893080766
+    },
+    {
+     "outcome": "collision",
+     "steps": 129,
+     "path_length": 386.9999827533278,
+     "efficiency": 157.13484726639868,
+     "min_clearance": 3.6091538664259004
+    },
+    {
+     "outcome": "collision",
+     "steps": 651,
+     "path_length": 1952.99990661834,
+     "efficiency": 31.137320066409487,
+     "min_clearance": 2.905097495897468
+    },
+    {
+     "outcome": "collision",
+     "steps": 1117,
+     "path_length": 3350.9998413828002,
+     "efficiency": 18.14717578648084,
+     "min_clearance": 3.3104694603246756
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.1795836780112468
+    },
+    {
+     "outcome": "collision",
+     "steps": 177,
+     "path_length": 530.9999746083595,
+     "efficiency": 114.52200770234414,
+     "min_clearance": 4.515537912772699
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.9998049838287,
+     "efficiency": 14.882815977590035,
+     "min_clearance": 3.9246778448947737
+    },
+    {
+     "outcome": "collision",
+     "steps": 335,
+     "path_length": 1004.9999522258008,
+     "efficiency": 60.50864285850253,
+     "min_clearance": 3.742385607819085
+    },
+    {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.4548285575412336
+    },
+    {
+     "outcome": "collision",
+     "steps": 410,
+     "path_length": 1229.9999406756392,
+     "efficiency": 49.43998871141367,
+     "min_clearance": 3.036428369054541
+    }
+   ]
+  },
+  "td3_seed7": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 891,
+     "path_length": 2672.999872402051,
+     "efficiency": 22.750163144376074,
+     "min_clearance": 3.769141261054301
+    },
+    {
+     "outcome": "collision",
+     "steps": 692,
+     "path_length": 2075.999901364603,
+     "efficiency": 29.292478839748732,
+     "min_clearance": 4.5791198401899464
+    },
+    {
+     "outcome": "collision",
+     "steps": 175,
+     "path_length": 524.9999750366599,
+     "efficiency": 115.83083061631908,
+     "min_clearance": 4.27950513061308
+    },
+    {
+     "outcome": "collision",
+     "steps": 889,
+     "path_length": 2666.99987475757,
+     "efficiency": 22.801344596077573,
+     "min_clearance": 4.013883276691999
+    },
+    {
+     "outcome": "collision",
+     "steps": 453,
+     "path_length": 1358.9999353800704,
+     "efficiency": 44.74700962000861,
+     "min_clearance": 4.794256161473899
+    },
+    {
+     "outcome": "collision",
+     "steps": 1205,
+     "path_length": 3614.9998279833753,
+     "efficiency": 16.82190486187839,
+     "min_clearance": 2.3558344070875203
+    },
+    {
+     "outcome": "collision",
+     "steps": 1213,
+     "path_length": 3638.99982702849,
+     "efficiency": 16.710960723430393,
+     "min_clearance": 4.281958942975621
+    },
+    {
+     "outcome": "collision",
+     "steps": 564,
+     "path_length": 1691.9999192268115,
+     "efficiency": 35.94041730795815,
+     "min_clearance": 4.483381753157737
+    },
+    {
+     "outcome": "collision",
+     "steps": 607,
+     "path_length": 1820.9999137127838,
+     "efficiency": 33.39439102885894,
+     "min_clearance": 4.5218032602717635
+    },
+    {
+     "outcome": "collision",
+     "steps": 1683,
+     "path_length": 5048.999758526098,
+     "efficiency": 12.04420401869757,
+     "min_clearance": 4.06433040484265
+    },
+    {
+     "outcome": "collision",
+     "steps": 1649,
+     "path_length": 4946.999766050167,
+     "efficiency": 12.292538115601442,
+     "min_clearance": 3.647209931799239
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.83087803513239
+    },
+    {
+     "outcome": "collision",
+     "steps": 1047,
+     "path_length": 3140.999850982921,
+     "efficiency": 19.36045401689952,
+     "min_clearance": 3.9877855268744815
+    },
+    {
+     "outcome": "collision",
+     "steps": 1450,
+     "path_length": 4349.999792405055,
+     "efficiency": 13.979583007846863,
+     "min_clearance": 2.756280467235202
+    },
+    {
+     "outcome": "collision",
+     "steps": 199,
+     "path_length": 596.9999692486233,
+     "efficiency": 101.86128360874002,
+     "min_clearance": 2.6722010384843244
+    },
+    {
+     "outcome": "collision",
+     "steps": 1319,
+     "path_length": 3956.999812310937,
+     "efficiency": 15.36800254395984,
+     "min_clearance": 4.191319054603468
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999064593505,
+     "efficiency": 31.185223640579057,
+     "min_clearance": 2.7954181328371837
+    },
+    {
+     "outcome": "collision",
+     "steps": 2004,
+     "path_length": 6011.999713929079,
+     "efficiency": 10.114967743785966,
+     "min_clearance": 3.278979604774668
+    },
+    {
+     "outcome": "collision",
+     "steps": 528,
+     "path_length": 1583.9999255671908,
+     "efficiency": 38.39090027751619,
+     "min_clearance": 4.2797267023358145
+    },
+    {
+     "outcome": "collision",
+     "steps": 1120,
+     "path_length": 3359.999838592151,
+     "efficiency": 18.098567292646997,
+     "min_clearance": 4.623554916790454
+    },
+    {
+     "outcome": "collision",
+     "steps": 1197,
+     "path_length": 3590.999828481783,
+     "efficiency": 16.934331965076446,
+     "min_clearance": 3.3403956972544933
+    },
+    {
+     "outcome": "collision",
+     "steps": 170,
+     "path_length": 509.9999748919279,
+     "efficiency": 119.23761995268598,
+     "min_clearance": 4.18985024235605
+    },
+    {
+     "outcome": "collision",
+     "steps": 280,
+     "path_length": 839.9999556845084,
+     "efficiency": 72.39426951217943,
+     "min_clearance": 4.7069911941991975
+    },
+    {
+     "outcome": "collision",
+     "steps": 1648,
+     "path_length": 4943.999765891177,
+     "efficiency": 12.299997180740483,
+     "min_clearance": 4.803006266068429
+    },
+    {
+     "outcome": "collision",
+     "steps": 610,
+     "path_length": 1829.9999121620654,
+     "efficiency": 33.23015633929584,
+     "min_clearance": 3.554085192480329
+    },
+    {
+     "outcome": "collision",
+     "steps": 809,
+     "path_length": 2426.9998858071767,
+     "efficiency": 25.056112914409297,
+     "min_clearance": 3.2416142689793332
+    },
+    {
+     "outcome": "collision",
+     "steps": 1253,
+     "path_length": 3758.999821325775,
+     "efficiency": 16.177490309269388,
+     "min_clearance": 4.412275550301757
+    },
+    {
+     "outcome": "collision",
+     "steps": 1287,
+     "path_length": 3860.9998167666326,
+     "efficiency": 15.750112941722175,
+     "min_clearance": 3.07580860130538
+    },
+    {
+     "outcome": "collision",
+     "steps": 1166,
+     "path_length": 3497.9998347107894,
+     "efficiency": 17.384558620789896,
+     "min_clearance": 4.27448533691192
+    },
+    {
+     "outcome": "collision",
+     "steps": 2764,
+     "path_length": 8291.9996055775,
+     "efficiency": 7.333717568092898,
+     "min_clearance": 4.770690533762149
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.99997545730514,
+     "efficiency": 126.68997144032583,
+     "min_clearance": 2.239801554130736
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999849839349,
+     "efficiency": 19.250138041360035,
+     "min_clearance": 4.809436468228713
+    },
+    {
+     "outcome": "collision",
+     "steps": 482,
+     "path_length": 1445.9999304435537,
+     "efficiency": 42.05476217650269,
+     "min_clearance": 3.0966458431004233
+    },
+    {
+     "outcome": "collision",
+     "steps": 763,
+     "path_length": 2288.999889688538,
+     "efficiency": 26.566704286874213,
+     "min_clearance": 4.136706844926721
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998679023784,
+     "efficiency": 21.937657316001243,
+     "min_clearance": 4.062385859675465
+    },
+    {
+     "outcome": "collision",
+     "steps": 962,
+     "path_length": 2885.9998620109764,
+     "efficiency": 21.07109705115149,
+     "min_clearance": 4.446803337323599
+    },
+    {
+     "outcome": "collision",
+     "steps": 1288,
+     "path_length": 3863.9998172156097,
+     "efficiency": 15.7378845907564,
+     "min_clearance": 3.2056120963746273
+    },
+    {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999840591847,
+     "efficiency": 18.130943969070778,
+     "min_clearance": 4.141927700502234
+    },
+    {
+     "outcome": "collision",
+     "steps": 1798,
+     "path_length": 5393.99974252412,
+     "efficiency": 11.273857264514165,
+     "min_clearance": 3.0942503511453054
+    },
+    {
+     "outcome": "collision",
+     "steps": 169,
+     "path_length": 506.9999773350343,
+     "efficiency": 119.94316745670781,
+     "min_clearance": 4.12663082331003
+    },
+    {
+     "outcome": "collision",
+     "steps": 414,
+     "path_length": 1241.9999408203712,
+     "efficiency": 48.96230763253968,
+     "min_clearance": 3.344884893080766
+    },
+    {
+     "outcome": "collision",
+     "steps": 129,
+     "path_length": 386.9999827533278,
+     "efficiency": 157.13484726639868,
+     "min_clearance": 3.6091538664259004
+    },
+    {
+     "outcome": "collision",
+     "steps": 651,
+     "path_length": 1952.99990661834,
+     "efficiency": 31.137320066409487,
+     "min_clearance": 2.905097495897468
+    },
+    {
+     "outcome": "collision",
+     "steps": 1117,
+     "path_length": 3350.9998410087874,
+     "efficiency": 18.14717578850629,
+     "min_clearance": 3.3104694603246756
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.1795836780112468
+    },
+    {
+     "outcome": "collision",
+     "steps": 177,
+     "path_length": 530.9999746083595,
+     "efficiency": 114.52200770234414,
+     "min_clearance": 4.515537912772699
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.9998049838287,
+     "efficiency": 14.882815977590035,
+     "min_clearance": 3.9246778448947737
+    },
+    {
+     "outcome": "collision",
+     "steps": 335,
+     "path_length": 1004.9999522258008,
+     "efficiency": 60.50864285850253,
+     "min_clearance": 3.742385607819085
+    },
+    {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.4548285575412336
+    },
+    {
+     "outcome": "collision",
+     "steps": 410,
+     "path_length": 1229.9999406756392,
+     "efficiency": 49.43998871141367,
+     "min_clearance": 3.036428369054541
+    }
+   ]
+  },
+  "td3_seed8": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 891,
+     "path_length": 2672.999872402051,
+     "efficiency": 22.750163144376074,
+     "min_clearance": 3.769141261054301
+    },
+    {
+     "outcome": "collision",
+     "steps": 692,
+     "path_length": 2075.999901364603,
+     "efficiency": 29.292478839748732,
+     "min_clearance": 4.5791198401899464
+    },
+    {
+     "outcome": "collision",
+     "steps": 175,
+     "path_length": 524.9999750366599,
+     "efficiency": 115.83083061631908,
+     "min_clearance": 4.27950513061308
+    },
+    {
+     "outcome": "collision",
+     "steps": 889,
+     "path_length": 2666.9998746861684,
+     "efficiency": 22.80134459668802,
+     "min_clearance": 4.013883276691999
+    },
+    {
+     "outcome": "collision",
+     "steps": 453,
+     "path_length": 1358.9999353800704,
+     "efficiency": 44.74700962000861,
+     "min_clearance": 4.794256161473899
+    },
+    {
+     "outcome": "collision",
+     "steps": 1205,
+     "path_length": 3614.9998279833753,
+     "efficiency": 16.82190486187839,
+     "min_clearance": 2.3558344070875203
+    },
+    {
+     "outcome": "collision",
+     "steps": 1213,
+     "path_length": 3638.99982702849,
+     "efficiency": 16.710960723430393,
+     "min_clearance": 4.281958942975621
+    },
+    {
+     "outcome": "collision",
+     "steps": 564,
+     "path_length": 1691.9999192268115,
+     "efficiency": 35.94041730795815,
+     "min_clearance": 4.483381753157737
+    },
+    {
+     "outcome": "collision",
+     "steps": 607,
+     "path_length": 1820.9999137127838,
+     "efficiency": 33.39439102885894,
+     "min_clearance": 4.5218032602717635
+    },
+    {
+     "outcome": "collision",
+     "steps": 1683,
+     "path_length": 5048.999758526098,
+     "efficiency": 12.04420401869757,
+     "min_clearance": 4.06433040484265
+    },
+    {
+     "outcome": "collision",
+     "steps": 1649,
+     "path_length": 4946.999766050167,
+     "efficiency": 12.292538115601442,
+     "min_clearance": 3.647209931799239
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.83087803513239
+    },
+    {
+     "outcome": "collision",
+     "steps": 1047,
+     "path_length": 3140.999850982921,
+     "efficiency": 19.36045401689952,
+     "min_clearance": 3.9877855268744815
+    },
+    {
+     "outcome": "collision",
+     "steps": 1450,
+     "path_length": 4349.999792405055,
+     "efficiency": 13.979583007846863,
+     "min_clearance": 2.756280467235202
+    },
+    {
+     "outcome": "collision",
+     "steps": 199,
+     "path_length": 596.9999692486233,
+     "efficiency": 101.86128360874002,
+     "min_clearance": 2.6722010384843244
+    },
+    {
+     "outcome": "collision",
+     "steps": 1319,
+     "path_length": 3956.9998122372617,
+     "efficiency": 15.368002544245977,
+     "min_clearance": 4.191319054603468
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.9999064593505,
+     "efficiency": 31.185223640579057,
+     "min_clearance": 2.7954181328371837
+    },
+    {
+     "outcome": "collision",
+     "steps": 2004,
+     "path_length": 6011.999713929079,
+     "efficiency": 10.114967743785966,
+     "min_clearance": 3.278979604774668
+    },
+    {
+     "outcome": "collision",
+     "steps": 528,
+     "path_length": 1583.9999255671908,
+     "efficiency": 38.39090027751619,
+     "min_clearance": 4.2797267023358145
+    },
+    {
+     "outcome": "collision",
+     "steps": 1120,
+     "path_length": 3359.999838592151,
+     "efficiency": 18.098567292646997,
+     "min_clearance": 4.623554916790454
+    },
+    {
+     "outcome": "collision",
+     "steps": 1197,
+     "path_length": 3590.999828481783,
+     "efficiency": 16.934331965076446,
+     "min_clearance": 3.3403956972544933
+    },
+    {
+     "outcome": "collision",
+     "steps": 170,
+     "path_length": 509.9999748919279,
+     "efficiency": 119.23761995268598,
+     "min_clearance": 4.18985024235605
+    },
+    {
+     "outcome": "collision",
+     "steps": 280,
+     "path_length": 839.9999556845084,
+     "efficiency": 72.39426951217943,
+     "min_clearance": 4.7069911941991975
+    },
+    {
+     "outcome": "collision",
+     "steps": 1648,
+     "path_length": 4943.999765891177,
+     "efficiency": 12.299997180740483,
+     "min_clearance": 4.803006266068429
+    },
+    {
+     "outcome": "collision",
+     "steps": 610,
+     "path_length": 1829.9999121620654,
+     "efficiency": 33.23015633929584,
+     "min_clearance": 3.554085192480329
+    },
+    {
+     "outcome": "collision",
+     "steps": 809,
+     "path_length": 2426.9998858071767,
+     "efficiency": 25.056112914409297,
+     "min_clearance": 3.2416142689793332
+    },
+    {
+     "outcome": "collision",
+     "steps": 1253,
+     "path_length": 3758.999821325775,
+     "efficiency": 16.177490309269388,
+     "min_clearance": 4.412275550301757
+    },
+    {
+     "outcome": "collision",
+     "steps": 1287,
+     "path_length": 3860.9998167666326,
+     "efficiency": 15.750112941722175,
+     "min_clearance": 3.07580860130538
+    },
+    {
+     "outcome": "collision",
+     "steps": 1166,
+     "path_length": 3497.9998347107894,
+     "efficiency": 17.384558620789896,
+     "min_clearance": 4.27448533691192
+    },
+    {
+     "outcome": "collision",
+     "steps": 2764,
+     "path_length": 8291.9996055775,
+     "efficiency": 7.333717568092898,
+     "min_clearance": 4.770690533762149
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.99997545730514,
+     "efficiency": 126.68997144032583,
+     "min_clearance": 2.239801554130736
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999849839349,
+     "efficiency": 19.250138041360035,
+     "min_clearance": 4.809436468228713
+    },
+    {
+     "outcome": "collision",
+     "steps": 482,
+     "path_length": 1445.9999304435537,
+     "efficiency": 42.05476217650269,
+     "min_clearance": 3.0966458431004233
+    },
+    {
+     "outcome": "collision",
+     "steps": 763,
+     "path_length": 2288.999889688538,
+     "efficiency": 26.566704286874213,
+     "min_clearance": 4.136706844926721
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.9998679023784,
+     "efficiency": 21.937657316001243,
+     "min_clearance": 4.062385859675465
+    },
+    {
+     "outcome": "collision",
+     "steps": 962,
+     "path_length": 2885.9998620109764,
+     "efficiency": 21.07109705115149,
+     "min_clearance": 4.446803337323599
+    },
+    {
+     "outcome": "collision",
+     "steps": 1288,
+     "path_length": 3863.9998172156097,
+     "efficiency": 15.7378845907564,
+     "min_clearance": 3.2056120963746273
+    },
+    {
+     "outcome": "collision",
+     "steps": 1118,
+     "path_length": 3353.999840591847,
+     "efficiency": 18.130943969070778,
+     "min_clearance": 4.141927700502234
+    },
+    {
+     "outcome": "collision",
+     "steps": 1798,
+     "path_length": 5393.999744001518,
+     "efficiency": 11.273857261426295,
+     "min_clearance": 3.0942484437966726
+    },
+    {
+     "outcome": "collision",
+     "steps": 169,
+     "path_length": 506.9999773350343,
+     "efficiency": 119.94316745670781,
+     "min_clearance": 4.12663082331003
+    },
+    {
+     "outcome": "collision",
+     "steps": 414,
+     "path_length": 1241.9999408203712,
+     "efficiency": 48.96230763253968,
+     "min_clearance": 3.344884893080766
+    },
+    {
+     "outcome": "collision",
+     "steps": 129,
+     "path_length": 386.9999827533278,
+     "efficiency": 157.13484726639868,
+     "min_clearance": 3.6091538664259004
+    },
+    {
+     "outcome": "collision",
+     "steps": 651,
+     "path_length": 1952.99990661834,
+     "efficiency": 31.137320066409487,
+     "min_clearance": 2.905097495897468
+    },
+    {
+     "outcome": "collision",
+     "steps": 1117,
+     "path_length": 3350.9998410087874,
+     "efficiency": 18.14717578850629,
+     "min_clearance": 3.3104694603246756
+    },
+    {
+     "outcome": "collision",
+     "steps": 127,
+     "path_length": 380.999982145361,
+     "efficiency": 159.60941215698563,
+     "min_clearance": 2.1795836780112468
+    },
+    {
+     "outcome": "collision",
+     "steps": 177,
+     "path_length": 530.9999746083595,
+     "efficiency": 114.52200770234414,
+     "min_clearance": 4.515537912772699
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.9998049838287,
+     "efficiency": 14.882815977590035,
+     "min_clearance": 3.9246778448947737
+    },
+    {
+     "outcome": "collision",
+     "steps": 335,
+     "path_length": 1004.9999522258008,
+     "efficiency": 60.50864285850253,
+     "min_clearance": 3.742385607819085
+    },
+    {
+     "outcome": "collision",
+     "steps": 922,
+     "path_length": 2765.999867713691,
+     "efficiency": 21.98524442891899,
+     "min_clearance": 3.4548285575412336
+    },
+    {
+     "outcome": "collision",
+     "steps": 410,
+     "path_length": 1229.9999406756392,
+     "efficiency": 49.43998871141367,
+     "min_clearance": 3.036428369054541
+    }
+   ]
+  },
+  "td3_seed9": {
+   "success": 0,
+   "runs": [
+    {
+     "outcome": "collision",
+     "steps": 931,
+     "path_length": 2792.99986545326,
+     "efficiency": 21.772712535442384,
+     "min_clearance": 4.698971631886323
+    },
+    {
+     "outcome": "collision",
+     "steps": 798,
+     "path_length": 2393.999888996578,
+     "efficiency": 25.401497912153832,
+     "min_clearance": 4.434273116888455
+    },
+    {
+     "outcome": "collision",
+     "steps": 285,
+     "path_length": 854.9999650516747,
+     "efficiency": 71.12419376340883,
+     "min_clearance": 4.812232997222459
+    },
+    {
+     "outcome": "collision",
+     "steps": 960,
+     "path_length": 2879.9998673457076,
+     "efficiency": 21.114995132999248,
+     "min_clearance": 3.302083871664678
+    },
+    {
+     "outcome": "collision",
+     "steps": 130,
+     "path_length": 389.9999805946426,
+     "efficiency": 155.92611848165424,
+     "min_clearance": 4.821602286694571
+    },
+    {
+     "outcome": "collision",
+     "steps": 1238,
+     "path_length": 3713.999933942233,
+     "efficiency": 16.373501417242874,
+     "min_clearance": 4.115448129182539
+    },
+    {
+     "outcome": "collision",
+     "steps": 1283,
+     "path_length": 3848.99981606607,
+     "efficiency": 15.799216962342209,
+     "min_clearance": 4.952200848218126
+    },
+    {
+     "outcome": "collision",
+     "steps": 493,
+     "path_length": 1478.9999302209735,
+     "efficiency": 41.1164205889837,
+     "min_clearance": 4.3123120909513375
+    },
+    {
+     "outcome": "collision",
+     "steps": 642,
+     "path_length": 1925.9999069641322,
+     "efficiency": 31.573824568816853,
+     "min_clearance": 4.167413354498805
+    },
+    {
+     "outcome": "collision",
+     "steps": 1575,
+     "path_length": 4724.999779790709,
+     "efficiency": 12.870092278551743,
+     "min_clearance": 4.745660609128095
+    },
+    {
+     "outcome": "collision",
+     "steps": 1760,
+     "path_length": 5279.999753378346,
+     "efficiency": 11.517270080009713,
+     "min_clearance": 3.9352966086929797
+    },
+    {
+     "outcome": "collision",
+     "steps": 194,
+     "path_length": 581.9999715890503,
+     "efficiency": 104.48657414193451,
+     "min_clearance": 3.3877269713586755
+    },
+    {
+     "outcome": "collision",
+     "steps": 1114,
+     "path_length": 3341.9998422182734,
+     "efficiency": 18.19604609606423,
+     "min_clearance": 3.5780904272648373
+    },
+    {
+     "outcome": "collision",
+     "steps": 1481,
+     "path_length": 4442.9997874267065,
+     "efficiency": 13.686965134262064,
+     "min_clearance": 3.1495668182265733
+    },
+    {
+     "outcome": "collision",
+     "steps": 163,
+     "path_length": 488.9999725646071,
+     "efficiency": 124.3582547931711,
+     "min_clearance": 3.126127088772698
+    },
+    {
+     "outcome": "collision",
+     "steps": 1249,
+     "path_length": 3746.99982851176,
+     "efficiency": 16.22929969713828,
+     "min_clearance": 4.2253433419386965
+    },
+    {
+     "outcome": "collision",
+     "steps": 721,
+     "path_length": 2162.9999032419473,
+     "efficiency": 28.114279196637078,
+     "min_clearance": 4.624629557553695
+    },
+    {
+     "outcome": "collision",
+     "steps": 1967,
+     "path_length": 5900.999722917579,
+     "efficiency": 10.3052340344759,
+     "min_clearance": 3.9870382805233695
+    },
+    {
+     "outcome": "collision",
+     "steps": 562,
+     "path_length": 1685.9999183695618,
+     "efficiency": 36.068319173378285,
+     "min_clearance": 4.085823729486736
+    },
+    {
+     "outcome": "collision",
+     "steps": 1049,
+     "path_length": 3146.9998562515866,
+     "efficiency": 19.323541773044663,
+     "min_clearance": 2.455486421661405
+    },
+    {
+     "outcome": "collision",
+     "steps": 1128,
+     "path_length": 3383.9998365533575,
+     "efficiency": 17.970208664070142,
+     "min_clearance": 4.654366593540374
+    },
+    {
+     "outcome": "collision",
+     "steps": 806,
+     "path_length": 2417.9999054002483,
+     "efficiency": 25.14937368121075,
+     "min_clearance": 4.14461801654959
+    },
+    {
+     "outcome": "collision",
+     "steps": 168,
+     "path_length": 503.9999768916237,
+     "efficiency": 120.65711502030378,
+     "min_clearance": 3.918636702602612
+    },
+    {
+     "outcome": "collision",
+     "steps": 1717,
+     "path_length": 5150.999796010892,
+     "efficiency": 11.805704832125468,
+     "min_clearance": 3.2237340975686877
+    },
+    {
+     "outcome": "collision",
+     "steps": 680,
+     "path_length": 2039.9999059100576,
+     "efficiency": 29.809404895494254,
+     "min_clearance": 3.128922518975685
+    },
+    {
+     "outcome": "collision",
+     "steps": 884,
+     "path_length": 2651.999876893042,
+     "efficiency": 22.930311464903465,
+     "min_clearance": 4.602213027551096
+    },
+    {
+     "outcome": "collision",
+     "steps": 1362,
+     "path_length": 4085.999811068275,
+     "efficiency": 14.882815955428091,
+     "min_clearance": 2.0555716759934595
+    },
+    {
+     "outcome": "collision",
+     "steps": 1393,
+     "path_length": 4178.999814612571,
+     "efficiency": 14.551611840088299,
+     "min_clearance": 3.1856638120197847
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.9998513615656,
+     "efficiency": 19.250138032084035,
+     "min_clearance": 4.1263678438196445
+    },
+    {
+     "outcome": "collision",
+     "steps": 2686,
+     "path_length": 8057.9996133307795,
+     "efficiency": 7.54668479773068,
+     "min_clearance": 2.7358373969660104
+    },
+    {
+     "outcome": "collision",
+     "steps": 160,
+     "path_length": 479.99997581312846,
+     "efficiency": 126.68997134641073,
+     "min_clearance": 2.2398053688280015
+    },
+    {
+     "outcome": "collision",
+     "steps": 1123,
+     "path_length": 3368.999836309392,
+     "efficiency": 18.050218503025924,
+     "min_clearance": 4.105987827352679
+    },
+    {
+     "outcome": "collision",
+     "steps": 483,
+     "path_length": 1448.999926942889,
+     "efficiency": 41.967692372727015,
+     "min_clearance": 3.7972685534982475
+    },
+    {
+     "outcome": "collision",
+     "steps": 726,
+     "path_length": 2177.9999765368643,
+     "efficiency": 27.920653736064818,
+     "min_clearance": 4.58060666353424
+    },
+    {
+     "outcome": "collision",
+     "steps": 735,
+     "path_length": 2204.9998925235586,
+     "efficiency": 27.578769227261255,
+     "min_clearance": 4.906911957719927
+    },
+    {
+     "outcome": "collision",
+     "steps": 924,
+     "path_length": 2771.999866161102,
+     "efficiency": 21.937657329781736,
+     "min_clearance": 4.9252126537418235
+    },
+    {
+     "outcome": "collision",
+     "steps": 732,
+     "path_length": 2195.999896638127,
+     "efficiency": 27.691796923642567,
+     "min_clearance": 3.7501925540907735
+    },
+    {
+     "outcome": "collision",
+     "steps": 1053,
+     "path_length": 3158.999938155607,
+     "efficiency": 19.250137503183335,
+     "min_clearance": 3.8422997025302257
+    },
+    {
+     "outcome": "collision",
+     "steps": 1728,
+     "path_length": 5183.999750112714,
+     "efficiency": 11.730552876805385,
+     "min_clearance": 3.1933491614891523
+    },
+    {
+     "outcome": "collision",
+     "steps": 203,
+     "path_length": 608.9999698823681,
+     "efficiency": 99.8541645146372,
+     "min_clearance": 3.474061311405327
+    },
+    {
+     "outcome": "collision",
+     "steps": 1482,
+     "path_length": 4445.999886084651,
+     "efficiency": 13.677729361256501,
+     "min_clearance": 4.863912905337784
+    },
+    {
+     "outcome": "collision",
+     "steps": 235,
+     "path_length": 704.9999701680875,
+     "efficiency": 86.25700107128283,
+     "min_clearance": 2.7953718810985944
+    },
+    {
+     "outcome": "collision",
+     "steps": 717,
+     "path_length": 2150.999901211265,
+     "efficiency": 28.271123186848715,
+     "min_clearance": 3.658925262060339
+    },
+    {
+     "outcome": "collision",
+     "steps": 1051,
+     "path_length": 3152.999849492592,
+     "efficiency": 19.28677008716932,
+     "min_clearance": 4.827234169535487
+    },
+    {
+     "outcome": "collision",
+     "steps": 198,
+     "path_length": 593.9999716738627,
+     "efficiency": 102.37573414470066,
+     "min_clearance": 3.0880726591601
+    },
+    {
+     "outcome": "collision",
+     "steps": 650,
+     "path_length": 1949.999957787591,
+     "efficiency": 31.185222819716138,
+     "min_clearance": 2.4137595610297495
+    },
+    {
+     "outcome": "collision",
+     "steps": 1293,
+     "path_length": 3878.9998154612776,
+     "efficiency": 15.677026572586115,
+     "min_clearance": 4.212580542662877
+    },
+    {
+     "outcome": "collision",
+     "steps": 446,
+     "path_length": 1337.9999355598488,
+     "efficiency": 45.449316973695026,
+     "min_clearance": 3.6082815087586937
+    },
+    {
+     "outcome": "collision",
+     "steps": 852,
+     "path_length": 2555.9998781402383,
+     "efficiency": 23.791543850264066,
+     "min_clearance": 3.845998451256847
+    },
+    {
+     "outcome": "collision",
+     "steps": 921,
+     "path_length": 2762.999891174166,
+     "efficiency": 22.009115301195592,
+     "min_clearance": 2.900748205680319
+    }
+   ]
+  }
+ },
+ "axes_note": "second_dyn cell for the TD3 static row"
+}

@@ -1,0 +1,350 @@
+0 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 273}
+0 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 273}
+0 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 273}
+0 SAC L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 273}
+0 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 273}
+0 DWA-CV L2 collision collision 0.0 {'push_away': 0, 'wall': 5, 'separation': 293}
+1 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1795}
+1 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1831}
+1 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 1072}
+1 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 1117}
+1 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1507}
+1 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 2692}
+2 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 22}
+2 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 22}
+2 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 22}
+3 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 296}
+3 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 320}
+3 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 81}
+3 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 81}
+3 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 590}
+3 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1265}
+4 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 144}
+4 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 152}
+4 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 84}
+4 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 92}
+4 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 205}
+4 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 29, 'separation': 598}
+5 APF none success success 0.004234 {'push_away': 0, 'wall': 2, 'separation': 766}
+5 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 859}
+5 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 790}
+5 SAC L2 success success 3.1e-05 {'push_away': 0, 'wall': 2, 'separation': 837}
+5 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 10, 'separation': 873}
+5 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 8, 'separation': 861}
+6 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 30}
+6 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 31}
+6 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+6 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+6 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+6 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 14, 'separation': 45}
+7 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 827}
+7 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 827}
+7 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 39}
+7 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 39}
+7 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 828}
+7 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 18, 'separation': 841}
+8 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 839}
+8 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 875}
+8 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 511}
+8 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 531}
+8 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 797}
+8 DWA-CV L2 collision collision 0.0 {'push_away': 0, 'wall': 6, 'separation': 1746}
+9 APF none success success 0.048412 {'push_away': 0, 'wall': 12, 'separation': 665}
+9 APF L2 success success 0.0 {'push_away': 0, 'wall': 12, 'separation': 665}
+9 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 92}
+9 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 72}
+9 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 389}
+9 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 6, 'separation': 630}
+10 APF none success success 2.8e-05 {'push_away': 0, 'wall': 2, 'separation': 126}
+10 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 126}
+10 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 81}
+10 SAC L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 113}
+10 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 94}
+10 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 14, 'separation': 243}
+11 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 36}
+11 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 36}
+11 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 36}
+11 SAC L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 36}
+11 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 36}
+11 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 19, 'separation': 69}
+12 APF none success success 9e-06 {'push_away': 0, 'wall': 2, 'separation': 134}
+12 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 134}
+12 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 83}
+12 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 107}
+12 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 134}
+12 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 12, 'separation': 161}
+13 APF none success success 3.58131 {'push_away': 0, 'wall': 25, 'separation': 420}
+13 APF L2 collision collision 5.744285 {'push_away': 0, 'wall': 18, 'separation': 190}
+13 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 100}
+13 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 100}
+13 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 100}
+13 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 14, 'separation': 113}
+14 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 46}
+14 APF L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 46}
+14 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 45}
+14 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 44}
+14 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 48}
+14 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 16, 'separation': 62}
+15 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 272}
+15 APF L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 272}
+15 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 64}
+15 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 272}
+15 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 272}
+15 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 272}
+16 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+16 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+16 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+16 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+16 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 30}
+16 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 4, 'separation': 74}
+17 APF none success success inf {'push_away': 0, 'wall': 5, 'separation': 69}
+17 APF L2 success success 0.0 {'push_away': 0, 'wall': 5, 'separation': 69}
+17 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 65}
+17 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 65}
+17 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 67}
+17 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 67}
+18 APF none success success 9.5e-05 {'push_away': 0, 'wall': 4, 'separation': 98}
+18 APF L2 success success 0.0 {'push_away': 0, 'wall': 4, 'separation': 98}
+18 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 92}
+18 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 92}
+18 DWA-CV none collision collision 0.0 {'push_away': 0, 'wall': 1, 'separation': 93}
+18 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 100}
+19 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 56}
+19 APF L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 56}
+19 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 54}
+19 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 56}
+19 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 56}
+19 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 8, 'separation': 81}
+20 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 53}
+20 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 60}
+20 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 30}
+20 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 30}
+20 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 54}
+20 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 8, 'separation': 833}
+21 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 365}
+21 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 365}
+21 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 21}
+21 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 21}
+21 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 8, 'separation': 367}
+21 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 31, 'separation': 571}
+22 APF none success success inf {'push_away': 0, 'wall': 4, 'separation': 109}
+22 APF L2 success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 116}
+22 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 108}
+22 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 108}
+22 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 109}
+22 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 13, 'separation': 140}
+23 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 916}
+23 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 918}
+23 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 822}
+23 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 842}
+23 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1072}
+23 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1072}
+24 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1189}
+24 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1225}
+24 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 775}
+24 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 845}
+24 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 1449}
+24 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1444}
+25 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 925}
+25 APF L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 925}
+25 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 925}
+25 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 925}
+25 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 1008}
+25 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 31, 'separation': 1060}
+26 APF none success success 1e-06 {'push_away': 0, 'wall': 1, 'separation': 113}
+26 APF L2 success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 209}
+26 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 78}
+26 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 78}
+26 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 79}
+26 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 23, 'separation': 393}
+27 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 64}
+27 APF L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 64}
+27 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 64}
+27 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 64}
+27 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 64}
+27 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 68}
+28 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 165}
+28 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 165}
+28 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 165}
+28 SAC L2 success success 3.1e-05 {'push_away': 0, 'wall': 2, 'separation': 165}
+28 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 8, 'separation': 169}
+28 DWA-CV L2 collision collision 0.0 {'push_away': 0, 'wall': 33, 'separation': 326}
+29 APF none success success inf {'push_away': 0, 'wall': 44, 'separation': 1355}
+29 APF L2 collision collision 0.050918 {'push_away': 0, 'wall': 9, 'separation': 444}
+29 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 435}
+29 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 435}
+29 DWA-CV none collision collision 0.0 {'push_away': 0, 'wall': 10, 'separation': 604}
+29 DWA-CV L2 collision collision 0.0 {'push_away': 0, 'wall': 9, 'separation': 447}
+30 APF none success success inf {'push_away': 0, 'wall': 5, 'separation': 40}
+30 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 36}
+30 SAC none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 36}
+30 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 36}
+30 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 36}
+30 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 36}
+31 APF none success success inf {'push_away': 0, 'wall': 10, 'separation': 99}
+31 APF L2 success success 0.0 {'push_away': 0, 'wall': 10, 'separation': 100}
+31 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 45}
+31 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 45}
+31 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 45}
+31 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 8, 'separation': 91}
+32 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 308}
+32 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 318}
+32 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 300}
+32 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 300}
+32 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 390}
+32 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 472}
+33 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 20}
+33 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 20}
+33 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 20}
+33 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 20}
+33 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 20}
+33 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 10, 'separation': 30}
+34 APF none success success 2.972307 {'push_away': 0, 'wall': 3, 'separation': 106}
+34 APF L2 success success 0.021185 {'push_away': 0, 'wall': 3, 'separation': 106}
+34 SAC none success success 0.003754 {'push_away': 0, 'wall': 3, 'separation': 105}
+34 SAC L2 collision collision 0.004196 {'push_away': 0, 'wall': 0, 'separation': 105}
+34 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 105}
+34 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 15, 'separation': 338}
+35 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 77}
+35 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 77}
+35 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 77}
+35 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 77}
+35 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 77}
+35 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 17, 'separation': 92}
+36 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 258}
+36 APF L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 258}
+36 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 258}
+36 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 258}
+36 DWA-CV none collision collision 0.0 {'push_away': 0, 'wall': 1, 'separation': 259}
+36 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 12, 'separation': 437}
+37 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 376}
+37 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 376}
+37 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 161}
+37 SAC L2 collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 161}
+37 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 376}
+37 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 14, 'separation': 390}
+38 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 35}
+38 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 35}
+38 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 35}
+38 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 35}
+38 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 35}
+38 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 35}
+39 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 818}
+39 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 818}
+39 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 818}
+39 SAC L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 818}
+39 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 6, 'separation': 819}
+39 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 22, 'separation': 2203}
+40 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 14}
+40 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 14}
+40 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 14}
+40 SAC L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 14}
+40 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 5, 'separation': 69}
+40 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 15, 'separation': 173}
+41 APF none success success 2.573738 {'push_away': 0, 'wall': 4, 'separation': 30}
+41 APF L2 success success 0.0 {'push_away': 0, 'wall': 4, 'separation': 30}
+41 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 29}
+41 SAC L2 success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 30}
+41 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 30}
+41 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 10, 'separation': 32}
+42 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1128}
+42 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1134}
+42 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 979}
+42 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 999}
+42 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1126}
+42 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 1148}
+43 APF none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 42}
+43 APF L2 success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 42}
+43 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 42}
+43 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 42}
+43 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 42}
+43 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 23, 'separation': 917}
+44 APF none success success 0.152596 {'push_away': 0, 'wall': 5, 'separation': 1185}
+44 APF L2 success success 0.0 {'push_away': 0, 'wall': 5, 'separation': 1185}
+44 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 1181}
+44 SAC L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1181}
+44 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1181}
+44 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 1181}
+45 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 54}
+45 APF L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 54}
+45 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 54}
+45 SAC L2 success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 54}
+45 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 54}
+45 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 5, 'separation': 54}
+46 APF none success success 2.74598 {'push_away': 0, 'wall': 11, 'separation': 67}
+46 APF L2 success success 0.0 {'push_away': 0, 'wall': 11, 'separation': 67}
+46 SAC none success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 59}
+46 SAC L2 success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 59}
+46 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 3, 'separation': 59}
+46 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 64}
+47 APF none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 140}
+47 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 140}
+47 SAC none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 140}
+47 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 140}
+47 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 0, 'separation': 140}
+47 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 5, 'separation': 142}
+48 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 99}
+48 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 99}
+48 SAC none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 98}
+48 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 98}
+48 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 98}
+48 DWA-CV L2 collision collision 0.0 {'push_away': 0, 'wall': 5, 'separation': 103}
+49 APF none success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 66}
+49 APF L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 66}
+49 SAC none collision collision 0.0 {'push_away': 0, 'wall': 0, 'separation': 49}
+49 SAC L2 success success 0.0 {'push_away': 0, 'wall': 1, 'separation': 66}
+49 DWA-CV none success success 0.0 {'push_away': 0, 'wall': 9, 'separation': 221}
+49 DWA-CV L2 success success 0.0 {'push_away': 0, 'wall': 2, 'separation': 66}
+{
+ "APF none": {
+  "n": 50,
+  "same_outcome": 50,
+  "same_steps": 45,
+  "bit_identical": 0,
+  "max_dev_m": Infinity
+ },
+ "APF L2": {
+  "n": 50,
+  "same_outcome": 50,
+  "same_steps": 50,
+  "bit_identical": 0,
+  "max_dev_m": 5.744284506560518
+ },
+ "SAC none": {
+  "n": 50,
+  "same_outcome": 50,
+  "same_steps": 50,
+  "bit_identical": 49,
+  "max_dev_m": 0.003753662109375
+ },
+ "SAC L2": {
+  "n": 50,
+  "same_outcome": 50,
+  "same_steps": 50,
+  "bit_identical": 47,
+  "max_dev_m": 0.0041961669921875
+ },
+ "DWA-CV none": {
+  "n": 50,
+  "same_outcome": 50,
+  "same_steps": 50,
+  "bit_identical": 50,
+  "max_dev_m": 0.0
+ },
+ "DWA-CV L2": {
+  "n": 50,
+  "same_outcome": 50,
+  "same_steps": 50,
+  "bit_identical": 50,
+  "max_dev_m": 0.0
+ },
+ "runs_with_event": {
+  "push_away": 0,
+  "wall": 229,
+  "separation": 300
+ },
+ "events_equal_A_B": false
+}
