@@ -129,3 +129,10 @@ Paper: 45 pages after cutting two hand-built-layout and ARC-training tables, Tab
 - Idle timing session: `python scripts/ws_x_timing.py` once nothing else runs (it refuses while training runs).
 - WS-A: macros for every number (v2 numbers first); WS-F: Holm within each table's family (existing tables still report unadjusted p).
 - Before submission: recheck the RAS guide (abstract limit, highlights; the guide page returns 403 to automated fetches).
+
+### 2026-10-13 night: Adi's decisions
+- Title: "Operating Envelopes and Failure Mechanisms of Classical and Learned Path Planners" (paper and README).
+- Handover bug: (a) + (c). D1 reported as registered; sensitivity check `d1fix` (handover reset, D3 thresholds unchanged) registered in prereg.md and running (`jobs/d4fix.json`, 10 jobs). Report d1fix against SAC alone and ray-APF-D alone on the same runs (not exact-geometry APF-D), plus d1 against d1fix.
+- Contribution 4 rewritten as a negative finding (envelope boundaries per episode do not give per-state switching rules); arbiter removed from the abstract; the lesson goes in the discussion. Switching rate (D1, seeds 0-6): one switch every 13.2-15.0 decisions (about 2.4 s at 6 Hz). The 44.6% trigger rate in success windows is at the D2 median thresholds (23.0 m, 1.00), not the selected ones; recompute at the selected thresholds for the discussion.
+- References: all DOI entries rechecked against Crossref; volumes added for the two LNCS chapters (12229, 12397) and the two AAAI-18 papers (32(1)); liu2026 is online-first with no volume yet (recheck before submission). Paper still 45 pages.
+- Repo is private (github.com page returns 404 without login): make it public at submission, since the paper links it.
