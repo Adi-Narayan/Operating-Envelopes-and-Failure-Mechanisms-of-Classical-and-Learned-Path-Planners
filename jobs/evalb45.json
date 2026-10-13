@@ -188,7 +188,7 @@
    "priority": "below",
    "clean": [],
    "after": [
-    "b45/b5_sacstatic_seed6"
+    "b45r/b5_sacstatic_seed6"
    ],
    "cmd": [
     "python",
