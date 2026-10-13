@@ -218,7 +218,7 @@ class DWACV:
 
 
 def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0, l_enabled=True,
-        max_time_s=None, log_signals=False, range_noise=0.0, heading_noise=0.0, noise_seed=0):
+        max_time_s=None, log_signals=False, range_noise=0.0, heading_noise=0.0, noise_seed=0, handover_reset=False):
     """One arbitrated run. c_kind in {'apf_rays', 'dwa_cv'}; l_enabled=False gives C alone."""
     d_off = d_on + 5.0 if d_off is None else d_off
     rho_off = 0.8 * rho_on if rho_off is None else rho_off
@@ -293,6 +293,9 @@ def run(timeline, L, C, c_kind, d_on, rho_on, d_off=None, rho_off=None, c_seed=0
                 switch_log.append(("L->C", k, float(np.linalg.norm(q - H.GOAL)), float(d_min), float(v_c), "trigger"))
                 if c_kind == "dwa_cv":
                     C.reset(v=H.GROUND_SPEED)
+                elif handover_reset:                        # opt-in fix: momentum starts from the current heading
+                    C.d_prev = np.array([math.cos(psi), math.sin(psi)])
+                    C.big_turns, C.cap_left = 0, 0
             elif active == "C":
                 held = (k - c_since) * tick >= 1.0
                 stall = False
