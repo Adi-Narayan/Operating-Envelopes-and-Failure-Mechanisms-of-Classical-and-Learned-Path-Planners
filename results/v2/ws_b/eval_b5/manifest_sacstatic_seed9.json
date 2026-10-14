@@ -1,0 +1,14 @@
+{
+ "git_commit": "7a8c8245ae66d4cc7351543f881d969e28aec256",
+ "script": "scripts/ws_b_eval.py b5 9",
+ "config": {
+  "protocol": "prereg.md, Evaluation of B4 and B5 policies"
+ },
+ "seeds": {
+  "see": "notes/seed_map.md (frozen evaluation sets)"
+ },
+ "start": "2026-10-14T03:03:31+05:30",
+ "end": "2026-10-14T03:23:17+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}
