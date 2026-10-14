@@ -144,3 +144,12 @@ Successes over 4,500 runs per arbiter (10 SAC seeds x 7 axes): SAC alone 3,024; 
 - **The fix matters more than the held-out diagnostic suggested.** On the evaluation sets it adds 199 successes (3,357 -> 3,556, +4.4 points). It is ahead in 57 of the 66 cells that differ, though no single cell is significant after Holm; the sign test over cells (p ~ 1e-9) is descriptive, not registered. The largest gains: noise +4.4 per seed, second layout +3.4, unseen dynamic +4.1. Exits from the arena after handing back to SAC fall from 491 to 305. The 50-run held-out check (+3/100) understated it. Since D3 tuned the thresholds with the bug, re-tuning (option b) may matter more than estimated **[ASK ADI]**.
 - Failures, D1: 591 collisions with C in control, 491 arena exits with SAC in control, 57 SAC collisions. d1fix: 587 / 305 / 51. C alone collides far less, so C fails in the states it inherits at handover.
 - Switching (D1): 16.5 switches and 3.7 chattering switches per run, one every 14.5 decisions (~2.4 s); 37% of time in C. First switch at a median 511 m from the goal (straight-line distance 608 m); L->C switches at a median 390 m, 0.8% within 50 m of the goal. 526 of 4,500 runs switch at least once within 50 m.
+
+### 2026-10-14 night: paper filled (Adi: no re-tune)
+- Adi decided against re-tuning the arbiter: D1 reported as registered plus the d1fix sensitivity rerun.
+- B4/B5 complete: fixed TD3 0/10 collapsed (original 5/10; paired McNemar p = 0.062, Holm 0.12), dynamic 40.6 +- 13.7 of 50, above original TD3 in 8/10 seeds (Holm p = 0.029), indistinguishable from SAC (p = 0.93). Static SAC 0/10 collapsed, 15.5 +- 10.0 of 50, below moving SAC in all 10 seeds (Holm p = 0.008).
+- Trigger rate at the selected thresholds: 55% of 2-s windows of SAC's successful held-out runs (`scripts/ws_d_trigger_rate.py`).
+- Idle timing (`results/v2/ws_x/timing/`): ms per decision APF 0.71, APF-D 0.90, C alone 1.41, SAC 1.91, D1 2.31, D2 2.52.
+- `scripts/make_numbers.py`: B4/B5, D3/D4, d1fix and timing macros (311 numbers); heatmap regenerated with all 12 rows.
+- Paper: every placeholder filled; title changed; arbiter as a negative result in contributions, results, discussion and conclusion; abstract without the arbiter. 45 pages (prose condensed; proceedings titles abbreviated in ISO 4 style). Highlights rewritten (5 bullets, <= 85 characters).
+- Still for Adi: read Appendix F (`appendixF_for_review.tex`), check the RAS Guide for Authors by hand, recheck liu2026 for a volume before submission, make the repository public at submission.

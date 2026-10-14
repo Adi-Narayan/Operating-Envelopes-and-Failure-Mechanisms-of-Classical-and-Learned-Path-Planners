@@ -353,8 +353,94 @@
      "n_seeds": 10
     }
    },
-   "TD3 fixed": {},
-   "SAC static": {},
+   "TD3 fixed": {
+    "indist": {
+     "mean": 81.2,
+     "min": 6.0,
+     "max": 100.0,
+     "n_seeds": 10
+    },
+    "r100": {
+     "mean": 37.6,
+     "min": 24.0,
+     "max": 58.0,
+     "n_seeds": 10
+    },
+    "r158": {
+     "mean": 15.6,
+     "min": 12.0,
+     "max": 20.0,
+     "n_seeds": 10
+    },
+    "noise5": {
+     "mean": 57.8,
+     "min": 0.0,
+     "max": 78.0,
+     "n_seeds": 10
+    },
+    "lay_static": {
+     "mean": 88.2,
+     "min": 46.0,
+     "max": 98.0,
+     "n_seeds": 10
+    },
+    "lay_dynamic": {
+     "mean": 70.4,
+     "min": 36.0,
+     "max": 83.0,
+     "n_seeds": 10
+    },
+    "second_dyn": {
+     "mean": 74.4,
+     "min": 34.0,
+     "max": 92.0,
+     "n_seeds": 10
+    }
+   },
+   "SAC static": {
+    "indist": {
+     "mean": 31.0,
+     "min": 12.0,
+     "max": 70.0,
+     "n_seeds": 10
+    },
+    "r100": {
+     "mean": 21.0,
+     "min": 8.0,
+     "max": 44.0,
+     "n_seeds": 10
+    },
+    "r158": {
+     "mean": 9.0,
+     "min": 6.0,
+     "max": 14.0,
+     "n_seeds": 10
+    },
+    "noise5": {
+     "mean": 21.2,
+     "min": 4.0,
+     "max": 46.0,
+     "n_seeds": 10
+    },
+    "lay_static": {
+     "mean": 58.6,
+     "min": 22.0,
+     "max": 97.0,
+     "n_seeds": 10
+    },
+    "lay_dynamic": {
+     "mean": 36.5,
+     "min": 12.0,
+     "max": 67.0,
+     "n_seeds": 10
+    },
+    "second_dyn": {
+     "mean": 36.6,
+     "min": 10.0,
+     "max": 68.0,
+     "n_seeds": 10
+    }
+   },
    "SAC moving": {
     "indist": {
      "mean": 82.6,
@@ -399,8 +485,94 @@
      "n_seeds": 10
     }
    },
-   "Arbiter D1": {},
-   "Arbiter D2": {}
+   "Arbiter D1": {
+    "indist": {
+     "mean": 90.2,
+     "min": 86.0,
+     "max": 94.0,
+     "n_seeds": 10
+    },
+    "r100": {
+     "mean": 54.8,
+     "min": 46.0,
+     "max": 64.0,
+     "n_seeds": 10
+    },
+    "r158": {
+     "mean": 23.8,
+     "min": 14.0,
+     "max": 28.0,
+     "n_seeds": 10
+    },
+    "noise5": {
+     "mean": 56.4,
+     "min": 36.0,
+     "max": 64.0,
+     "n_seeds": 10
+    },
+    "lay_static": {
+     "mean": 92.7,
+     "min": 84.0,
+     "max": 97.0,
+     "n_seeds": 10
+    },
+    "lay_dynamic": {
+     "mean": 87.5,
+     "min": 81.0,
+     "max": 92.0,
+     "n_seeds": 10
+    },
+    "second_dyn": {
+     "mean": 85.8,
+     "min": 72.0,
+     "max": 94.0,
+     "n_seeds": 10
+    }
+   },
+   "Arbiter D2": {
+    "indist": {
+     "mean": 87.2,
+     "min": 72.0,
+     "max": 98.0,
+     "n_seeds": 10
+    },
+    "r100": {
+     "mean": 54.4,
+     "min": 8.0,
+     "max": 76.0,
+     "n_seeds": 10
+    },
+    "r158": {
+     "mean": 27.6,
+     "min": 10.0,
+     "max": 36.0,
+     "n_seeds": 10
+    },
+    "noise5": {
+     "mean": 54.8,
+     "min": 24.0,
+     "max": 74.0,
+     "n_seeds": 10
+    },
+    "lay_static": {
+     "mean": 92.3,
+     "min": 73.0,
+     "max": 98.0,
+     "n_seeds": 10
+    },
+    "lay_dynamic": {
+     "mean": 82.6,
+     "min": 60.0,
+     "max": 89.0,
+     "n_seeds": 10
+    },
+    "second_dyn": {
+     "mean": 77.0,
+     "min": 22.0,
+     "max": 92.0,
+     "n_seeds": 10
+    }
+   }
   }
  },
  "numbers": {
@@ -584,6 +756,136 @@
   "ncDiffArcMin": "$-$100",
   "ncDiffArcMax": "$-$48",
   "iqmTdDyn": "11.8 (0.0--32.8)",
-  "iqmSacDyn": "42.2 (37.7--45.8)"
+  "iqmSacDyn": "42.2 (37.7--45.8)",
+  "bFourCollapsed": "0",
+  "bFourCollapseCI": "0--28\\%",
+  "bFourDyn": "$40.6 \\pm 13.7$",
+  "bFourDynIqm": "43.7 (35.3--47.7)",
+  "bFourDynMin": "3",
+  "bFourDynMax": "50",
+  "bFourRonePct": "38\\%",
+  "bFourRhighPct": "16\\%",
+  "bFourNoisePct": "58\\%",
+  "bFourLayStatPct": "88\\%",
+  "bFourLayDynPct": "70\\%",
+  "bFourSecondPct": "74\\%",
+  "bFiveCollapsed": "0",
+  "bFiveCollapseCI": "0--28\\%",
+  "bFiveDyn": "$15.5 \\pm 10.0$",
+  "bFiveDynIqm": "12.5 (8.8--22.0)",
+  "bFiveDynMin": "6",
+  "bFiveDynMax": "35",
+  "bFiveRonePct": "21\\%",
+  "bFiveRhighPct": "9\\%",
+  "bFiveNoisePct": "21\\%",
+  "bFiveLayStatPct": "59\\%",
+  "bFiveLayDynPct": "36\\%",
+  "bFiveSecondPct": "37\\%",
+  "bTestCollapse": "0.062",
+  "bTestCollapseHolm": "0.12",
+  "bTestFixTd": "0.010",
+  "bTestFixTdHolm": "0.029",
+  "bTestFixSac": "0.93",
+  "bTestFixSacHolm": "0.93",
+  "bTestSstSac": "0.002",
+  "bTestSstSacHolm": "0.008",
+  "bFourSeedsAboveTd": "8",
+  "bFiveSeedsBelowSac": "10",
+  "dThreeDon": "28.0",
+  "dThreeRhoOn": "0.75",
+  "dThreeDoff": "33.0",
+  "dThreeRhoOff": "0.60",
+  "trigFracSel": "55\\%",
+  "trigFracInit": "45\\%",
+  "arbRuns": "4,500",
+  "arbTotSac": "3,024",
+  "arbTotDone": "3,357",
+  "arbTotDoneFix": "3,556",
+  "arbTotDtwo": "3,254",
+  "arbTotCapf": "3,990",
+  "arbTotOracle": "4,090",
+  "arbFixGain": "199",
+  "arbEnvs": "450",
+  "arbCapfFail": "51",
+  "arbDoneCollCPerSeed": "59",
+  "arbRowSac": "83 (14) & 34 (14) & 12 (4) & 61 (18) & 95 (8) & 76 (8) & 75 (20)",
+  "arbRowCapf": "98 & 84 & 44 & 82 & 100 & 99 & 92",
+  "arbRowDone": "90 (3) & 55 (6) & 24 (4) & 56 (8) & 93 (4) & 88 (4) & 86 (6)",
+  "arbRowDoneFix": "90 (4) & 59 (8) & 28 (5) & 65 (10) & 96 (3) & 92 (3) & 93 (6)",
+  "arbRowDtwo": "87 (8) & 54 (18) & 28 (8) & 55 (14) & 92 (7) & 83 (9) & 77 (20)",
+  "arbRowDwacv": "94 & 80 & 46 & 70 & 98 & 99 & 96",
+  "arbRowOracle": "99 & 86 & 46 & 91 & 100 & 99 & 97",
+  "arbDoneSacAhead": "51",
+  "arbDoneSacBehind": "17",
+  "arbDoneSacSigBetter": "6",
+  "arbDoneSacSigWorse": "1",
+  "arbDoneCapfAhead": "1",
+  "arbDoneCapfBehind": "69",
+  "arbDoneCapfSigBetter": "0",
+  "arbDoneCapfSigWorse": "10",
+  "arbFixSacAhead": "57",
+  "arbFixSacBehind": "11",
+  "arbFixSacSigBetter": "10",
+  "arbFixSacSigWorse": "0",
+  "arbFixCapfAhead": "6",
+  "arbFixCapfBehind": "61",
+  "arbFixCapfSigBetter": "0",
+  "arbFixCapfSigWorse": "5",
+  "arbFixDoneAhead": "57",
+  "arbFixDoneBehind": "9",
+  "arbFixDoneSigBetter": "0",
+  "arbFixDoneSigWorse": "0",
+  "arbDtwoSacAhead": "46",
+  "arbDtwoSacBehind": "18",
+  "arbDtwoSacSigBetter": "1",
+  "arbDtwoSacSigWorse": "0",
+  "arbDtwoDwacvAhead": "2",
+  "arbDtwoDwacvBehind": "66",
+  "arbDtwoDwacvSigBetter": "0",
+  "arbDtwoDwacvSigWorse": "14",
+  "arbDoneCollC": "591",
+  "arbDoneCollL": "57",
+  "arbDoneExitL": "491",
+  "arbDoneSwitches": "16.5",
+  "arbDoneChatter": "3.7",
+  "arbDoneTimeC": "37\\%",
+  "arbDoneSecPerSwitch": "2.4",
+  "arbDoneFixCollC": "587",
+  "arbDoneFixCollL": "51",
+  "arbDoneFixExitL": "305",
+  "arbDoneFixSwitches": "15.1",
+  "arbDoneFixChatter": "3.4",
+  "arbDoneFixTimeC": "37\\%",
+  "arbDoneFixSecPerSwitch": "2.5",
+  "arbDtwoCollC": "490",
+  "arbDtwoCollL": "55",
+  "arbDtwoExitL": "700",
+  "arbDtwoSwitches": "19.4",
+  "arbDtwoChatter": "4.9",
+  "arbDtwoTimeC": "39\\%",
+  "arbDtwoSecPerSwitch": "2.8",
+  "arbFirstSwitchGoal": "511",
+  "arbLtoCGoalMedian": "390",
+  "arbLtoCWithinFifty": "0.8\\%",
+  "arbRunsSwitchNearGoal": "526",
+  "arbStallGuardShare": "4\\%",
+  "timeApfMs": "0.71",
+  "timeApfRatio": "1.0",
+  "timeApfHundredRatio": "1.0",
+  "timeApfdMs": "0.90",
+  "timeApfdRatio": "1.3",
+  "timeApfdHundredRatio": "1.3",
+  "timeCapfMs": "1.41",
+  "timeCapfRatio": "2.0",
+  "timeCapfHundredRatio": "1.2",
+  "timeSacMs": "1.91",
+  "timeSacRatio": "2.7",
+  "timeSacHundredRatio": "1.6",
+  "timeDoneMs": "2.31",
+  "timeDoneRatio": "3.3",
+  "timeDoneHundredRatio": "2.0",
+  "timeDtwoMs": "2.52",
+  "timeDtwoRatio": "3.6",
+  "timeDtwoHundredRatio": "2.9"
  }
 }

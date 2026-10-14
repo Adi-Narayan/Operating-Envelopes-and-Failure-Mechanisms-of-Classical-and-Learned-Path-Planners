@@ -286,6 +286,129 @@ def v2_numbers():
         x = [v["success"] for v in rep["baselines"]["corridor"][grp]["dynamic"]["per_seed"].values()]
         m, lo, hi = iqm_ci([x])
         n[f"iqm{nm}"] = f"{m:.1f} ({lo:.1f}--{hi:.1f})"
+    n.update(b45_numbers(rep, iqm_ci, wilson))
+    n.update(d4_numbers())
+    t = J(V2, "ws_x", "timing", "result.json")
+    if t:
+        for k, nm in (("APF", "Apf"), ("APF-D", "Apfd"), ("APF-D, rays (C alone)", "Capf"), ("SAC alone", "Sac"),
+                      ("Arbiter D1", "Done"), ("Arbiter D2", "Dtwo")):
+            n[f"time{nm}Ms"] = f"{t[k]['ms_per_decision_median']:.2f}"
+            n[f"time{nm}Ratio"] = f"{t[k]['ratio_to_apf_per_decision']:.1f}"
+            n[f"time{nm}HundredRatio"] = f"{t[k]['ratio_to_apf_per_100m']:.1f}"
+    return n
+
+
+def b45_numbers(rep, iqm_ci, wilson):
+    """B4 (TD3 + pre-tanh penalty, moving) and B5 (SAC, static training): collapse, dynamic success, tests."""
+    from scipy import stats
+    from stats_v2 import holm
+    sys.path.insert(0, os.path.join(ROOT, "experiments"))
+    from stats_utils import mcnemar_exact
+    n = {}
+    ev = {}
+    for key, d, pre in (("Four", "eval_b4", "td3fix"), ("Five", "eval_b5", "sacstatic")):
+        runs = [J(V2, "ws_b", d, f"{pre}_seed{s}.json") for s in range(10)]
+        if any(r is None for r in runs):
+            return {}
+        ev[key] = runs
+        col = [bool(r["collapse"]["collapsed"]) for r in runs]
+        dyn = np.array([sum(x["outcome"] == "success" for x in r["axes"]["indist"]) for r in runs])
+        lo, hi = wilson(sum(col), 10)
+        n[f"b{key}Collapsed"] = str(sum(col))
+        n[f"b{key}CollapseCI"] = f"{100 * lo:.0f}--{100 * hi:.0f}\\%"
+        n[f"b{key}Dyn"] = f"${dyn.mean():.1f} \\pm {dyn.std(ddof=1):.1f}$"
+        m, l2, h2 = iqm_ci([dyn.tolist()])
+        n[f"b{key}DynIqm"] = f"{m:.1f} ({l2:.1f}--{h2:.1f})"
+        n[f"b{key}DynMin"], n[f"b{key}DynMax"] = str(dyn.min()), str(dyn.max())
+        for ax, nm in (("r100", "Rone"), ("r158", "Rhigh"), ("noise5", "Noise"), ("lay_static", "LayStat"),
+                       ("lay_dynamic", "LayDyn"), ("second_dyn", "Second")):
+            v = [100.0 * sum(x["outcome"] == "success" for x in r["axes"][ax]) / len(r["axes"][ax]) for r in runs]
+            n[f"b{key}{nm}Pct"] = f"{np.mean(v):.0f}\\%"
+    base = rep["baselines"]
+    td3 = np.array([base["corridor"]["td3dyn/best"]["dynamic"]["per_seed"][str(s)]["success"] for s in range(10)])
+    sac = np.array([base["corridor"]["sacdyn/best"]["dynamic"]["per_seed"][str(s)]["success"] for s in range(10)])
+    fix = np.array([sum(x["outcome"] == "success" for x in r["axes"]["indist"]) for r in ev["Four"]])
+    sst = np.array([sum(x["outcome"] == "success" for x in r["axes"]["indist"]) for r in ev["Five"]])
+    old_col = np.array([s in base["collapse"]["td3dyn"]["collapsed"] for s in range(10)])
+    new_col = np.array([bool(r["collapse"]["collapsed"]) for r in ev["Four"]])
+    tests = {"collapse": mcnemar_exact(~old_col, ~new_col)[2],            # paired by seed
+             "fix_vs_td3": stats.wilcoxon(fix, td3).pvalue,                 # paired by seed
+             "fix_vs_sac": stats.permutation_test((fix, sac), lambda a, b: np.mean(a) - np.mean(b), n_resamples=100000,
+                                                  random_state=0).pvalue,
+             "sst_vs_sac": stats.wilcoxon(sst, sac).pvalue}                 # same algorithm and seeds
+    adj = dict(zip(tests, holm(list(tests.values()))))
+    g = lambda x: f"{x:.2f}" if x >= 0.1 else f"{x:.3f}" if x >= 0.001 else f"{x:.4f}"
+    for k, nm in (("collapse", "Collapse"), ("fix_vs_td3", "FixTd"), ("fix_vs_sac", "FixSac"), ("sst_vs_sac", "SstSac")):
+        n[f"bTest{nm}"] = g(tests[k])
+        n[f"bTest{nm}Holm"] = g(adj[k])
+    n["bFourSeedsAboveTd"] = str(int(np.sum(fix > td3)))
+    n["bFiveSeedsBelowSac"] = str(int(np.sum(sst < sac)))
+    return n
+
+
+def d4_numbers():
+    """D3 selection and D4: the arbiter against its components, the handover-bug sensitivity check, behaviour."""
+    n = {}
+    sel = J(V2, "ws_d", "d3_selection", "result.json")
+    an = J(V2, "ws_d", "d4_analysis", "result.json")
+    tr = J(V2, "ws_d", "trigger_rate", "result.json")
+    if not (sel and an and tr):
+        return n
+    s = sel["selected"]
+    n["dThreeDon"], n["dThreeRhoOn"] = f"{s['d_on']:.1f}", f"{s['rho_on']:.2f}"
+    n["dThreeDoff"], n["dThreeRhoOff"] = f"{s['d_off']:.1f}", f"{s['rho_off']:.2f}"
+    n["trigFracSel"] = f"{100 * tr['selected']['fraction_triggering']:.0f}\\%"
+    n["trigFracInit"] = f"{100 * tr['d2']['fraction_triggering']:.0f}\\%"
+    S, O, N = an["successes"], an["oracle"], an["n_per_axis"]
+    axes = list(N)
+    tot = lambda k: sum(sum(S[k][a]) for a in axes)
+    n["arbRuns"] = f"{10 * sum(N.values()):,}"
+    for k, nm in (("sac", "Sac"), ("d1", "Done"), ("d1fix", "DoneFix"), ("d2", "Dtwo")):
+        n[f"arbTot{nm}"] = f"{tot(k):,}"
+    n["arbTotCapf"] = f"{10 * sum(S['capf'][a] for a in axes):,}"
+    n["arbTotOracle"] = f"{sum(sum(O['d1'][a]) for a in axes):,}"
+    n["arbFixGain"] = str(tot("d1fix") - tot("d1"))
+    n["arbEnvs"] = str(sum(N.values()))
+    n["arbCapfFail"] = str(sum(N.values()) - sum(S["capf"][a] for a in axes))
+    n["arbDoneCollCPerSeed"] = f"{an['behaviour']['d1']['failures_by_outcome_and_controller'].get('collision|C', 0) / 10:.0f}"
+    pct = lambda k, a: 100.0 * np.array(S[k][a]) / N[a]
+
+    def row(k):
+        out = []
+        for a in axes:
+            if isinstance(S[k][a], list):
+                v = pct(k, a)
+                out.append(f"{v.mean():.0f} ({v.std(ddof=1):.0f})")
+            else:
+                out.append(f"{100.0 * S[k][a] / N[a]:.0f}")
+        return " & ".join(out)
+    for k, nm in (("sac", "Sac"), ("capf", "Capf"), ("d1", "Done"), ("d1fix", "DoneFix"), ("d2", "Dtwo"), ("dwacv", "Dwacv")):
+        n[f"arbRow{nm}"] = row(k)
+    n["arbRowOracle"] = " & ".join(f"{(100.0 * np.array(O['d1'][a]) / N[a]).mean():.0f}" for a in axes)
+    F = an["families"]
+    for f, nm in (("d1_vs_sac", "DoneSac"), ("d1_vs_capf", "DoneCapf"), ("d1fix_vs_sac", "FixSac"),
+                  ("d1fix_vs_capf", "FixCapf"), ("d1fix_vs_d1", "FixDone"), ("d2_vs_sac", "DtwoSac"), ("d2_vs_dwacv", "DtwoDwacv")):
+        v = F[f]
+        n[f"arb{nm}Ahead"], n[f"arb{nm}Behind"] = str(v["cells_a_ahead"]), str(v["cells_b_ahead"])
+        n[f"arb{nm}SigBetter"], n[f"arb{nm}SigWorse"] = str(v["sig_a_better"]), str(v["sig_b_better"])
+    B = an["behaviour"]
+    for k, nm in (("d1", "Done"), ("d1fix", "DoneFix"), ("d2", "Dtwo")):
+        b = B[k]
+        fb = b["failures_by_outcome_and_controller"]
+        n[f"arb{nm}CollC"] = str(fb.get("collision|C", 0))
+        n[f"arb{nm}CollL"] = str(fb.get("collision|L", 0))
+        n[f"arb{nm}ExitL"] = str(fb.get("out_of_bounds|L", 0))
+        n[f"arb{nm}Switches"] = f"{b['switches_per_run']:.1f}"
+        n[f"arb{nm}Chatter"] = f"{b['chatter_per_run']:.1f}"
+        n[f"arb{nm}TimeC"] = f"{100 * b['frac_time_C']:.0f}\\%"
+        n[f"arb{nm}SecPerSwitch"] = f"{b['decisions_per_switch'] / 6.0:.1f}"
+    b = B["d1"]
+    n["arbFirstSwitchGoal"] = f"{b['first_switch_goal_dist_median']:.0f}"
+    n["arbLtoCGoalMedian"] = f"{b['goal_dist_L_to_C']['median']:.0f}"
+    n["arbLtoCWithinFifty"] = f"{100 * b['goal_dist_L_to_C']['frac_within_50m']:.1f}\\%"
+    n["arbRunsSwitchNearGoal"] = str(b["runs_switching_within_50m_of_goal"])
+    r = b["c_to_l_reasons"]
+    n["arbStallGuardShare"] = f"{100 * r.get('stall_guard', r.get('stall', 0)) / sum(r.values()):.0f}\\%"
     return n
 
 

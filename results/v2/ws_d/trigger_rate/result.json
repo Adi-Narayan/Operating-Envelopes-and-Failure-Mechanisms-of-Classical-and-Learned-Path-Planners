@@ -1,0 +1,17 @@
+{
+ "windows": 8134,
+ "d2": {
+  "d_on": 22.973953932523727,
+  "rho_on": 1.0037830720345178,
+  "fraction_triggering": 0.4456601917875584,
+  "fraction_by_distance": 0.22559626260142612,
+  "fraction_by_closing": 0.27870666338824684
+ },
+ "selected": {
+  "d_on": 27.973953932523727,
+  "rho_on": 0.7528373040258883,
+  "fraction_triggering": 0.5545856896975657,
+  "fraction_by_distance": 0.35640521268748465,
+  "fraction_by_closing": 0.32480944184902877
+ }
+}

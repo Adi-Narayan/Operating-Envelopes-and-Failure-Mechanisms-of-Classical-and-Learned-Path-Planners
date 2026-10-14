@@ -1,0 +1,15 @@
+{
+ "git_commit": "8ac70c2b6b0c01b30b26001989768abc8a13826a",
+ "script": "scripts/ws_d_trigger_rate.py",
+ "config": {
+  "lead_steps": 12
+ },
+ "seeds": {
+  "heldout_motion": "500000-500049",
+  "sac_seeds": "0-9"
+ },
+ "start": "2026-10-14T22:15:17+05:30",
+ "end": "2026-10-14T22:15:18+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}
