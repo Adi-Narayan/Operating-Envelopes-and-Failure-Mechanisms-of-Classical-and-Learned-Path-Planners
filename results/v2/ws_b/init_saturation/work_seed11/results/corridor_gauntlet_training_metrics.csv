@@ -1,0 +1,2 @@
+episode,avg_reward,avg_steps,success_rate,collision_rate,sim_time_s,avg_cpu_pct,end_rss_gb,system_power_w
+0,-94.52687704242757,155.4,0.0,0.4,60.337,97.81,0.3128,
