@@ -153,6 +153,14 @@ def v2_numbers():
         bad = [v for v in nodes if abs(v["m"]) >= 1]
         if bad:
             n["cTwoBadXzero"] = f"{min(min(abs(v['x0']), abs(v['x_other'])) for v in bad):.2f}"
+        cm = J(V2, "ws_c", "cycle_multipliers", "result.json")
+        if cm:
+            cs = cm["summary"]
+            n["cycTransMax"] = f"{cs['max_abs_transverse']:.2f}"
+            n["cycLinEigenOk"] = str(cs["linear_eigen_abs_m_below_1"])
+            n["cycLinEigenMax"] = f"{max(abs(v['m_linear_eigen']) for v in cm['cycles'].values()):.3f}"
+            n["cycNeutralDev"] = f"$10^{{{int(np.ceil(np.log10(cs['neutral_dev_max'])))}}}$"
+            n["cycPeriodDev"] = f"$10^{{{int(np.ceil(np.log10(cs['max_period2_dev_m'])))}}}$"
         n["cTwoMidMin"], n["cTwoMidMax"] = f"{sm['mid_to_shifted_eq_range'][0]:.2f}", f"{sm['mid_to_shifted_eq_range'][1]:.2f}"
         n["cTwoSinks"] = str(sm["det_sign"]["positive"])
         n["cTwoCapRemoved"] = str(sm["cap_outcomes"]["success"])
@@ -288,6 +296,20 @@ def v2_numbers():
         n[f"iqm{nm}"] = f"{m:.1f} ({lo:.1f}--{hi:.1f})"
     n.update(b45_numbers(rep, iqm_ci, wilson))
     n.update(d4_numbers())
+    mm = J(V2, "ws_c", "matched_apfd", "result.json")
+    if mm:                     # post hoc: APF-D under all three constraints, and the step types of C alone
+        AXS = ("indist", "r100", "r158", "noise5", "lay_static", "lay_dynamic", "second_dyn")
+        sd_, sa_ = mm["matched_apfd"]["summary"], mm["matched_apf"]["summary"]
+        n["mApfdIndist"], n["mApfIndist"] = str(sd_["indist"]), str(sa_["indist"])
+        n["mApfdBelowAxes"] = str(sum(sd_[a] < sa_[a] for a in AXS))
+        ok = [r["efficiency"] for r in mm["matched_apfd"]["runs"]["indist"] if r["outcome"] == "success"]
+        n["mApfdEta"] = f"{np.mean(ok):.1f}"
+        c = mm["c_alone_steps"]
+        n["cEscPct"] = f"{c['escape_per_100_decisions'] + c['pushout_per_100_decisions']:.1f}\\%"
+        R, M = c["runs"], mm["matched_apfd"]["runs"]
+        only = [(rc["escape"] + rc["pushout"]) > 0 for a in AXS for rc, rm in zip(R[a], M[a])
+                if rc["outcome"] == "success" and rm["outcome"] != "success"]
+        n["cOnly"], n["cOnlyEsc"] = str(len(only)), str(sum(only))
     t = J(V2, "ws_x", "timing", "result.json")
     if t:
         for k, nm in (("APF", "Apf"), ("APF-D", "Apfd"), ("APF-D, rays (C alone)", "Capf"), ("SAC alone", "Sac"),
@@ -402,6 +424,9 @@ def d4_numbers():
         n[f"arb{nm}Chatter"] = f"{b['chatter_per_run']:.1f}"
         n[f"arb{nm}TimeC"] = f"{100 * b['frac_time_C']:.0f}\\%"
         n[f"arb{nm}SecPerSwitch"] = f"{b['decisions_per_switch'] / 6.0:.1f}"
+    sig9 = [c for c in F["d1_vs_sac"]["cells"] if c["p_holm"] < 0.05 and c["a_only"] > c["b_only"]]
+    n["arbDoneSacSigSeedNine"] = str(sum(c["seed"] == 9 for c in sig9))
+    n["arbDtwoSacSigBetter"] = str(F["d2_vs_sac"]["sig_a_better"])
     b = B["d1"]
     n["arbFirstSwitchGoal"] = f"{b['first_switch_goal_dist_median']:.0f}"
     n["arbLtoCGoalMedian"] = f"{b['goal_dist_L_to_C']['median']:.0f}"

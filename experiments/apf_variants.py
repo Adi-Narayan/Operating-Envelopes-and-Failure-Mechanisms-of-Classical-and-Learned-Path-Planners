@@ -80,10 +80,14 @@ def _rep_points(q, goal, hits, cfg):
 
 
 def run(timeline, planner_seed, sensing="full", turn_cap=False, rate="apf", max_distance=H.MAX_DISTANCE,
-        range_noise=0.0, heading_noise=0.0, noise_seed=None):
+        range_noise=0.0, heading_noise=0.0, noise_seed=None, momentum=None):
     """range_noise: SD (m) of Gaussian noise on every perceived obstacle distance, one sample per
     obstacle (or ray) per step. heading_noise: SD (rad) of Gaussian noise on the executed heading.
-    Collision and success are always judged on the true state."""
+    Collision and success are always judged on the true state.
+    momentum: heading momentum beta (APF-D) in the turn-capped branch only; None (default) leaves the
+    planner unchanged. The desired heading is that of beta * last executed direction + (1 - beta) * force
+    direction, then clipped to the cap (post-hoc matched-constraints check, prereg.md 2026-10-14)."""
+    d_prev = None
     cfg = dyn.APFConfig()
     nrng = np.random.default_rng(planner_seed + 7_000_000 if noise_seed is None else noise_seed)
     R_theta = dyn.rotation_matrix(cfg.theta)
@@ -176,6 +180,10 @@ def run(timeline, planner_seed, sensing="full", turn_cap=False, rate="apf", max_
                 heading = math.atan2(q_next[1] - q[1], q_next[0] - q[0])
         else:
             desired = math.atan2(Fb[1], Fb[0]) if nF >= cfg.stuck_eps else heading
+            if momentum is not None and d_prev is not None and nF >= cfg.stuck_eps:
+                mv = momentum * d_prev + (1 - momentum) * Fb / nF
+                if np.linalg.norm(mv) > 1e-12:
+                    desired = math.atan2(mv[1], mv[0])
             delta = math.atan2(math.sin(desired - heading), math.cos(desired - heading))
             cand = [heading + max(-cap, min(cap, delta))]
             cand_q = [np.clip(q + step * np.array([math.cos(c), math.sin(c)]), lo, hi) for c in cand]
@@ -202,6 +210,8 @@ def run(timeline, planner_seed, sensing="full", turn_cap=False, rate="apf", max_
             q_next = np.clip(q + np.array([c_ * dvec[0] - s_ * dvec[1], s_ * dvec[0] + c_ * dvec[1]]), lo, hi)
             heading = math.atan2(q_next[1] - q[1], q_next[0] - q[0])
 
+        if np.linalg.norm(q_next - q) > 1e-9:
+            d_prev = (q_next - q) / np.linalg.norm(q_next - q)
         q = q_next
         path.append(q.copy())
         c = H.clearance(q, timeline.at((k + 1) * dt))

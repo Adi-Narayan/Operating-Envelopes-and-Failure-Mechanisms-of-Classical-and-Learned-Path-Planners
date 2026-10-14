@@ -89,6 +89,7 @@ class APFRays:
         self.rng = rng
         self.bias = rng.normal(0, 0.06, size=2)
         self.d_prev, self.big_turns, self.cap_left = None, 0, 0
+        self.counts = {"decisions": 0, "jitter": 0, "escape": 0, "pushout": 0}   # diagnostics only
 
     def decide(self, q, heading, obs, nrng=None, range_noise=0.0, heading_noise=0.0):
         cfg, goal, step, rng = self.cfg, H.GOAL.copy(), self.step, self.rng
@@ -117,6 +118,7 @@ class APFRays:
             if nF < cfg.stuck_eps:
                 sd = rng.normal(0, 1, size=2); sd /= np.linalg.norm(sd) + 1e-12
                 q_next = q + cfg.jitter * sd
+                self.counts["jitter"] += 1
             else:
                 sd = Fb / nF
                 if self.momentum is not None and self.d_prev is not None:
@@ -129,10 +131,12 @@ class APFRays:
                 perp = np.array([-sd[1], sd[0]]); perp /= np.linalg.norm(perp) + 1e-12
                 q_next = np.clip(q + step * 1.8 * perp + rng.normal(0, 0.15, size=2), self.lo, self.hi)
                 tries += 1
+            self.counts["escape"] += bool(tries)
             if margin_bad(q_next):
                 d_, p_ = min(((np.linalg.norm(q_next - p), p) for p in pts), key=lambda x: x[0])
                 if d_ < dyn.COLLISION_MARGIN:
                     q_next = q_next + (dyn.COLLISION_MARGIN - d_ + 3.0) * ((q_next - p_) / (d_ + 1e-12))
+                    self.counts["pushout"] += 1
             new_h = math.atan2(q_next[1] - q[1], q_next[0] - q[0]) if np.linalg.norm(q_next - q) > 1e-9 else heading
         if heading_noise > 0 and np.linalg.norm(q_next - q) > 1e-9:
             a = nrng.normal(0.0, heading_noise)
@@ -145,6 +149,7 @@ class APFRays:
             self.big_turns = self.big_turns + 1 if turn > 150.0 else 0
             if self.big_turns >= 2 and self.cap_left == 0:
                 self.cap_left, self.big_turns = self.osc_cap_K, 0
+        self.counts["decisions"] += 1
         disp = q_next - q
         if np.linalg.norm(disp) > 1e-9:
             self.d_prev = disp / np.linalg.norm(disp)

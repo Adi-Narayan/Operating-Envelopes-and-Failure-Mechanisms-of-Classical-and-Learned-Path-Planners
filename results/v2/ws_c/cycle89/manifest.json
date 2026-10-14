@@ -1,0 +1,15 @@
+{
+ "git_commit": "07bf3800cb573347d428a01ce267f7905304966c",
+ "script": "scripts/ws_c_cycle89.py",
+ "config": {
+  "tail": 600,
+  "layout": 89
+ },
+ "seeds": {
+  "planner": 0
+ },
+ "start": "2026-10-14T22:53:45+05:30",
+ "end": "2026-10-14T22:53:50+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}

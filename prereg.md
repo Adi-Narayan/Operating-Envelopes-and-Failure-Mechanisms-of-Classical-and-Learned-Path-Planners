@@ -176,3 +176,13 @@ comparison family. Exact-geometry APF-D is not the reference for this check (it 
 arbiter). Reading: if d1fix loses to both of its components, the negative result stands as is; if it
 beats SAC alone but loses to ray-APF-D, the finding is the narrower one that handing control back to
 SAC costs successes.
+
+### WS-C post hoc: fully matched APF-D (recorded 2026-10-14, before the run)
+Post hoc, prompted by Table 9: ray-sensed APF-D (the arbiter's C alone, no turn cap) outperforms SAC on
+every axis, while APF under all three of the learned agent's constraints reaches 36/50. To separate the
+effect of momentum from that of turning freedom, APF-D is run with all three constraints (nine 50 m
+rays, 6 Hz with 3.0 m steps, hard 9 deg per step cap; momentum beta = 0.85 applied to the desired
+heading before the cap), on the seven envelope axes and the static custom environment, beside matched APF
+without momentum on the same runs (`scripts/ws_c_matched_apfd.py`). The escape (perpendicular jump),
+push-out and jitter steps of C alone are counted, since they bypass the momentum turn limit. No setting
+is tuned; the result is reported whichever way it falls and labelled post hoc in the paper.

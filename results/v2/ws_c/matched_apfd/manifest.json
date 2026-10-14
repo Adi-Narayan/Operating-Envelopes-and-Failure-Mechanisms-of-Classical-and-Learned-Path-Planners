@@ -1,0 +1,17 @@
+{
+ "git_commit": "07bf3800cb573347d428a01ce267f7905304966c",
+ "script": "scripts/ws_c_matched_apfd.py",
+ "config": {
+  "momentum": 0.85,
+  "cap_deg_per_step": 9.0,
+  "rate": "6 Hz, 3.0 m",
+  "sensing": "nine 50 m rays"
+ },
+ "seeds": {
+  "see": "docstring"
+ },
+ "start": "2026-10-14T22:53:06+05:30",
+ "end": "2026-10-14T23:18:01+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}
