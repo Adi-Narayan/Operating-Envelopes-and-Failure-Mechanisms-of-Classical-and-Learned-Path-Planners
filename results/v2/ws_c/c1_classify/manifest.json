@@ -1,0 +1,19 @@
+{
+ "git_commit": "39a16ca19d81dc4e5ec78c31129e3f59aacf897e",
+ "script": "scripts/ws_c_classify_stalls.py",
+ "config": {
+  "theta_deg": 25,
+  "k_a": 5.0,
+  "k_r": 0.85,
+  "step_m": 1.8,
+  "jacobian_h_m": 0.0001
+ },
+ "seeds": {
+  "layout_generator": "0-99",
+  "planner_seed": 0
+ },
+ "start": "2026-10-12T19:31:29+05:30",
+ "end": "2026-10-12T19:35:35+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

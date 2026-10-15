@@ -1,0 +1,23 @@
+{
+ "git_commit": "8ab63ffdd4b1da6b82b87b96b3d4403408732359",
+ "script": "scripts/ws_d_d4_eval.py d2 2",
+ "config": {
+  "mode": "d2",
+  "sac_seed": 2,
+  "c_kind": "dwa_cv",
+  "c_config": "DWA-CV (dwa_tune.json)",
+  "thresholds": {
+   "d_on": 27.973953932523727,
+   "rho_on": 0.7528373040258883,
+   "d_off": 32.97395393252373,
+   "rho_off": 0.6022698432207108
+  }
+ },
+ "seeds": {
+  "see": "notes/seed_map.md (frozen evaluation sets)"
+ },
+ "start": "2026-10-13T15:20:47+05:30",
+ "end": "2026-10-13T16:35:42+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

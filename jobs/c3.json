@@ -1,0 +1,14 @@
+{
+ "name": "c3",
+ "jobs": [
+  {
+   "name": "c3_theta_sweep",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_theta_sweep.py"
+   ],
+   "clean": []
+  }
+ ]
+}

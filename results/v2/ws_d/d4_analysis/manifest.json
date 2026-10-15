@@ -1,0 +1,52 @@
+{
+ "git_commit": "4a14e5e057d34595c07cdb9e54a1a85cc0cc44f1",
+ "script": "scripts/ws_d_d4_analysis.py",
+ "config": {
+  "families": {
+   "d1_vs_sac": [
+    "d1",
+    "sac"
+   ],
+   "d1_vs_capf": [
+    "d1",
+    "capf"
+   ],
+   "d1fix_vs_sac": [
+    "d1fix",
+    "sac"
+   ],
+   "d1fix_vs_capf": [
+    "d1fix",
+    "capf"
+   ],
+   "d1fix_vs_d1": [
+    "d1fix",
+    "d1"
+   ],
+   "d2_vs_sac": [
+    "d2",
+    "sac"
+   ],
+   "d2_vs_dwacv": [
+    "d2",
+    "dwacv"
+   ]
+  },
+  "axes": [
+   "indist",
+   "r100",
+   "r158",
+   "noise5",
+   "lay_static",
+   "lay_dynamic",
+   "second_dyn"
+  ]
+ },
+ "seeds": {
+  "sac": "0-9"
+ },
+ "start": "2026-10-14T00:41:36+05:30",
+ "end": "2026-10-14T00:41:42+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

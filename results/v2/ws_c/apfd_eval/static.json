@@ -1,0 +1,71 @@
+{
+ "variant": "mom085",
+ "kwargs": {
+  "momentum": 0.85
+ },
+ "custom": {
+  "outcome": "success",
+  "steps": 417,
+  "path_length": 750.5999999999999,
+  "efficiency": 81.01676416472569,
+  "min_clearance": 19.18304733842976,
+  "escape_steps": 0,
+  "pushouts": 0
+ },
+ "second": {
+  "outcome": "success",
+  "steps": 417,
+  "path_length": 750.6000000000006,
+  "efficiency": 81.0167641647256,
+  "min_clearance": 10.538615762734672,
+  "escape_steps": 0,
+  "pushouts": 0
+ },
+ "five_layouts": {
+  "Corridor Gauntlet": {
+   "outcome": "success",
+   "steps": 417,
+   "path_length": 750.5999999999999,
+   "efficiency": 81.01676416472569,
+   "min_clearance": 19.18304733842976,
+   "escape_steps": 0,
+   "pushouts": 0
+  },
+  "Dense Forest": {
+   "outcome": "success",
+   "steps": 421,
+   "path_length": 759.1573096341408,
+   "efficiency": 80.10353376080869,
+   "min_clearance": 6.217935616694181,
+   "escape_steps": 1,
+   "pushouts": 0
+  },
+  "Wall Maze": {
+   "outcome": "success",
+   "steps": 395,
+   "path_length": 710.9999999999994,
+   "efficiency": 85.52909027010287,
+   "min_clearance": 16.55252383421621,
+   "escape_steps": 0,
+   "pushouts": 0
+  },
+  "Scattered Mixed": {
+   "outcome": "success",
+   "steps": 440,
+   "path_length": 792.0,
+   "efficiency": 76.7817969470241,
+   "min_clearance": 20.171847700084964,
+   "escape_steps": 0,
+   "pushouts": 0
+  },
+  "Narrow Passage": {
+   "outcome": "timeout",
+   "steps": 6000,
+   "path_length": 10800.0,
+   "efficiency": 5.630665109448434,
+   "min_clearance": 15.025961993652317,
+   "escape_steps": 0,
+   "pushouts": 0
+  }
+ }
+}

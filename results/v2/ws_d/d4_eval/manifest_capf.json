@@ -1,0 +1,23 @@
+{
+ "git_commit": "05b949c1490a824260b93cd8a0e21c69dbdd2fd5",
+ "script": "scripts/ws_d_d4_eval.py capf",
+ "config": {
+  "mode": "capf",
+  "sac_seed": null,
+  "c_kind": "apf_rays",
+  "c_config": {
+   "kind": "apf_rays",
+   "momentum": 0.85,
+   "osc_cap_K": null,
+   "source": "C4 rule selected mom085 (results/v2/ws_c/c4_selection)"
+  },
+  "thresholds": null
+ },
+ "seeds": {
+  "see": "notes/seed_map.md (frozen evaluation sets)"
+ },
+ "start": "2026-10-12T23:51:30+05:30",
+ "end": "2026-10-13T00:47:57+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

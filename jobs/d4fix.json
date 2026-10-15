@@ -1,0 +1,115 @@
+{
+ "name": "d4fix",
+ "jobs": [
+  {
+   "name": "d1fix_0",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "0"
+   ]
+  },
+  {
+   "name": "d1fix_1",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "1"
+   ]
+  },
+  {
+   "name": "d1fix_2",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "2"
+   ]
+  },
+  {
+   "name": "d1fix_3",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "3"
+   ]
+  },
+  {
+   "name": "d1fix_4",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "4"
+   ]
+  },
+  {
+   "name": "d1fix_5",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "5"
+   ]
+  },
+  {
+   "name": "d1fix_6",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "6"
+   ]
+  },
+  {
+   "name": "d1fix_7",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "7"
+   ]
+  },
+  {
+   "name": "d1fix_8",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "8"
+   ]
+  },
+  {
+   "name": "d1fix_9",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1fix",
+    "9"
+   ]
+  }
+ ]
+}

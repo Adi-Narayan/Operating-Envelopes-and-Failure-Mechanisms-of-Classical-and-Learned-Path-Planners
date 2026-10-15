@@ -1,0 +1,29 @@
+{
+ "git_commit": "4a14e5e057d34595c07cdb9e54a1a85cc0cc44f1",
+ "script": "scripts/ws_d_d4_eval.py d1fix 0",
+ "config": {
+  "mode": "d1fix",
+  "sac_seed": 0,
+  "c_kind": "apf_rays",
+  "c_config": {
+   "kind": "apf_rays",
+   "momentum": 0.85,
+   "osc_cap_K": null,
+   "source": "C4 rule selected mom085 (results/v2/ws_c/c4_selection)"
+  },
+  "thresholds": {
+   "d_on": 27.973953932523727,
+   "rho_on": 0.7528373040258883,
+   "d_off": 32.97395393252373,
+   "rho_off": 0.6022698432207108
+  },
+  "handover_reset": true
+ },
+ "seeds": {
+  "see": "notes/seed_map.md (frozen evaluation sets)"
+ },
+ "start": "2026-10-13T19:52:43+05:30",
+ "end": "2026-10-13T20:48:42+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

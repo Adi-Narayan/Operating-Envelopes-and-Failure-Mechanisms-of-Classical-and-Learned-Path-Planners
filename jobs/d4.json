@@ -1,0 +1,516 @@
+{
+ "name": "d4",
+ "jobs": [
+  {
+   "name": "capf",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "capf"
+   ]
+  },
+  {
+   "name": "dwacv",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "dwacv"
+   ]
+  },
+  {
+   "name": "sac_0",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "0"
+   ]
+  },
+  {
+   "name": "sac_1",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "1"
+   ]
+  },
+  {
+   "name": "sac_2",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "2"
+   ]
+  },
+  {
+   "name": "sac_3",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "3"
+   ]
+  },
+  {
+   "name": "sac_4",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "4"
+   ]
+  },
+  {
+   "name": "sac_5",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "5"
+   ]
+  },
+  {
+   "name": "sac_6",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "6"
+   ]
+  },
+  {
+   "name": "sac_7",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "7"
+   ]
+  },
+  {
+   "name": "sac_8",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "8"
+   ]
+  },
+  {
+   "name": "sac_9",
+   "priority": "below",
+   "clean": [],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "sac",
+    "9"
+   ]
+  },
+  {
+   "name": "d3_select",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d3/d3_g0_sac0",
+    "d3/d3_g0_sac1",
+    "d3/d3_g0_sac2",
+    "d3/d3_g0_sac3",
+    "d3/d3_g0_sac4",
+    "d3/d3_g0_sac5",
+    "d3/d3_g0_sac6",
+    "d3/d3_g0_sac7",
+    "d3/d3_g0_sac8",
+    "d3/d3_g0_sac9",
+    "d3/d3_g1_sac0",
+    "d3/d3_g1_sac1",
+    "d3/d3_g1_sac2",
+    "d3/d3_g1_sac3",
+    "d3/d3_g1_sac4",
+    "d3/d3_g1_sac5",
+    "d3/d3_g1_sac6",
+    "d3/d3_g1_sac7",
+    "d3/d3_g1_sac8",
+    "d3/d3_g1_sac9",
+    "d3/d3_g2_sac0",
+    "d3/d3_g2_sac1",
+    "d3/d3_g2_sac2",
+    "d3/d3_g2_sac3",
+    "d3/d3_g2_sac4",
+    "d3/d3_g2_sac5",
+    "d3/d3_g2_sac6",
+    "d3/d3_g2_sac7",
+    "d3/d3_g2_sac8",
+    "d3/d3_g2_sac9",
+    "d3/d3_g3_sac0",
+    "d3/d3_g3_sac1",
+    "d3/d3_g3_sac2",
+    "d3/d3_g3_sac3",
+    "d3/d3_g3_sac4",
+    "d3/d3_g3_sac5",
+    "d3/d3_g3_sac6",
+    "d3/d3_g3_sac7",
+    "d3/d3_g3_sac8",
+    "d3/d3_g3_sac9",
+    "d3/d3_g4_sac0",
+    "d3/d3_g4_sac1",
+    "d3/d3_g4_sac2",
+    "d3/d3_g4_sac3",
+    "d3/d3_g4_sac4",
+    "d3/d3_g4_sac5",
+    "d3/d3_g4_sac6",
+    "d3/d3_g4_sac7",
+    "d3/d3_g4_sac8",
+    "d3/d3_g4_sac9",
+    "d3/d3_g5_sac0",
+    "d3/d3_g5_sac1",
+    "d3/d3_g5_sac2",
+    "d3/d3_g5_sac3",
+    "d3/d3_g5_sac4",
+    "d3/d3_g5_sac5",
+    "d3/d3_g5_sac6",
+    "d3/d3_g5_sac7",
+    "d3/d3_g5_sac8",
+    "d3/d3_g5_sac9",
+    "d3/d3_g6_sac0",
+    "d3/d3_g6_sac1",
+    "d3/d3_g6_sac2",
+    "d3/d3_g6_sac3",
+    "d3/d3_g6_sac4",
+    "d3/d3_g6_sac5",
+    "d3/d3_g6_sac6",
+    "d3/d3_g6_sac7",
+    "d3/d3_g6_sac8",
+    "d3/d3_g6_sac9",
+    "d3/d3_g7_sac0",
+    "d3/d3_g7_sac1",
+    "d3/d3_g7_sac2",
+    "d3/d3_g7_sac3",
+    "d3/d3_g7_sac4",
+    "d3/d3_g7_sac5",
+    "d3/d3_g7_sac6",
+    "d3/d3_g7_sac7",
+    "d3/d3_g7_sac8",
+    "d3/d3_g7_sac9",
+    "d3/d3_g8_sac0",
+    "d3/d3_g8_sac1",
+    "d3/d3_g8_sac2",
+    "d3/d3_g8_sac3",
+    "d3/d3_g8_sac4",
+    "d3/d3_g8_sac5",
+    "d3/d3_g8_sac6",
+    "d3/d3_g8_sac7",
+    "d3/d3_g8_sac8",
+    "d3/d3_g8_sac9"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d3_select.py"
+   ]
+  },
+  {
+   "name": "d1_0",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "0"
+   ]
+  },
+  {
+   "name": "d2_0",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "0"
+   ]
+  },
+  {
+   "name": "d1_1",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "1"
+   ]
+  },
+  {
+   "name": "d2_1",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "1"
+   ]
+  },
+  {
+   "name": "d1_2",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "2"
+   ]
+  },
+  {
+   "name": "d2_2",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "2"
+   ]
+  },
+  {
+   "name": "d1_3",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "3"
+   ]
+  },
+  {
+   "name": "d2_3",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "3"
+   ]
+  },
+  {
+   "name": "d1_4",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "4"
+   ]
+  },
+  {
+   "name": "d2_4",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "4"
+   ]
+  },
+  {
+   "name": "d1_5",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "5"
+   ]
+  },
+  {
+   "name": "d2_5",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "5"
+   ]
+  },
+  {
+   "name": "d1_6",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "6"
+   ]
+  },
+  {
+   "name": "d2_6",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "6"
+   ]
+  },
+  {
+   "name": "d1_7",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "7"
+   ]
+  },
+  {
+   "name": "d2_7",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "7"
+   ]
+  },
+  {
+   "name": "d1_8",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "8"
+   ]
+  },
+  {
+   "name": "d2_8",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "8"
+   ]
+  },
+  {
+   "name": "d1_9",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d1",
+    "9"
+   ]
+  },
+  {
+   "name": "d2_9",
+   "priority": "below",
+   "clean": [],
+   "after": [
+    "d4/d3_select"
+   ],
+   "cmd": [
+    "python",
+    "scripts/ws_d_d4_eval.py",
+    "d2",
+    "9"
+   ]
+  }
+ ]
+}

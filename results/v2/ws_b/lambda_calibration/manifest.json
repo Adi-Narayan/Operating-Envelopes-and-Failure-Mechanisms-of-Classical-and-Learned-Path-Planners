@@ -1,0 +1,14 @@
+{
+ "git_commit": "525f5f62b0b46518adf394834ed14c49294fc4b6",
+ "script": "experiments/train_arc_seed.py --algo td3 --dynamic --seed 100 --episodes 10",
+ "config": {
+  "rule": "lambda * E[u^2] = 0.01 * |actor loss| at episode 10 of a baseline TD3 moving run"
+ },
+ "seeds": {
+  "seed": 100
+ },
+ "start": "2026-10-12",
+ "end": "2026-10-12T19:23:18+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}

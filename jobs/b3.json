@@ -1,0 +1,287 @@
+{
+ "name": "b3",
+ "jobs": [
+  {
+   "name": "b3a_seed10",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "10",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3a_seed10"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3a_seed10"
+   ]
+  },
+  {
+   "name": "b3b_seed10",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "10",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3b_seed10",
+    "--gamma",
+    "0.9"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3b_seed10"
+   ]
+  },
+  {
+   "name": "b3c_seed10",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "10",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3c_seed10",
+    "--pretanh-penalty",
+    "0.002"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3c_seed10"
+   ]
+  },
+  {
+   "name": "b3d_seed10",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "10",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3d_seed10",
+    "--exploration-noise",
+    "0.3"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3d_seed10"
+   ]
+  },
+  {
+   "name": "b3a_seed11",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "11",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3a_seed11"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3a_seed11"
+   ]
+  },
+  {
+   "name": "b3b_seed11",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "11",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3b_seed11",
+    "--gamma",
+    "0.9"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3b_seed11"
+   ]
+  },
+  {
+   "name": "b3c_seed11",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "11",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3c_seed11",
+    "--pretanh-penalty",
+    "0.002"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3c_seed11"
+   ]
+  },
+  {
+   "name": "b3d_seed11",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "11",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3d_seed11",
+    "--exploration-noise",
+    "0.3"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3d_seed11"
+   ]
+  },
+  {
+   "name": "b3a_seed12",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "12",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3a_seed12"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3a_seed12"
+   ]
+  },
+  {
+   "name": "b3b_seed12",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "12",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3b_seed12",
+    "--gamma",
+    "0.9"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3b_seed12"
+   ]
+  },
+  {
+   "name": "b3c_seed12",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "12",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3c_seed12",
+    "--pretanh-penalty",
+    "0.002"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3c_seed12"
+   ]
+  },
+  {
+   "name": "b3d_seed12",
+   "priority": "normal",
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "12",
+    "--episodes",
+    "50",
+    "--out-root",
+    "results/v2/ws_b/b3",
+    "--name",
+    "b3d_seed12",
+    "--exploration-noise",
+    "0.3"
+   ],
+   "clean": [
+    "results/v2/ws_b/b3/b3d_seed12"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "APF": {
+  "ms_per_decision_median": 0.7069628384429846,
+  "ms_per_100m_median": 39.27571324683248,
+  "ratio_to_apf_per_decision": 1.0,
+  "ratio_to_apf_per_100m": 1.0
+ },
+ "APF-D": {
+  "ms_per_decision_median": 0.8961072453809737,
+  "ms_per_100m_median": 49.82208428199763,
+  "ratio_to_apf_per_decision": 1.2675450485552548,
+  "ratio_to_apf_per_100m": 1.2685214389076866
+ },
+ "APF-D, rays (C alone)": {
+  "ms_per_decision_median": 1.410439429142011,
+  "ms_per_100m_median": 46.783018256560936,
+  "ratio_to_apf_per_decision": 1.9950686973142235,
+  "ratio_to_apf_per_100m": 1.1911436964250142
+ },
+ "SAC alone": {
+  "ms_per_decision_median": 1.9093662091246397,
+  "ms_per_100m_median": 63.64554881156947,
+  "ratio_to_apf_per_decision": 2.7008013792207652,
+  "ratio_to_apf_per_100m": 1.6204810441399782
+ },
+ "Arbiter D1": {
+  "ms_per_decision_median": 2.314868790982963,
+  "ms_per_100m_median": 77.01519261211992,
+  "ratio_to_apf_per_decision": 3.2743853921391843,
+  "ratio_to_apf_per_100m": 1.960885907484597
+ },
+ "Arbiter D2": {
+  "ms_per_decision_median": 2.52140079531506,
+  "ms_per_100m_median": 112.09503070898135,
+  "ratio_to_apf_per_decision": 3.566525223402399,
+  "ratio_to_apf_per_100m": 2.8540546165134666
+ }
+}

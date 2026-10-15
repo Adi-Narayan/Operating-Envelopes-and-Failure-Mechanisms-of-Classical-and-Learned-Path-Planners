@@ -1,0 +1,14 @@
+{
+ "git_commit": "05b949c1490a824260b93cd8a0e21c69dbdd2fd5",
+ "script": "scripts/ws_b_init_saturation.py 11",
+ "config": {
+  "config": "BASELINE_TRAIN_CONFIG, TD3, moving obstacles"
+ },
+ "seeds": {
+  "seed": 11
+ },
+ "start": "2026-10-13T01:22:30+05:30",
+ "end": "2026-10-13T01:23:38+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

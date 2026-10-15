@@ -1,0 +1,166 @@
+{
+ "c1_types": {
+  "stable node": 27,
+  "stable focus": 4,
+  "arena-boundary trap": 1
+ },
+ "c3_by_theta": {
+  "0": {
+   "success": 64,
+   "timeout": 36,
+   "collision": 0,
+   "two_cycles": 36
+  },
+  "5": {
+   "success": 64,
+   "timeout": 36,
+   "collision": 0,
+   "two_cycles": 36
+  },
+  "10": {
+   "success": 69,
+   "timeout": 31,
+   "collision": 0,
+   "two_cycles": 31
+  },
+  "15": {
+   "success": 68,
+   "timeout": 32,
+   "collision": 0,
+   "two_cycles": 30
+  },
+  "20": {
+   "success": 63,
+   "timeout": 37,
+   "collision": 0,
+   "two_cycles": 30
+  },
+  "25": {
+   "success": 68,
+   "timeout": 32,
+   "collision": 0,
+   "two_cycles": 27
+  },
+  "30": {
+   "success": 60,
+   "timeout": 40,
+   "collision": 0,
+   "two_cycles": 31
+  },
+  "35": {
+   "success": 58,
+   "timeout": 42,
+   "collision": 0,
+   "two_cycles": 34
+  },
+  "40": {
+   "success": 55,
+   "timeout": 45,
+   "collision": 0,
+   "two_cycles": 40
+  },
+  "45": {
+   "success": 61,
+   "timeout": 39,
+   "collision": 0,
+   "two_cycles": 30
+  },
+  "50": {
+   "success": 69,
+   "timeout": 31,
+   "collision": 0,
+   "two_cycles": 22
+  },
+  "55": {
+   "success": 71,
+   "timeout": 29,
+   "collision": 0,
+   "two_cycles": 18
+  },
+  "60": {
+   "success": 73,
+   "timeout": 27,
+   "collision": 0,
+   "two_cycles": 11
+  },
+  "65": {
+   "success": 78,
+   "timeout": 22,
+   "collision": 0,
+   "two_cycles": 6
+  },
+  "70": {
+   "success": 76,
+   "timeout": 24,
+   "collision": 0,
+   "two_cycles": 5
+  },
+  "75": {
+   "success": 83,
+   "timeout": 17,
+   "collision": 0,
+   "two_cycles": 1
+  },
+  "80": {
+   "success": 89,
+   "timeout": 11,
+   "collision": 0,
+   "two_cycles": 0
+  },
+  "85": {
+   "success": 92,
+   "timeout": 8,
+   "collision": 0,
+   "two_cycles": 0
+  },
+  "90": {
+   "success": 95,
+   "timeout": 5,
+   "collision": 0,
+   "two_cycles": 0
+  }
+ },
+ "apfd": {
+  "variant": "mom085",
+  "kwargs": {
+   "momentum": 0.85
+  },
+  "static_custom": "success",
+  "static_second": "success",
+  "static_five_layouts": {
+   "Corridor Gauntlet": "success",
+   "Dense Forest": "success",
+   "Wall Maze": "success",
+   "Scattered Mixed": "success",
+   "Narrow Passage": "timeout"
+  },
+  "dynamic_success": 49,
+  "dynamic_efficiency_mean": 73.70246400105782,
+  "speed_success": {
+   "3.0": 22,
+   "4.0": 37,
+   "4.75": 43,
+   "6.0": 48,
+   "9.0": 44,
+   "12.0": 43,
+   "18.0": 49,
+   "27.0": 50
+  },
+  "noise_success": {
+   "L1": 49,
+   "L2": 41,
+   "L3": 43
+  },
+  "layouts_static": {
+   "success": 88,
+   "timeout": 12,
+   "collision": 0
+  },
+  "layouts_dynamic": {
+   "success": 98,
+   "timeout": 0,
+   "collision": 2
+  },
+  "second_dynamic_success": 47
+ }
+}

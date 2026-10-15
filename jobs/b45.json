@@ -1,0 +1,455 @@
+{
+ "name": "b45",
+ "jobs": [
+  {
+   "name": "b4_td3fix_seed0",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed0"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "0",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed0"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed0",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed0"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "0",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed0"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed1",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed1"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "1",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed1"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed1",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed1"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "1",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed1"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed2",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed2"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "2",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed2"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed2",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed2"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "2",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed2"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed3",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed3"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "3",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed3"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed3",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed3"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "3",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed3"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed4",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed4"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "4",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed4"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed4",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed4"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "4",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed4"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed5",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed5"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "5",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed5"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed5",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed5"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "5",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed5"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed6",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed6"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "6",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed6"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed6",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed6"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "6",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed6"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed7",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed7"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "7",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed7"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed7",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed7"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "7",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed7"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed8",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed8"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "8",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed8"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed8",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed8"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "8",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed8"
+   ]
+  },
+  {
+   "name": "b4_td3fix_seed9",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b4/td3fix_seed9"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "td3",
+    "--dynamic",
+    "--seed",
+    "9",
+    "--episodes",
+    "300",
+    "--pretanh-penalty",
+    "0.002",
+    "--out-root",
+    "results/v2/ws_b/b4",
+    "--name",
+    "td3fix_seed9"
+   ]
+  },
+  {
+   "name": "b5_sacstatic_seed9",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed9"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "9",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed9"
+   ]
+  }
+ ]
+}

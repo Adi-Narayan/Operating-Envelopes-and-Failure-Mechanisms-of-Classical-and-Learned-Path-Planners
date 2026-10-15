@@ -1,0 +1,222 @@
+{
+ "APF-D": {
+  "indist": {
+   "mean": 98.0,
+   "min": 98.0,
+   "max": 98.0,
+   "n_seeds": 1
+  },
+  "r100": {
+   "mean": 86.0,
+   "min": 86.0,
+   "max": 86.0,
+   "n_seeds": 1
+  },
+  "r158": {
+   "mean": 44.0,
+   "min": 44.0,
+   "max": 44.0,
+   "n_seeds": 1
+  },
+  "noise5": {
+   "mean": 86.0,
+   "min": 86.0,
+   "max": 86.0,
+   "n_seeds": 1
+  },
+  "lay_static": {
+   "mean": 88.0,
+   "min": 88.0,
+   "max": 88.0,
+   "n_seeds": 1
+  },
+  "lay_dynamic": {
+   "mean": 98.0,
+   "min": 98.0,
+   "max": 98.0,
+   "n_seeds": 1
+  },
+  "second_dyn": {
+   "mean": 94.0,
+   "min": 94.0,
+   "max": 94.0,
+   "n_seeds": 1
+  }
+ },
+ "TD3 fixed": {
+  "indist": {
+   "mean": 81.2,
+   "min": 6.0,
+   "max": 100.0,
+   "n_seeds": 10
+  },
+  "r100": {
+   "mean": 37.6,
+   "min": 24.0,
+   "max": 58.0,
+   "n_seeds": 10
+  },
+  "r158": {
+   "mean": 15.6,
+   "min": 12.0,
+   "max": 20.0,
+   "n_seeds": 10
+  },
+  "noise5": {
+   "mean": 57.8,
+   "min": 0.0,
+   "max": 78.0,
+   "n_seeds": 10
+  },
+  "lay_static": {
+   "mean": 88.2,
+   "min": 46.0,
+   "max": 98.0,
+   "n_seeds": 10
+  },
+  "lay_dynamic": {
+   "mean": 70.4,
+   "min": 36.0,
+   "max": 83.0,
+   "n_seeds": 10
+  },
+  "second_dyn": {
+   "mean": 74.4,
+   "min": 34.0,
+   "max": 92.0,
+   "n_seeds": 10
+  }
+ },
+ "SAC static": {
+  "indist": {
+   "mean": 31.0,
+   "min": 12.0,
+   "max": 70.0,
+   "n_seeds": 10
+  },
+  "r100": {
+   "mean": 21.0,
+   "min": 8.0,
+   "max": 44.0,
+   "n_seeds": 10
+  },
+  "r158": {
+   "mean": 9.0,
+   "min": 6.0,
+   "max": 14.0,
+   "n_seeds": 10
+  },
+  "noise5": {
+   "mean": 21.2,
+   "min": 4.0,
+   "max": 46.0,
+   "n_seeds": 10
+  },
+  "lay_static": {
+   "mean": 58.6,
+   "min": 22.0,
+   "max": 97.0,
+   "n_seeds": 10
+  },
+  "lay_dynamic": {
+   "mean": 36.5,
+   "min": 12.0,
+   "max": 67.0,
+   "n_seeds": 10
+  },
+  "second_dyn": {
+   "mean": 36.6,
+   "min": 10.0,
+   "max": 68.0,
+   "n_seeds": 10
+  }
+ },
+ "Arbiter D1": {
+  "indist": {
+   "mean": 90.2,
+   "min": 86.0,
+   "max": 94.0,
+   "n_seeds": 10
+  },
+  "r100": {
+   "mean": 54.8,
+   "min": 46.0,
+   "max": 64.0,
+   "n_seeds": 10
+  },
+  "r158": {
+   "mean": 23.8,
+   "min": 14.0,
+   "max": 28.0,
+   "n_seeds": 10
+  },
+  "noise5": {
+   "mean": 56.4,
+   "min": 36.0,
+   "max": 64.0,
+   "n_seeds": 10
+  },
+  "lay_static": {
+   "mean": 92.7,
+   "min": 84.0,
+   "max": 97.0,
+   "n_seeds": 10
+  },
+  "lay_dynamic": {
+   "mean": 87.5,
+   "min": 81.0,
+   "max": 92.0,
+   "n_seeds": 10
+  },
+  "second_dyn": {
+   "mean": 85.8,
+   "min": 72.0,
+   "max": 94.0,
+   "n_seeds": 10
+  }
+ },
+ "Arbiter D2": {
+  "indist": {
+   "mean": 87.2,
+   "min": 72.0,
+   "max": 98.0,
+   "n_seeds": 10
+  },
+  "r100": {
+   "mean": 54.4,
+   "min": 8.0,
+   "max": 76.0,
+   "n_seeds": 10
+  },
+  "r158": {
+   "mean": 27.6,
+   "min": 10.0,
+   "max": 36.0,
+   "n_seeds": 10
+  },
+  "noise5": {
+   "mean": 54.8,
+   "min": 24.0,
+   "max": 74.0,
+   "n_seeds": 10
+  },
+  "lay_static": {
+   "mean": 92.3,
+   "min": 73.0,
+   "max": 98.0,
+   "n_seeds": 10
+  },
+  "lay_dynamic": {
+   "mean": 82.6,
+   "min": 60.0,
+   "max": 89.0,
+   "n_seeds": 10
+  },
+  "second_dyn": {
+   "mean": 77.0,
+   "min": 22.0,
+   "max": 92.0,
+   "n_seeds": 10
+  }
+ }
+}

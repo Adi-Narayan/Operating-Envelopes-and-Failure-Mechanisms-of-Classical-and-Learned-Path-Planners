@@ -1,0 +1,609 @@
+{
+ "summary": {
+  "nodes": 27,
+  "all_true_multipliers_inside_unit_circle": false,
+  "max_abs_true_multiplier": 1.0000000113137202,
+  "max_abs_transverse": 0.8575490275913122,
+  "neutral_dev_max": 2.186776137946822e-08,
+  "transverse_89": -0.8104612539628215,
+  "linear_eigen_abs_m_below_1": 27,
+  "max_map_error_m": 1.4210854715202004e-13,
+  "max_period2_dev_m": 1.4210854715202004e-13
+ },
+ "cycles": {
+  "2": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     1.0000000106805347,
+     0.0
+    ],
+    [
+     -0.10427237284090735,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.0000000106805347,
+   "neutral_multiplier": 1.0000000106805347,
+   "transverse_multiplier": -0.10427237284090735,
+   "offset_slow_coord": 0.04869735768065881,
+   "rho": 0.5885890604071902,
+   "a_eigen": 0.7223086640645437,
+   "m_linear_eigen": -0.20726571550638884,
+   "m_linear_c2": -0.17414137256769371
+  },
+  "8": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999904320886,
+     0.0
+    ],
+    [
+     0.655089699756927,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999904320886,
+   "neutral_multiplier": 0.9999999904320886,
+   "transverse_multiplier": 0.655089699756927,
+   "offset_slow_coord": 0.00985221908935736,
+   "rho": 0.08992754506091435,
+   "a_eigen": 0.3936422682603404,
+   "m_linear_eigen": 0.6571232302425676,
+   "m_linear_c2": 0.6578971041200962
+  },
+  "15": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.4534917698809848,
+     0.0
+    ],
+    [
+     0.9999999961759288,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999961759288,
+   "neutral_multiplier": 0.9999999961759288,
+   "transverse_multiplier": 0.4534917698809848,
+   "offset_slow_coord": 0.010219872072211287,
+   "rho": 0.16183638518182977,
+   "a_eigen": 0.4560260213364885,
+   "m_linear_eigen": 0.45318902439229836,
+   "m_linear_c2": 0.45259218517011224
+  },
+  "16": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     1.0000000011285604,
+     0.0
+    ],
+    [
+     0.7937814635698803,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.0000000011285604,
+   "neutral_multiplier": 1.0000000011285604,
+   "transverse_multiplier": 0.7937814635698803,
+   "offset_slow_coord": 0.06071040740564957,
+   "rho": 0.048022918397232814,
+   "a_eigen": 0.3478312371934713,
+   "m_linear_eigen": 0.7984668619972458,
+   "m_linear_c2": 0.8022657678989907
+  },
+  "21": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999994322502,
+     0.0
+    ],
+    [
+     -0.28771722977740155,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999994322502,
+   "neutral_multiplier": 0.9999999994322502,
+   "transverse_multiplier": -0.28771722977740155,
+   "offset_slow_coord": 0.016147447770572906,
+   "rho": 0.1904942415998458,
+   "a_eigen": 0.14833493836957892,
+   "m_linear_eigen": -0.2206453686957328,
+   "m_linear_c2": -0.1927346638681914
+  },
+  "22": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     1.0000000025605038,
+     0.0
+    ],
+    [
+     0.7238575910002477,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.0000000025605038,
+   "neutral_multiplier": 1.0000000025605038,
+   "transverse_multiplier": 0.7238575910002477,
+   "offset_slow_coord": 0.006154616856343927,
+   "rho": 0.05383508535469387,
+   "a_eigen": 0.24355472660765096,
+   "m_linear_eigen": 0.7235235338361076,
+   "m_linear_c2": 0.7223483837647532
+  },
+  "23": {
+   "exact_period2_m": 1.10990323433763e-13,
+   "map_reproduces_cycle_m": 1.10990323433763e-13,
+   "multipliers": [
+    [
+     -0.45686643667559457,
+     0.0
+    ],
+    [
+     0.999999996136379,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.999999996136379,
+   "neutral_multiplier": 0.999999996136379,
+   "transverse_multiplier": -0.45686643667559457,
+   "offset_slow_coord": 0.03212407827316843,
+   "rho": 0.6373393751004378,
+   "a_eigen": 0.7459037043243021,
+   "m_linear_eigen": -0.21952317572899704,
+   "m_linear_c2": -0.23941190015550412
+  },
+  "35": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     -0.8575490275913122,
+     0.0
+    ],
+    [
+     0.9999999852876951,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999852876951,
+   "neutral_multiplier": 0.9999999852876951,
+   "transverse_multiplier": -0.8575490275913122,
+   "offset_slow_coord": 0.0022582973808628016,
+   "rho": 0.08101364382532185,
+   "a_eigen": 0.042022331111111484,
+   "m_linear_eigen": -0.8494036226242891,
+   "m_linear_c2": -0.8262889594617482
+  },
+  "41": {
+   "exact_period2_m": 3.1776437161565096e-14,
+   "map_reproduces_cycle_m": 3.1776437161565096e-14,
+   "multipliers": [
+    [
+     0.2314335357845636,
+     0.0
+    ],
+    [
+     0.9999999935849332,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999935849332,
+   "neutral_multiplier": 0.9999999935849332,
+   "transverse_multiplier": 0.2314335357845636,
+   "offset_slow_coord": 0.06691801794793963,
+   "rho": 0.12987138188557795,
+   "a_eigen": 0.8392763768110266,
+   "m_linear_eigen": 0.16225431233779164,
+   "m_linear_c2": 0.0819295871041729
+  },
+  "46": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     -0.27791229902328907,
+     0.0
+    ],
+    [
+     1.0000000113137202,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.0000000113137202,
+   "neutral_multiplier": 1.0000000113137202,
+   "transverse_multiplier": -0.27791229902328907,
+   "offset_slow_coord": 0.03712752477061598,
+   "rho": 0.6112591674894575,
+   "a_eigen": 0.24057784506296967,
+   "m_linear_eigen": -0.30060869389597866,
+   "m_linear_c2": -0.32914430176809056
+  },
+  "47": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     1.000000006329865,
+     0.0
+    ],
+    [
+     -0.5290258204565912,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.000000006329865,
+   "neutral_multiplier": 1.000000006329865,
+   "transverse_multiplier": -0.5290258204565912,
+   "offset_slow_coord": 0.004149378274917451,
+   "rho": 0.04492784493818505,
+   "a_eigen": 0.9723485856256504,
+   "m_linear_eigen": -0.5959248363931602,
+   "m_linear_c2": -0.6539130400387811
+  },
+  "51": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999973824061,
+     0.0
+    ],
+    [
+     0.46896822434707697,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999973824061,
+   "neutral_multiplier": 0.9999999973824061,
+   "transverse_multiplier": 0.46896822434707697,
+   "offset_slow_coord": 0.0043118711262841855,
+   "rho": 0.13861228377604107,
+   "a_eigen": 0.663384468162822,
+   "m_linear_eigen": 0.4653113772791484,
+   "m_linear_c2": 0.464385633760336
+  },
+  "52": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.021616657546591034,
+     0.0
+    ],
+    [
+     1.0000000110484246,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.0000000110484246,
+   "neutral_multiplier": 1.0000000110484246,
+   "transverse_multiplier": 0.021616657546591034,
+   "offset_slow_coord": 0.004657490310755046,
+   "rho": 0.15419079170672498,
+   "a_eigen": 0.8421473849262308,
+   "m_linear_eigen": 0.018950407071652187,
+   "m_linear_c2": 0.025036408576512067
+  },
+  "53": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999847663885,
+     0.0
+    ],
+    [
+     -0.12654930409459397,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999847663885,
+   "neutral_multiplier": 0.9999999847663885,
+   "transverse_multiplier": -0.12654930409459397,
+   "offset_slow_coord": 0.012807514830770332,
+   "rho": 0.49680066478384555,
+   "a_eigen": 0.3340684371343584,
+   "m_linear_eigen": -0.12371759807053095,
+   "m_linear_c2": -0.13022782239469602
+  },
+  "55": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.4633775782783709,
+     0.0
+    ],
+    [
+     0.999999979519314,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.999999979519314,
+   "neutral_multiplier": 0.999999979519314,
+   "transverse_multiplier": 0.4633775782783709,
+   "offset_slow_coord": 0.08023630208305436,
+   "rho": 0.15154015476132593,
+   "a_eigen": 0.6235812703467032,
+   "m_linear_eigen": 0.4522344278172795,
+   "m_linear_c2": 0.4379887426224987
+  },
+  "59": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999781322386,
+     0.0
+    ],
+    [
+     0.09920332446914279,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999781322386,
+   "neutral_multiplier": 0.9999999781322386,
+   "transverse_multiplier": 0.09920332446914279,
+   "offset_slow_coord": 0.0026621132155079264,
+   "rho": 0.14517606130533886,
+   "a_eigen": 0.836740451848109,
+   "m_linear_eigen": 0.09154727929962958,
+   "m_linear_c2": 0.09461908271380429
+  },
+  "66": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999959916596,
+     0.0
+    ],
+    [
+     0.025054789949733286,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999959916596,
+   "neutral_multiplier": 0.9999999959916596,
+   "transverse_multiplier": 0.025054789949733286,
+   "offset_slow_coord": 0.022777732934372984,
+   "rho": 0.36034842104158943,
+   "a_eigen": 0.38346826551594054,
+   "m_linear_eigen": 0.025052489102589837,
+   "m_linear_c2": 0.01779395876516095
+  },
+  "67": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.5845291390061171,
+     0.0
+    ],
+    [
+     0.9999999911214039,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999911214039,
+   "neutral_multiplier": 0.9999999911214039,
+   "transverse_multiplier": 0.5845291390061171,
+   "offset_slow_coord": 0.005953969311068806,
+   "rho": 0.05699848350336655,
+   "a_eigen": 0.844998182599816,
+   "m_linear_eigen": 0.5896228916386318,
+   "m_linear_c2": 0.5927480866618177
+  },
+  "72": {
+   "exact_period2_m": 4.0194366942304644e-14,
+   "map_reproduces_cycle_m": 4.0194366942304644e-14,
+   "multipliers": [
+    [
+     0.9999999864991282,
+     0.0
+    ],
+    [
+     0.14758022036254761,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999864991282,
+   "neutral_multiplier": 0.9999999864991282,
+   "transverse_multiplier": 0.14758022036254761,
+   "offset_slow_coord": 0.004185000445062908,
+   "rho": 0.08446529188017932,
+   "a_eigen": 0.10229061059413028,
+   "m_linear_eigen": 0.15786530207658034,
+   "m_linear_c2": 0.16537350122833638
+  },
+  "73": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999927249137,
+     0.0
+    ],
+    [
+     0.7574783940963625,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999927249137,
+   "neutral_multiplier": 0.9999999927249137,
+   "transverse_multiplier": 0.7574783940963625,
+   "offset_slow_coord": 0.12669460743045954,
+   "rho": 0.02807002243509119,
+   "a_eigen": 0.1585195693877264,
+   "m_linear_eigen": 0.7954729130833804,
+   "m_linear_c2": 0.8219479955177056
+  },
+  "75": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999878169565,
+     0.0
+    ],
+    [
+     -0.08909051374471516,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999878169565,
+   "neutral_multiplier": 0.9999999878169565,
+   "transverse_multiplier": -0.08909051374471516,
+   "offset_slow_coord": 0.04130526441797875,
+   "rho": 0.42289400773609925,
+   "a_eigen": 0.3634684774798536,
+   "m_linear_eigen": -0.05487365839268166,
+   "m_linear_c2": -0.07159875806904281
+  },
+  "76": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     1.000000000686255,
+     0.0
+    ],
+    [
+     0.5082196178427282,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.000000000686255,
+   "neutral_multiplier": 1.000000000686255,
+   "transverse_multiplier": 0.5082196178427282,
+   "offset_slow_coord": 0.04243114884386738,
+   "rho": 0.07816904631146845,
+   "a_eigen": 0.8346275710016753,
+   "m_linear_eigen": 0.4779281605548503,
+   "m_linear_c2": 0.4492724540549102
+  },
+  "80": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     1.0000000010087176,
+     0.0
+    ],
+    [
+     -0.3044199381270998,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 1.0000000010087176,
+   "neutral_multiplier": 1.0000000010087176,
+   "transverse_multiplier": -0.3044199381270998,
+   "offset_slow_coord": 0.007113345716761041,
+   "rho": 0.26693058307130396,
+   "a_eigen": 0.18358709873303217,
+   "m_linear_eigen": -0.30554371673279346,
+   "m_linear_c2": -0.3163003543792699
+  },
+  "85": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     -0.524651797494782,
+     0.0
+    ],
+    [
+     0.9999999991842669,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999991842669,
+   "neutral_multiplier": 0.9999999991842669,
+   "transverse_multiplier": -0.524651797494782,
+   "offset_slow_coord": 0.03583405528408,
+   "rho": 0.2504777552076197,
+   "a_eigen": 0.13515765268181637,
+   "m_linear_eigen": -0.6061130157568362,
+   "m_linear_c2": -0.5157143481867347
+  },
+  "87": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     0.9999999923840703,
+     0.0
+    ],
+    [
+     0.31641043361587723,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999923840703,
+   "neutral_multiplier": 0.9999999923840703,
+   "transverse_multiplier": 0.31641043361587723,
+   "offset_slow_coord": 0.04439419662251193,
+   "rho": 0.07353476222043527,
+   "a_eigen": 0.901282795600392,
+   "m_linear_eigen": 0.23428369997920084,
+   "m_linear_c2": 0.1497771230565535
+  },
+  "89": {
+   "exact_period2_m": 1.4210854715202004e-13,
+   "map_reproduces_cycle_m": 1.4210854715202004e-13,
+   "multipliers": [
+    [
+     0.9999999924448639,
+     0.0
+    ],
+    [
+     -0.8104612539628215,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999924448639,
+   "neutral_multiplier": 0.9999999924448639,
+   "transverse_multiplier": -0.8104612539628215,
+   "offset_slow_coord": 0.06795941481131873,
+   "rho": 0.1940541490789853,
+   "a_eigen": 0.08576399695526618,
+   "m_linear_eigen": -0.9946443169056012,
+   "m_linear_c2": -1.3872478685905762
+  },
+  "91": {
+   "exact_period2_m": 0.0,
+   "map_reproduces_cycle_m": 0.0,
+   "multipliers": [
+    [
+     -0.1589500000445716,
+     0.0
+    ],
+    [
+     0.9999999959145518,
+     0.0
+    ]
+   ],
+   "max_abs_multiplier": 0.9999999959145518,
+   "neutral_multiplier": 0.9999999959145518,
+   "transverse_multiplier": -0.1589500000445716,
+   "offset_slow_coord": 0.06250241042236351,
+   "rho": 0.6227863114414938,
+   "a_eigen": 0.31315880015610015,
+   "m_linear_eigen": -0.09220847984390912,
+   "m_linear_c2": -0.12408844843795366
+  }
+ }
+}

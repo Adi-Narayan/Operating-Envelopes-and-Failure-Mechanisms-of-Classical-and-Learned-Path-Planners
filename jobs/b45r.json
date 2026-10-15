@@ -1,0 +1,26 @@
+{
+ "name": "b45r",
+ "jobs": [
+  {
+   "name": "b5_sacstatic_seed6",
+   "priority": "normal",
+   "clean": [
+    "results/v2/ws_b/b5/sacstatic_seed6"
+   ],
+   "cmd": [
+    "python",
+    "experiments/train_arc_seed.py",
+    "--algo",
+    "sac",
+    "--seed",
+    "6",
+    "--episodes",
+    "300",
+    "--out-root",
+    "results/v2/ws_b/b5",
+    "--name",
+    "sacstatic_seed6"
+   ]
+  }
+ ]
+}

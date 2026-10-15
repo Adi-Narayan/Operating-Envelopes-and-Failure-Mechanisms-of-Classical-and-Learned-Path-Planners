@@ -1,0 +1,16 @@
+{
+ "git_commit": "05b949c1490a824260b93cd8a0e21c69dbdd2fd5",
+ "script": "scripts/ws_a_td3static_second.py",
+ "config": {
+  "checkpoint": "arc_best",
+  "layout": "urban",
+  "speed": 18.0
+ },
+ "seeds": {
+  "motion": "0-49 (frozen second-layout set)"
+ },
+ "start": "2026-10-12T23:53:02+05:30",
+ "end": "2026-10-13T01:59:38+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

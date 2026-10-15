@@ -1,0 +1,12 @@
+{
+ "git_commit": "1f38ae916b7f9d7b302ebbd04b2affe45404d4ae",
+ "script": "scripts/ws_c_apfd_compare.py",
+ "config": {
+  "stats": "exact McNemar, Newcombe method 10, Holm"
+ },
+ "seeds": {},
+ "start": "2026-10-13T00:02:57+05:30",
+ "end": "2026-10-13T00:02:57+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

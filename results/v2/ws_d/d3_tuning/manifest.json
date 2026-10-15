@@ -1,0 +1,22 @@
+{
+ "git_commit": "8ab63ffdd4b1da6b82b87b96b3d4403408732359",
+ "script": "scripts/ws_d_d3_tune.py",
+ "config": {
+  "rule": "prereg.md WS-D D3",
+  "c_config": {
+   "kind": "apf_rays",
+   "momentum": 0.85,
+   "osc_cap_K": null,
+   "source": "C4 rule selected mom085 (results/v2/ws_c/c4_selection)"
+  }
+ },
+ "seeds": {
+  "heldout_motion": "500000-500049",
+  "tuning_layouts": "500000-500049",
+  "tuning_layout_motion": "510000-510049"
+ },
+ "start": "2026-10-13T13:15:56+05:30",
+ "end": "2026-10-13T13:28:42+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

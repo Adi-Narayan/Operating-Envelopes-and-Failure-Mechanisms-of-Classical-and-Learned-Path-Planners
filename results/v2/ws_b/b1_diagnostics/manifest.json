@@ -1,0 +1,18 @@
+{
+ "git_commit": "3825659b5632deb6978b5a8785f3773fc4063a24",
+ "script": "scripts/ws_b_b1_diagnostics.py sacdyn",
+ "config": {
+  "group": "sacdyn",
+  "rollouts_per_checkpoint": 20,
+  "environment": "moving",
+  "gamma": 0.99,
+  "checkpoints": "full checkpoints (checkpoints_full) for TD3/SAC; stored arc_best/best/ep300 for ARC"
+ },
+ "seeds": {
+  "starts": "np.random.seed(0-19)"
+ },
+ "start": "2026-10-12T21:59:16+05:30",
+ "end": "2026-10-12T22:37:23+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

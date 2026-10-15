@@ -1,0 +1,28 @@
+{
+ "git_commit": "1e801cfa18e291dbdb121b844c35c9c928f2e057",
+ "script": "scripts/verify_section3.py scale_invariance",
+ "config": {
+  "A": "agent 18 m/s, baseline obstacle speeds",
+  "B": "agent 9 m/s, obstacle speeds x0.5",
+  "sac_model": "experiments/out/arc_models/sacdyn_seed0/models/arc_best.pth"
+ },
+ "seeds": {
+  "motion_seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "apf_planner_seed": "1000+s"
+ },
+ "start": "2026-10-12T19:04:28+05:30",
+ "end": "2026-10-12T19:05:18+05:30",
+ "machine_also_training": false,
+ "threads_per_process": 1
+}

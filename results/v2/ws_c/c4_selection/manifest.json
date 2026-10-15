@@ -1,0 +1,23 @@
+{
+ "git_commit": "b7dd89ee5bdecee47df32245b5839e2bc1e604eb",
+ "script": "scripts/ws_c_c4_select.py",
+ "config": {
+  "rule": "prereg.md WS-C C4",
+  "order": [
+   "apf",
+   "osc10",
+   "osc30",
+   "mom050",
+   "mom070",
+   "mom085",
+   "cap"
+  ]
+ },
+ "seeds": {
+  "see": "c4_tuning manifest"
+ },
+ "start": "2026-10-12T20:22:17+05:30",
+ "end": "2026-10-12T20:22:17+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

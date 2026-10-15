@@ -1,0 +1,176 @@
+{
+ "td3dyn": {
+  "rows": [
+   {
+    "run": "td3dyn_seed0",
+    "frac_at_cap_ep50": 0.03389830508474576,
+    "collapsed_ep50": false,
+    "outcome_ep50": "success",
+    "collapsed_final": false,
+    "frac_at_cap_final": 0.2236024844720497
+   },
+   {
+    "run": "td3dyn_seed1",
+    "frac_at_cap_ep50": 0.0,
+    "collapsed_ep50": false,
+    "outcome_ep50": "success",
+    "collapsed_final": false,
+    "frac_at_cap_final": 0.18220338983050846
+   },
+   {
+    "run": "td3dyn_seed2",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3dyn_seed3",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3dyn_seed4",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": false,
+    "frac_at_cap_final": 0.025210084033613446
+   },
+   {
+    "run": "td3dyn_seed5",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3dyn_seed6",
+    "frac_at_cap_ep50": 0.03474903474903475,
+    "collapsed_ep50": false,
+    "outcome_ep50": "out_of_bounds",
+    "collapsed_final": false,
+    "frac_at_cap_final": 0.11949685534591195
+   },
+   {
+    "run": "td3dyn_seed7",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3dyn_seed8",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3dyn_seed9",
+    "frac_at_cap_ep50": 0.03048780487804878,
+    "collapsed_ep50": false,
+    "outcome_ep50": "collision",
+    "collapsed_final": false,
+    "frac_at_cap_final": 0.07051282051282051
+   }
+  ],
+  "agree": 9,
+  "n": 10,
+  "criterion_9_of_10": true
+ },
+ "td3": {
+  "rows": [
+   {
+    "run": "td3_seed0",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed1",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed2",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed3",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed4",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed5",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed6",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed7",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed8",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   },
+   {
+    "run": "td3_seed9",
+    "frac_at_cap_ep50": 1.0,
+    "collapsed_ep50": true,
+    "outcome_ep50": "timeout",
+    "collapsed_final": true,
+    "frac_at_cap_final": 1.0
+   }
+  ],
+  "agree": 10,
+  "n": 10,
+  "criterion_9_of_10": true
+ }
+}

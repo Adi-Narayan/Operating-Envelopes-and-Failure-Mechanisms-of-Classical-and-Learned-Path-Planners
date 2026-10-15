@@ -1,0 +1,17 @@
+{
+ "git_commit": "3825659b5632deb6978b5a8785f3773fc4063a24",
+ "script": "scripts/ws_c_apfd_eval.py speed",
+ "config": {
+  "variant": "mom085",
+  "kwargs": {
+   "momentum": 0.85
+  }
+ },
+ "seeds": {
+  "see": "notes/seed_map.md (frozen evaluation sets, APF planner seeds)"
+ },
+ "start": "2026-10-12T20:36:28+05:30",
+ "end": "2026-10-12T20:51:24+05:30",
+ "machine_also_training": true,
+ "threads_per_process": 1
+}

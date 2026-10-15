@@ -1,0 +1,75 @@
+{
+ "name": "c4",
+ "jobs": [
+  {
+   "name": "c4_apf",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_c4_tune.py",
+    "apf"
+   ],
+   "clean": []
+  },
+  {
+   "name": "c4_osc10",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_c4_tune.py",
+    "osc10"
+   ],
+   "clean": []
+  },
+  {
+   "name": "c4_osc30",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_c4_tune.py",
+    "osc30"
+   ],
+   "clean": []
+  },
+  {
+   "name": "c4_mom050",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_c4_tune.py",
+    "mom050"
+   ],
+   "clean": []
+  },
+  {
+   "name": "c4_mom070",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_c4_tune.py",
+    "mom070"
+   ],
+   "clean": []
+  },
+  {
+   "name": "c4_mom085",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_c4_tune.py",
+    "mom085"
+   ],
+   "clean": []
+  },
+  {
+   "name": "c4_cap",
+   "priority": "below",
+   "cmd": [
+    "python",
+    "scripts/ws_c_c4_tune.py",
+    "cap"
+   ],
+   "clean": []
+  }
+ ]
+}

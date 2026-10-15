@@ -1,0 +1,90 @@
+2 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -144.683, 'det': 4882.326, 'angle_osc_fast_deg': 1.227, 'mid_to_shifted_eq': 0.377, 'mid_to_unshifted_eq': 0.377, 'x0': 1.277, 'x_other': -0.523, 'rho': 0.589, 'm': -0.174, 'nearest_saddle_m': 25.512, 'n_saddles_found': 3, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+8 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -135.31, 'det': 1385.975, 'angle_osc_fast_deg': 0.026, 'mid_to_shifted_eq': 0.187, 'mid_to_unshifted_eq': 0.187, 'x0': 0.713, 'x_other': -1.087, 'rho': 0.09, 'm': 0.658, 'nearest_saddle_m': 22.2, 'n_saddles_found': 3, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+15 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -129.548, 'det': 2012.085, 'angle_osc_fast_deg': 0.021, 'mid_to_shifted_eq': 0.085, 'mid_to_unshifted_eq': 0.085, 'x0': 0.815, 'x_other': -0.985, 'rho': 0.162, 'm': 0.453, 'nearest_saddle_m': 40.651, 'n_saddles_found': 4, 'cap_outcome': 'timeout', 'apfd_outcome': 'success', 'pred_cap_escapes': False, 'pred_apfd_escapes': False}
+16 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.002, 'shift_exact': 0.002, 'shifted_converged': True, 'div': -148.041, 'det': 958.238, 'angle_osc_fast_deg': 0.108, 'mid_to_shifted_eq': 0.252, 'mid_to_unshifted_eq': 0.252, 'x0': 0.653, 'x_other': -1.147, 'rho': 0.048, 'm': 0.802, 'nearest_saddle_m': 14.237, 'n_saddles_found': 3, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+21 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -202.034, 'det': 5486.235, 'angle_osc_fast_deg': 0.473, 'mid_to_shifted_eq': 0.625, 'mid_to_unshifted_eq': 0.625, 'x0': 0.275, 'x_other': -1.525, 'rho': 0.19, 'm': -0.193, 'nearest_saddle_m': 17.988, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+22 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.002, 'shift_exact': 0.002, 'shifted_converged': True, 'div': -141.486, 'det': 970.393, 'angle_osc_fast_deg': 0.027, 'mid_to_shifted_eq': 0.464, 'mid_to_unshifted_eq': 0.464, 'x0': 0.436, 'x_other': -1.364, 'rho': 0.054, 'm': 0.722, 'nearest_saddle_m': 27.101, 'n_saddles_found': 1, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+23 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -94.852, 'det': 2138.898, 'angle_osc_fast_deg': 0.814, 'mid_to_shifted_eq': 0.454, 'mid_to_unshifted_eq': 0.454, 'x0': 1.354, 'x_other': -0.446, 'rho': 0.637, 'm': -0.239, 'nearest_saddle_m': 26.171, 'n_saddles_found': 5, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+26 {'type': 'stable focus', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -93.811, 'det': 2483.276, 'nearest_saddle_m': 15.862, 'n_saddles_found': 5, 'cap_outcome': 'collision', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+34 {'type': 'stable focus', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -149.844, 'det': 6832.29, 'nearest_saddle_m': 19.761, 'n_saddles_found': 2, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+35 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -124.39, 'det': 1072.675, 'angle_osc_fast_deg': 0.116, 'mid_to_shifted_eq': 0.823, 'mid_to_unshifted_eq': 0.824, 'x0': 0.077, 'x_other': -1.723, 'rho': 0.081, 'm': -0.826, 'nearest_saddle_m': 31.946, 'n_saddles_found': 3, 'cap_outcome': 'timeout', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+36 {'type': 'stable focus', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -160.156, 'det': 7751.353, 'nearest_saddle_m': 25.14, 'n_saddles_found': 4, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+41 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -360.517, 'det': 13222.287, 'angle_osc_fast_deg': 1.232, 'mid_to_shifted_eq': 0.643, 'mid_to_unshifted_eq': 0.642, 'x0': 1.541, 'x_other': -0.258, 'rho': 0.13, 'm': 0.082, 'nearest_saddle_m': 19.967, 'n_saddles_found': 4, 'cap_outcome': 'timeout', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+46 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -125.017, 'det': 3679.868, 'angle_osc_fast_deg': 1.005, 'mid_to_shifted_eq': 0.48, 'mid_to_unshifted_eq': 0.48, 'x0': 0.42, 'x_other': -1.38, 'rho': 0.611, 'm': -0.329, 'nearest_saddle_m': 37.626, 'n_saddles_found': 3, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+47 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.002, 'shift_exact': 0.002, 'shifted_converged': True, 'div': -110.915, 'det': 506.198, 'angle_osc_fast_deg': 0.186, 'mid_to_shifted_eq': 0.852, 'mid_to_unshifted_eq': 0.853, 'x0': 1.752, 'x_other': -0.048, 'rho': 0.045, 'm': -0.654, 'nearest_saddle_m': 43.518, 'n_saddles_found': 2, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': False, 'pred_apfd_escapes': False}
+51 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -153.094, 'det': 2505.906, 'angle_osc_fast_deg': 0.022, 'mid_to_shifted_eq': 0.296, 'mid_to_unshifted_eq': 0.297, 'x0': 1.196, 'x_other': -0.604, 'rho': 0.139, 'm': 0.464, 'nearest_saddle_m': 29.794, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+52 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -127.087, 'det': 1869.423, 'angle_osc_fast_deg': 0.1, 'mid_to_shifted_eq': 0.614, 'mid_to_unshifted_eq': 0.614, 'x0': 1.514, 'x_other': -0.286, 'rho': 0.154, 'm': 0.025, 'nearest_saddle_m': 21.719, 'n_saddles_found': 3, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+53 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -165.533, 'det': 6076.09, 'angle_osc_fast_deg': 0.242, 'mid_to_shifted_eq': 0.306, 'mid_to_unshifted_eq': 0.305, 'x0': 0.594, 'x_other': -1.206, 'rho': 0.497, 'm': -0.13, 'nearest_saddle_m': 27.432, 'n_saddles_found': 4, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+55 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -220.52, 'det': 5557.338, 'angle_osc_fast_deg': 0.415, 'mid_to_shifted_eq': 0.269, 'mid_to_unshifted_eq': 0.269, 'x0': 1.162, 'x_other': -0.638, 'rho': 0.152, 'm': 0.438, 'nearest_saddle_m': 20.501, 'n_saddles_found': 3, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+59 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -134.086, 'det': 1990.3, 'angle_osc_fast_deg': 0.053, 'mid_to_shifted_eq': 0.605, 'mid_to_unshifted_eq': 0.605, 'x0': 1.505, 'x_other': -0.295, 'rho': 0.145, 'm': 0.095, 'nearest_saddle_m': 33.719, 'n_saddles_found': 2, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+66 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -141.863, 'det': 3918.858, 'angle_osc_fast_deg': 0.248, 'mid_to_shifted_eq': 0.223, 'mid_to_unshifted_eq': 0.223, 'x0': 0.677, 'x_other': -1.123, 'rho': 0.36, 'm': 0.018, 'nearest_saddle_m': 35.838, 'n_saddles_found': 5, 'cap_outcome': 'collision', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+67 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -144.647, 'det': 1067.409, 'angle_osc_fast_deg': 0.051, 'mid_to_shifted_eq': 0.618, 'mid_to_unshifted_eq': 0.618, 'x0': 1.518, 'x_other': -0.282, 'rho': 0.057, 'm': 0.593, 'nearest_saddle_m': 24.322, 'n_saddles_found': 3, 'cap_outcome': 'collision', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+72 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -153.471, 'det': 1691.601, 'angle_osc_fast_deg': 0.085, 'mid_to_shifted_eq': 0.714, 'mid_to_unshifted_eq': 0.714, 'x0': 0.186, 'x_other': -1.614, 'rho': 0.084, 'm': 0.165, 'nearest_saddle_m': 11.485, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+73 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.002, 'shift_exact': 0.002, 'shifted_converged': True, 'div': -227.14, 'det': 1370.207, 'angle_osc_fast_deg': 0.538, 'mid_to_shifted_eq': 0.57, 'mid_to_unshifted_eq': 0.569, 'x0': 0.34, 'x_other': -1.46, 'rho': 0.028, 'm': 0.822, 'nearest_saddle_m': 21.957, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+75 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -133.957, 'det': 3748.137, 'angle_osc_fast_deg': 0.644, 'mid_to_shifted_eq': 0.269, 'mid_to_unshifted_eq': 0.269, 'x0': 0.631, 'x_other': -1.168, 'rho': 0.423, 'm': -0.072, 'nearest_saddle_m': 29.776, 'n_saddles_found': 4, 'cap_outcome': 'timeout', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+76 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -181.542, 'det': 2216.241, 'angle_osc_fast_deg': 0.443, 'mid_to_shifted_eq': 0.622, 'mid_to_unshifted_eq': 0.622, 'x0': 1.521, 'x_other': -0.279, 'rho': 0.078, 'm': 0.449, 'nearest_saddle_m': 22.39, 'n_saddles_found': 2, 'cap_outcome': 'collision', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+80 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -154.02, 'det': 3945.019, 'angle_osc_fast_deg': 0.214, 'mid_to_shifted_eq': 0.573, 'mid_to_unshifted_eq': 0.573, 'x0': 0.327, 'x_other': -1.473, 'rho': 0.267, 'm': -0.316, 'nearest_saddle_m': 6.665, 'n_saddles_found': 3, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+85 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -100.272, 'det': 1610.554, 'angle_osc_fast_deg': 1.364, 'mid_to_shifted_eq': 0.639, 'mid_to_unshifted_eq': 0.639, 'x0': 0.261, 'x_other': -1.539, 'rho': 0.25, 'm': -0.516, 'nearest_saddle_m': 17.77, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+87 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.001, 'shift_exact': 0.001, 'shifted_converged': True, 'div': -190.098, 'det': 2305.775, 'angle_osc_fast_deg': 0.818, 'mid_to_shifted_eq': 0.742, 'mid_to_unshifted_eq': 0.743, 'x0': 1.642, 'x_other': -0.158, 'rho': 0.074, 'm': 0.15, 'nearest_saddle_m': 12.384, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+89 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -448.166, 'det': 27337.061, 'angle_osc_fast_deg': 3.322, 'mid_to_shifted_eq': 0.772, 'mid_to_unshifted_eq': 0.772, 'x0': 0.127, 'x_other': -1.67, 'rho': 0.194, 'm': -1.387, 'nearest_saddle_m': 6.662, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'success', 'pred_cap_escapes': True, 'pred_apfd_escapes': True}
+91 {'type': 'stable node', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -120.105, 'det': 3411.465, 'angle_osc_fast_deg': 1.414, 'mid_to_shifted_eq': 0.364, 'mid_to_unshifted_eq': 0.364, 'x0': 0.535, 'x_other': -1.264, 'rho': 0.623, 'm': -0.124, 'nearest_saddle_m': 47.09, 'n_saddles_found': 6, 'cap_outcome': 'timeout', 'apfd_outcome': 'timeout', 'pred_cap_escapes': False, 'pred_apfd_escapes': False}
+97 {'type': 'stable focus', 'bias_norm': 0.011, 'shift_linear': 0.0, 'shift_exact': 0.0, 'shifted_converged': True, 'div': -168.309, 'det': 7739.363, 'nearest_saddle_m': 24.68, 'n_saddles_found': 4, 'cap_outcome': 'success', 'apfd_outcome': 'timeout', 'pred_cap_escapes': True, 'pred_apfd_escapes': False}
+{
+ "bias": [
+  0.007543813265603597,
+  -0.007926291797478113
+ ],
+ "turn_diameter_cap_m": 38.21132717247027,
+ "turn_deg_apfd": 10.164248621723484,
+ "turn_diameter_apfd_m": 20.31980252107637,
+ "all_div_negative": true,
+ "det_sign": {
+  "positive": 31,
+  "negative": 0
+ },
+ "shift_linear_range": [
+  0.00012693309975406287,
+  0.0023914779206415616
+ ],
+ "shift_exact_range": [
+  0.00012693359026076217,
+  0.0023914473053218152
+ ],
+ "nodes": 27,
+ "angle_osc_fast_deg_range": [
+  0.020892288637242705,
+  3.321895607483409
+ ],
+ "mid_to_shifted_eq_range": [
+  0.08490975653636715,
+  0.8520268047626656
+ ],
+ "abs_m_max": 1.3872478685905762,
+ "all_abs_m_lt1": false,
+ "rho_range": [
+  0.02807002242240672,
+  0.6373393751326475
+ ],
+ "cap": {
+  "pred_escape_and_removed": 14,
+  "pred_escape_not_removed": 14,
+  "pred_stay_removed": 1,
+  "pred_stay_not_removed": 2
+ },
+ "apfd": {
+  "pred_escape_and_removed": 8,
+  "pred_escape_not_removed": 2,
+  "pred_stay_removed": 12,
+  "pred_stay_not_removed": 9
+ },
+ "cap_outcomes": {
+  "success": 15,
+  "timeout": 12,
+  "collision": 4
+ },
+ "apfd_outcomes": {
+  "success": 20,
+  "timeout": 11,
+  "collision": 0
+ }
+}
