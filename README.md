@@ -83,6 +83,10 @@ All results were produced on a single laptop (AMD Ryzen 7 5800HS, 16 GB RAM); al
 
 Python 3.12, NumPy, SciPy, PyTorch, Shapely, Matplotlib, tqdm, TensorBoard (logging only), openpyxl and psutil. A CPU build of PyTorch is sufficient for every experiment in the paper.
 
+## License
+
+The code is released under the MIT License (see [`LICENSE`](LICENSE)).
+
 ## Citation
 
 ```bibtex
