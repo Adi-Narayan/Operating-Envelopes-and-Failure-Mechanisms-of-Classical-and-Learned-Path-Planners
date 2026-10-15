@@ -5,7 +5,7 @@ Numbers marked **[FINAL]** come from the re-run on the new machine and can go in
 All runs have finished; earlier [PENDING] markers in Section 1 are resolved by Section 3.
 
 - Paper checked: `Apf_research.pdf` (PDF only; no .tex was available, so edits are given as replacement text).
-- Code: `github.com/Adi-Narayan/Research-Paper` (cloned into `Research-Paper/`), plus `models.zip` (the original 2D ARC checkpoints).
+- Code: `github.com/Adi-Narayan/Operating-Envelopes-and-Failure-Mechanisms-of-Classical-and-Learned-Path-Planners` (cloned into `Research-Paper/`), plus `models.zip` (the original 2D ARC checkpoints).
 - New machine for all re-runs: AMD Ryzen 7 5800HS (8 cores / 16 threads), 16 GB DDR4 (15.4 GB usable), NVIDIA RTX 3050 Laptop GPU (4 GB), Windows 11, Python 3.12.7, NumPy 2.0.2, PyTorch 2.5.0, Shapely 2.1.2.
 - Scripts: `experiments/*.py`. Raw outputs: `experiments/out/*.json`.
 
@@ -85,7 +85,7 @@ Keep [18,19] only if RRT is mentioned for another reason. Otherwise drop them fr
 (Xu et al., "Benchmarking RL techniques for autonomous navigation", ICRA 2023, arXiv:2210.04839, exists, but its abstract makes no classical-vs-RL claim, so do not cite it for one.)
 
 ### 1.9 Abstract `\ref{sec:github}` renders "Section 9" — CONFIRMED (from the PDF)
-The abstract says "link is given at Section 9", but Section 9 is the Conclusion. The Data Availability section is unnumbered, and it prints the paper title instead of a URL. Fix: drop the cross-reference from the abstract ("The code and evaluation logs are publicly available; see Data Availability."), and put the URL `https://github.com/Adi-Narayan/Research-Paper` in the Data Availability section.
+The abstract says "link is given at Section 9", but Section 9 is the Conclusion. The Data Availability section is unnumbered, and it prints the paper title instead of a URL. Fix: drop the cross-reference from the abstract ("The code and evaluation logs are publicly available; see Data Availability."), and put the URL `https://github.com/Adi-Narayan/Operating-Envelopes-and-Failure-Mechanisms-of-Classical-and-Learned-Path-Planners` in the Data Availability section.
 
 ### 1.10 "Escape deflections make L exceed s × steps" (marked VERIFY) — REFUTED
 Under the original protocol there were **zero** escape steps and **zero** push-outs on all five 2D layouts and on the 3D static run [FINAL]. The excess comes from two things:

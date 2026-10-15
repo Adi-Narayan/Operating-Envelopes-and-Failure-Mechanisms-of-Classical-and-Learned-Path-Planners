@@ -307,7 +307,7 @@ Keep the 3D ARC and hardware limitation paragraphs, updating "8 GB RAM, 4 GB VRA
 
 ## Data Availability
 
-> "The code, trained models and evaluation logs supporting this study are available at https://github.com/Adi-Narayan/Research-Paper. The experiments in Section 7 are reproduced by the scripts in the experiments/ directory."
+> "The code, trained models and evaluation logs supporting this study are available at https://github.com/Adi-Narayan/Operating-Envelopes-and-Failure-Mechanisms-of-Classical-and-Learned-Path-Planners. The experiments in Section 7 are reproduced by the scripts in the experiments/ directory."
 
 ---
 
