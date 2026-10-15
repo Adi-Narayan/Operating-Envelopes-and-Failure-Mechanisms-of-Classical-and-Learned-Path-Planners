@@ -11,7 +11,7 @@ Scene 2: random static layout 16. APF (planner seed 0) stalls at a stable node o
 Every run is checked against the stored outcome (results/v2/ws_d/d4_eval, results/v2/ws_c) before
 rendering; the script stops if any differs.
 
-    python scripts/make_video.py   -> results/v2/media/simulation_video.mp4
+    python scripts/make_video.py   -> results/v2/media/simulation_video.mp4 (720p), simulation_video_still.png
 """
 import json
 import math
@@ -270,7 +270,7 @@ def main():
     print("simulating scene 2 ...", flush=True)
     ob, eq, r2 = simulate_scene2()
     os.makedirs(M.MEDIA, exist_ok=True)
-    out = os.path.join(M.MEDIA, "simulation_video.mp4")
+    out = os.path.join(M.MEDIA, "simulation_video_master.tmp.mp4")     # 1080p master, removed after encoding
     writer = imageio_ffmpeg.write_frames(out, (W, HGT), fps=FPS, codec="libx264", pix_fmt_out="yuv420p",
                                          quality=8, macro_block_size=8)
     writer.send(None)
@@ -289,7 +289,26 @@ def main():
     text_card(writer, [("Every run in this video is a rerun of a stored evaluation run", 22, "bold", "#1b1b1b"),
                        ("Reproduced by scripts/make_video.py in the code repository", 18, "normal", "#444444")], 3.0)
     writer.close()
-    print("video ->", out, flush=True)
+    finalise(out, imageio_ffmpeg.get_ffmpeg_exe())
+
+
+def finalise(master, ffmpeg):
+    """Elsevier media specifications: MP4 with H.264 + AAC, at most 720p, at least 15 fps, bit rate at least
+    260 kbps (750 kbps preferred), at most 5 minutes and 150 MB; a still frame serves as the thumbnail.
+    The 1080p master is re-encoded to 720p at a constant 1 Mbit/s with a silent AAC track."""
+    import subprocess
+    out = os.path.join(M.MEDIA, "simulation_video.mp4")
+    tmp = os.path.join(M.MEDIA, "simulation_video_720p.tmp.mp4")
+    subprocess.run([ffmpeg, "-v", "error", "-y", "-i", master, "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo",
+                    "-vf", "scale=1280:720:flags=lanczos", "-c:v", "libx264", "-preset", "slow", "-profile:v", "high",
+                    "-pix_fmt", "yuv420p", "-b:v", "1000k", "-minrate", "1000k", "-maxrate", "1000k", "-bufsize", "2000k",
+                    "-x264-params", "nal-hrd=cbr", "-r", str(FPS),
+                    "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", tmp], check=True)
+    os.replace(tmp, out)
+    os.remove(master)
+    still = os.path.join(M.MEDIA, "simulation_video_still.png")
+    subprocess.run([ffmpeg, "-v", "error", "-y", "-ss", "30", "-i", out, "-frames:v", "1", still], check=True)
+    print("video ->", out, "\nstill ->", still, flush=True)
 
 
 if __name__ == "__main__":

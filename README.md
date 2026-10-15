@@ -55,6 +55,7 @@ To add a planner, implement `run(timeline, ...)` returning the same dictionary a
 │                       #   make_numbers.py (every number in the paper) and make_figures.py
 ├── jobs/               # job files listing the runs of each experiment in order
 ├── results/v2/         # revision outputs, one folder per workstream and experiment, each with a manifest.json
+│                       #   (media/: graphical abstract and simulation video, also in submission_media.zip)
 ├── prereg.md           # selection rules, recorded before the runs they govern
 ├── PROGRESS.md         # dated log of decisions and deviations
 ├── notes/              # seed map, scale-invariance audit, proofs

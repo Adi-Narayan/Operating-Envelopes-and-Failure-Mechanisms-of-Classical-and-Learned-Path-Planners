@@ -3,14 +3,15 @@ Graphical abstract for the RAS submission, one panel per contribution:
   (1) the same paired environments order the planners differently on different axes (results/numbers.json);
   (2) an APF stall: the normalised force field around a stable node on random layout 16, the two-point
       oscillation of APF and the path of APF-D (beta = 0.85), both rerun here with the evaluation settings;
-  (3) collapsed seeds per learner and training condition (results/numbers.json, Table 6 of the paper);
+  (3) collapsed seeds out of 10, moving-obstacle training: TD3, TD3 with the pre-tanh penalty, SAC
+      (Table 6 of the paper; the penalty count from results/numbers.json);
   (4) total successes of SAC alone, the arbiter (D1) and APF-D on SAC's rays, over the 10 SAC seeds and
       the seven heatmap axes (results/numbers.json: arbTotSac, arbTotDone, arbTotCapf).
 
     python scripts/make_graphical_abstract.py     -> results/v2/media/graphical_abstract.{pdf,png,tif}
 
-Elsevier: landscape, at least 1328 x 531 px, readable when shown at 13 x 5 cm. The figure is drawn at
-twice that size with fonts of 11 pt or more, so they are at least 5.5 pt at the displayed size.
+Elsevier: at least 1328 x 531 px at 300 dpi in the ratio 500:200, Arial, no synopsis text or heading; the
+image is reduced to 200 px high in the table of contents, so the labels are large and few.
 """
 import json
 import os
@@ -31,7 +32,7 @@ from random_layouts import make_layout  # noqa: E402
 
 CM = 1 / 2.54
 plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
-                     "pdf.fonttype": 42, "font.size": 12, "axes.titlesize": 13.5, "axes.titleweight": "bold"})
+                     "pdf.fonttype": 42, "font.size": 15, "axes.titlesize": 17.5, "axes.titleweight": "bold"})
 STALL_LAYOUT = 16
 
 
@@ -44,23 +45,25 @@ def _clean(ax, left=True):
 
 def panel_rankings(ax, num):
     cells = num["heatmap"]["cells"]
-    axes = [("indist", "In\ndistr."), ("r158", "Fast\nobstacles"), ("noise5", "Heavy\nnoise"),
-            ("lay_static", "New static\nlayouts")]
+    axes = [("indist", "In\ndistr."), ("r158", "Fast\nobst."), ("noise5", "Heavy\nnoise"), ("lay_static", "New\nlayouts")]
     rows = [("APF", "APF"), ("DWA-CV", "DWA-CV"), ("SAC moving", "SAC"), ("Arbiter D1", "Arbiter")]
     x = np.arange(len(axes))
     for key, lab in rows:
         y = [cells[key][a]["mean"] for a, _ in axes]
-        ax.plot(x, y, "-o", color=M.COL[lab], lw=2.2, ms=6, label=lab, zorder=3)
+        ax.plot(x, y, "-o", color=M.COL[lab], lw=3.0, ms=8, label=lab, zorder=3)
     ax.set_xticks(x)
-    ax.set_xticklabels([l for _, l in axes], fontsize=10.5)
-    ax.set_xlim(-0.3, len(axes) - 0.7)
-    ax.set_ylim(0, 104)
+    ax.set_xticklabels([l for _, l in axes], fontsize=15)
+    ax.set_xlim(-0.25, len(axes) - 0.75)
+    ax.set_ylim(0, 142)                         # the band above 100 holds the legend
     ax.set_yticks([0, 50, 100])
-    ax.set_ylabel("Success (%)", fontsize=11.5)
+    ax.tick_params(axis="y", labelsize=15)
+    ax.set_ylabel("Success (%)", fontsize=16)
+    ax.yaxis.set_label_coords(-0.17, 0.36)
     ax.grid(axis="y", color="#e3e3e3", lw=0.8)
     _clean(ax)
-    ax.legend(loc="lower left", bbox_to_anchor=(0.0, 0.0), fontsize=10.5, frameon=False, ncol=2,
-              handlelength=1.2, columnspacing=0.7, borderaxespad=0.1)
+    ax.spines["left"].set_bounds(0, 100)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, 1.0), fontsize=14, frameon=False, ncol=2,
+              handlelength=0.9, columnspacing=0.8, handletextpad=0.35, borderaxespad=0.0)
     ax.set_title("1  Rankings change", loc="left")
 
 
@@ -84,13 +87,16 @@ def panel_stall(ax):
             f = H.dyn.F_total(q, H.GOAL.astype(float), ob, cfg)[0]
             n = np.linalg.norm(f)
             U[i, j], Vv[i, j] = f / n if n > 0 else (0, 0)
-    ax.streamplot(gx, gy, U, Vv, color="#c3ccd5", density=0.9, linewidth=0.7, arrowsize=0.8, zorder=1)
+    ax.streamplot(gx, gy, U, Vv, color="#c3ccd5", density=0.8, linewidth=0.7, arrowsize=0.8, zorder=1)
     M.draw_obstacles(ax, ob, z=2)
-    ax.plot(*apfd["path"].T, color=M.COL["APF-D"], lw=2.6, zorder=4, label="APF + momentum")
-    ax.plot(*apf["path"].T, color=M.COL["APF"], lw=2.6, zorder=5, label="APF")
-    ax.plot(*eq, "x", color="#d62728", ms=12, mew=2.8, zorder=7)
-    ax.text(eq[0] - 8, eq[1] - 4, "sink:\nAPF\noscillates", ha="right", va="top", fontsize=10.5, color="#7f1d1d",
-            zorder=8, bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.85))
+    ax.plot(*apfd["path"].T, color=M.COL["APF-D"], lw=3.4, zorder=4)
+    ax.plot(*apf["path"].T, color=M.COL["APF"], lw=3.4, zorder=5)
+    ax.plot(*eq, "x", color="#d62728", ms=15, mew=3.4, zorder=7)
+    box = dict(boxstyle="round,pad=0.12", fc="white", ec="none", alpha=0.9)
+    ax.text(eq[0] - 10, eq[1] - 2, "APF\nstalls", ha="right", va="top", fontsize=15, fontweight="bold",
+            color=M.COL["APF"], zorder=8, bbox=box)
+    ax.text(x0 + 4, y1 - 4, "APF +\nmomentum", ha="left", va="top", fontsize=15, fontweight="bold",
+            color=M.COL["APF-D"], zorder=8, bbox=box)
     ax.set_xlim(x0, x1)
     ax.set_ylim(y0, y1)
     ax.set_aspect("equal")
@@ -98,29 +104,27 @@ def panel_stall(ax):
     ax.set_yticks([])
     for sp in ax.spines.values():
         sp.set_color("#999999")
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.02), ncol=2, fontsize=10.5, frameon=False,
-              handlelength=1.2, columnspacing=0.8)
-    ax.set_title("2  APF stalls at sinks", loc="left")
+    ax.set_title("2  APF stalls", loc="left")
     return apf, apfd
 
 
 def panel_collapse(ax, num):
     n = num["numbers"]
-    # TD3 static 10/10 and TD3 moving 5/10: Table 6 of the paper (results/v2/ws_b); penalty and SAC: numbers.json
-    bars = [("TD3\nstatic", 10), ("TD3\nmoving", 5), ("TD3 +\npen.", int(n["bFourCollapsed"])), ("SAC", 0)]
-    cols = ["#7f1d1d", "#c0392b", M.COL["APF-D"], "#8a8a8a"]
+    # moving-obstacle training: TD3 5/10 (Table 6 of the paper); TD3 + penalty from numbers.json; SAC 0/10 (Table 6)
+    bars = [("TD3", 5), ("TD3 +\npenalty", int(n["bFourCollapsed"])), ("SAC", 0)]
+    cols = ["#c0392b", M.COL["APF-D"], "#8a8a8a"]
     x = np.arange(len(bars))
-    ax.bar(x, [b[1] for b in bars], color=cols, width=0.66, zorder=3)
+    ax.bar(x, [b[1] for b in bars], color=cols, width=0.62, zorder=3)
     for xi, (_, v) in zip(x, bars):
-        ax.text(xi, v + 0.3, f"{v}/10", ha="center", va="bottom", fontsize=11.5, fontweight="bold")
+        ax.text(xi, v + 0.2, f"{v}/10", ha="center", va="bottom", fontsize=16, fontweight="bold")
     ax.set_xticks(x)
-    ax.set_xticklabels([b[0] for b in bars], fontsize=10)
-    ax.set_ylim(0, 13.5)
+    ax.set_xticklabels([b[0] for b in bars], fontsize=15)
+    ax.set_ylim(0, 8.2)
     _clean(ax, left=False)
-    ax.text(2.5, 6.0, "tanh output\nsaturates early;\npre-tanh penalty\nfixes it", ha="center", va="center",
-            fontsize=10.5, color="#333333")
+    ax.text(1.5, 3.4, "tanh output\nsaturates;\npenalty\nfixes it", ha="center", va="center", fontsize=14.5,
+            color="#333333")
     ax.set_title("3  TD3 collapses", loc="left")
-    ax.text(0.0, 0.99, "collapsed seeds", transform=ax.transAxes, fontsize=10.5, color="#555555", va="top")
+    ax.text(0.0, 0.99, "collapsed seeds", transform=ax.transAxes, fontsize=15, color="#555555", va="top")
 
 
 def panel_arbiter(ax, num):
@@ -128,30 +132,26 @@ def panel_arbiter(ax, num):
     t = {k: int(n[m].replace(",", "")) for k, m in (("sac", "arbTotSac"), ("d1", "arbTotDone"), ("capf", "arbTotCapf"))}
     vals = [("SAC", t["sac"], M.COL["SAC"]), ("Arbiter", t["d1"], M.COL["Arbiter"]), ("APF-D", t["capf"], M.COL["APF-D"])]
     x = np.arange(len(vals))
-    ax.bar(x, [v[1] for v in vals], color=[v[2] for v in vals], width=0.66, zorder=3)
+    ax.bar(x, [v[1] for v in vals], color=[v[2] for v in vals], width=0.62, zorder=3)
     for xi, (_, v, _) in zip(x, vals):
-        ax.text(xi, v + 70, f"{v:,}", ha="center", va="bottom", fontsize=11.5, fontweight="bold")
+        ax.text(xi, v + 70, f"{v:,}", ha="center", va="bottom", fontsize=16, fontweight="bold")
     ax.set_xticks(x)
-    ax.set_xticklabels([v[0] for v in vals], fontsize=10.5)
-    ax.set_ylim(0, 5400)
+    ax.set_xticklabels([v[0] for v in vals], fontsize=15)
+    ax.set_ylim(0, 5600)
     _clean(ax, left=False)
-    ax.set_title("4  Arbiter falls short", loc="left")
-    ax.text(0.0, 0.99, "successes of 4,500 runs", transform=ax.transAxes, fontsize=10.5, color="#555555", va="top")
+    ax.set_title("4  Arbiter < APF-D", loc="left")
+    ax.text(0.0, 0.99, "successes of 4,500", transform=ax.transAxes, fontsize=15, color="#555555", va="top")
 
 
 def main():
     num = M.numbers()
     fig = plt.figure(figsize=(26.6 * CM, 10.6 * CM))
-    gs = fig.add_gridspec(1, 4, width_ratios=[1.25, 1.1, 1.05, 0.95], left=0.06, right=0.99, top=0.74,
-                          bottom=0.16, wspace=0.3)
+    gs = fig.add_gridspec(1, 4, width_ratios=[1.2, 1.0, 0.9, 1.25], left=0.075, right=0.985, top=0.87,
+                          bottom=0.17, wspace=0.28)
     panel_rankings(fig.add_subplot(gs[0]), num)
     panel_stall(fig.add_subplot(gs[1]))
     panel_collapse(fig.add_subplot(gs[2]), num)
     panel_arbiter(fig.add_subplot(gs[3]), num)
-    fig.text(0.5, 0.965, "Classical and learned path planners under one paired, seeded protocol",
-             ha="center", va="top", fontsize=15, fontweight="bold", color="#1b1b1b")
-    fig.text(0.5, 0.885, "APF, DWA-CV, SAC, TD3 and an envelope-derived arbiter on identical obstacle motion",
-             ha="center", va="top", fontsize=11.5, color="#444444")
     os.makedirs(M.MEDIA, exist_ok=True)
     base = os.path.join(M.MEDIA, "graphical_abstract")
     fig.savefig(base + ".pdf")
